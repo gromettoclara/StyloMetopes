@@ -97,9 +97,11 @@ Il faut ensuite faire des citations plus complexes.
 
 :::{.quotcomplexe}
 > tatitata (ça peut être des vers ou des didascalies)
+
 :::{.trad lang=fr}
 tatitata dans une autre langue
 :::
+
 [@hugo1862miserables, 123-125]
 :::
 
@@ -115,7 +117,7 @@ Vérifions ce qui se passe quand on veut encoder des vers ou le théâtre.
 
 Voici la citation linguistique.
 
-::: {.ling lang=fr num= 123 label=ex1 }
+::: {.ling lang=fr num=123 label=ex1 }
 
 [Titre de l'exemple]{.head}
 
