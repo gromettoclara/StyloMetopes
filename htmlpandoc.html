@@ -1,0 +1,182 @@
+<p>Ceci est le doc de référence pour vérifier comment pandoc gère le
+balisage infratextuel / sémantique</p>
+<h2 id="vérifier-les-niveaux-de-titre">Vérifier les niveaux de
+titre</h2>
+<h2 id="liminaires">Liminaires</h2>
+<div class="ack">
+<p>remerciements</p>
+</div>
+<div class="dedication">
+<p>Voici une dédicace</p>
+</div>
+<div class="notepre" data-origin="aut">
+<p>Note préliminaire de l’auteur</p>
+</div>
+<div class="argument">
+<p>ATTENTION: Ceci est un chapôt introductif</p>
+</div>
+<div class="epigraph">
+<p>Tant qu’il existera, par le fait des lois et des mœurs, une damnation
+sociale créant artificiellement, en pleine civilisation, des enfers, et
+compliquant d’une fatalité humaine la destinée qui est divine ; tant que
+les trois problèmes du siècle, la dégradation de l’homme par le
+prolétariat, la déchéance de la femme par la faim, l’atrophie de
+l’enfant par la nuit, ne seront pas résolus ; tant que, dans de
+certaines régions, l’asphyxie sociale sera possible ; en d’autres
+termes, et à un point de vue plus étendu encore, tant qu’il y aura sur
+la terre ignorance et misère, des livres de la nature de celui-ci
+pourront ne pas être inutiles. <span class="citation"
+data-cites="hugo1862miserables">(Hugo 1862)</span></p>
+</div>
+<div class="sponsor">
+<p>Ce livre a été rendu possible grâce au soutien du CRSH.</p>
+</div>
+<div class="endnote">
+<p>Note de fin.</p>
+</div>
+<h2 id="texte">Texte</h2>
+<p>Du texte</p>
+<p>Un saut de ligne</p>
+<p>Une ligne<br />
+Une ligne à la suite</p>
+<hr />
+<p>Et là je veux citer <span class="citation"
+data-cites="hugo1862miserables">Hugo (1862)</span></p>
+<div class="sig">
+<p>Ceci est une signature</p>
+</div>
+<ul>
+<li>liste</li>
+<li>liste
+<ul>
+<li>sous liste</li>
+<li>sous liste</li>
+</ul></li>
+</ul>
+<ol type="1">
+<li>liste numérotée</li>
+<li>liste numérotée
+<ol type="1">
+<li>sous liste numérotée</li>
+<li>sous liste numérotée</li>
+</ol></li>
+</ol>
+<p><strong>Il manque les contenus additionnels !!!</strong></p>
+<h2 id="entretien">Entretien</h2>
+<div class="question">
+<p><span class="speaker">Ta sœur</span> Une question est posée</p>
+</div>
+<div class="answ">
+<p><span class="speaker">Ma grand-mère</span> Réponse à la question</p>
+</div>
+<h2 id="notes">Notes</h2>
+<p>Bablebliblablou, comme l’indique la note en bas de page.<a
+href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a></p>
+<p>Ou alors on peut faire cette syntaxe<a href="#fn2"
+class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>
+aussi.</p>
+<h2 id="citations">Citations</h2>
+<blockquote>
+<p>Ceci est une citation. <span class="citation"
+data-cites="hugo1862miserables">(Hugo 1862, 123–25)</span></p>
+</blockquote>
+<p>Parfois j’écris un paragraphe et comme le disait <span
+class="citation" data-cites="hugo1862miserables">Hugo (1862)</span>,
+<span class="inlinequote">Il n’y a ni mauvaises herbes ni mauvais
+hommes. Il n’y a que de mauvais cultivateurs.</span></p>
+<div class="quote-alt">
+<p>c’est une pratique d’open edition, pas de notion sémantique, elle
+s’appelle juste citation bis</p>
+</div>
+<p>Il faut ensuite faire des citations plus complexes.</p>
+<div class="quotcomplexe">
+<blockquote>
+<p>tatitata (ça peut être des vers ou des didascalies) :::{.trad
+lang=fr} tatitata dans une autre langue</p>
+</blockquote>
+</div>
+<p><span class="citation" data-cites="hugo1862miserables">(Hugo 1862,
+123–25)</span> :::</p>
+<p>Vérifions ce qui se passe quand on veut encoder des vers ou le
+théâtre.</p>
+<blockquote>
+<p><span class="verse" data-num="1">Souvent, pour s’amuser, les hommes
+d’équipage</span> <span class="verse" data-num="2">Prennent des
+albatros, vastes oiseaux des mers,</span> <span class="verse"
+data-num="3">Qui suivent, indolents compagnons de voyage,</span> <span
+class="citation" data-cites="baudelaire_albatros_1857">(Baudelaire 1857,
+1–3)</span></p>
+</blockquote>
+<p><strong>Le théâtre il faut trouver un meilleur système.</strong></p>
+<p>Voici la citation linguistique.</p>
+<p>::: {.ling lang=fr num= 123 label=ex1 }</p>
+<p><span class="head">Titre de l’exemple</span></p>
+<blockquote>
+<p>pomme</p>
+</blockquote>
+<div class="glose">
+<p>fruit</p>
+</div>
+<div class="trl" lang="en">
+<p>apple</p>
+</div>
+<p><span class="citation" data-cites="moliere_misanthrope_1666">(Molière
+1666)</span></p>
+<p>:::</p>
+<h2 id="figures">Figures</h2>
+<div class="figure">
+<p><span class="head">Titre de l’image dans laquelle on devrait mettre
+aussi des <span class="credits">crédits</span></span></p>
+<figure>
+<img src="image.png" alt="caption" />
+<figcaption aria-hidden="true">caption</figcaption>
+</figure>
+<div class="credits">
+<p>Cette image est sous licence <span class="credits">machin</span> et
+est attribuée à <span class="citation"
+data-cites="baudelaire_albatros_1857">Baudelaire (1857)</span></p>
+</div>
+</div>
+<h2 id="typographie">Typographie</h2>
+<p><em>italique</em> ou <em>italique</em></p>
+<p><strong>gras</strong></p>
+<p><strong><em>gras et italique</em></strong></p>
+<p><span class="smallcaps">en petites majuscules</span></p>
+<p><span class="smallcaps"><em>petites majuscules en
+italique</em></span></p>
+<p>1<sup>er</sup></p>
+<p>3<sup><em>eme</em></sup></p>
+<p>A<sub>a</sub></p>
+<p>Trouver comment souligne ??</p>
+<p><del>texte barré</del></p>
+<h2 id="index">Index</h2>
+<p><span class="personnalite" data-idsp="Platon"
+data-idwiki="https://www.wikidata.org/wiki/Q859">Platon</span></p>
+<div id="refs" class="references csl-bib-body hanging-indent"
+data-entry-spacing="0" role="list">
+<div id="ref-baudelaire_albatros_1857" class="csl-entry"
+role="listitem">
+Baudelaire, Charles. 1857. <span>“L’albatros.”</span> In <em>Les Fleurs
+Du Mal</em>, 45–47. Paris: Poulet-Malassis et de Broise.
+</div>
+<div id="ref-hugo1862miserables" class="csl-entry" role="listitem">
+Hugo, Victor. 1862. <em>Les Misérables</em>. Paris: A. Lacroix,
+Verboeckhoven &amp; Cie.
+</div>
+<div id="ref-moliere_misanthrope_1666" class="csl-entry"
+role="listitem">
+Molière. 1666. <em>Le Misanthrope</em>. Paris: Jean Ribou.
+</div>
+</div>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Ceci est une note de bas de page.<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Cette manière de faire des notes de bas de page est
+aussi possible.<a href="#fnref2" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
