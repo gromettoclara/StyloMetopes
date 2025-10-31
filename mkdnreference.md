@@ -141,11 +141,23 @@ apple
 
 [Titre de l'image dans laquelle on devrait mettre aussi des [crédits]{.credits}]{.head}
 
-![caption](image.png)
+![légende](image.png)
 
 :::{.credits}
 Cette image est sous licence [machin]{.credits} et est attribuée à @baudelaire_albatros_1857
 :::
+:::
+
+
+## Encadrés
+
+:::{.encadre titre=montitre}
+
+[ [nom]{.name}[prenom]{.surname}]{.auth}
+
+Pour le moment on a un encadré minimal avecun titre et une autorité à récupérer 
+dans `TEI/text/body//bibl[@type="sec_authority"]/author/persName/surname|forename`
+
 :::
 
 
