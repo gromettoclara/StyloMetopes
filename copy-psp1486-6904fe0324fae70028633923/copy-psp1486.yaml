@@ -1,0 +1,103 @@
+---
+'@version': '1.0'
+abstract:
+- lang: fr
+  text_f: null
+acknowledgements: null
+articleslies:
+- auteur: ''
+  titre: ''
+  url: ''
+authors:
+- foaf: ''
+  forname: Anne
+  isni: ''
+  orcid: 0000-0001-6154-7040
+  surname: Chassagnol
+  viaf: ''
+  wikidata: ''
+- foaf: ''
+  forname: Gwen
+  isni: ''
+  orcid: 0000-0001-8908-9934
+  surname: Le Cor
+  viaf: ''
+  wikidata: ''
+bibliography: copy-psp1486.bib
+controlledKeywords:
+- idRameau: FRBNF120218114
+  label: Arts et Lettres
+  uriRameau: http://catalogue.bnf.fr/ark:/12148/cb12021811z
+- idRameau: FRBNF133328055
+  label: "Monde num\xE9rique"
+  uriRameau: http://catalogue.bnf.fr/ark:/12148/cb133328054
+- idRameau: FRBNF13318593
+  label: "\xC9dition, presse et m\xE9dias"
+  uriRameau: http://catalogue.bnf.fr/ark:/12148/cb13318593f
+date: 2021/06/15
+day: '15'
+diffnum: "\xC9rudit"
+director:
+- foaf: ''
+  forname: "G\xE9rard"
+  gender: male
+  isni: ''
+  orcid: 0000-0002-6651-1650
+  surname: Wormser
+  viaf: ''
+dossier:
+- id: SP1486
+  title: "Textures : l'objet livre du papier au num\xE9rique"
+  title_f: "Textures : l'objet livre du papier au num\xE9rique"
+funder:
+  funder_id: null
+  funder_name: null
+id: SP1486
+issnnum: 2104-3272
+issueDirectors:
+- forname: Anne
+  orcid: 0000-0001-6154-7040
+  surname: Chassagnol
+- forname: Gwen
+  orcid: 0000-0001-8908-9934
+  surname: Le Cor
+journal: Sens public
+journal_email: null
+journal_issue: null
+keywords:
+- lang: fr
+  list_f: null
+lang: fr
+link-citations: true
+month: '06'
+nocite: '@*'
+prod: Sens public
+prodnum: Sens public
+publisher: "D\xE9partement des litt\xE9ratures de langue fran\xE7aise"
+reviewers:
+- forname: Lune
+  surname: Wagner
+rights: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC
+  BY-NC-SA 4.0)
+subtitle_f: null
+title: "Textures : l'objet livre du papier au num\xE9rique"
+title_f: "Textures : l'objet livre du papier au num\xE9rique"
+translatedTitle: []
+translationOf:
+- null
+translations:
+- lang: ''
+  titre: ''
+  url: ''
+translator:
+- forname: ''
+  surname: ''
+type: article
+typeArticle:
+- Sommaire dossier
+url_article: /articles/1486
+year: '2021'
+"\u013Cogocredits": "Mar Arza, \u201CDe sus largas conjeturas\u2026\u201D, Asombros\
+  \ Series, From the book Fisiolog\xEDa del Esp\xEDritu, 2010, Paper, 55 x 40 x 38\
+  \ cm, glass cabinet"
+--- 

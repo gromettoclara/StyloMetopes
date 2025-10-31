@@ -1,0 +1,136 @@
+---
+'@version': '1.0'
+abstract:
+- lang: en
+  text: "Regarding trauma as a \u201Cblack sun\u201D, this essay analyzes the poetics\
+    \ of avoidance in Olivia Rosenthal\u2019s M\xE9canismes de survie en milieu hostile\
+    \ (2014). Blending fictional narratives, reflexive fragments on her stance as\
+    \ author, and excerpts from interviews, Rosenthal sets up literary schemes to\
+    \ get closer to the unspeakable, which she cannot describe head-on but is nonetheless\
+    \ inevitable. The five parts of the text are thus as many attempts to tell the\
+    \ story of grief and guilt with increasing success. In an analysis based on Dominique\
+    \ Rabat\xE9\u2019s theory of contemporary fiction as described in Vers une litt\xE9\
+    rature de l\u2019\xE9puisement (1991) and Viktor Shklovsky\u2019s notion of defamiliarization,\
+    \ I seek to examine how the text distances itself from its topic to access it\
+    \ better."
+  text_f: "Regarding trauma as a \u201Cblack sun\u201D, this essay analyzes the poetics\
+    \ of avoidance in Olivia Rosenthal\u2019s _M\xE9canismes de survie en milieu hostile_\
+    \ (2014). Blending fictional narratives, reflexive fragments on her stance as\
+    \ author, and excerpts from interviews, Rosenthal sets up literary schemes to\
+    \ get closer to the unspeakable, which she cannot describe head-on but is nonetheless\
+    \ inevitable. The five parts of the text are thus as many attempts to tell the\
+    \ story of grief and guilt with increasing success. In an analysis based on Dominique\
+    \ Rabat\xE9\u2019s theory of contemporary fiction as described in _Vers une litt\xE9\
+    rature de l\u2019\xE9puisement_ (1991) and Viktor Shklovsky\u2019s notion of defamiliarization,\
+    \ I seek to examine how the text distances itself from its topic to access it\
+    \ better."
+- lang: fr
+  text: "Consid\xE9rant le traumatisme comme un \xAB soleil noir \xBB, cet article\
+    \ propose une analyse de la po\xE9tique de l\u2019\xE9vitement dans M\xE9canismes\
+    \ de survie en milieu hostile (2014), d\u2019Olivia Rosenthal. M\xEAlant r\xE9\
+    cits fictionnels, fragments r\xE9flexifs et extraits d\u2019entrevues, Rosenthal\
+    \ met en place des stratag\xE8mes pour se rapprocher de l\u2019indicible qu\u2019\
+    elle est incapable de d\xE9crire frontalement et qui, pourtant, est in\xE9vitable.\
+    \ Les cinq parties du texte se pr\xE9sentent alors comme autant de tentatives\
+    \ de raconter, avec un succ\xE8s croissant, le deuil et la culpabilit\xE9. Dans\
+    \ une analyse appuy\xE9e sur la th\xE9orie du r\xE9cit de Dominique Rabat\xE9\
+    \ telle que d\xE9ploy\xE9e dans Vers une litt\xE9rature de l\u2019\xE9puisement\
+    \ (1991) et la notion d\u2019\xE9trangisation de Viktor Shklovsky, j\u2019examinerai\
+    \ les m\xE9thodes par lesquelles l\u2019\u0153uvre s\u2019\xE9loigne du propos\
+    \ pour mieux y acc\xE9der."
+  text_f: "Consid\xE9rant le traumatisme comme un \xAB soleil noir \xBB, cet article\
+    \ propose une analyse de la po\xE9tique de l\u2019\xE9vitement dans _M\xE9canismes\
+    \ de survie en milieu hostile_ (2014), d\u2019Olivia Rosenthal. M\xEAlant r\xE9\
+    cits fictionnels, fragments r\xE9flexifs et extraits d\u2019entrevues, Rosenthal\
+    \ met en place des stratag\xE8mes pour se rapprocher de l\u2019indicible qu\u2019\
+    elle est incapable de d\xE9crire frontalement et qui, pourtant, est in\xE9vitable.\
+    \ Les cinq parties du texte se pr\xE9sentent alors comme autant de tentatives\
+    \ de raconter, avec un succ\xE8s croissant, le deuil et la culpabilit\xE9. Dans\
+    \ une analyse appuy\xE9e sur la th\xE9orie du r\xE9cit de Dominique Rabat\xE9\
+    \ telle que d\xE9ploy\xE9e dans _Vers une litt\xE9rature de l\u2019\xE9puisement_\
+    \ (1991) et la notion d\u2019\xE9trangisation de Viktor Shklovsky, j\u2019examinerai\
+    \ les m\xE9thodes par lesquelles l\u2019\u0153uvre s\u2019\xE9loigne du propos\
+    \ pour mieux y acc\xE9der."
+acknowledgements: null
+articleslies:
+- auteur: ''
+  title: ''
+  url: ''
+authors:
+- affiliations: "Universit\xE9 de Montr\xE9al"
+  biography: "Adrien Savard-Arseneault est titulaire d\u2019une ma\xEEtrise en litt\xE9\
+    rature m\xE9di\xE9vale et \xE9tudiant \xE0 la ma\xEEtrise en biblioth\xE9conomie\
+    \ et sciences de l\u2019information \xE0 l\u2019Universit\xE9 de Montr\xE9al.\
+    \ Il s\u2019int\xE9resse notamment aux repr\xE9sentations des personnages non-conformes\
+    \ de genre dans les romans de chevalerie et aux enjeux anticoloniaux dans les\
+    \ syst\xE8mes de production et d\u2019organisation du savoir. Il a r\xE9cemment\
+    \ publi\xE9 \xAB \u201C[Q]uant faire violt un vallant home\u201D. Construction\
+    \ de la masculinit\xE9 dans le _Roman de Silence_ \xBB, dans la revue _Memini_."
+  forname: Adrien
+  orcid: 0009-0007-8892-0117
+  surname: Savard-Arseneault
+bibliography: copy-savard-arseneault-article.bib
+controlledKeywords: null
+date: null
+director:
+- affiliations: "Universit\xE9 de Montr\xE9al"
+  foaf: ''
+  forname: Andrea
+  gender: ''
+  isni: ''
+  orcid: ''
+  surname: Oberhuber
+  viaf: ''
+dossier:
+- id: ''
+  title: "Soleil noir, cr\xE9ations et saccages d\u2019H\xE9lios"
+  title_f: "Soleil noir, cr\xE9ations et saccages d\u2019H\xE9lios"
+funder:
+  funder_id: null
+  funder_name: null
+id: null
+issnnum: 2369-3045
+issueDirectors:
+- affiliations: Brandon University
+  forname: Eftihia
+  surname: Mihelakis
+- affiliations: "Universit\xE9 de Montr\xE9al"
+  forname: Clara
+  surname: Dupuis-Morency
+journal: MuseMedusa
+journal_email: musemedusa@umontreal.ca
+journal_issue: '13'
+keywords:
+- lang: fr
+  list: "\xE9trangisation, Viktor Shklovsky, ressassement, \xE9criture du traumatisme,\
+    \ M\xE9canismes de survie en milieu hostile, Olivia Rosenthal"
+  list_f: "\xE9trangisation, Viktor Shklovsky, ressassement, \xE9criture du traumatisme,\
+    \ M\xE9canismes de survie en milieu hostile, Olivia Rosenthal"
+- lang: en
+  list: "defamiliarization, Viktor Shklovsky, reiteration, trauma writing, M\xE9canismes\
+    \ de survie en milieu hostile, Olivia Rosenthal"
+  list_f: "defamiliarization, Viktor Shklovsky, reiteration, trauma writing, M\xE9\
+    canismes de survie en milieu hostile, Olivia Rosenthal"
+lang: fr
+link-citations: true
+publisher: null
+rights: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+subtitle: Traumatisme et soleil noir chez Olivia Rosenthal
+subtitle_f: Traumatisme et soleil noir chez Olivia Rosenthal
+title: "L'intangible et l'intol\xE9rable"
+title_f: "L'intangible et l'intol\xE9rable"
+translatedTitle:
+- lang: en
+translationOf:
+- null
+translations:
+- lang: ''
+  title: ''
+  url: ''
+translator:
+- forname: ''
+  surname: ''
+type: article
+typeArticle: null
+url_article: null
+--- 

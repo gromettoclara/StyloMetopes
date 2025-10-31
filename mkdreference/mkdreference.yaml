@@ -1,0 +1,161 @@
+---
+'@version': '1.0'
+abstract: >-
+  La première pièce créée par Carbone 14, Pain blanc (1981, 1983), est une
+  parodie de la société de consommation. La pièce s’articule autour de la
+  condition de l'humain moderne : il s’agit d’une représentation de l’aliénation
+  dans le travail, les loisirs et la sexualité.
+
+  Dans cet article, je propose de faire une description détaillée de la pièce
+  sous l’angle de l’exposition et de la dénonciation de la société de
+  consommation qu’elle propose, notamment à partir de la théorie de la
+  danse-théâtre telle que développée par la chorégraphe allemande Pina Bausch.
+  Gilbert David, dans son article sur Pain blanc, soutient que c’est « par des
+  effets de surcharge, de reprise, de réduplication, jusqu'au point de
+  saturation, [que] la “partition” gestuelle se désigne comme symptôme d'un
+  dérèglement plus profond » (Jeu, no 28, p. 93), d’une aliénation plus
+  profonde. La pièce chercherait ainsi à représenter l’humain moderne comme
+  prisonnier d’une circularité sans fin.
+acknowledgements: 'Merci bien '
+authors:
+  - affiliations: Université de Montréal
+    biography: biographie
+    email: blabla
+    foaf: blabla
+    forename: Karolann
+    isni: blabla
+    orcid: blabla
+    surname: St-Amand
+    viaf: blabla
+    wikidata: blabla
+controlledKeywords:
+  - idRameau: ''
+    label: Pain
+    uriRameau: http://data.bnf.fr/ark:/12148/cb11933895x
+  - idRameau: ''
+    label: Bibliographie
+    uriRameau: http://data.culture.fr/thesaurus/resource/ark:/67717/T990-367
+funder:
+  id: '1234567898754'
+  organization: Truc
+id: monid
+issue:
+  identifier: D0005
+  number: '34'
+  title: L'argent
+issueDirectors:
+  - forename: Léonore
+    orcid: 0000-0002-5457-1680
+    surname: Brassard
+  - forename: Marine
+    surname: Noël
+journal:
+  email: gromettoclara@gmail.com
+  name: Revue Fémur
+  publisher: Revue Fémur
+  url: https://sens-public.org
+journalDirectors:
+  - foaf: ''
+    forename: Emma
+    gender: ''
+    isni: ''
+    orcid: ''
+    surname: Gauthier-Mamaril
+    viaf: ''
+  - forename: Eugénie
+    orcid: 0000-0001-6533-4210
+    surname: Matthey-Jonais
+  - forename: Stéphanie
+    surname: Guité-Verret
+keywords:
+  - essai
+  - de
+  - mot
+  - clé
+lang: fr
+license: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+link-citations: true
+localizedContent:
+  - abstract: résumé en espagnol
+    keywords:
+      - mot-clé-es
+    lang: es
+    subtitle: a mi me gusta bailar
+    title: Vamos a la playe
+nocite: '@*'
+production:
+  entities:
+    - media: print
+      name: Revue Fémur
+      type: producer
+    - media: digital
+      name: Revue Fémur
+      type: producer
+    - media: digital
+      name: Revue Fémur
+      type: publisher
+  issn: 2563-6812
+publicationDate: '2022-06-20'
+reviewers:
+  - affiliations: Université de Montréal
+    biography: blabla
+    email: blabla
+    foaf: blabla
+    forename: Clara
+    isni: blabla
+    orcid: blabla
+    surname: Grometto
+    viaf: blabla
+    wikidata: blabla
+senspublic:
+  categories:
+    - Essai
+  linkedArticles:
+    - auteur: ''
+      titre: ''
+      url: ''
+  translations:
+    - lang: ''
+      titre: ''
+      url: ''
+subtitle: Voilà du pain
+title: 'Pain blanc : une circularité sans fin'
+transcribers:
+  - affiliations: Université de Montréal
+    biography: blabla
+    email: blabla
+    foaf: blabla
+    forename: Clara
+    isni: blabla
+    orcid: blabla
+    surname: Grometto
+    viaf: blabla
+    wikidata: blabla
+translationOf:
+  lang: es
+  title: Translation
+  url: http://uneurl.fr
+translators:
+  - affiliations: Sorbonne
+    biography: blabla
+    email: blabla
+    foaf: foad:traduc
+    forename: marcello
+    isni: isni:traduc
+    orcid: blabla
+    surname: vitali-rosati
+    viaf: viaftraduc
+    wikidata: Q678975traduc
+  - affiliations: université de montreal
+    biography: blabla
+    email: blabla
+    foaf: blabla
+    forename: Clara
+    isni: blabla
+    orcid: blabla
+    surname: Grometto
+    viaf: blabla
+    wikidata: blabla
+type: article
+url: https://revuefemur.com/?p=2515
+---

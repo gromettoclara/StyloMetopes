@@ -1,0 +1,71 @@
+---
+'@version': '1.0'
+abstract:
+- lang: fr
+  text_f: null
+acknowledgements: null
+articleslies:
+- auteur: ''
+  titre: ''
+  url: ''
+authors:
+- forname: Gilles
+  orcid: 0000-0002-1028-3898
+  surname: Bonnet
+- forname: "Ga\xEBlle"
+  orcid: 0000-0002-4159-1121
+  surname: "Th\xE9val"
+- forname: Erika
+  orcid: 0000-0002-9736-3603
+  surname: "F\xFCl\xF6p"
+bibliography: copy-copy-litteratube-chap1.bib
+controlledKeywords: null
+date: 1998/05/15
+day: '15'
+director:
+- foaf: ''
+  forname: ''
+  gender: ''
+  isni: ''
+  orcid: ''
+  surname: ''
+  viaf: ''
+dossier:
+- id: ''
+  title: ''
+  title_f: ''
+funder:
+  funder_id: null
+  funder_name: null
+id: null
+issnnum: null
+journal: null
+journal_email: null
+journal_issue: null
+keywords:
+- lang: fr
+  list_f: null
+lang: fr
+link-citations: true
+month: '05'
+nocite: '@*'
+publisher: null
+rights: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+subtitle_f: null
+title: Chapitre 1. Teasers et promotion de livre
+title_f: Chapitre 1. *Teasers* et promotion de livre
+translatedTitle: []
+translationOf:
+- null
+translations:
+- lang: ''
+  titre: ''
+  url: ''
+translator:
+- forname: ''
+  surname: ''
+type: article
+typeArticle: null
+url_article: null
+year: '1998'
+--- 

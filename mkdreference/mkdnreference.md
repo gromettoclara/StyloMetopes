@@ -141,13 +141,14 @@ apple
 
 [Titre de l'image dans laquelle on devrait mettre aussi des [crédits]{.credits}]{.head}
 
-![légende](image.png)
+![légende](mkdreference/medias/image.png)
 
 :::{.credits}
 Cette image est sous licence [machin]{.credits} et est attribuée à @baudelaire_albatros_1857
 :::
 :::
 
+L'idée ici est de détourner l'alt de l'image pour faire la caption. 
 
 ## Encadrés
 
@@ -155,7 +156,7 @@ Cette image est sous licence [machin]{.credits} et est attribuée à @baudelaire
 
 [ [nom]{.name}[prenom]{.surname}]{.auth}
 
-Pour le moment on a un encadré minimal avecun titre et une autorité à récupérer 
+Pour le moment on a un encadré minimal avec un titre et une autorité à récupérer 
 dans `TEI/text/body//bibl[@type="sec_authority"]/author/persName/surname|forename`
 
 :::

@@ -1,0 +1,109 @@
+---
+'@version': '1.0'
+abstract:
+- lang: fr
+  text: "La premi\xE8re pi\xE8ce cr\xE9\xE9e par Carbone 14, Pain blanc (1981, 1983),\
+    \ est une parodie de la soci\xE9t\xE9 de consommation. La pi\xE8ce s\u2019articule\
+    \ autour de la condition de l'humain moderne : il s\u2019agit d\u2019une repr\xE9\
+    sentation de l\u2019ali\xE9nation dans le travail, les loisirs et la sexualit\xE9\
+    .\nDans cet article, je propose de faire une description d\xE9taill\xE9e de la\
+    \ pi\xE8ce sous l\u2019angle de l\u2019exposition et de la d\xE9nonciation de\
+    \ la soci\xE9t\xE9 de consommation qu\u2019elle propose, notamment \xE0 partir\
+    \ de la th\xE9orie de la danse-th\xE9\xE2tre telle que d\xE9velopp\xE9e par la\
+    \ chor\xE9graphe allemande Pina Bausch. Gilbert David, dans son article sur Pain\
+    \ blanc, soutient que c\u2019est \xAB par des effets de surcharge, de reprise,\
+    \ de re\u0301duplication, jusqu'au point de saturation, [que] la \u201Cpartition\u201D\
+    \ gestuelle se de\u0301signe comme sympto\u0302me d'un de\u0301re\u0300glement\
+    \ plus profond \xBB (Jeu, no 28, p. 93), d\u2019une ali\xE9nation plus profonde.\
+    \ La pi\xE8ce chercherait ainsi \xE0 repr\xE9senter l\u2019humain moderne comme\
+    \ prisonnier d\u2019une circularit\xE9 sans fin."
+  text_f: "La premi\xE8re pi\xE8ce cr\xE9\xE9e par Carbone 14, Pain blanc (1981, 1983),\
+    \ est une parodie de la soci\xE9t\xE9 de consommation. La pi\xE8ce s\u2019articule\
+    \ autour de la condition de l'humain moderne : il s\u2019agit d\u2019une repr\xE9\
+    sentation de l\u2019ali\xE9nation dans le travail, les loisirs et la sexualit\xE9\
+    .\nDans cet article, je propose de faire une description d\xE9taill\xE9e de la\
+    \ pi\xE8ce sous l\u2019angle de l\u2019exposition et de la d\xE9nonciation de\
+    \ la soci\xE9t\xE9 de consommation qu\u2019elle propose, notamment \xE0 partir\
+    \ de la th\xE9orie de la danse-th\xE9\xE2tre telle que d\xE9velopp\xE9e par la\
+    \ chor\xE9graphe allemande Pina Bausch. Gilbert David, dans son article sur Pain\
+    \ blanc, soutient que c\u2019est \xAB par des effets de surcharge, de reprise,\
+    \ de re\u0301duplication, jusqu'au point de saturation, [que] la \u201Cpartition\u201D\
+    \ gestuelle se de\u0301signe comme sympto\u0302me d'un de\u0301re\u0300glement\
+    \ plus profond \xBB (Jeu, no 28, p. 93), d\u2019une ali\xE9nation plus profonde.\
+    \ La pi\xE8ce chercherait ainsi \xE0 repr\xE9senter l\u2019humain moderne comme\
+    \ prisonnier d\u2019une circularit\xE9 sans fin."
+acknowledgements: null
+articleslies:
+- auteur: ''
+  titre: ''
+  url: ''
+authors:
+- forname: Karolann
+  surname: St-Amand
+bibliography: copy-rf0038.bib
+controlledKeywords: null
+date: 2022/06/20
+day: '20'
+diffnum: "Revue F\xE9mur"
+director:
+- foaf: ''
+  forname: Emma
+  gender: ''
+  isni: ''
+  orcid: ''
+  surname: Gauthier-Mamaril
+  viaf: ''
+- forname: "Eug\xE9nie"
+  orcid: 0000-0001-6533-4210
+  surname: Matthey-Jonais
+- forname: "St\xE9phanie"
+  surname: "Guit\xE9-Verret"
+dossier:
+- id: D0005
+  title: L'argent
+  title_f: L'argent
+funder:
+  funder_id: null
+  funder_name: null
+id: RF0038
+issnnum: 2563-6812
+issueDirectors:
+- forname: "L\xE9onore"
+  orcid: 0000-0002-5457-1680
+  surname: Brassard
+- forname: Marine
+  surname: "No\xEBl"
+journal: "Revue F\xE9mur"
+journal_email: null
+journal_issue: null
+keywords:
+- lang: fr
+  list: "essai, de, mot, cl\xE9"
+  list_f: "essai, de, mot, cl\xE9"
+lang: fr
+link-citations: true
+month: '06'
+nocite: '@*'
+prod: "Revue F\xE9mur"
+prodnum: "Revue F\xE9mur"
+publisher: "Revue F\xE9mur"
+rights: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+subtitle_f: null
+title: "Pain blanc : une circularit\xE9 sans fin"
+title_f: "<i>Pain blanc</i> : une circularit\xE9 sans fin"
+translatedTitle: []
+translationOf:
+- null
+translations:
+- lang: ''
+  titre: ''
+  url: ''
+translator:
+- forname: ''
+  surname: ''
+type: article
+typeArticle:
+- Essai
+url_article: https://revuefemur.com/?p=2515
+year: '2022'
+--- 

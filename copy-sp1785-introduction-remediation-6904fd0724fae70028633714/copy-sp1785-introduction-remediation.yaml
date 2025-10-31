@@ -1,0 +1,134 @@
+---
+'@version': '1.0'
+abstract:
+- lang: en
+  text: "How can sign language, an eminently embodied and dynamic practice, be translated\
+    \ into text and fixed images? What effect does the composition of a \u201Crecueil\
+    \ factice\u201D from flying libels have on their reception and preservation? What\
+    \ happens from the drawing on paper of an object for a video game to its digital\
+    \ encoding in the most disk-space-efficient forms? These issues raise the question\
+    \ of the media of heritage, and the operations that lead to the remediation of\
+    \ practices incorporated into paper, of fragments assembled into a whole, of drawings\
+    \ in code... (SDP)"
+  text_f: "How can sign language, an eminently embodied and dynamic practice, be translated\
+    \ into text and fixed images? What effect does the composition of a \u201Crecueil\
+    \ factice\u201D from flying libels have on their reception and preservation? What\
+    \ happens from the drawing on paper of an object for a video game to its digital\
+    \ encoding in the most disk-space-efficient forms? These issues raise the question\
+    \ of the media of heritage, and the operations that lead to the remediation of\
+    \ practices incorporated into paper, of fragments assembled into a whole, of drawings\
+    \ in code... (SDP)"
+- lang: fr
+  text: "Comment traduire en texte et en images fig\xE9es la langue des signes, pratique\
+    \ \xE9minemment incarn\xE9e et dynamique ? Quel effet la composition d'un \xAB\
+    \_recueil factice\_\xBB \xE0 partir de libelles volants a-t-elle sur leur r\xE9\
+    ception et leur conservation ? Que se passe-t-il du dessin sur le papier d'un\
+    \ objet pour un jeu vid\xE9o \xE0 son encodage num\xE9rique dans des formes les\
+    \ plus \xE9conomes en espace disque ? Ces probl\xE9matiques soul\xE8vent la question\
+    \ des media du patrimoine et des op\xE9rations qui pr\xE9sident \xE0 la rem\xE9\
+    diation de pratiques incorpor\xE9es dans du papier, de fragments rassembl\xE9\
+    s en un tout, de dessins dans du code... (SDP)"
+  text_f: "Comment traduire en texte et en images fig\xE9es la langue des signes,\
+    \ pratique \xE9minemment incarn\xE9e et dynamique ? Quel effet la composition\
+    \ d'un \xAB\_recueil factice\_\xBB \xE0 partir de libelles volants a-t-elle sur\
+    \ leur r\xE9ception et leur conservation ? Que se passe-t-il du dessin sur le\
+    \ papier d'un objet pour un jeu vid\xE9o \xE0 son encodage num\xE9rique dans des\
+    \ formes les plus \xE9conomes en espace disque ? Ces probl\xE9matiques soul\xE8\
+    vent la question des _media_ du patrimoine et des op\xE9rations qui pr\xE9sident\
+    \ \xE0 la rem\xE9diation de pratiques incorpor\xE9es dans du papier, de fragments\
+    \ rassembl\xE9s en un tout, de dessins dans du code... (SDP)"
+acknowledgements: BnF, OpenEdition Lab, Mucem
+articleslies:
+- auteur: ''
+  title: ''
+  url: ''
+authors:
+- affiliations: OpenEdition Lab
+  email: simon.dumas-primbault@openedition.org
+  forname: Simon
+  orcid: 0000-0002-0012-0550
+  surname: Dumas Primbault
+bibliography: copy-sp1785-introduction-remediation.bib
+controlledKeywords:
+- idRameau: ''
+  label: "biblioth\xE8que"
+  uriRameau: http://www.eionet.europa.eu/gemet/concept/4793
+- idRameau: ''
+  label: "M\xE9dia"
+  uriRameau: http://data.culture.fr/thesaurus/resource/ark:/67717/T990-1295
+- idRameau: ''
+  label: patrimoine
+  uriRameau: http://ark.frantiq.fr/ark:/26678/pcrt1hEGf8Mxjm
+- idRameau: ''
+  label: "mus\xE9e"
+  uriRameau: http://www.eionet.europa.eu/gemet/concept/5444
+- idRameau: ''
+  label: archives
+  uriRameau: http://ark.frantiq.fr/ark:/26678/pcrttUONyH0Uai
+date: 2025/07/17
+day: '17'
+diffnum: "\xC9rudit"
+director:
+- foaf: ''
+  forname: "G\xE9rard"
+  gender: ''
+  isni: ''
+  orcid: 0000-0002-6651-1650
+  surname: Wormser
+  viaf: ''
+dossier:
+- id: '1785'
+  title: "La (re-)me\u0301diation des collections de la BnF et du Mucem. Les multiples\
+    \ mate\u0301rialite\u0301s des fonds documentaires et les pratiques qu\u2019elles\
+    \ re\u0301ve\u0300lent"
+  title_f: "La (re-)me\u0301diation des collections de la BnF et du Mucem. Les multiples\
+    \ mate\u0301rialite\u0301s des fonds documentaires et les pratiques qu\u2019elles\
+    \ re\u0301ve\u0300lent"
+funder:
+  funder_id: null
+  funder_name: null
+id: SP1785
+issnnum: 2104-3272
+issueDirectors:
+- forname: Simon
+  orcid: 0000-0002-0012-0550
+  surname: Dumas Primbault
+journal: Sens public
+journal_email: redaction@sens-public.org
+keywords:
+- lang: fr
+  list: "rem\xE9diation, pratiques mat\xE9rielles, medium, patrimoine, BnF, Mucem"
+  list_f: "rem\xE9diation, pratiques mat\xE9rielles, medium, patrimoine, BnF, Mucem"
+- lang: en
+  list: remediation, material practices, medium, patrimonial, BnF, MuCEM
+  list_f: remediation, material practices, medium, patrimonial, BnF, MuCEM
+lang: fr
+link-citations: true
+logocredits: "Conception graphique : Federica Pardini et B\xE9atrice Durandard"
+month: '07'
+nocite: '@*'
+prodnum: Sens public
+publisher: "D\xE9partement des litt\xE9ratures de langue fran\xE7aise"
+reviewers: []
+rights: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+title: Voir l'archive par le travers
+title_f: Voir l'archive par le travers
+transcribers: []
+translatedTitle:
+- lang: en
+translationOf:
+- null
+translations:
+- lang: ''
+  title: ''
+  url: ''
+translator:
+- forname: ''
+  surname: ''
+type: article
+typeArticle:
+- null
+- Sommaire dossier
+url_article: /articles/1785
+year: '2025'
+--- 
