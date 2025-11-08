@@ -28,10 +28,12 @@ D’abord, les _types_ BibTeX et BibLaTeX. Des lignes 97-133, je déduis les typ
 1. techreport
 1. unpublished
 1. misc
+
 Le manuel BibTex inclut deux types additionnels :
 
 1. manual
 1. proceedings
+
 Cela doit impliquer que pandoc ne produira jamais en extrant des entrées de ce type; cependant, il les accepte en intrant : les deux sont mappés sur book (tests faits avec @mvr2025_1 et @mvr2025_2).
 
 BibLaTeX ajoute les types suivants :
