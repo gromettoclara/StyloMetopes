@@ -249,6 +249,7 @@ pandoc) :
 4.  On ne peut mettre aucune commande de police dans une `\mbox{}`.
 
 Cela dit, c'est extrêmement impressionnant tout ce qu'il arrive à gérer
-et, qui plus est, à traduire en MathML.
+et, qui plus est, à traduire en MathML. Ce que les navigateurs (comme
+Firefox) arrivent à faire avec le MathML est aussi très impressionnant.
 
 ------------------------------------------------------------------------
