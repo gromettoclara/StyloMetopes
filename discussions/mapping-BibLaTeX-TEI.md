@@ -175,17 +175,15 @@ Selon moi, deux conclusions s'imposent :
 
 3.  Quelle est la politique / prescription pour le contenu TeX / LaTeX
     dans les données ? Exemples : `XIX$^{\textrm{e}}$ siècle` dans
-    `dauphin_ces_1995`, `\textbar` dans `noauthor_tianjin_nodate`,
-    `17$^{\textrm{eme}}$ siècle` dans `sauret_revue_2020`.
-
-    Je note cependant que, dans ce dernier cas, le TeX est mal codé; il
-    faudrait plutôt écrire : `17$^{\textrm{eme}}$ siècle`.
-
-    Également,
+    `dauphin_ces_1995` (article `essai-HN-fictif.bib`), `\textbar` dans
+    `noauthor_tianjin_nodate` (article `HN-02.bib`),
+    `17$^{\textrm{eme}}$ siècle` dans `sauret_revue_2020` (article
+    `humanistica2022-proposition-crcen.md`).
 
 4.  Même question pour les balises HTML ? Exemples : et `&lt;/p&gt;`
     (sûrement inutiles) dans `sauret_revue_2020`, `&lt;i&gt;` et
-    `&lt;/i&gt;` dans `pierre-jean_raymonde_1993`.
+    `&lt;/i&gt;` dans `pierre-jean_raymonde_1993` (article
+    `SP1339.bib`).
 
     Une analyse plus poussée semble montrer que ces balises HTML sont en
     fait « codées » dans les .bib via des équivalents TeX, p.ex.
@@ -204,7 +202,7 @@ Selon moi, deux conclusions s'imposent :
 
 ------------------------------------------------------------------------
 
-## Les formules mathématiques LaTeX / MathML {#d2e384}
+## Les formules mathématiques LaTeX / MathML {#d2e386}
 
 Mes essais avec les bibliographies me font bifurquer vers la question
 des formules mathématiques, qui risquent d'être un problème épineux,
@@ -235,6 +233,9 @@ encore sous quelle forme exactement) dans l'AST plutôt que les
 `<Math math-type="InlineMath">…</Math>` ou
 `<Math math-type="DisplayMath">…</Math>`.
 
+*Voir plus bas une autre idée qui ne demande pas de modification a
+pandoc.*
+
 Notes sur le LaTeX accepté par `texmath` (qui fait le travail pour
 pandoc) :
 
@@ -251,5 +252,29 @@ pandoc) :
 Cela dit, c'est extrêmement impressionnant tout ce qu'il arrive à gérer
 et, qui plus est, à traduire en MathML. Ce que les navigateurs (comme
 Firefox) arrivent à faire avec le MathML est aussi très impressionnant.
+
+### Une approche possible pour les formules mathématiques {#d2e478}
+
+pandoc est très accueillant pour LaTeX dans le md. Il serait donc
+naturel que les formules math. soient rédigées en LaTeX dans le md.
+
+Commen mentionné, c'est l'option `--mathml` du writer HTML qui gère la
+traduction en MathML (via le package `texmath`, aussi de JGM et intégér
+à pandoc). L'idée est d'ajouter des étapes à la chaîne de traitement
+pour faire du `-f md -t html` et récupérer le MathML. Ça semble tordu,
+mais ça marche et entraîne un overhead très faible.
+
+Pour les formules dans l'article, c'est très simple. Mais pour les
+formules en bibliographie (dans un titre, par exemple, ou un
+sous-titre), c'est tout aussi faisable, mais ça demande cependant encore
+des étapes additionnelles (peu coûteuses, cependant, encore une fois).
+
+Il faut comprendre cependant une limite intrinsèque au traitement
+sémantique que fait pandoc du BibLaTeX : certains champs (en général,
+les champs « courts ») sont traités comme de simples chaînes de
+caractères et ne peuvent donc pas avoir de formules, ni d'artifices
+typographiques, par exemple, les différentes parties d'un nom de
+personne ou le nom d'une maison d'édition (même si on pourrait *a
+priori* légitimement appeler une maison d'édition "Les éditions √π").
 
 ------------------------------------------------------------------------
