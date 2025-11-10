@@ -262,19 +262,37 @@ Comme mentionné, c'est l'option `--mathml` du writer HTML qui gère la
 traduction en MathML (via le package `texmath`, aussi de JGM et intégré
 à pandoc). L'idée est d'ajouter des étapes à la chaîne de traitement
 pour faire du `-f md -t html` et récupérer le MathML. Ça semble tordu,
-mais ça marche et entraîne un overhead très faible.
+mais ça marche, et avec un overhead très faible.
 
-Pour les formules dans l'article, c'est très simple. Mais pour les
-formules en bibliographie (dans un titre, par exemple, ou un
-sous-titre), c'est tout aussi faisable, mais ça demande cependant encore
-des étapes additionnelles (peu coûteuses, cependant, encore une fois).
+Pour les formules dans l'article lui-même, c'est très simple. Mais pour
+les formules en bibliographie (dans un titre, par exemple, ou un
+sous-titre, en fait n'importe quel champ qui n'est pas traité par pandoc
+comme un simple chaîne de caractères^\*^), c'est tout aussi faisable,
+mais ça demande encore une ou peut-être deux étapes additionnelles (peu
+coûteuses, cependant, encore une fois).
 
-Il faut comprendre cependant une limite intrinsèque au traitement
+^\*^Il faut comprendre la limite suivante, intrinsèque au traitement
 sémantique que fait pandoc du BibLaTeX : certains champs (en général,
 les champs « courts ») sont traités comme de simples chaînes de
 caractères et ne peuvent donc pas avoir de formules, ni d'artifices
-typographiques, par exemple, les différentes parties d'un nom de
-personne ou le nom d'une maison d'édition (même si on pourrait *a
-priori* légitimement appeler une maison d'édition "Les éditions √π").
+typographiques (e.g. `*…*` pour l'italique). Ce type de champ inclut les
+différentes parties d'un nom de personne ou le nom d'une maison
+d'édition (même si on pourrait *a priori* légitimement appeler une
+maison d'édition "Les éditions √π").
+
+Le fin mot de l'histoire est que :
+
+- Nulle part dans une référence BibLaTeX le MD habituel n'est reconnu
+  (`*…*`, `**…**`, etc.).
+- Cependant, dans les champs qui sont convertis en `MetaInlines` (plutôt
+  qu'en `MetaString`), les formules LaTeX sont reconnues et taguées
+  comme telles dans l'AST de la bibliographie.
+
+> *2025-11-10* En visio avec Clara et Marcello, on décide qu'on va de
+> l'avant avec cette approche.
+
+Prochaine étape : répertorier exactement les champs BibLaTeX qui sont
+traduits en `MetaInlines`. Ça correspondra aux champs où il est possible
+de mettre des formules LaTeX.
 
 ------------------------------------------------------------------------
