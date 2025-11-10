@@ -258,8 +258,8 @@ Firefox) arrivent à faire avec le MathML est aussi très impressionnant.
 pandoc est très accueillant pour LaTeX dans le md. Il serait donc
 naturel que les formules math. soient rédigées en LaTeX dans le md.
 
-Commen mentionné, c'est l'option `--mathml` du writer HTML qui gère la
-traduction en MathML (via le package `texmath`, aussi de JGM et intégér
+Comme mentionné, c'est l'option `--mathml` du writer HTML qui gère la
+traduction en MathML (via le package `texmath`, aussi de JGM et intégré
 à pandoc). L'idée est d'ajouter des étapes à la chaîne de traitement
 pour faire du `-f md -t html` et récupérer le MathML. Ça semble tordu,
 mais ça marche et entraîne un overhead très faible.
