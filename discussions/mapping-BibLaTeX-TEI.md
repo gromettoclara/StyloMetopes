@@ -11,7 +11,7 @@ Yves Marcoux
 
 ------------------------------------------------------------------------
 
-## Comparaison BibTeX ↔ BibLaTeX {#d2e35}
+## Comparaison BibTeX ↔ BibLaTeX {#d2e19}
 
 2025-11-05 Je décide de comparer exhaustivement les formats BibTeX et
 BibLaTeX, tels que vus par pandoc (puisque ultimement, c'est sur lui
@@ -19,6 +19,8 @@ qu'on s'appuie pour produire nos données-sources).
 
 Basé sur
 `D:\_YmaProjets\MarcelloVR\Haskell\pandoc-ym\src\Text\Pandoc\Citeproc\BibTeX.hs`.
+
+### Types de référence {#d2e25}
 
 D'abord, les *types* BibTeX et BibLaTeX. Des lignes 97-133, je déduis
 les types BibTeX suivants :
@@ -35,7 +37,7 @@ les types BibTeX suivants :
 10. unpublished
 11. misc
 
-Le manuel BibTex inclut deux types additionnels :
+Le manuel LaTeX inclut deux types additionnels :
 
 1.  manual
 2.  proceedings
@@ -61,9 +63,73 @@ BibLaTeX ajoute les types suivants :
 13. review
 14. software
 
+### Les champs {#d2e65}
+
+Des lignes 135 à 190, on constate les champs suivants pour **BibTeX** :
+
+1.  \"author\"
+2.  \"editor\"
+3.  \"translator\"
+4.  \"publisher\"
+5.  \"title\"
+6.  \"booktitle\"
+7.  \"journal\"
+8.  \"series\"
+9.  \"edition\"
+10. \"volume\"
+11. \"number\"
+12. \"pages\"
+13. \"year\"
+14. \"month\"
+15. \"address\"
+16. \"type\"
+17. \"note\"
+18. \"annote\"
+19. \"url\" \-- not officially supported, but supported by some styles
+
+Le manuel LaTeX ajoute :
+
+1.  \"howpublished\"
+2.  \"institution\"
+3.  \"organization\"
+4.  \"key\"
+5.  \"school\"
+
+Le manuel LaTeX dit que \"key\" devrait être fourni lorsque \"author\"
+et \"editor\" sont tous les deux absents.
+
+Il faudra faire des tests pour savoir ce que pandoc fait avec ces champs
+quand ils sont présents. À vue de nez, je dirais qu'il les mappe à autre
+chose.
+
+S'ajoutent les champs suivants pour **BibLaTeX** :
+
+1.  \"volumes\"
+2.  \"pagetotal\"
+3.  \"version\"
+4.  \"date\"
+5.  \"eventdate\"
+6.  \"urldate\"
+7.  \"doi\"
+8.  \"isbn\"
+9.  \"issn\"
+10. \"entrysubtype\"
+11. \"langid\"
+12. \"abstract\"
+13. \"keywords\"
+
+Le manuel LaTeX précise qu'une entrée peut contenir d'autres champs (que
+ceux énumérés) et qu'ils sont simplement ignorés lorsque le style
+bibliographique ne les utilise pas.
+
+Je pense que la référence ultime sur BibLaTeX est le manuel "The
+biblatex Package" disponible en PDF
+[ici](https://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf){shape="rect"}
+(j'en ai une copie dans mes `ressources-diverses`).
+
 ------------------------------------------------------------------------
 
-## L'existant bibliographique stylo {#d2e125}
+## L'existant bibliographique stylo {#d2e129}
 
 Je fusionne tous mes fichiers `.bib` (ou presque), pour me faire une
 idée des pratiques bibliographiques supportées actuellement par stylo.
@@ -106,7 +172,7 @@ scrupule.
 
 J'appelle le résultat `tests-YMA-LOURDE.bib`.
 
-### Constats {#d2e190}
+### Constats {#d2e177}
 
 **Premier constat (2025-11-05) :** Les .bib que j'utilise dans mes tests
 (et qui proviennent donc de stylo, sauf quelques références de mon cru)
@@ -154,7 +220,7 @@ automatiser.
 Évidemment, ces tests ne sont pas exhaustifs, il n'est donc pas exclus
 qu'il y ait d'autres différences.
 
-### Conclusions provisoires {#d2e279}
+### Conclusions provisoires {#d2e247}
 
 Selon moi, deux conclusions s'imposent :
 
@@ -165,7 +231,7 @@ Selon moi, deux conclusions s'imposent :
 
 ------------------------------------------------------------------------
 
-## Questions {#d2e304}
+## Questions {#d2e265}
 
 1.  Y aurait-il d'autres fichiers .bib plus « frais » à utiliser pour
     tester ?
@@ -202,7 +268,7 @@ Selon moi, deux conclusions s'imposent :
 
 ------------------------------------------------------------------------
 
-## Les formules mathématiques LaTeX / MathML {#d2e386}
+## Les formules mathématiques LaTeX / MathML {#d2e335}
 
 Mes essais avec les bibliographies me font bifurquer vers la question
 des formules mathématiques, qui risquent d'être un problème épineux,
@@ -253,7 +319,7 @@ Cela dit, c'est extrêmement impressionnant tout ce qu'il arrive à gérer
 et, qui plus est, à traduire en MathML. Ce que les navigateurs (comme
 Firefox) arrivent à faire avec le MathML est aussi très impressionnant.
 
-### Une approche possible pour les formules mathématiques {#d2e478}
+### Une approche possible pour les formules mathématiques {#d2e412}
 
 pandoc est très accueillant pour LaTeX dans le md. Il serait donc
 naturel que les formules math. soient rédigées en LaTeX dans le md.
@@ -283,7 +349,7 @@ maison d'édition "Les éditions √π").
 Le fin mot de l'histoire est que :
 
 - Nulle part dans une référence BibLaTeX le MD habituel n'est reconnu
-  (`*…*`, `**…**`, etc.).
+  comme tel (`*…*`, `**…**`, etc.).
 - Cependant, dans les champs qui sont convertis en `MetaInlines` (plutôt
   qu'en `MetaString`), les formules LaTeX sont reconnues et taguées
   comme telles dans l'AST de la bibliographie.
@@ -294,5 +360,9 @@ Le fin mot de l'histoire est que :
 Prochaine étape : répertorier exactement les champs BibLaTeX qui sont
 traduits en `MetaInlines`. Ça correspondra aux champs où il est possible
 de mettre des formules LaTeX.
+
+> *2025-11-12* Cette recension s'avère finalement assez laborieuse pour
+> justifier son propre [document de
+> réflexion](bib-pretraitement-pandoc.md){shape="rect"}.
 
 ------------------------------------------------------------------------
