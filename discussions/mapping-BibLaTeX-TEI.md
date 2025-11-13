@@ -124,7 +124,7 @@ bibliographique ne les utilise pas.
 
 Je pense que la référence ultime sur BibLaTeX est le manuel "The
 biblatex Package" disponible en PDF
-[ici](https://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf){shape="rect"}
+[ici](https://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf)
 (j'en ai une copie dans mes `ressources-diverses`).
 
 ------------------------------------------------------------------------
@@ -363,6 +363,6 @@ de mettre des formules LaTeX.
 
 > *2025-11-12* Cette recension s'avère finalement assez laborieuse pour
 > justifier son propre [document de
-> réflexion](bib-pretraitement-pandoc.md){shape="rect"}.
+> réflexion](bib-pretraitement-pandoc.md).
 
 ------------------------------------------------------------------------
