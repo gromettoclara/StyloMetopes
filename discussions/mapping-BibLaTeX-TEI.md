@@ -220,18 +220,22 @@ automatiser.
 Évidemment, ces tests ne sont pas exhaustifs, il n'est donc pas exclus
 qu'il y ait d'autres différences.
 
-### Conclusions provisoires {#d2e247}
+2025-11-15 Je m'oriente maintenant vers `-f biblatex -t xml`, qui
+résulte en quelque chose de plus riche que `-t CSLJSON`, mais cela ne
+compromet pas la validité des constats présentés.
+
+### Conclusions provisoires {#d2e253}
 
 Selon moi, deux conclusions s'imposent :
 
 1.  Il faut considérer qu'on travaille *de facto* en BibLaTeX. Donc,
     viser une méthodologie (protocole) axée sur ce format.
 2.  Il **faut continuer à spécifier `-f biblatex`** pour l'opération
-    `-t CSLJSON` car la suppression des `location` n'est pas viable.
+    `-t xml` car la suppression des `location` n'est pas viable.
 
 ------------------------------------------------------------------------
 
-## Questions {#d2e265}
+## Questions {#d2e271}
 
 1.  Y aurait-il d'autres fichiers .bib plus « frais » à utiliser pour
     tester ?
@@ -244,16 +248,12 @@ Selon moi, deux conclusions s'imposent :
     `dauphin_ces_1995` (article `essai-HN-fictif.bib`), `\textbar` dans
     `noauthor_tianjin_nodate` (article `HN-02.bib`),
     `17$^{\textrm{eme}}$ siècle` dans `sauret_revue_2020` (article
-    `humanistica2022-proposition-crcen.md`).
+    `humanistica2022-proposition-crcen`) et `\emph` dans
+    `pierre-jean_raymonde_1993` (article `SP1339`).
 
-4.  Même question pour les balises HTML ? Exemples : et `&lt;/p&gt;`
-    (sûrement inutiles) dans `sauret_revue_2020`, `&lt;i&gt;` et
-    `&lt;/i&gt;` dans `pierre-jean_raymonde_1993` (article
-    `SP1339.bib`).
-
-    Une analyse plus poussée semble montrer que ces balises HTML sont en
-    fait « codées » dans les .bib via des équivalents TeX, p.ex.
-    `{\textless}p{\textgreater}` pour `&lt;p&gt;`.
+4.  Même question pour des balises HTML « simulées » en TeX ? Exemples :
+    `{\textless}p{\textgreater}` et `{\textless}/p{\textgreater}` dans
+    `sauret_revue_2020` (article `humanistica2022-proposition-crcen`).
 
 5.  Comment des caractères Windows-1252 peuvent-ils se retrouver dans
     les .bib ?
@@ -268,7 +268,7 @@ Selon moi, deux conclusions s'imposent :
 
 ------------------------------------------------------------------------
 
-## Les formules mathématiques LaTeX / MathML {#d2e335}
+## Les formules mathématiques LaTeX / MathML {#d2e337}
 
 Mes essais avec les bibliographies me font bifurquer vers la question
 des formules mathématiques, qui risquent d'être un problème épineux,
@@ -319,7 +319,7 @@ Cela dit, c'est extrêmement impressionnant tout ce qu'il arrive à gérer
 et, qui plus est, à traduire en MathML. Ce que les navigateurs (comme
 Firefox) arrivent à faire avec le MathML est aussi très impressionnant.
 
-### Une approche possible pour les formules mathématiques {#d2e412}
+### Une approche possible pour les formules mathématiques {#d2e413}
 
 pandoc est très accueillant pour LaTeX dans le md. Il serait donc
 naturel que les formules math. soient rédigées en LaTeX dans le md.

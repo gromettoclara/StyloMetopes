@@ -45,8 +45,8 @@ d'une bibliographie lors d'un `-t html --citeproc`), le traitement et la
 structuration résultante sont essentiellement les mêmes que pour une
 sortie en CSL-JSON.
 
-Spécifiquement entre `-t csljson` et `-t xml`, la seule différence notée
-est :
+Spécifiquement entre `-t csljson` et `-t xml`, les seules différences
+notées sont :
 
 1.  Pour les champs BibLaTeX `date`, `eventdate` et `year`, lorsque la
     date (ou l'année) est bien formée, elle est scindée en une liste de
@@ -71,16 +71,37 @@ est :
     comme en CSL-JSON, c'est-à-dire qu'elles sont reproduites comme des
     suites de caractères avec, dans certains cas, les \"\$\" éliminés.
 
-Une réalité pour les deux formats de sortie est la non prise en charge
-du Markdown. Il n'est donc pas possible de jouer avec la typographie en
-utilisant le Markdown. *vérifier lorsque -t html*
+Une réalité pour les deux formats de sortie (et pour toute forme de
+restitution de ce qui vient de BibLaTeX) est la non reconnaissance du
+Markdown ou du HTML imbriqué (de quelque façon que ce soit). Il n'est
+donc pas possible de jouer avec la typographie en utilisant du Markdown
+ou du HTML imbriqué dans les références BibLaTeX.
 
-Certains auteurs ont pris l'habitude de « tricher » en codant des
-balises HTML dans les différents champs, mais bien que cet artifice
-fonctionne pour un `-t html` *vérifier*, ça ne pourra pas marcher en
-biblio sémantique.
+Cependant, il est possible de contrôler jusqu'à un certain point la
+typographie avec quelques commandes LaTeX et TeX qui sont reconnues et
+interprétées dans *certains* champs.
 
-### Genres de prétraitement {#d2e113}
+Dans le cas de bibliographies produites par `-t html --citeproc`, ces
+commandes sont traduites dans les équivalents HTML. Dans notre cas,
+elles seront récupérées du `-f biblatex -t xml` et traduites dans les
+équivalents Métopes.
+
+Dans une bibliographie sémantique, ces commandes typographiques doivent
+être utilisées avec parcimonie et ne devraient surtout pas viser à
+imiter un style bibliographique formaté.
+
+Dans une bibliographie formatée, il faut être conscient que ces
+commandes typographiques peuvent interférer avec les directives de
+formatage du CSL appliqué. C'est bien sûr le cas des bibliographies
+produites par `-t html --citeproc`, mais ce pourrait aussi être le cas
+des versions formatées des références bibliographiques (produites par le
+truchement de `-t xml --citeproc`, si la conversion vers Métopes prévoit
+ultimement la coexistence des références bibliographiques formatées et
+sémantiques.
+
+### Genres de prétraitement {#d2e122}
+
+Mappage de types.
 
 Mappage de noms de champs.
 
