@@ -81,6 +81,16 @@ Cependant, il est possible de contrôler jusqu'à un certain point la
 typographie avec quelques commandes LaTeX et TeX qui sont reconnues et
 interprétées dans *certains* champs.
 
+1.  upright \\textup{Sample Text 0123} \\upshape *À vérifier*
+
+2.  italic \\textit{Sample Text 0123} \\itshape
+
+3.  ~~slanted \\textsl{Sample Text 0123} \\slshape~~
+
+4.  ~~small caps \\textsc{Sample Text 0123} \\scshape~~
+
+5.  {\\em } \\emph \\textrm
+
 Dans le cas de bibliographies produites par `-t html --citeproc`, ces
 commandes sont traduites dans les équivalents HTML. Dans notre cas,
 elles seront récupérées du `-f biblatex -t xml` et traduites dans les
@@ -99,19 +109,35 @@ truchement de `-t xml --citeproc`, si la conversion vers Métopes prévoit
 ultimement la coexistence des références bibliographiques formatées et
 sémantiques.
 
-### Genres de prétraitement {#d2e122}
+### Genres de prétraitement {#d2e150}
 
-Mappage de types.
+1.  Mappage de types.
 
-Mappage de noms de champs.
+2.  Mappage de noms de champs.
 
-Séparation sémantique de certains champs (les « noms »).
+3.  Séparation sémantique de certains champs (les « noms »).
 
-Regroupement de certains champs.
+4.  Modification sémantique de certains champs.
 
-Ignorance de certains champs.
+5.  Regroupement de certains champs (avec ponctuation).
 
-Sémantique spécifique de certains champs BibLaTeX.
+6.  Ignorance de certains champs.
+
+7.  Actuation de la sémantique spécifique de certains champs BibLaTeX.
+
+*Exemples à ajouter.*
+
+Les prétraitements réellement effectués pour une référence donnée
+varient en fonction du type de référence, des champs présents, de leurs
+valeurs et même de l'ensemble des références présentes dans la
+bibliographie.
+
+*Exemples à ajouter.*
+
+Même si tout ça peut devenir très complexe, mes tests montrent qu'on
+peut faire confiance à pandoc pour la pertinence de ces prétraitements.
+Le plus important est donc d'être conscient que ces prétraitements sont
+possibles.
 
 ------------------------------------------------------------------------
 
