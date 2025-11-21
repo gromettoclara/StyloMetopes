@@ -111,38 +111,506 @@ sémantiques.
 
 ### Genres de prétraitement {#d2e150}
 
-1.  Mappage de types.
+Les prétraitements réellement effectués pour une référence (entrée)
+donnée varient en fonction du type de référence, des champs présents, de
+leurs valeurs et même parfois du fichier de références dans son ensemble
+(par exemple via le champ `crossref`).
 
-2.  Mappage de noms de champs.
+1.  **Traitement des abréviations**
 
-3.  Séparation sémantique de certains champs (les « noms »).
+    S'il y a des commandes `@string{`*`abrev`*` = "`*`chaîne`*`"}`
+    (section B.1.3 du manuel LaTeX) n'importe où dans le fichier
+    BibLaTeX, elles sont exécutées et globalement prises en compte dans
+    l'analyse du fichier.
 
-4.  Modification sémantique de certains champs.
+2.  **Mappage de types**
 
-5.  Regroupement de certains champs (avec ponctuation).
+    Par exemple, `letter` est mappé sur le type CSL
+    `personal_communication`, `image` et `artwork` sur `graphic`.
 
-6.  Ignorance de certains champs.
+    Neuf types (parmi les 55 analysés) sont mappés à \"pas de type\"
+    (i.e. `<entry key="type"><MetaString/></entry>`) (sans compter
+    `@commentary`, voir ci-dessous) :
 
-7.  Actuation de la sémantique spécifique de certains champs BibLaTeX.
+    - bibnote (pas surprenant : présenté comme un type « spécial »)
+    - conference (*A legacy alias for* `@inproceedings`)
+    - customa -- customf
+    - misc
 
-*Exemples à ajouter.*
+3.  **Mappage de noms de champ**
 
-Les prétraitements réellement effectués pour une référence donnée
-varient en fonction du type de référence, des champs présents, de leurs
-valeurs et même de l'ensemble des références présentes dans la
-bibliographie.
+    La plupart des champs BibLaTeX sont mappés à des champs qui portent
+    un nom différent. Par exemple, `series` est mappé sur
+    `collection-title`, `shortjournal` sur `container-title-short`.
 
-*Exemples à ajouter.*
+    Le champ `location` est ignoré, sauf dans les types `patent`, où il
+    est mappé sur `jurisdiction`.
 
-Même si tout ça peut devenir très complexe, mes tests montrent qu'on
-peut faire confiance à pandoc pour la pertinence de ces prétraitements.
-Le plus important est donc d'être conscient que ces prétraitements sont
-possibles.
+    Il y a des exceptions, par exemple : `abstract`, `doi`, `edition` ne
+    changent pas de nom.
+
+4.  **Séparation sémantique de certains champs (les « noms »)**
+
+    Dans les champs susceptibles de contenir des noms, les noms sont
+    séparés l'un de l'autre sur présence du mot `and`. De plus, chaque
+    nom est découpé en `family`, `given`, de même que d'éventuelles
+    particules, comme `dropping-particle` ou `non-dropping-particle`.
+
+5.  **Modification sémantique de certains champs**
+
+    Dans certains champs, le mot `and` indique une séparation, mais ne
+    donne pas lieu à une subdivision du champ; le `and` est plutôt
+    remplacé par de la ponctuation. Par exemple, dans le champ
+    `address`, qui est mappé sur `publisher-place`, le `and` est
+    remplacé par un point-virgule.
+
+6.  **Regroupement de certains champs (avec ponctuation)**
+
+    Les champs `issuetitle` et `issuesubtitle` sont ignorés, sauf dans
+    les types `periodical`, où ils sont fusionnés (avec ponctuation)
+    avec `maintitleaddon` et mappés sur `title`.
+
+7.  **Ignorance de certains champs**
+
+    92 des 148 champs BibLaTeX sont ignorés par pandoc. Voir ci-dessous.
+
+8.  **Actuation de la sémantique spécifique de certains champs
+    BibLaTeX**
+
+    Les champs `crossref` et `xref` se comportent de façon très
+    particulière, mise en application par pandoc.
+
+9.  **Actuation de la sémantique de certains types BibLaTeX (ou bogue de
+    pandoc)**
+
+    Certains types entraînent l'ajout automatique de certains champs
+    avec une valeur prédéterminée. Par exemple, le type `phdthesis` est
+    mappé à `thesis`, mais avec l'ajout automatique du champ `genre`
+    avec valeur `Master’s thesis` (à moins que le champ `type` soit
+    présent dans l'entrée, dans quel cas il est mappé à `genre`).
+
+    Le type `@xdata` se comporte de façon très particulière, mise en
+    application par pandoc.
+
+    Le type `@commentary` ne produit absolument aucun extrant, peu
+    importe son contenu. Je soupçonne un bogue (ou du moins une
+    idiosyncrasie très singulière) de pandoc dans ce cas, car rien dans
+    le manuel BibLaTeX ne semble justifier ce comportement.
+
+Tout ça peut devenir très complexe, et mes tests sont loin d'être
+exhaustifs, mais ils montrent qu'on peut faire confiance à pandoc pour
+la pertinence de ces prétraitements. Le plus important est donc d'être
+conscient que ces prétraitements sont possibles.
 
 ------------------------------------------------------------------------
 
 ## Annexe
 
-*À venir.*
+Les recensions suivantes faites avec `gigabib.bib`, la concaténation de
+tous les exemples BibLaTeX que j'ai sous la main, incluant mes tests et
+les exemples récents fournis par Clara dans le github `StyloMetopes`;
+total 84 fichiers `.bib`, pour 578 références.
+
+Voici ce qu'on peut retrouver directement sous `MetaInlines` dans le
+`-t xml` (`distinct-values(/*/meta/entry[2]//MetaInlines/*/name())`) :
+
+``` {xml:space="preserve"}
+Emph
+Math
+Quoted
+Space
+Span
+Str
+```
+
+Si on regarde tous les descendants
+(`distinct-values(/*/meta/entry[2]//MetaInlines//*/name())`), ça ajoute
+juste `RawInline`.
+
+À l'interne, les références sont gérées dans pandoc avec cet ensemble de
+99 variables :
+
+(Source : `citeproc-jgm-3.8\src\Citeproc\Types.hs`)
+
+``` {xml:space="preserve"}
+abstract
+accessed
+annote
+archive
+archive-place
+archive_collection
+archive_location
+author
+authority
+available-date
+call-number
+chair
+chapter-number
+citation-key
+citation-label
+citation-number
+collection-editor
+collection-number
+collection-title
+compiler
+composer
+container
+container-author
+container-title
+container-title-short
+contributor
+curator
+dimensions
+director
+division
+DOI
+edition
+editor
+editor-translator
+editorial-director
+event
+event-date
+event-place
+event-title
+executive-producer
+first-reference-note-number
+genre
+guest
+host
+illustrator
+interviewer
+ISBN
+ISSN
+issue
+issued
+jurisdiction
+keyword
+language
+license
+locator
+medium
+narrator
+note
+number
+number-of-pages
+number-of-volumes
+organizer
+original-author
+original-date
+original-publisher
+original-publisher-place
+original-title
+page
+page-first
+part-number
+part-title
+performer
+PMCID
+PMID
+printing-number
+producer
+publisher
+publisher-place
+recipient
+references
+reviewed-author
+reviewed-genre
+reviewed-title
+scale
+script-writer
+section
+series-creator
+source
+status
+submitted
+supplement-number
+title
+title-short
+translator
+URL
+version
+volume
+volume-title
+year-suffix
+```
+
+Cette liste correspond probablement à l'ensemble des variables
+manipulables en CSL. Clairement, une notice BibLaTeX, même pleinement
+populée, ne renseigne qu'une partie de ces variables.
+
+Noter que certaines variables sont composites, par exemple, tout ce qui
+est nom de personne peut se décliner en `family`, `given`, etc.
+
+De ces 99 variables, seules les 43 suivantes sont utilisées par pandoc
+avec un intrant en BibLaTeX (ce pourrait être différent avec un intrant
+en CSLJSON, par exemple) :
+
+``` {xml:space="preserve"}
+abstract
+accessed
+annote
+author
+call-number
+chapter-number
+collection-number
+collection-title
+container-author
+container-title
+container-title-short
+doi
+edition
+editor
+event
+event-place
+genre
+isbn
+issn
+issue
+issued
+jurisdiction
+keyword
+language
+note
+number
+number-of-pages
+number-of-volumes
+original-publisher
+original-publisher-place
+original-title
+page
+pmid
+publisher
+publisher-place
+status
+title
+title-short
+translator
+url
+version
+volume
+volume-title
+```
+
+Il s'agit des noms de champ qu'on retrouve comme `entry/@key` dans
+l'extrant `-t xml`. Noter qu'à ce stade, ils sont tous en minuscules
+seulement.
+
+Le manuel BibLaTeX mentionne les 148 champs suivants :
+
+``` {xml:space="preserve"}
+abstract
+addendum
+address
+afterword
+annotation
+annotator
+annote
+archiveprefix
+author
+authortype
+bookauthor
+bookpagination
+booksubtitle
+booktitle
+booktitleaddon
+chapter
+commentator
+crossref
+date
+doi
+edition
+editor
+editora
+editoratype
+editorb
+editorbtype
+editorc
+editorctype
+editortype
+eid
+entryset
+entrysubtype
+eprint
+eprintclass
+eprinttype
+eventdate
+eventtitle
+eventtitleaddon
+execute
+file
+foreword
+gender
+holder
+howpublished
+ids
+indexsorttitle
+indextitle
+institution
+introduction
+isan
+isbn
+ismn
+isrn
+issn
+issue
+issuesubtitle
+issuetitle
+issuetitleaddon
+iswc
+journal
+journalsubtitle
+journaltitle
+journaltitleaddon
+key
+keywords
+label
+langid
+langidopts
+language
+library
+lista
+listb
+listc
+listd
+liste
+listf
+location
+mainsubtitle
+maintitle
+maintitleaddon
+month
+namea
+nameaddon
+nameatype
+nameb
+namebtype
+namec
+namectype
+note
+number
+options
+organization
+origdate
+origlanguage
+origlocation
+origpublisher
+origtitle
+pages
+pagetotal
+pagination
+part
+pdf
+presort
+primaryclass
+publisher
+pubstate
+related
+relatedoptions
+relatedstring
+relatedtype
+reprinttitle
+school
+series
+shortauthor
+shorteditor
+shorthand
+shorthandintro
+shortjournal
+shortseries
+shorttitle
+sortkey
+sortname
+sortshorthand
+sorttitle
+sortyear
+subtitle
+title
+titleaddon
+translator
+type
+url
+urldate
+usera
+userb
+userc
+userd
+usere
+userf
+venue
+verba
+verbb
+verbc
+version
+volume
+volumes
+xdata
+xref
+year
+```
+
+De ces champs, seuls les 56 suivants sont traités par pandoc
+(vérifications faites avec `megabib.bib`, ne comptant que mes 58
+références à contenu contrôlé) :
+
+``` {xml:space="preserve"}
+abstract
+addendum
+address
+annotation
+author
+bookauthor
+booksubtitle
+booktitle
+booktitleaddon
+chapter
+doi
+edition
+editor
+eventtitle
+howpublished
+ids
+institution
+isbn
+issn
+issue
+issuesubtitle
+issuetitle
+journalsubtitle
+journaltitle
+keywords
+langid
+library
+location
+mainsubtitle
+maintitle
+maintitleaddon
+note
+number
+organization
+origlocation
+origpublisher
+origtitle
+pages
+pagetotal
+part
+publisher
+pubstate
+school
+series
+shortjournal
+shorttitle
+subtitle
+title
+titleaddon
+translator
+type
+url
+venue
+version
+volume
+volumes
+```
+
+Les 92 autres champs sont ignorés.
 
 ------------------------------------------------------------------------
