@@ -104,8 +104,8 @@ Dans une bibliographie formatée, il faut être conscient que ces
 commandes typographiques peuvent interférer avec les directives de
 formatage du CSL appliqué. C'est bien sûr le cas des bibliographies
 produites par `-t html --citeproc`, mais ce pourrait aussi être le cas
-des versions formatées des références bibliographiques (produites par le
-truchement de `-t xml --citeproc`, si la conversion vers Métopes prévoit
+des versions formatées des références bibliographiques produites à
+partir du `-t xml --citeproc`, si la conversion vers Métopes prévoit
 ultimement la coexistence des références bibliographiques formatées et
 sémantiques.
 
@@ -166,9 +166,9 @@ leurs valeurs et même parfois du fichier de références dans son ensemble
 
 6.  **Regroupement de certains champs (avec ponctuation)**
 
-    Les champs `issuetitle` et `issuesubtitle` sont ignorés, sauf dans
-    les types `periodical`, où ils sont fusionnés (avec ponctuation)
-    avec `maintitleaddon` et mappés sur `title`.
+    Par exemple, les champs `issuetitle` et `issuesubtitle` sont
+    ignorés, sauf dans les types `periodical`, où ils sont fusionnés
+    (avec ponctuation) avec `maintitleaddon` et mappés sur `title`.
 
 7.  **Ignorance de certains champs**
 
