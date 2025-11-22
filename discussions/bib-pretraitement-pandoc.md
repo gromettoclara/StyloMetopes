@@ -128,14 +128,16 @@ leurs valeurs et même parfois du fichier de références dans son ensemble
     Par exemple, `letter` est mappé sur le type CSL
     `personal_communication`, `image` et `artwork` sur `graphic`.
 
-    Neuf types (parmi les 55 analysés) sont mappés à \"pas de type\"
-    (i.e. `<entry key="type"><MetaString/></entry>`) (sans compter
-    `@commentary`, voir ci-dessous) :
+    Des 54 types utilisables, 45 sont mappés à \"quelque chose\", alors
+    que les neuf suivants sont mappés à \"pas de type\" (i.e.
+    `<entry key="type"><MetaString/></entry>`) :
 
-    - bibnote (pas surprenant : présenté comme un type « spécial »)
-    - conference (*A legacy alias for* `@inproceedings`)
-    - customa -- customf
-    - misc
+    - `@bibnote` (pas surprenant : présenté comme un type « spécial »)
+    - `@conference` (*A legacy alias for* `@inproceedings`)
+    - `@customa` -- `@customf`
+    - `@misc`
+
+    Je compte traiter ces neuf types de façon identique.
 
 3.  **Mappage de noms de champ**
 
@@ -143,8 +145,10 @@ leurs valeurs et même parfois du fichier de références dans son ensemble
     un nom différent. Par exemple, `series` est mappé sur
     `collection-title`, `shortjournal` sur `container-title-short`.
 
-    Le champ `location` est ignoré, sauf dans les types `patent`, où il
-    est mappé sur `jurisdiction`.
+    En l'absence du champ `address`, `location` est considéré comme son
+    synonyme. Cependant, si `address` est présent, `location` est
+    ignoré, sauf dans les types `patent`, où il est mappé sur
+    `jurisdiction`.
 
     Il y a des exceptions, par exemple : `abstract`, `doi`, `edition` ne
     changent pas de nom.
@@ -206,10 +210,96 @@ conscient que ces prétraitements sont possibles.
 
 ## Annexe
 
-Les recensions suivantes faites avec `gigabib.bib`, la concaténation de
-tous les exemples BibLaTeX que j'ai sous la main, incluant mes tests et
-les exemples récents fournis par Clara dans le github `StyloMetopes`;
-total 84 fichiers `.bib`, pour 578 références.
+Analyses basées sur la référence ultime sur BibLaTeX est le manuel "The
+biblatex Package" disponible en PDF
+[ici](https://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf)
+(j'en ai une copie dans mes `ressources-diverses`).
+
+Le manuel BibLaTeX mentionne 56 types suivants :
+
+``` {xml:space="preserve"}
+article
+artwork
+audio
+bibnote
+book
+bookinbook
+booklet
+collection
+commentary
+conference
+customa
+customb
+customc
+customd
+custome
+customf
+dataset
+electronic
+image
+inbook
+incollection
+inproceedings
+inreference
+jurisdiction
+legal
+legislation
+letter
+manual
+mastersthesis
+misc
+movie
+music
+mvbook
+mvcollection
+mvproceedings
+mvreference
+online
+patent
+performance
+periodical
+phdthesis
+proceedings
+reference
+report
+review
+software
+standard
+suppbook
+suppcollection
+suppperiodical
+techreport
+thesis
+unpublished
+video
+www
+xdata
+```
+
+Cependant le type `@xdata` n'est pas utilisé pour produire une référence
+et `@commentary` (voir plus loin) n'en produit pas non plus, ce qui
+laisse 54 types utilisables, traités par pandoc.
+
+Dans l'existant stylo que j'ai sous la main et qui n'est pas de moi
+(`megabib.bib`), les 10 types suivants se retrouvent :
+
+``` {xml:space="preserve"}
+@article
+@audio
+@book
+@incollection
+@inproceedings
+@misc
+@movie
+@phdthesis
+@techreport
+@unpublished
+```
+
+Les recensions suivantes ont été faites avec `gigabib.bib`, la
+concaténation de tous les exemples BibLaTeX que j'ai sous la main,
+incluant mes tests et les exemples récents fournis par Clara dans le
+github `StyloMetopes`; total 84 fichiers `.bib`, pour 578 références.
 
 Voici ce qu'on peut retrouver directement sous `MetaInlines` dans le
 `-t xml` (`distinct-values(/*/meta/entry[2]//MetaInlines/*/name())`) :
@@ -547,6 +637,10 @@ xdata
 xref
 year
 ```
+
+Le manuel LaTeX précise qu'une entrée peut contenir d'autres champs (que
+ceux énumérés) et qu'ils sont simplement ignorés lorsque le style
+bibliographique ne les utilise pas.
 
 De ces champs, seuls les 56 suivants sont traités par pandoc
 (vérifications faites avec `megabib.bib`, ne comptant que mes 58

@@ -11,132 +11,88 @@ Yves Marcoux
 
 ------------------------------------------------------------------------
 
-## Comparaison BibTeX ↔ BibLaTeX {#d2e19}
+## Réflexions en date du 2025-11-22 {#d2e19}
 
-2025-11-05 Je décide de comparer exhaustivement les formats BibTeX et
-BibLaTeX, tels que vus par pandoc (puisque ultimement, c'est sur lui
-qu'on s'appuie pour produire nos données-sources).
+Je me questionne sur un titre approprié pour ce document. Oui, il
+s'agira de mapper du BibLaTeX en TEI, mais le fait que le mapping se
+fasse par l'intermédiaire du CSL teinte l'entièreté du processus. Le
+fait qu'il s'effectue à l'aide pandoc aussi.
 
-Basé sur
-`D:\_YmaProjets\MarcelloVR\Haskell\pandoc-ym\src\Text\Pandoc\Citeproc\BibTeX.hs`.
+Ce que pandoc fait -- et très bien -- est de mapper un *sous-ensemble*
+de BibLaTeX sur un *sous-ensemble* de CSL. Ces sous-ensembles sont
+décrits plutôt bien dans l'[autre document de
+réflexion](bib-pretraitement-pandoc.md).
 
-### Types de référence {#d2e25}
+En réalité, ma job est de mapper *ce sous-ensemble* de CSL sur TEI (ce
+qui, incidemment, se trouvera à définir *de facto* un autre
+sous-ensemble, de TEI celui-là !).
 
-D'abord, les *types* BibTeX et BibLaTeX. Des lignes 97-133, je déduis
-les types BibTeX suivants :
+Du point de vue des auteurs et d'un « protocole de rédaction » (réel ou
+virtuel -- puisque, qu'on en soit conscient ou non, il y a toujours au
+moins un protocole implicite : ce qui marche vs ce qui ne marche pas),
+c'est autour du sous-ensemble de BibLaTeX qu'il doit s'articuler.
 
-1.  article
-2.  book
-3.  booklet
-4.  inbook
-5.  incollection
-6.  inproceedings (synonyme = conference)
-7.  mastersthesis
-8.  phdthesis
-9.  techreport
-10. unpublished
-11. misc
-
-Le manuel LaTeX inclut deux types additionnels :
-
-1.  manual
-2.  proceedings
-
-Cela doit impliquer que pandoc ne produira jamais en extrant des entrées
-de ce type; cependant, il les accepte en intrant : les deux sont mappés
-sur book (tests faits avec \@mvr2025_1 et \@mvr2025_2).
-
-BibLaTeX ajoute les types suivants :
-
-1.  dataset
-2.  online
-3.  inreference
-4.  patent
-5.  report
-6.  artwork
-7.  music
-8.  jurisdictionN (probablement une typo)
-9.  legislation
-10. legal
-11. letter
-12. movie
-13. review
-14. software
-
-### Les champs {#d2e65}
-
-Des lignes 135 à 190, on constate les champs suivants pour **BibTeX** :
-
-1.  \"author\"
-2.  \"editor\"
-3.  \"translator\"
-4.  \"publisher\"
-5.  \"title\"
-6.  \"booktitle\"
-7.  \"journal\"
-8.  \"series\"
-9.  \"edition\"
-10. \"volume\"
-11. \"number\"
-12. \"pages\"
-13. \"year\"
-14. \"month\"
-15. \"address\"
-16. \"type\"
-17. \"note\"
-18. \"annote\"
-19. \"url\" \-- not officially supported, but supported by some styles
-
-Le manuel LaTeX ajoute :
-
-1.  \"howpublished\"
-2.  \"institution\"
-3.  \"organization\"
-4.  \"key\"
-5.  \"school\"
-
-Le manuel LaTeX dit que \"key\" devrait être fourni lorsque \"author\"
-et \"editor\" sont tous les deux absents.
-
-Il faudra faire des tests pour savoir ce que pandoc fait avec ces champs
-quand ils sont présents. À vue de nez, je dirais qu'il les mappe à autre
-chose.
-
-S'ajoutent les champs suivants pour **BibLaTeX** :
-
-1.  \"volumes\"
-2.  \"pagetotal\"
-3.  \"version\"
-4.  \"date\"
-5.  \"eventdate\"
-6.  \"urldate\"
-7.  \"doi\"
-8.  \"isbn\"
-9.  \"issn\"
-10. \"entrysubtype\"
-11. \"langid\"
-12. \"abstract\"
-13. \"keywords\"
-
-Le manuel LaTeX précise qu'une entrée peut contenir d'autres champs (que
-ceux énumérés) et qu'ils sont simplement ignorés lorsque le style
-bibliographique ne les utilise pas.
-
-Je pense que la référence ultime sur BibLaTeX est le manuel "The
-biblatex Package" disponible en PDF
-[ici](https://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf)
-(j'en ai une copie dans mes `ressources-diverses`).
+Quoique, en réalité, s'il est vrai que la plupart des `.bib` sont en
+fait dérivés de Zotero, c'est plutôt en fonction de Zotero qu'il
+faudrait formuler un protocole de rédaction.
 
 ------------------------------------------------------------------------
 
-## L'existant bibliographique stylo {#d2e129}
+## L'existant bibliographique stylo {#d2e42}
 
-Je fusionne tous mes fichiers `.bib` (ou presque), pour me faire une
-idée des pratiques bibliographiques supportées actuellement par stylo.
+Je fusionne tout ce que j'ai comme fichiers `.bib` qui n'est pas de moi,
+pour me faire une idée des usages bibliographiques pratiqués
+actuellement dans stylo.
 
 Mettre tous les fichiers `.bib` dans un sandbox. Commande PS
-`cat *.bib -Encoding UTF8 > bigbib.txt`. Donne un fichier UTF-16-BOM,
+`cat *.bib -Encoding UTF8 > megabib.txt`. Donne un fichier UTF-16-BOM,
 mais le contenu est correct. Convertir en UTF8 sans BOM avec np++.
+Renommer `megabib.bib`.
+
+Cet existant (`megabib.bib`) compte les 23 bibliographies suivantes :
+
+``` {xml:space="preserve"}
+calculer-la-semantique-avec-ieml.bib
+copy-copy-litteratube-chap1.bib
+copy-psp1486.bib
+copy-rf0038.bib
+copy-savard-arseneault-article.bib
+copy-sp1785-introduction-remediation.bib
+demo-2023-09-29.bib
+essai-HN-fictif.bib
+HN-02.bib
+humanistica2022-proposition-crcen.bib
+nvcq02003.bib
+nvcq02005.bib
+nvcq02008.bib
+nvcq02009.bib
+SP1339.bib
+SP1368.bib
+SP1376.bib
+SP1391.bib
+SP1395.bib
+SP1407.bib
+SP1414.bib
+SP1423.bib
+SP1436.bib
+```
+
+Ce qui totalise 519 occurrences de référence, dont 508 distinctes, des
+10 types suivants :
+
+``` {xml:space="preserve"}
+@article
+@audio
+@book
+@incollection
+@inproceedings
+@misc
+@movie
+@phdthesis
+@techreport
+@unpublished
+```
+
 Filtrer sur @ pour avoir les clés. Expression régulière à utiliser pour
 repérer les mauvais caractères dans les clés :
 `[^a-z0-9\,\{\}\@\012\015 \-\.\_]`.
@@ -150,29 +106,31 @@ Clés \"douteuses\" repérées, contenant caractères accentués ou un de
 4.  \@book{mbembe_postcolonie:\_2000,
 5.  \@book{stael_litterature:\_1998,
 
-Apparemment, pandoc accepte tout ça sans broncher. Mais à tenir en
-compte dans la conversion XML. Idéalement, ce serait de les interdire
-directement dans les fichiers `.bib`.
+Apparemment, pandoc accepte tout ça sans broncher. À surveiller dans la
+conversion vers XML.
 
-Pour pouvoir obtenir du bon XML de pandoc, je corrige les \"/\" et
-\":\", qui causent problème.
+Il ne bronche pas non plus sur les duplications de clé (qui n'arrivent
+jamais en temps normal); selon mes tests sommaires, il prend la dernière
+entrée rencontrée.
 
-Je vois aussi par hasard que SP1376.bib contient un caractère incorrect
-(mauvaise ligature \"œ\" = 9C en Windows-1252), que je corrige.
+Je vois par hasard que SP1376.bib -- référence `adorno_minima_2003`
+contient un caractère incorrect (mauvaise ligature \"œ\" = 9C en
+Windows-1252), que je corrige.
 
-Il y a aussi un problème
+Il y a aussi trois fois le problème
 `[INFO] Not rendering RawInline (Format "latex") "\\textbar"`, mais
 seulement à la génération du HTML, que je demande accessoirement, pour
-avoir une référence de rendu. Ce message est causé par un `\textbar`
-dans la référence `noauthor_tianjin_nodate`, mais pas à la génération de
-l'AST en XML ni lors du `-t CSLJSON`. En fait, `\textbar` n'est pas une
-des commandes LaTeX reconnues par pandoc. La conséquence de cette erreur
-est probablement la simple omission d'un caractère. Je l'ignore sans
-scrupule.
+avoir une référence de rendu. Ces messages sont causés par des
+`\textbar` dans trois références, mais ne se produisent pas à la
+génération de l'AST en XML ni lors du `-f biblatex -t CSLJSON` ou du
+`-f biblatex -t xml`. En fait, `\textbar` n'est pas une des commandes
+LaTeX reconnues par pandoc.
 
-J'appelle le résultat `tests-YMA-LOURDE.bib`.
+Je remplace les 3 occurrences de `{\textbar}` par `{|}`.
 
-### Constats {#d2e177}
+Ce sont les deux seules modifs que je fais dans `megabib.bib`.
+
+### Constats {#d2e110}
 
 **Premier constat (2025-11-05) :** Les .bib que j'utilise dans mes tests
 (et qui proviennent donc de stylo, sauf quelques références de mon cru)
@@ -224,7 +182,7 @@ qu'il y ait d'autres différences.
 résulte en quelque chose de plus riche que `-t CSLJSON`, mais cela ne
 compromet pas la validité des constats présentés.
 
-### Conclusions provisoires {#d2e253}
+### Conclusions provisoires {#d2e186}
 
 Selon moi, deux conclusions s'imposent :
 
@@ -235,7 +193,7 @@ Selon moi, deux conclusions s'imposent :
 
 ------------------------------------------------------------------------
 
-## Questions {#d2e271}
+## Questions {#d2e204}
 
 1.  Y aurait-il d'autres fichiers .bib plus « frais » à utiliser pour
     tester ?
@@ -268,7 +226,7 @@ Selon moi, deux conclusions s'imposent :
 
 ------------------------------------------------------------------------
 
-## Les formules mathématiques LaTeX / MathML {#d2e337}
+## Les formules mathématiques LaTeX / MathML {#d2e270}
 
 Mes essais avec les bibliographies me font bifurquer vers la question
 des formules mathématiques, qui risquent d'être un problème épineux,
@@ -319,7 +277,7 @@ Cela dit, c'est extrêmement impressionnant tout ce qu'il arrive à gérer
 et, qui plus est, à traduire en MathML. Ce que les navigateurs (comme
 Firefox) arrivent à faire avec le MathML est aussi très impressionnant.
 
-### Une approche possible pour les formules mathématiques {#d2e413}
+### Une approche possible pour les formules mathématiques {#d2e347}
 
 pandoc est très accueillant pour LaTeX dans le md. Il serait donc
 naturel que les formules math. soient rédigées en LaTeX dans le md.
