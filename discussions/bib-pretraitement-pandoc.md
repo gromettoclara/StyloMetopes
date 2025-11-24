@@ -5,6 +5,20 @@ title: Prétraitement du BibLaTeX par pandoc
 viewport: width=device-width, initial-scale=1.0
 ---
 
+- [[1]{.toc-section-number} Prétraitement du BibLaTeX par
+  pandoc](#prétraitement-du-biblatex-par-pandoc){#toc-prétraitement-du-biblatex-par-pandoc}
+  - [[1.1]{.toc-section-number} Généralités](#d2e19){#toc-d2e19}
+    - [[1.1.1]{.toc-section-number} Vue d'ensemble](#d2e29){#toc-d2e29}
+    - [[1.1.2]{.toc-section-number} Commandes typographiques
+      LaTeX](#d2e105){#toc-d2e105}
+    - [[1.1.3]{.toc-section-number} Genres de
+      prétraitement](#d2e231){#toc-d2e231}
+  - [[1.2]{.toc-section-number} Annexe](#annexe){#toc-annexe}
+    - [[1.2.1]{.toc-section-number} Types
+      bibliographiques](#d2e457){#toc-d2e457}
+    - [[1.2.2]{.toc-section-number} Champs](#d2e748){#toc-d2e748}
+    - [[1.2.3]{.toc-section-number} Conclusions](#d2e824){#toc-d2e824}
+
 # Prétraitement du BibLaTeX par pandoc
 
 Yves Marcoux
@@ -245,8 +259,8 @@ conscient que ces prétraitements sont possibles.
 
 ## Annexe
 
-Analyses basées sur la référence ultime sur BibLaTeX est le manuel "The
-biblatex Package" disponible en PDF
+Analyses basées sur la référence ultime sur BibLaTeX : le manuel "The
+biblatex Package," disponible en PDF
 [ici](https://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf)
 (j'en ai une copie dans mes `ressources-diverses`).
 
@@ -401,6 +415,8 @@ Les recensions suivantes ont été faites avec `gigabib.bib`, la
 concaténation de tous les exemples BibLaTeX que j'ai sous la main,
 incluant mes tests et les exemples récents fournis par Clara dans le
 github `StyloMetopes`; total 84 fichiers `.bib`, pour 578 références.
+
+#### Champs CSL {#d2e757}
 
 À l'interne, les références sont gérées dans pandoc avec cet ensemble de
 99 variables :
@@ -567,10 +583,10 @@ volume-title
 ```
 
 Il s'agit des noms de champ qu'on retrouve comme `entry/@key` dans
-l'extrant `-t xml`. Noter qu'à ce stade, ils sont tous en minuscules
-seulement.
+l'extrant `-t xml` (excluant `id` et `type`). Noter qu'à ce stade, ils
+sont tous en minuscules seulement.
 
-Requête XPath pour liste précédente :
+Requête XPath (sur `gigabib.bib` → XML) pour liste précédente :
 
 ``` {xml:space="preserve"}
 for $mot in tokenize("
@@ -674,8 +690,48 @@ volume
 volume-title
 year-suffix
 ") return $mot || " " ||
-    count(/*/meta/entry[2]//*[@key=$mot])
+    count(/*/meta/entry[2]/MetaList/MetaMap/entry[@key=$mot])
 ```
+
+De ces 43 champs possibles, dans l'existant stylo (`megabib.bib`), on ne
+retrouve que les 30 suivants (même requête) :
+
+``` {xml:space="preserve"}
+abstract
+accessed
+annote
+author
+chapter-number
+collection-number
+collection-title
+container-title
+doi
+edition
+editor
+genre
+isbn
+issn
+issue
+issued
+keyword
+language
+note
+number
+number-of-pages
+page
+pmid
+publisher
+publisher-place
+title
+title-short
+translator
+url
+volume
+```
+
+Ce serait donc les 30 champs à traiter en priorité.
+
+#### Champs BibLaTeX {#d2e799}
 
 Le manuel BibLaTeX mentionne les 148 champs suivants :
 
@@ -899,7 +955,7 @@ volumes
 year
 ```
 
-Requête XPath pour liste précédente :
+Requête XPath (sur `megabib.bib` → XML) pour liste précédente :
 
 ``` {xml:space="preserve"}
 for $mot in tokenize("
@@ -1059,7 +1115,9 @@ résultat auquel il faut ajouter `date` et `year` à la main.
 
 Les 92 autres champs sont ignorés.
 
-### Conclusions {#d2e805}
+### Conclusions {#d2e824}
+
+Traiter les 30 champs CSL identifiés ci-dessus.
 
 Voici ce qu'on peut retrouver directement sous `MetaInlines` dans le
 `-t xml` (`distinct-values(/*/meta/entry[2]//MetaInlines/*/name())`) :

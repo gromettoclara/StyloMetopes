@@ -5,6 +5,21 @@ title: Mapping BibLaTeX → TEI
 viewport: width=device-width, initial-scale=1.0
 ---
 
+- [[1]{.toc-section-number} Mapping BibLaTeX →
+  TEI](#mapping-biblatex-tei){#toc-mapping-biblatex-tei}
+  - [[1.1]{.toc-section-number} Réflexions en date du
+    2025-11-22](#d2e19){#toc-d2e19}
+  - [[1.2]{.toc-section-number} L'existant bibliographique
+    stylo](#d2e42){#toc-d2e42}
+    - [[1.2.1]{.toc-section-number} Constats](#d2e110){#toc-d2e110}
+    - [[1.2.2]{.toc-section-number} Conclusions
+      provisoires](#d2e186){#toc-d2e186}
+  - [[1.3]{.toc-section-number} Questions](#d2e204){#toc-d2e204}
+  - [[1.4]{.toc-section-number} Les formules mathématiques LaTeX /
+    MathML](#d2e270){#toc-d2e270}
+    - [[1.4.1]{.toc-section-number} Une approche possible pour les
+      formules mathématiques](#d2e347){#toc-d2e347}
+
 # Mapping BibLaTeX → TEI
 
 Yves Marcoux
@@ -44,7 +59,7 @@ Je fusionne tout ce que j'ai comme fichiers `.bib` qui n'est pas de moi,
 pour me faire une idée des usages bibliographiques pratiqués
 actuellement dans stylo.
 
-Mettre tous les fichiers `.bib` dans un sandbox. Commande PS
+Mettre tous les fichiers `.bib` voulus dans un sandbox. Commande PS
 `cat *.bib -Encoding UTF8 > megabib.txt`. Donne un fichier UTF-16-BOM,
 mais le contenu est correct. Convertir en UTF8 sans BOM avec np++.
 Renommer `megabib.bib`.
