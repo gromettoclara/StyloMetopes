@@ -5,28 +5,35 @@ title: Mapping BibLaTeX → TEI
 viewport: width=device-width, initial-scale=1.0
 ---
 
-- [[1]{.toc-section-number} Mapping BibLaTeX →
-  TEI](#mapping-biblatex-tei){#toc-mapping-biblatex-tei}
-  - [[1.1]{.toc-section-number} Réflexions en date du
-    2025-11-22](#d2e19){#toc-d2e19}
-  - [[1.2]{.toc-section-number} L'existant bibliographique
-    stylo](#d2e42){#toc-d2e42}
-    - [[1.2.1]{.toc-section-number} Constats](#d2e110){#toc-d2e110}
-    - [[1.2.2]{.toc-section-number} Conclusions
-      provisoires](#d2e186){#toc-d2e186}
-  - [[1.3]{.toc-section-number} Questions](#d2e204){#toc-d2e204}
-  - [[1.4]{.toc-section-number} Les formules mathématiques LaTeX /
-    MathML](#d2e270){#toc-d2e270}
-    - [[1.4.1]{.toc-section-number} Une approche possible pour les
-      formules mathématiques](#d2e347){#toc-d2e347}
-
 # Mapping BibLaTeX → TEI
 
 Yves Marcoux
 
 ------------------------------------------------------------------------
 
-## Réflexions en date du 2025-11-22 {#d2e19}
+::: {#tHe_TDM}
+# Table des matières
+
+## [Réflexions en date du 2025-11-22](#d2e20)
+
+## [L'existant bibliographique stylo](#d2e44)
+
+### [Constats](#d2e144)
+
+### [Conclusions provisoires](#d2e220)
+
+## [Questions](#d2e238)
+
+## [Les formules mathématiques LaTeX / MathML](#d2e304)
+
+### [Une approche possible pour les formules mathématiques](#d2e380)
+
+## [L'existant Métopes](#d2e432)
+
+------------------------------------------------------------------------
+:::
+
+## Réflexions en date du 2025-11-22 {#d2e20}
 
 Je me questionne sur un titre approprié pour ce document. Oui, il
 s'agira de mapper du BibLaTeX en TEI, mais le fait que le mapping se
@@ -53,7 +60,7 @@ faudrait formuler un protocole de rédaction.
 
 ------------------------------------------------------------------------
 
-## L'existant bibliographique stylo {#d2e42}
+## L'existant bibliographique stylo {#d2e44}
 
 Je fusionne tout ce que j'ai comme fichiers `.bib` qui n'est pas de moi,
 pour me faire une idée des usages bibliographiques pratiqués
@@ -145,7 +152,72 @@ Je remplace les 3 occurrences de `{\textbar}` par `{|}`.
 
 Ce sont les deux seules modifs que je fais dans `megabib.bib`.
 
-### Constats {#d2e110}
+On trouve dans `megabib.bib` les 9 types CSL suivants :
+
+``` {xml:space="preserve"}
+book
+article-journal
+chapter
+report
+paper-conference
+thesis
+manuscript
+motion_picture
+song
+```
+
+Requête XPath (sur `megabib.xml`) pour cette dernière liste :
+
+``` {xml:space="preserve"}
+string-join(distinct-values(
+/*/meta/entry[2]/MetaList/MetaMap/entry[@key='type']/normalize-space()
+), ' ')
+```
+
+Plus bien sûr le type vide, auquel pandoc mappe les `@misc`.
+
+Des 43 champs CSL possibles, avec l'existant stylo (`megabib.bib`), on
+ne retrouve que les 30 suivants dans l'extrant :
+
+``` {xml:space="preserve"}
+abstract
+accessed
+annote
+author
+chapter-number
+collection-number
+collection-title
+container-title
+doi
+edition
+editor
+genre
+isbn
+issn
+issue
+issued
+keyword
+language
+note
+number
+number-of-pages
+page
+pmid
+publisher
+publisher-place
+title
+title-short
+translator
+url
+volume
+```
+
+Même requête que pour `gigabib.bib` dans le [document sur le
+prétraitement](bib-pretraitement-pandoc.mb), mais avec `megabib.bib`.
+
+Ce serait donc les 10 types et 30 champs CSL à traiter en priorité.
+
+### Constats {#d2e144}
 
 **Premier constat (2025-11-05) :** Les .bib que j'utilise dans mes tests
 (et qui proviennent donc de stylo, sauf quelques références de mon cru)
@@ -197,7 +269,7 @@ qu'il y ait d'autres différences.
 résulte en quelque chose de plus riche que `-t CSLJSON`, mais cela ne
 compromet pas la validité des constats présentés.
 
-### Conclusions provisoires {#d2e186}
+### Conclusions provisoires {#d2e220}
 
 Selon moi, deux conclusions s'imposent :
 
@@ -208,7 +280,7 @@ Selon moi, deux conclusions s'imposent :
 
 ------------------------------------------------------------------------
 
-## Questions {#d2e204}
+## Questions {#d2e238}
 
 1.  Y aurait-il d'autres fichiers .bib plus « frais » à utiliser pour
     tester ?
@@ -241,7 +313,7 @@ Selon moi, deux conclusions s'imposent :
 
 ------------------------------------------------------------------------
 
-## Les formules mathématiques LaTeX / MathML {#d2e270}
+## Les formules mathématiques LaTeX / MathML {#d2e304}
 
 Mes essais avec les bibliographies me font bifurquer vers la question
 des formules mathématiques, qui risquent d'être un problème épineux,
@@ -292,7 +364,7 @@ Cela dit, c'est extrêmement impressionnant tout ce qu'il arrive à gérer
 et, qui plus est, à traduire en MathML. Ce que les navigateurs (comme
 Firefox) arrivent à faire avec le MathML est aussi très impressionnant.
 
-### Une approche possible pour les formules mathématiques {#d2e347}
+### Une approche possible pour les formules mathématiques {#d2e380}
 
 pandoc est très accueillant pour LaTeX dans le md. Il serait donc
 naturel que les formules math. soient rédigées en LaTeX dans le md.
@@ -337,5 +409,72 @@ de mettre des formules LaTeX.
 > *2025-11-12* Cette recension s'avère finalement assez laborieuse pour
 > justifier son propre [document de
 > réflexion](bib-pretraitement-pandoc.md).
+
+------------------------------------------------------------------------
+
+## L'existant Métopes {#d2e432}
+
+2025-11-26 Il n'y a actuellement *aucun* élément `biblStruct` dans la
+totalité des fichiers fournis comme exemples.
+
+Il y a cependant des `bibl` à profusion. Ils semblent se décliner en
+deux types de contenu très différents, selon qu'ils sont sous
+`publicationStmt` ou non.
+
+Ce qu\'on trouve sous `bibl` hors `publicationStmt` :
+
+``` {xml:space="preserve"}
+text()
+hi
+author
+ref
+title
+date
+biblScope
+```
+
+De plus, les `p` ne sont actuellement pas permis, il me semble qu'ils
+devraient l'être.
+
+Sous `publicationStmt`, `bibl` n'a aucun contenu mixte, que ces
+sous-éléments :
+
+``` {xml:space="preserve"}
+publisher
+availability
+date
+biblScope
+idno
+ref
+distributor
+dim
+name
+```
+
+`formula` y est interdit et devrait être permis, selon moi.
+
+J'ai constaté, un peu avec effroi, que le MathML est embarqué dans leur
+TEI *sans namespace*. Autrement dit, tous les éléments MathML se
+retrouvent comme éléments TEI.
+
+Notes en vrac 2025-11-26:
+
+J'ai fait quelques mods dans le .rng (version appelée
+commons-publishing-metopes-YMA.rng) et je définis un scénario pour
+valider avec lui (je garde aussi le scénario pour le .rng actuel
+intouché). Mes mods représentent en fait des suggestions.
+
+Une d'elles est de garder le MathML dans son namespace naturel, car les
+outils se basent là-dessus pour reconnaître et traiter le MathML
+(browser, oXygen, feuilles de style standard TEI).
+
+À part pour cette modif, as of 2025-11-26 midi, tous les documents dans
+histoire-indent valident avec mon rng (autant qu'avec l'intouché). Ce
+n'est pas le cas de unit_tests-indent, mais ceux-là ne valident pas non
+plus avec l'intouché.
+
+Je me plie à l'intouché pour les codeblock's (donc inline indiqué
+explicitement; sinon block par défaut). Je modifie mon ajout css local
+en conséquence (\"D:\_YmaProjets\\MarcelloVR\\codeblock.YMA.css\").
 
 ------------------------------------------------------------------------

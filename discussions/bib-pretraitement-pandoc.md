@@ -5,27 +5,39 @@ title: Prétraitement du BibLaTeX par pandoc
 viewport: width=device-width, initial-scale=1.0
 ---
 
-- [[1]{.toc-section-number} Prétraitement du BibLaTeX par
-  pandoc](#prétraitement-du-biblatex-par-pandoc){#toc-prétraitement-du-biblatex-par-pandoc}
-  - [[1.1]{.toc-section-number} Généralités](#d2e19){#toc-d2e19}
-    - [[1.1.1]{.toc-section-number} Vue d'ensemble](#d2e29){#toc-d2e29}
-    - [[1.1.2]{.toc-section-number} Commandes typographiques
-      LaTeX](#d2e105){#toc-d2e105}
-    - [[1.1.3]{.toc-section-number} Genres de
-      prétraitement](#d2e231){#toc-d2e231}
-  - [[1.2]{.toc-section-number} Annexe](#annexe){#toc-annexe}
-    - [[1.2.1]{.toc-section-number} Types
-      bibliographiques](#d2e457){#toc-d2e457}
-    - [[1.2.2]{.toc-section-number} Champs](#d2e748){#toc-d2e748}
-    - [[1.2.3]{.toc-section-number} Conclusions](#d2e824){#toc-d2e824}
-
 # Prétraitement du BibLaTeX par pandoc
 
 Yves Marcoux
 
 ------------------------------------------------------------------------
 
-## Généralités {#d2e19}
+::: {#tHe_TDM}
+# Table des matières
+
+## [Généralités](#d2e20)
+
+### [Vue d'ensemble](#d2e30)
+
+### [Commandes typographiques LaTeX](#d2e106)
+
+### [Genres de prétraitement](#d2e233)
+
+## [Annexe](#annexe)
+
+### [Types bibliographiques BibLaTeX](#d2e488)
+
+### [Champs](#d2e774)
+
+#### [Champs BibLaTeX](#d2e775)
+
+#### [Champs CSL](#d2e804)
+
+### [Conclusions](#d2e847)
+
+------------------------------------------------------------------------
+:::
+
+## Généralités {#d2e20}
 
 Le prétraitement du BibLaTeX par pandoc est finalement assez alambiqué
 et loin d'être banal. J'ai analysé ce prétraitement avec de nombreux
@@ -43,7 +55,7 @@ présentait de disposer des données brutes dans un autre format que
 BibLaTeX, par exemple dans un XML riche sémantiquement qui sortirait
 directement de Zotero, il serait pertinent de reconsidérer cette option.
 
-### Vue d'ensemble {#d2e29}
+### Vue d'ensemble {#d2e30}
 
 Le traitement effectué par pandoc est fortement influencé par trois
 spécifications : celle de BibLaTeX, exposée dans [The `biblatex`
@@ -91,7 +103,7 @@ Markdown ou du HTML imbriqué (de quelque façon que ce soit). Il n'est
 donc pas possible de jouer avec la typographie en utilisant du Markdown
 ou du HTML imbriqué dans les références BibLaTeX.
 
-### Commandes typographiques LaTeX {#d2e105}
+### Commandes typographiques LaTeX {#d2e106}
 
 Cependant, il est possible de contrôler jusqu'à un certain point la
 typographie avec *quelques* commandes de formatage LaTeX et TeX
@@ -108,8 +120,8 @@ ces commandes dans l'AST en éléments pandoc habituels, tels `<Emph>`,
 Voici une recension préliminaire des commandes typographiques LaTeX qui
 fonctionnent *hors mode mathématique* dans *certains* champs BibLaTeX :
 
-  Commande        Traduction dans l'AST pandoc
-  --------------- -------------------------------
+  Commande        Traduction dans l'AST `-t xml`
+  --------------- --------------------------------
   {\\rm ...}      \<Span\>
   \\textrm{...}   \<Span class=\"roman\"\>
   {\\em ...}      \<Emph\>
@@ -155,7 +167,7 @@ produites à partir du `-t xml --citeproc`, si le schéma (ODD) Métopes
 prévoit ultimement la coexistence des références bibliographiques
 formatées et sémantiques.
 
-### Genres de prétraitement {#d2e231}
+### Genres de prétraitement {#d2e233}
 
 Les prétraitements réellement effectués pour une référence (entrée)
 donnée varient en fonction du type de référence, des champs présents, de
@@ -185,8 +197,13 @@ leurs valeurs et même parfois du fichier de références dans son ensemble
       bonne et due forme)
 
     Je compte traiter ces neuf types de façon identique, comme des
-    `@misc` (que j'appelerai probablement `misc` un fois rendu en TEI
+    `@misc` (que j'appellerai probablement `misc` un fois rendu en TEI
     Métopes).
+
+    Le mappage de types n'est cependant pas unique, il est parfois
+    affecté par les champs présents dans la notice. Par exemple,
+    `@unpublished` est en général mappé à `manuscript`, mais si le champ
+    `eventdate` est présent, il est mappé sur `speech`.
 
 3.  **Mappage de noms de champ**
 
@@ -199,8 +216,14 @@ leurs valeurs et même parfois du fichier de références dans son ensemble
     ignoré, sauf dans les types `patent`, où il est mappé sur
     `jurisdiction`.
 
-    Il y a des exceptions, par exemple : `abstract`, `doi`, `edition` ne
-    changent pas de nom.
+    `annote` est synonyme d'`annotation`. Cependant, si ce dernier est
+    présent, `annote` est ignoré.
+
+    `journal` est synonyme de `journaltitle`. Cependant, si ce dernier
+    est présent, `journal` est ignoré.
+
+    Il y a des exceptions, par exemple : `abstract`, `doi`, `edition`
+    sont mappés sur des champs de même nom.
 
 4.  **Séparation sémantique de certains champs (les « noms »)**
 
@@ -257,14 +280,14 @@ conscient que ces prétraitements sont possibles.
 
 ------------------------------------------------------------------------
 
-## Annexe
+## Annexe {#annexe}
 
 Analyses basées sur la référence ultime sur BibLaTeX : le manuel "The
 biblatex Package," disponible en PDF
 [ici](https://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf)
 (j'en ai une copie dans mes `ressources-diverses`).
 
-### Types bibliographiques {#d2e457}
+### Types bibliographiques BibLaTeX {#d2e488}
 
 Le manuel BibLaTeX mentionne 56 types suivants :
 
@@ -331,7 +354,7 @@ Cependant le type `@xdata` n'est pas utilisé pour produire une référence
 et `@commentary` (voir plus loin) n'en produit pas non plus, ce qui
 laisse 54 types utilisables, traités par pandoc.
 
-Voici le mapping de types utilisé par pandoc :
+Voici un exemple de mapping de types fait par pandoc :
 
   ---------------- ------------------------
   BibLaTeX         CSL
@@ -391,32 +414,405 @@ Voici le mapping de types utilisé par pandoc :
   www              webpage
   ---------------- ------------------------
 
-  : Mapping de types effectué par pandoc
+  : Exemple de mapping de types fait par pandoc
 
-Dans l'existant stylo que j'ai sous la main et qui n'est pas de moi
-(`megabib.bib`), les 10 types suivants se retrouvent :
+Ce n'est qu'un exemple, car le mapping est parfois affecté par les
+champs présents dans la notice (voir plus haut).
+
+### Champs {#d2e774}
+
+#### Champs BibLaTeX {#d2e775}
+
+Le manuel BibLaTeX mentionne les 148 champs suivants :
 
 ``` {xml:space="preserve"}
-@article
-@audio
-@book
-@incollection
-@inproceedings
-@misc
-@movie
-@phdthesis
-@techreport
-@unpublished
+abstract
+addendum
+address
+afterword
+annotation
+annotator
+annote
+archiveprefix
+author
+authortype
+bookauthor
+bookpagination
+booksubtitle
+booktitle
+booktitleaddon
+chapter
+commentator
+crossref
+date
+doi
+edition
+editor
+editora
+editoratype
+editorb
+editorbtype
+editorc
+editorctype
+editortype
+eid
+entryset
+entrysubtype
+eprint
+eprintclass
+eprinttype
+eventdate
+eventtitle
+eventtitleaddon
+execute
+file
+foreword
+gender
+holder
+howpublished
+ids
+indexsorttitle
+indextitle
+institution
+introduction
+isan
+isbn
+ismn
+isrn
+issn
+issue
+issuesubtitle
+issuetitle
+issuetitleaddon
+iswc
+journal
+journalsubtitle
+journaltitle
+journaltitleaddon
+key
+keywords
+label
+langid
+langidopts
+language
+library
+lista
+listb
+listc
+listd
+liste
+listf
+location
+mainsubtitle
+maintitle
+maintitleaddon
+month
+namea
+nameaddon
+nameatype
+nameb
+namebtype
+namec
+namectype
+note
+number
+options
+organization
+origdate
+origlanguage
+origlocation
+origpublisher
+origtitle
+pages
+pagetotal
+pagination
+part
+pdf
+presort
+primaryclass
+publisher
+pubstate
+related
+relatedoptions
+relatedstring
+relatedtype
+reprinttitle
+school
+series
+shortauthor
+shorteditor
+shorthand
+shorthandintro
+shortjournal
+shortseries
+shorttitle
+sortkey
+sortname
+sortshorthand
+sorttitle
+sortyear
+subtitle
+title
+titleaddon
+translator
+type
+url
+urldate
+usera
+userb
+userc
+userd
+usere
+userf
+venue
+verba
+verbb
+verbc
+version
+volume
+volumes
+xdata
+xref
+year
 ```
 
-### Champs {#d2e748}
+Le manuel LaTeX précise qu'une entrée peut contenir d'autres champs (que
+ceux énumérés) et qu'ils sont simplement ignorés lorsque le style
+bibliographique ne les utilise pas.
 
-Les recensions suivantes ont été faites avec `gigabib.bib`, la
-concaténation de tous les exemples BibLaTeX que j'ai sous la main,
-incluant mes tests et les exemples récents fournis par Clara dans le
-github `StyloMetopes`; total 84 fichiers `.bib`, pour 578 références.
+De ces champs, seuls les 58 suivants sont traités par pandoc
+(vérifications faites avec `kilobib.bib`, ne comptant que mes 55
+références à contenu contrôlé) :
 
-#### Champs CSL {#d2e757}
+``` {xml:space="preserve"}
+abstract
+addendum
+address
+annotation
+author
+bookauthor
+booksubtitle
+booktitle
+booktitleaddon
+chapter
+date
+doi
+edition
+editor
+eventtitle
+howpublished
+ids
+institution
+isbn
+issn
+issue
+issuesubtitle
+issuetitle
+journalsubtitle
+journaltitle
+keywords
+langid
+library
+location
+mainsubtitle
+maintitle
+maintitleaddon
+note
+number
+organization
+origlocation
+origpublisher
+origtitle
+pages
+pagetotal
+part
+publisher
+pubstate
+school
+series
+shortjournal
+shorttitle
+subtitle
+title
+titleaddon
+translator
+type
+url
+venue
+version
+volume
+volumes
+year
+```
+
+Requête XPath (sur `kilobib.bib` → XML) pour liste précédente :
+
+``` {xml:space="preserve"}
+for $mot in tokenize("
+abstract
+addendum
+address
+afterword
+annotation
+annotator
+annote
+archiveprefix
+author
+authortype
+bookauthor
+bookpagination
+booksubtitle
+booktitle
+booktitleaddon
+chapter
+commentator
+crossref
+date
+doi
+edition
+editor
+editora
+editoratype
+editorb
+editorbtype
+editorc
+editorctype
+editortype
+eid
+entryset
+entrysubtype
+eprint
+eprintclass
+eprinttype
+eventdate
+eventtitle
+eventtitleaddon
+execute
+file
+foreword
+gender
+holder
+howpublished
+ids
+indexsorttitle
+indextitle
+institution
+introduction
+isan
+isbn
+ismn
+isrn
+issn
+issue
+issuesubtitle
+issuetitle
+issuetitleaddon
+iswc
+journal
+journalsubtitle
+journaltitle
+journaltitleaddon
+key
+keywords
+label
+langid
+langidopts
+language
+library
+lista
+listb
+listc
+listd
+liste
+listf
+location
+mainsubtitle
+maintitle
+maintitleaddon
+month
+namea
+nameaddon
+nameatype
+nameb
+namebtype
+namec
+namectype
+note
+number
+options
+organization
+origdate
+origlanguage
+origlocation
+origpublisher
+origtitle
+pages
+pagetotal
+pagination
+part
+pdf
+presort
+primaryclass
+publisher
+pubstate
+related
+relatedoptions
+relatedstring
+relatedtype
+reprinttitle
+school
+series
+shortauthor
+shorteditor
+shorthand
+shorthandintro
+shortjournal
+shortseries
+shorttitle
+sortkey
+sortname
+sortshorthand
+sorttitle
+sortyear
+subtitle
+title
+titleaddon
+translator
+type
+url
+urldate
+usera
+userb
+userc
+userd
+usere
+userf
+venue
+verba
+verbb
+verbc
+version
+volume
+volumes
+xdata
+xref
+year
+") return $mot || " " ||
+    count(/*/meta/entry[2]//*[(self::MetaInlines or self::MetaString) and tokenize(.)=$mot])
+```
+
+résultat auquel il faut ajouter `annote`, `date`, `journal` et `year` à
+la main (pour les raisons données plus haut).
+
+Les 92 autres champs sont ignorés.
+
+#### Champs CSL {#d2e804}
+
+Sauf indication contraire, les recensions suivantes ont été faites avec
+`gigabib.bib`, la concaténation de tous les exemples BibLaTeX que j'ai
+sous la main, incluant mes tests et les exemples récents fournis par
+Clara dans le github `StyloMetopes`; total 84 fichiers `.bib`, pour 578
+références.
 
 À l'interne, les références sont gérées dans pandoc avec cet ensemble de
 99 variables :
@@ -693,429 +1089,7 @@ year-suffix
     count(/*/meta/entry[2]/MetaList/MetaMap/entry[@key=$mot])
 ```
 
-De ces 43 champs possibles, dans l'existant stylo (`megabib.bib`), on ne
-retrouve que les 30 suivants (même requête) :
-
-``` {xml:space="preserve"}
-abstract
-accessed
-annote
-author
-chapter-number
-collection-number
-collection-title
-container-title
-doi
-edition
-editor
-genre
-isbn
-issn
-issue
-issued
-keyword
-language
-note
-number
-number-of-pages
-page
-pmid
-publisher
-publisher-place
-title
-title-short
-translator
-url
-volume
-```
-
-Ce serait donc les 30 champs à traiter en priorité.
-
-#### Champs BibLaTeX {#d2e799}
-
-Le manuel BibLaTeX mentionne les 148 champs suivants :
-
-``` {xml:space="preserve"}
-abstract
-addendum
-address
-afterword
-annotation
-annotator
-annote
-archiveprefix
-author
-authortype
-bookauthor
-bookpagination
-booksubtitle
-booktitle
-booktitleaddon
-chapter
-commentator
-crossref
-date
-doi
-edition
-editor
-editora
-editoratype
-editorb
-editorbtype
-editorc
-editorctype
-editortype
-eid
-entryset
-entrysubtype
-eprint
-eprintclass
-eprinttype
-eventdate
-eventtitle
-eventtitleaddon
-execute
-file
-foreword
-gender
-holder
-howpublished
-ids
-indexsorttitle
-indextitle
-institution
-introduction
-isan
-isbn
-ismn
-isrn
-issn
-issue
-issuesubtitle
-issuetitle
-issuetitleaddon
-iswc
-journal
-journalsubtitle
-journaltitle
-journaltitleaddon
-key
-keywords
-label
-langid
-langidopts
-language
-library
-lista
-listb
-listc
-listd
-liste
-listf
-location
-mainsubtitle
-maintitle
-maintitleaddon
-month
-namea
-nameaddon
-nameatype
-nameb
-namebtype
-namec
-namectype
-note
-number
-options
-organization
-origdate
-origlanguage
-origlocation
-origpublisher
-origtitle
-pages
-pagetotal
-pagination
-part
-pdf
-presort
-primaryclass
-publisher
-pubstate
-related
-relatedoptions
-relatedstring
-relatedtype
-reprinttitle
-school
-series
-shortauthor
-shorteditor
-shorthand
-shorthandintro
-shortjournal
-shortseries
-shorttitle
-sortkey
-sortname
-sortshorthand
-sorttitle
-sortyear
-subtitle
-title
-titleaddon
-translator
-type
-url
-urldate
-usera
-userb
-userc
-userd
-usere
-userf
-venue
-verba
-verbb
-verbc
-version
-volume
-volumes
-xdata
-xref
-year
-```
-
-Le manuel LaTeX précise qu'une entrée peut contenir d'autres champs (que
-ceux énumérés) et qu'ils sont simplement ignorés lorsque le style
-bibliographique ne les utilise pas.
-
-De ces champs, seuls les 58 suivants sont traités par pandoc
-(vérifications faites avec `megabib.bib`, ne comptant que mes 55
-références à contenu contrôlé) :
-
-``` {xml:space="preserve"}
-abstract
-addendum
-address
-annotation
-author
-bookauthor
-booksubtitle
-booktitle
-booktitleaddon
-chapter
-date
-doi
-edition
-editor
-eventtitle
-howpublished
-ids
-institution
-isbn
-issn
-issue
-issuesubtitle
-issuetitle
-journalsubtitle
-journaltitle
-keywords
-langid
-library
-location
-mainsubtitle
-maintitle
-maintitleaddon
-note
-number
-organization
-origlocation
-origpublisher
-origtitle
-pages
-pagetotal
-part
-publisher
-pubstate
-school
-series
-shortjournal
-shorttitle
-subtitle
-title
-titleaddon
-translator
-type
-url
-venue
-version
-volume
-volumes
-year
-```
-
-Requête XPath (sur `megabib.bib` → XML) pour liste précédente :
-
-``` {xml:space="preserve"}
-for $mot in tokenize("
-abstract
-addendum
-afterword
-annotation
-annotator
-author
-authortype
-bookauthor
-bookpagination
-booksubtitle
-booktitle
-booktitleaddon
-chapter
-commentator
-date
-doi
-edition
-editor
-editora
-editorb
-editorc
-editortype
-editoratype
-editorbtype
-editorctype
-eid
-entrysubtype
-eprint
-eprintclass
-eprinttype
-eventdate
-eventtitle
-eventtitleaddon
-file
-foreword
-holder
-howpublished
-indextitle
-institution
-introduction
-isan
-isbn
-ismn
-isrn
-issn
-issue
-issuesubtitle
-issuetitle
-issuetitleaddon
-iswc
-journalsubtitle
-journaltitle
-journaltitleaddon
-label
-language
-library
-location
-mainsubtitle
-maintitle
-maintitleaddon
-month
-nameaddon
-note
-number
-organization
-origdate
-origlanguage
-origlocation
-origpublisher
-origtitle
-pages
-pagetotal
-pagination
-part
-publisher
-pubstate
-reprinttitle
-series
-shortauthor
-shorteditor
-shorthand
-shorthandintro
-shortjournal
-shortseries
-shorttitle
-subtitle
-title
-titleaddon
-translator
-type
-url
-urldate
-venue
-version
-volume
-volumes
-year
-crossref
-entryset
-execute
-gender
-langid
-langidopts
-ids
-indexsorttitle
-keywords
-options
-presort
-related
-relatedoptions
-relatedtype
-relatedstring
-sortkey
-sortname
-sortshorthand
-sorttitle
-sortyear
-xdata
-xref
-address
-annote
-archiveprefix
-journal
-key
-pdf
-primaryclass
-school
-namea
-nameb
-namec
-nameatype
-namebtype
-namectype
-lista
-listb
-listc
-listd
-liste
-listf
-usera
-userb
-userc
-userd
-usere
-userf
-verba
-verbb
-verbc
-") return $mot || " " ||
-    count(/*/meta/entry[2]//*[(self::MetaInlines or self::MetaString) and tokenize(.)=$mot])
-```
-
-résultat auquel il faut ajouter `date` et `year` à la main.
-
-Les 92 autres champs sont ignorés.
-
-### Conclusions {#d2e824}
+### Conclusions {#d2e847}
 
 Traiter les 30 champs CSL identifiés ci-dessus.
 
