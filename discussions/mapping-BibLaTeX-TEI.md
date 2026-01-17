@@ -14,48 +14,50 @@ Yves Marcoux
 ::: {#tHe_TDM}
 # Table des matières
 
-## [Réflexions en date du 2025-11-22](#d2e20)
+## [Réflexions en date du 2025-11-22, 2026-01-17](#d2e20)
 
-## [L'existant bibliographique stylo](#d2e44)
+## [L'existant bibliographique stylo](#d2e41)
 
-### [Constats](#d2e148)
+### [Correction d'erreurs de base](#d2e69)
 
-### [Conclusions provisoires](#d2e224)
+### [Premiers constats](#d2e125)
 
-## [Questions](#d2e242)
+### [L'existant stylo une fois converti en CSL](#d2e217)
 
-## [Les formules mathématiques LaTeX / MathML](#d2e307)
+## [Questions](#d2e483)
 
-### [Une approche possible pour les formules mathématiques](#d2e384)
+## [Les formules mathématiques LaTeX / MathML](#d2e549)
 
-## [L'existant Métopes](#d2e436)
+### [Une approche possible pour les formules mathématiques](#d2e626)
 
-## [Prétraitement du BibLaTeX par pandoc](#d2e484)
+## [L'existant Métopes](#d2e678)
 
-### [Généralités](#d2e485)
+## [Prétraitement du BibLaTeX par pandoc](#d2e726)
 
-### [Vue d'ensemble](#d2e495)
+### [Généralités](#d2e727)
 
-### [Commandes typographiques LaTeX](#d2e571)
+### [Vue d'ensemble](#d2e733)
 
-### [Genres de prétraitement](#d2e701)
+### [Commandes typographiques LaTeX](#d2e809)
+
+### [Genres de prétraitement](#d2e939)
 
 ## [Annexe](#annexe)
 
-### [Types bibliographiques BibLaTeX](#d2e962)
+### [Types bibliographiques BibLaTeX](#d2e1201)
 
-### [Champs BibLaTeX](#d2e1257)
+### [Champs BibLaTeX](#d2e1495)
 
-### [Champs CSL](#d2e1262)
+### [Champs CSL](#d2e1501)
 
-### [Mappage des champs](#d2e1305)
+### [Mappage des champs](#d2e1544)
 
-### [Conclusions](#d2e1352)
+### [Conclusions](#d2e1590)
 
 ------------------------------------------------------------------------
 :::
 
-## Réflexions en date du 2025-11-22 {#d2e20}
+## Réflexions en date du 2025-11-22, 2026-01-17 {#d2e20}
 
 Je me questionne sur un titre approprié pour ce document. Oui, il
 s'agira de mapper du BibLaTeX en TEI, mais le fait que le mapping se
@@ -64,25 +66,35 @@ fait qu'il s'effectue à l'aide pandoc aussi.
 
 Ce que pandoc fait -- et très bien -- est de mapper un *sous-ensemble*
 de BibLaTeX sur un *sous-ensemble* de CSL. Ces sous-ensembles sont
-décrits plutôt bien dans l'[autre document de
-réflexion](bib-pretraitement-pandoc.md).
-
-En réalité, ma job est de mapper *ce sous-ensemble* de CSL sur TEI (ce
-qui, incidemment, se trouvera à définir *de facto* un autre
-sous-ensemble, de TEI celui-là !).
+décrits plutôt bien ci-dessous. Et en réalité, ma job est de mapper *ce
+sous-ensemble* de CSL sur TEI (ce qui, incidemment, se trouvera à
+définir *de facto* un autre sous-ensemble, de TEI celui-là !).
 
 Du point de vue des auteurs et d'un « protocole de rédaction » (réel ou
 virtuel -- puisque, qu'on en soit conscient ou non, il y a toujours au
 moins un protocole implicite : ce qui marche vs ce qui ne marche pas),
-c'est autour du sous-ensemble de BibLaTeX qu'il doit s'articuler.
+c'est autour du sous-ensemble de BibLaTeX qu'il doit s'articuler. Cela
+dit, s'il est vrai que la plupart des `.bib` sont en fait dérivés de
+Zotero, c'est plutôt en fonction de Zotero qu'il faudrait formuler un
+protocole de rédaction.
 
-Quoique, en réalité, s'il est vrai que la plupart des `.bib` sont en
-fait dérivés de Zotero, c'est plutôt en fonction de Zotero qu'il
-faudrait formuler un protocole de rédaction.
+Le traitement que fait pandoc du BibLaTeX n'est pas toujours optimal
+sémantiquement (par exemple, plusieurs types BibLaTeX sont mappés sur le
+même type CSL et certaines séparations d'information présentes dans le
+BibLaTeX sont parfois perdues). Malgré tout, l'utilisation du BibLaTeX
+traité par pandoc demeure une excellente option pour produire un
+bibliographie sémantique (en TEI ou autre, d'ailleurs), notamment à
+cause de la prise en charge des formules mathématiques. Cependant, *si*
+la possibilité se présentait de disposer des données brutes dans un
+autre format que BibLaTeX, par exemple dans un XML riche sémantiquement
+qui sortirait directement de Zotero, il serait pertinent de reconsidérer
+cette option.
 
 ------------------------------------------------------------------------
 
-## L'existant bibliographique stylo {#d2e44}
+## L'existant bibliographique stylo {#d2e41}
+
+*Section vérifée courante 2026-01-17.*
 
 Je fusionne tout ce que j'ai comme fichiers `.bib` qui n'est pas de moi,
 pour me faire une idée des usages bibliographiques pratiqués
@@ -139,6 +151,8 @@ Ce qui totalise 519 occurrences de référence, dont 508 distinctes, des
 @unpublished
 ```
 
+### Correction d'erreurs de base {#d2e69}
+
 Filtrer sur @ pour avoir les clés. Expression régulière à utiliser pour
 repérer les mauvais caractères dans les clés :
 `[^a-z0-9\,\{\}\@\012\015 \-\.\_]`.
@@ -157,12 +171,13 @@ conversion vers XML.
 
 Il ne bronche pas non plus sur les duplications de clé (qui n'arrivent
 jamais en temps normal); selon mes tests sommaires, il prend la dernière
-entrée rencontrée. Je ne prends donc pas la peine d'éliminer les
-doublons.
+entrée rencontrée. Je prends quand même la peine d'**éliminer les
+doublons**, conservant pour chacun la version la plus riche (le plus de
+champs).
 
 Je vois par hasard que SP1376.bib -- référence `adorno_minima_2003`
 contient un caractère incorrect (mauvaise ligature \"œ\" = 9C en
-Windows-1252), que je corrige.
+Windows-1252), que **je corrige**.
 
 Il y a aussi trois fois le problème
 `[INFO] Not rendering RawInline (Format "latex") "\\textbar"`, mais
@@ -173,77 +188,12 @@ génération de l'AST en XML ni lors du `-f biblatex -t CSLJSON` ou du
 `-f biblatex -t xml`. En fait, `\textbar` n'est pas une des commandes
 LaTeX reconnues par pandoc.
 
-Je remplace les 3 occurrences de `{\textbar}` par `{|}`.
+**Je remplace** les 3 occurrences de `{\textbar}` par `{|}`.
 
-Ce sont les deux seules modifs que je fais dans `megabib.bib`.
+Ce sont les **trois seules modifs** que je fais dans `megabib.bib`;
+j'appelle le résultat `megabib-sans-doublon.bib`.
 
-Ce `megabib.bib` génère en extrant des références des 9 types CSL
-suivants :
-
-``` {xml:space="preserve"}
-book
-article-journal
-chapter
-report
-paper-conference
-thesis
-manuscript
-motion_picture
-song
-```
-
-> Requête XPath (sur `megabib.xml`) pour cette dernière liste :
->
-> ``` {xml:space="preserve"}
-> string-join(distinct-values(
-> /*/meta/entry[2]/MetaList/MetaMap/entry[@key='type']/normalize-space()
-> ), ' ')
-> ```
-
-Plus bien sûr le type vide, auquel pandoc mappe les `@misc`.
-
-Des 46 champs CSL possibles, on ne retrouve que les 30 suivants dans
-l'extrant produit par l'existant stylo (`megabib.bib`) :
-
-``` {xml:space="preserve"}
-abstract
-accessed
-annote
-author
-chapter-number
-collection-number
-collection-title
-container-title
-doi
-edition
-editor
-genre
-isbn
-issn
-issue
-issued
-keyword
-language
-note
-number
-number-of-pages
-page
-pmid
-publisher
-publisher-place
-title
-title-short
-translator
-url
-volume
-```
-
-Même requête que pour `gigabib.bib` dans le [document sur le
-prétraitement](bib-pretraitement-pandoc.mb), mais avec `megabib.bib`.
-
-Ce serait donc les 10 types et 30 champs CSL à traiter en priorité.
-
-### Constats {#d2e148}
+### Premiers constats {#d2e125}
 
 **Premier constat (2025-11-05) :** Les .bib que j'utilise dans mes tests
 (et qui proviennent donc de stylo, sauf quelques références de mon cru)
@@ -295,18 +245,112 @@ qu'il y ait d'autres différences.
 résulte en quelque chose de plus riche que `-t CSLJSON`, mais cela ne
 compromet pas la validité des constats présentés.
 
-### Conclusions provisoires {#d2e224}
-
-Selon moi, deux conclusions s'imposent :
+Deux conclusions s'imposent face à ces constats :
 
 1.  Il faut considérer qu'on travaille *de facto* en BibLaTeX. Donc,
     viser une méthodologie (protocole) axée sur ce format.
 2.  Il **faut continuer à spécifier `-f biblatex`** pour l'opération
     `-t xml` car la suppression des `location` n'est pas viable.
 
+### L'existant stylo une fois converti en CSL {#d2e217}
+
+Le fichier `megabib-sans-doublon.bib` génère en extrant XML des
+références des 9 types CSL suivants :
+
+``` {xml:space="preserve"}
+book
+article-journal
+chapter
+report
+paper-conference
+thesis
+manuscript
+motion_picture
+song
+```
+
+> Requête XPath (sur `megabib-sans-doublon.xml`) pour cette dernière
+> liste :
+>
+> ``` {xml:space="preserve"}
+> string-join(distinct-values(
+> /*/meta/entry[2]/MetaList/MetaMap/entry[@key='type']/normalize-space()
+> ), ' ')
+> ```
+
+Plus bien sûr le type vide, auquel pandoc mappe les `@misc`.
+
+Des 46 champs CSL possibles, on ne retrouve que les 30 suivants dans
+l'extrant XML produit par l'existant stylo (`megabib-sans-doublon.bib`).
+Les voici par ordre de priorité descendante (fréquence sur 508
+entrées) :
+
+  -------------------------- -----
+  title                      507
+  issued                     503
+  author                     487
+  publisher                  321
+  publisher-place            303
+  container-title            193
+  title-short                159
+  page                       139
+  url                        124
+  isbn                       107
+  issue                      104
+  volume                     95
+  note                       83
+  abstract                   79
+  collection-title           67
+  accessed                   65
+  doi                        63
+  issn                       46
+  keyword                    41
+  edition                    39
+  editor                     31
+  translator                 20
+  language                   17
+  collection-number          14
+  pmid                       13
+  number-of-pages            7
+  chapter-number             6
+  genre                      6
+  annote                     3
+  number                     3
+  call-number                0
+  container-author           0
+  container-title-short      0
+  event                      0
+  event-date                 0
+  event-place                0
+  jurisdiction               0
+  number-of-volumes          0
+  original-date              0
+  original-publisher         0
+  original-publisher-place   0
+  original-title             0
+  other-ids                  0
+  status                     0
+  version                    0
+  volume-title               0
+  -------------------------- -----
+
+Requête XPath sur `megabib-sans-doublon.xml` :
+
+``` {xml:space="preserve"}
+for $mot in tokenize("
+abstract
+… (liste des (46 - 2) autres champs possibles)
+volume-title
+") return $mot || " " ||
+count(/*/meta/entry[2]/MetaList/MetaMap/entry[@key=$mot])
+```
+
+Ce serait donc les 10 types (9 ci-dessus + type vide) et 30 champs CSL à
+traiter en priorité. (Vérifié 2026-01-17.)
+
 ------------------------------------------------------------------------
 
-## Questions {#d2e242}
+## Questions {#d2e483}
 
 1.  Y aurait-il d'autres fichiers .bib plus « frais » à utiliser pour
     tester ?
@@ -339,7 +383,7 @@ Selon moi, deux conclusions s'imposent :
 
 ------------------------------------------------------------------------
 
-## Les formules mathématiques LaTeX / MathML {#d2e307}
+## Les formules mathématiques LaTeX / MathML {#d2e549}
 
 Mes essais avec les bibliographies me font bifurquer vers la question
 des formules mathématiques, qui risquent d'être un problème épineux,
@@ -390,7 +434,7 @@ Cela dit, c'est extrêmement impressionnant tout ce qu'il arrive à gérer
 et, qui plus est, à traduire en MathML. Ce que les navigateurs (comme
 Firefox) arrivent à faire avec le MathML est aussi très impressionnant.
 
-### Une approche possible pour les formules mathématiques {#d2e384}
+### Une approche possible pour les formules mathématiques {#d2e626}
 
 pandoc est très accueillant pour LaTeX dans le md. Il serait donc
 naturel que les formules math. soient rédigées en LaTeX dans le md.
@@ -438,7 +482,7 @@ de mettre des formules LaTeX.
 
 ------------------------------------------------------------------------
 
-## L'existant Métopes {#d2e436}
+## L'existant Métopes {#d2e678}
 
 2025-11-26 Il n'y a actuellement *aucun* élément `biblStruct` dans la
 totalité des fichiers fournis comme exemples.
@@ -506,9 +550,11 @@ Je me plie à l'intouché pour les codeblock's (donc inline indiqué
 explicitement; sinon block par défaut). Je modifie mon ajout css local
 en conséquence (\"D:\_YmaProjets\\MarcelloVR\\codeblock.YMA.css\").
 
-## Prétraitement du BibLaTeX par pandoc {#d2e484}
+------------------------------------------------------------------------
 
-### Généralités {#d2e485}
+## Prétraitement du BibLaTeX par pandoc {#d2e726}
+
+### Généralités {#d2e727}
 
 Le prétraitement du BibLaTeX par pandoc est finalement assez alambiqué
 et loin d'être banal. J'ai analysé ce prétraitement avec de nombreux
@@ -516,18 +562,7 @@ tests diversifiés, décrits avec plus ou moins de précision en
 [annexe](#annexe). Ce document présente les conclusions auxquelles
 j'arrive.
 
-Même si ce prétraitement n'est pas toujours optimal sémantiquement (par
-exemple, plusieurs types BibLaTeX sont mappés sur le même type CSL et
-certaines séparations d'information présentes dans le BibLaTeX sont
-parfois perdues), l'utilisation du BibLaTeX traité par pandoc demeure
-une excellente option pour produire un bibliographie sémantique (en TEI
-ou autre, d'ailleurs), notamment à cause de la prise en charge des
-formules mathématiques. Cependant, *si* la possibilité se présentait de
-disposer des données brutes dans un autre format que BibLaTeX, par
-exemple dans un XML riche sémantiquement qui sortirait directement de
-Zotero, il serait pertinent de reconsidérer cette option.
-
-### Vue d'ensemble {#d2e495}
+### Vue d'ensemble {#d2e733}
 
 Le traitement effectué par pandoc est fortement influencé par trois
 spécifications : celle de BibLaTeX, exposée dans [The `biblatex`
@@ -574,7 +609,7 @@ Markdown ou du HTML imbriqué (de quelque façon que ce soit). Il n'est
 donc pas possible de jouer avec la typographie en utilisant du Markdown
 ou du HTML imbriqué dans les références BibLaTeX.
 
-### Commandes typographiques LaTeX {#d2e571}
+### Commandes typographiques LaTeX {#d2e809}
 
 Cependant, il est possible de contrôler jusqu'à un certain point la
 typographie avec *quelques* commandes de formatage LaTeX et TeX
@@ -665,7 +700,7 @@ implantation le 2025-12-04:
 </listBibl>
 ```
 
-### Genres de prétraitement {#d2e701}
+### Genres de prétraitement {#d2e939}
 
 Les prétraitements réellement effectués pour une référence (entrée)
 donnée varient en fonction du type de référence, des champs présents, de
@@ -787,7 +822,7 @@ biblatex Package," disponible en PDF
 [ici](https://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf)
 (j'en ai une copie dans mes `ressources-diverses`).
 
-### Types bibliographiques BibLaTeX {#d2e962}
+### Types bibliographiques BibLaTeX {#d2e1201}
 
 Le manuel BibLaTeX mentionne 56 types bibliographiques suivants :
 
@@ -919,7 +954,7 @@ Voici le mapping de types fait par pandoc :
 Rappelons que le mapping de `unpublished` est affecté par les champs
 présents dans la notice (voir plus haut).
 
-### Champs BibLaTeX {#d2e1257}
+### Champs BibLaTeX {#d2e1495}
 
 Le manuel BibLaTeX mentionne les 148 champs suivants :
 
@@ -1078,7 +1113,7 @@ Le manuel LaTeX précise qu'une entrée peut contenir d'autres champs (que
 ceux énumérés) et qu'ils sont simplement ignorés lorsque le style
 bibliographique ne les utilise pas.
 
-### Champs CSL {#d2e1262}
+### Champs CSL {#d2e1501}
 
 Sauf indication contraire, les recensions suivantes ont été faites avec
 `gigabib.bib`, la concaténation de tous les exemples BibLaTeX que j'ai
@@ -1258,7 +1293,7 @@ Il s'agit des noms de champ qu'on retrouve comme `entry/@key` dans
 l'extrant `-t xml` (excluant `id` et `type`). Noter qu'à ce stade, ils
 sont tous en minuscules seulement.
 
-Requête XPath (sur `gigabib.bib` → XML) pour liste précédente :
+Requête XPath (sur `gigabib.xml`) pour liste précédente :
 
 ``` {xml:space="preserve"}
 for $mot in tokenize("
@@ -1367,7 +1402,7 @@ year-suffix
     count(/*/meta/entry[2]/MetaList/MetaMap/entry[@key=$mot])
 ```
 
-### Mappage des champs {#d2e1305}
+### Mappage des champs {#d2e1544}
 
 Certains des 148 champs BibLaTeX sont traités dans tous les 55 types de
 références bibliographiques. C'est le cas par exemple de `abstract`,
@@ -1446,7 +1481,7 @@ volumes
 year
 ```
 
-Requête XPath (sur `kilobib.bib` → XML) pour liste précédente :
+Requête XPath (sur `kilobib.xml`) pour liste précédente :
 
 ``` {xml:space="preserve"}
 for $mot in tokenize("
@@ -1608,7 +1643,7 @@ la main (pour les raisons données plus haut).
 ~~Les 92 autres champs sont ignorés.~~ 2026-01-16 Faux, aucun des champs
 n'est complètement ignoré.
 
-### Conclusions {#d2e1352}
+### Conclusions {#d2e1590}
 
 Traiter les 30 champs CSL identifiés ci-dessus.
 
