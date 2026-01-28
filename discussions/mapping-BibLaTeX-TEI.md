@@ -14,60 +14,54 @@ Yves Marcoux
 ::: {#tHe_TDM}
 # Table des matières
 
-## [Réflexions en date du 2025-11-22, 2026-01-17](#d2e20)
+## [Réflexions en date du 2025-11-22 -- 2026-01-27](#d2e20)
 
-## [L'existant bibliographique stylo](#d2e41)
+## [`-f BibTeX` ou `-f BibLaTeX` ?](#d2e44)
 
-### [Composition du corpus](#d2e45)
+## [`-t xml` ou `-t CSLJSON` ?](#d2e143)
 
-### [Premiers constats et conséquences](#d2e73)
+## [L'existant bibliographique stylo](#d2e232)
 
-### [Nettoyage du corpus](#d2e167)
+### [Composition du corpus](#d2e235)
 
-### [Qualité des données bibliographiques entrantes](#d2e251)
+### [Nettoyage du corpus](#d2e264)
 
-## [Aperçu de BibLaTeX](#d2e309)
+### [Réflexions sur la qualité des données](#d2e333)
 
-### [Types bibliographiques BibLaTeX](#d2e310)
+## [Traitement du BibLaTeX par pandoc](#d2e397)
 
-### [Champs BibLaTeX](#d2e319)
+### [Généralités](#d2e398)
 
-## [Aperçu de CSL](#d2e325)
+### [Genres de traitement](#d2e405)
 
-### [Types bibliographiques CSL](#d2e326)
+### [Mappage des types](#d2e660)
 
-### [Champs CSL](#d2e331)
+### [Mappage des champs](#d2e947)
 
-## [Prétraitement du BibLaTeX par pandoc](#d2e349)
+### [Conclusions](#d2e1038)
 
-### [Généralités](#d2e350)
+## [L'existant stylo une fois converti en CSL](#d2e1058)
 
-### [Vue d'ensemble](#d2e356)
+## [L'existant Métopes](#d2e1347)
 
-### [Commandes typographiques LaTeX](#d2e432)
+## [Commandes typographiques LaTeX](#d2e1396)
 
-### [Genres de prétraitement](#d2e563)
+## [Les formules mathématiques LaTeX / MathML](#d2e1539)
 
-## [Les formules mathématiques LaTeX / MathML](#d2e818)
+## [Annexe](#d2e1673)
 
-### [Une approche possible pour les formules mathématiques](#d2e894)
+### [Types bibliographiques BibLaTeX](#d2e1674)
 
-## [L'existant stylo une fois converti en CSL](#d2e939)
+### [Champs BibLaTeX](#d2e1689)
 
-## [L'existant Métopes](#d2e1229)
+### [Types bibliographiques CSL](#d2e1702)
 
-## [Annexe](#annexe)
-
-### [Mappage des types](#d2e1287)
-
-### [Mappage des champs](#d2e1574)
-
-### [Conclusions](#d2e1621)
+### [Champs CSL](#d2e1710)
 
 ------------------------------------------------------------------------
 :::
 
-## Réflexions en date du 2025-11-22, 2026-01-17 {#d2e20}
+## Réflexions en date du 2025-11-22 -- 2026-01-27 {#d2e20}
 
 Je me questionne sur un titre approprié pour ce document. Oui, il
 s'agira de mapper du BibLaTeX en TEI, mais le fait que le mapping se
@@ -90,23 +84,147 @@ protocole de rédaction.
 
 Le traitement que fait pandoc du BibLaTeX n'est pas toujours optimal
 sémantiquement (par exemple, plusieurs types BibLaTeX sont mappés sur le
-même type CSL et certaines séparations d'information présentes dans le
-BibLaTeX sont parfois perdues). Malgré tout, l'utilisation du BibLaTeX
-traité par pandoc demeure une excellente option pour produire un
-bibliographie sémantique (en TEI ou autre, d'ailleurs), notamment à
-cause de la prise en charge des formules mathématiques. Cependant, *si*
-la possibilité se présentait de disposer des données brutes dans un
-autre format que BibLaTeX, par exemple dans un XML riche sémantiquement
-qui sortirait directement de Zotero, il serait pertinent de reconsidérer
-cette option.
+même type CSL et certains champs et séparations d'information présents
+dans le BibLaTeX sont parfois perdus). Malgré tout, l'utilisation du
+BibLaTeX traité par pandoc demeure une excellente option pour produire
+un bibliographie sémantique (en TEI ou autre, d'ailleurs), notamment à
+cause de la prise en charge des formules mathématiques.
+
+Cependant, *si* la possibilité se présentait de disposer des données
+brutes dans un autre format que BibLaTeX, par exemple dans un XML riche
+sémantiquement qui sortirait directement de Zotero, il serait pertinent
+de reconsidérer cette option.
+
+Une autre option qu'il serait possible d'envisager (mais à mon avis, pas
+maintenant), si la préservation de la richesse sémantique intégrale du
+BibLaTeX est souhaitée, serait de lire le BibLaTeX en parallèle de
+pandoc (en ixml, qui devrait être bientôt supporté par Saxon), de façon
+à récupérer les informations sémantiques éliminées par pandoc (champs et
+séparations d'information).
 
 ------------------------------------------------------------------------
 
-## L'existant bibliographique stylo {#d2e41}
+## `-f BibTeX` ou `-f BibLaTeX` ? {#d2e44}
+
+**Premier constat (2025-11-05) :** Les .bib de l'existant stylo, **sont
+en fait du BibLaTeX**, tant par les *types* de références (qui incluent
+un type \"movie\", qui n'existe pas en BibTeX), que (surtout) par les
+*champs* qu'ils contiennent, dont beaucoup n'existent qu'en BibLaTeX,
+par exemple `keywords`, `isbn`, `issn` et `urldate`.
+
+**Deuxième constat :** Le fait de spécifier `-f bibtex` ou `-f biblatex`
+ne semble changer que très peu de choses dans les opérations de
+conversion de bibliographies de pandoc. Il n'affecte en tout cas *pas*
+la reconnaissance des champs BibLaTeX, y compris ceux qui n'existent
+qu'en BibLaTeX.
+
+Entre deux conversions de la même bibliographie
+(`megabib-dans-doublon.bib`), l'une `-f bibtex` et l'autre
+`-f biblatex`, voici les différences observées entre
+`megabib-sans-doublon.xml` et `megabib-sans-doublon.bibtex.xml` :
+
+1.  Le champ `publisher` est traité en BibLaTeX comme un champ \"noms\"
+    (donc, où les \"and\" sont traités sémantiquement comme séparateurs
+    d'occurrences), alors qu'il est traité comme un champ texte en
+    BibTeX.
+2.  Le champ `location` est traité comme synonyme de `address` en
+    BibLaTeX alors qu'il est ignoré en BibTeX.
+
+Dans le second cas, le résultat avec BibLaTeX est toujours meilleur
+qu'avec BibTeX. Mais dans le premier cas, ça dépend si le remplacement
+des \"and\" par un \";\" est heureux ou non. Dans mes tests (clé
+`fillmore_case_1968`, provenant de `calculer-la-semantique-avec-ieml`),
+le changement est malheureux, résultant en :
+
+> `<MetaInlines>Holt, Rinehart,<Str content=";" /> Winston</MetaInlines>`
+
+avec BibLaTeX au lieu de :
+
+> `<MetaInlines>Holt, Rinehart, and Winston</MetaInlines>`
+
+avec BibTeX.
+
+Le remède pour que ça marche bien avec BibLaTeX serait de flanquer le
+`and` d'accolades dans le `.bib` : `Hold, Rinehart, {and} Winston` (en
+plus d'enlever la virgule d'Oxford, qui n'est *pas* dans le nom
+officiel). Ce détail serait à préciser par protocole ou, si nécessaire,
+automatiser.
+
+Évidemment, ces tests ne sont pas exhaustifs, il n'est donc pas exclus
+qu'il y ait d'autres différences.
+
+**Deux conséquences de ces constats :**
+
+1.  Il faut considérer qu'on travaille *de facto* en BibLaTeX. Donc,
+    viser une chaîne de traitement axée sur ce format.
+2.  Il **faut continuer à spécifier `-f biblatex`** pour l'opération
+    `-t xml` car la suppression des `location` n'est pas acceptable.
+
+------------------------------------------------------------------------
+
+## `-t xml` ou `-t CSLJSON` ? {#d2e143}
+
+Le traitement effectué par pandoc est fortement influencé par la
+spécification de
+[CSL](https://citationstyles.org/developers/#/language-specification).
+Quel que soit le format de sortie visé (notamment `-t xml`, `-t CSLJSON`
+et `-t html --citeproc`), pandoc commence toujours par convertir le
+BibLaTeX en une forme Haskell isomorphe à CSL à une variable près (voir
+en annexe).
+
+Sans trop de surprise, il y a très peu de différences entre `-t csljson`
+et `-t xml`; les seules que nous ayons notées sont :
+
+1.  Pour les champs BibLaTeX `date`, `eventdate` et `year`, lorsque la
+    date (ou l'année) est bien formée, elle est scindée en une liste de
+    trois nombres (un seul si l'info provient de `year`) appelée
+    `date-parts` dans le champ CSL-JSON `issued` ou `event-date`. Si la
+    date (ou l'année) est mal formée, l'info présente est simplement
+    copiée dans le XML (comme `MetaString`), alors que la liste
+    `date-parts` est laissée vide en CSL-JSON (`"date-parts": []`) et
+    l'info mal formée est perdue.
+
+    Tant pour `-t csljson` que pour `-t xml`, si `date` est indécodable
+    (ou absente), c'est `year` (bien ou mal formée) qui est utilisée.
+
+2.  Interprétation des formules LaTeX. Les formules LaTeX ne sont jamais
+    récupérables dans le CSL-JSON. Elles sont toujours reproduites comme
+    telles en caractères, mais dans certains cas les \"\$\" sont
+    éliminés. Dans le XML et dans *certains* champs, les formules LaTeX
+    sont taguées `Math` avec `@math-type="InlineMath"` ou
+    `"DisplayMath"`, selon que la formule est flanquée de \"\$\" simples
+    ou doubles. Dans les autres champs, cependant, elles sont traitées
+    comme en CSL-JSON, c'est-à-dire qu'elles sont reproduites comme des
+    suites de caractères avec, dans certains cas, les \"\$\" éliminés.
+
+3.  Interprétation de commandes typographiques LaTeX. Dans *certains*
+    champs BibLaTeX, *quelques* commandes de formatage LaTeX et TeX sont
+    reconnues *hors mode mathématique*, i.e. sans \$ ou \$\$ comme
+    délimiteurs (voir section à cet effet ci-dessous). En XML, elles
+    sont traduites en éléments standard de l'AST pandoc, alors qu'en
+    CSL-JSON, elles sont traduites en HTML de base, où les balises sont
+    directement en caractères, p.ex. :
+    `"title": "Du <i>digital naive</i> au bricoleur numérique"`. Ce
+    n'est ni robuste (présuppose un traitement subséquent en HTML), ni
+    élégant.
+
+C'est principalement le point 2 qui nous fait opter pour `-t xml`, car
+`-t CSLJSON` voudrait carrément dire l'impossibilité d'avoir un formule
+mathématique dans une référence bibliographique.
+
+Le point 3 a aussi son importance. En effet, puisqu'il n'est pas
+possible d'imbriquer du Markdown ou du HTML dans du BibLaTeX, les
+commandes LaTeX demeurent la seule possibilité pour jouer avec la
+typographie dans les références BibLaTeX (dans certains champs
+seulement).
+
+------------------------------------------------------------------------
+
+## L'existant bibliographique stylo {#d2e232}
 
 *Section vérifiée courante 2026-01-17.*
 
-### Composition du corpus {#d2e45}
+### Composition du corpus {#d2e235}
 
 Je fusionne tout ce que j'ai comme fichiers `.bib` qui n'est pas de moi,
 pour me faire une idée des usages bibliographiques pratiqués
@@ -211,65 +329,7 @@ volume
 year
 ```
 
-### Premiers constats et conséquences {#d2e73}
-
-**Premier constat (2025-11-05) :** Les .bib de l'existant stylo, **sont
-en fait du BibLaTeX**, tant par les *types* de références (qui incluent
-un type \"movie\", qui n'existe pas en BibTeX, traduit par pandoc en
-\"motion_picture\"), que (surtout) par les *champs* qu'ils contiennent,
-dont beaucoup n'existent qu'en BibLaTeX, par exemple `keywords`, `isbn`,
-`issn` et `urldate`.
-
-**Deuxième constat :** Le fait de spécifier `-f bibtex` ou `-f biblatex`
-ne semble changer que très peu de choses dans l'opération `-t CSLJSON`
-de pandoc. Il ne semble en tout cas *pas* affecter la reconnaissance des
-champs BibLaTeX, y compris ceux qui n'existent qu'en BibLaTeX.
-
-Pour en avoir le cœur net, je génère deux bibliographies en XML
-(résultat de la conversion du CSLJSON en XML par saxon) :
-`tests-YMA.bib-BIBTEX.xml` et `tests-YMA.bib-BIBLATEX.xml` et les
-compare dans np++. Voici les différences observées :
-
-1.  Le champ `publisher` est traité en BibLaTeX comme un champ \"noms\"
-    (donc, où les \"and\" sont traités sémantiquement comme séparateurs
-    d'occurrences), alors qu'il est traité comme un champ texte en
-    BibTeX.
-2.  Le champ `location` est traité comme synonyme de `address` en
-    BibLaTeX alors qu'il est ignoré en BibTeX.
-
-Dans le second cas, le résultat avec BibLaTeX est toujours meilleur
-qu'avec BibTeX. Mais dans le premier cas, ça dépend si le remplacement
-des \"and\" par un \";\" est heureux ou non. Dans mes tests (clé
-`fillmore_case_1968` dans `calculer-la-semantique-avec-ieml`), le
-changement est malheureux, résultant en :
-
-> \"publisher\": \"Holt, Rinehart,; Winston\"
-
-avec BibLaTeX au lieu de :
-
-> \"publisher\": \"Holt, Rinehart, and Winston\"
-
-avec BibTeX. Le remède est de flanquer le `and` d'accolades dans le
-`.bib` : `Hold, Rinehart, {and} Winston` (ce que je fais, en plus
-d'enlever la virgule d'Oxford, qui n'est *pas* dans le nom officiel). Ce
-détail est aussi à préciser par protocole ou, si nécessaire,
-automatiser.
-
-Évidemment, ces tests ne sont pas exhaustifs, il n'est donc pas exclus
-qu'il y ait d'autres différences.
-
-2025-11-15 Je m'oriente maintenant vers `-f biblatex -t xml`, qui
-résulte en quelque chose de plus riche que `-t CSLJSON`, mais cela ne
-compromet pas la validité des constats présentés.
-
-**Deux conséquences de ces constats :**
-
-1.  Il faut considérer qu'on travaille *de facto* en BibLaTeX. Donc,
-    viser une chaîne de traitement axée sur ce format.
-2.  Il **faut continuer à spécifier `-f biblatex`** pour l'opération
-    `-t xml` car la suppression des `location` n'est pas viable.
-
-### Nettoyage du corpus {#d2e167}
+### Nettoyage du corpus {#d2e264}
 
 Filtrer sur @ pour avoir les clés. Expression régulière à utiliser pour
 repérer les mauvais caractères dans les clés :
@@ -278,24 +338,28 @@ repérer les mauvais caractères dans les clés :
 Clés \"douteuses\" repérées, contenant caractères accentués ou un de
 \"`/:`\" (interdits dans les `@xml:id`) :
 
-1.  \@BOOK{luisdegóngora1582,
-2.  \@INCOLLECTION {anamaríabarranechea1988,
-3.  \@book{louvel_texte/image_2002,
-4.  \@book{mbembe_postcolonie:\_2000,
-5.  \@book{stael_litterature:\_1998,
+1.  \@BOOK{luisdegóngora1582, *(dans SP1423)*
+2.  \@INCOLLECTION {anamaríabarranechea1988, *(dans SP1423)*
+3.  \@book{louvel_texte/image_2002, *(dans SP1436)*
+4.  \@book{mbembe_postcolonie:\_2000, *(dans SP1395)*
+5.  \@book{stael_litterature:\_1998, *(dans SP1339)*
 
 Apparemment, pandoc accepte tout ça sans broncher. À surveiller dans la
-conversion vers XML.
+conversion vers XML. Pour éviter des erreurs de bien-formé XML, je
+**corrige les trois derniers cas (1)** (éliminé les \":\" et remplacé le
+\"/\" par un \"\_\") directement dans les bibliographies concernées (et
+articles correspondants, pour que les clés concordent). J'ai fait ces
+corrections avant la fusion des bibliographies dans `megabib.bib`.
 
-Il ne bronche pas non plus sur les duplications de clé (qui n'arrivent
-jamais en temps normal); selon mes tests sommaires, il prend la dernière
-entrée rencontrée. Je prends quand même la peine d'**éliminer les
-doublons (1)**, conservant pour chacun la version la plus riche (le plus
-de champs).
+pandoc ne bronche pas non plus sur les duplications de clé (qui
+n'arrivent jamais en temps normal); selon mes tests sommaires, il prend
+la dernière entrée rencontrée. Je prends quand même la peine
+d'**éliminer les doublons (2)**, conservant pour chacun la version la
+plus riche (le plus de champs).
 
 Je vois par hasard que SP1376.bib -- référence `adorno_minima_2003`
 contient un caractère incorrect (mauvaise ligature \"œ\" = 9C en
-Windows-1252), que **je corrige (2)**.
+Windows-1252), que **je corrige (3)**.
 
 Il y a aussi trois fois le problème
 `[INFO] Not rendering RawInline (Format "latex") "\\textbar"`, mais
@@ -306,35 +370,15 @@ génération de l'AST en XML ni lors du `-f biblatex -t CSLJSON` ou du
 `-f biblatex -t xml`. En fait, `\textbar` n'est pas une des commandes
 LaTeX reconnues par pandoc.
 
-**Je remplace (3)** les 3 occurrences de `{\textbar}` par `{|}`.
+**Je remplace (4)** les 3 occurrences de `{\textbar}` par `{|}`.
 
-Ce sont les **trois seules modifs** que je fais dans `megabib.bib`;
-j'appelle le résultat `megabib-sans-doublon.bib`.
+Ce sont les **quatre seules modifs** que je fais aux bibliographies
+originelles; j'appelle le résultat `megabib-sans-doublon.bib`.
 
-**Un problème particulier**, découvert sur le tard 2026-01-18 et que je
-n'ai **pas corrigé** est que l'article SP1436 comporte quatre références
-(ndiaye_y_2011, cointe_y_2012, heymann_y_nodate,
-l.\_hart_nibbrig_voix_2008) utilisant les champs `editora` et
-`editoratype = {collaborator}`, qui ne sont pas traités par pandoc, donc
-entièrement ignorés. Pourtant, leur utilisation ici semble tout à fait
-en accord avec ce qui est dit sur le champ `editortype` en page 19 du
-manuel BibLaTeX, pour coder un collaborateur. pandoc pourrait très bien
-traiter le cas `editoratype = {collaborator}` en plaçant en extrant les
-noms des `editora` dans le champ CSL `contributor`.
+### Réflexions sur la qualité des données {#d2e333}
 
-À moins d'interdire par protocole l'utilisation de ces champs (et de
-proposer une solution de rechange), il faudrait probablement faire une
-issue pour demander à JGM que pandoc traite correctement le cas
-`editoratype = {collaborator}`.
-
-Noter que l'article SP1436 comporte une cinquième référence avec
-`editoratype = {collaborator}` (taieb_interview_nodate), mais il s'agit
-d'une erreur, car le champ `editora` n'y est pas renseigné.
-
-### Qualité des données bibliographiques entrantes {#d2e251}
-
-Ces points devraient être considérés en réfléchissant à un éventuel
-protocole pour les données entrantes.
+Les points suivants devraient être considérés pour un éventuel protocole
+pour les données entrantes :
 
 1.  Quelle est la politique / prescription pour le contenu TeX / LaTeX
     dans les données ? Exemples : `XIX$^{\textrm{e}}$ siècle` dans
@@ -344,14 +388,19 @@ protocole pour les données entrantes.
     `humanistica2022-proposition-crcen`) et `\emph` dans
     `pierre-jean_raymonde_1993` (article `SP1339`).
 
-2.  Même question pour des balises HTML « simulées » en TeX ? Exemples :
-    `{\textless}p{\textgreater}` et `{\textless}/p{\textgreater}` dans
-    `sauret_revue_2020` (article `humanistica2022-proposition-crcen`).
+2.  Même question pour des balises HTML « simulées » en TeX (qui ne
+    fonctionnent pas) ? Exemples : `{\textless}p{\textgreater}` et
+    `{\textless}/p{\textgreater}` dans `sauret_revue_2020` (article
+    `humanistica2022-proposition-crcen`).
 
 3.  Comment des caractères Windows-1252 peuvent-ils se retrouver dans
     les .bib ?
 
-4.  Serait-il pensable de passer les .bib dans une espèce de filtre de
+4.  S'assurer que le champ `publisher` est renseigné comme un champ
+    \"nom\", i.e. que le mot `and`, si présent, doit être flanqué
+    d'accolades. Cela pourrait éventuellement être automatisé.
+
+5.  Serait-il pensable de passer les .bib dans une espèce de filtre de
     nettoyage avant ou après leur sauvegarde ?
 
     Un problème potentiel à considérer ici est si la clé d'id est
@@ -361,79 +410,288 @@ protocole pour les données entrantes.
 
 ------------------------------------------------------------------------
 
-## Aperçu de BibLaTeX {#d2e309}
+## Traitement du BibLaTeX par pandoc {#d2e397}
 
-### Types bibliographiques BibLaTeX {#d2e310}
+### Généralités {#d2e398}
 
-Le manuel BibLaTeX mentionne 56 types bibliographiques suivants :
+Le traitement du BibLaTeX par pandoc est finalement assez alambiqué et
+loin d'être banal. J'ai analysé ce traitement avec de nombreux tests
+diversifiés, décrits avec plus ou moins de précision en
+[annexe](#annexe). Ce document présente les conclusions auxquelles
+j'arrive.
+
+Notons que, simplement par le nombre supérieur de types et de champs
+disponibles en BibLaTeX comparé à CSL, il est clair que les mappings de
+BibLaTeX vers CSL ne peuvent être injectifs; autrement dit, plusieurs
+types et champs BibLaTeX distincts devront nécessairement être mappés à
+un même type ou champ CSL.
+
+### Genres de traitement {#d2e405}
+
+Les prétraitements réellement effectués pour une référence (entrée)
+donnée varient en fonction du type de référence, des champs présents, de
+leurs valeurs et même parfois du fichier de références dans son ensemble
+(par exemple via le champ `crossref`).
+
+1.  **Traitement des abréviations**
+
+    S'il y a des commandes `@string{`*`abrev`*` = "`*`chaîne`*`"}`
+    (section B.1.3 du manuel LaTeX) n'importe où dans le fichier
+    BibLaTeX, elles sont exécutées et globalement prises en compte dans
+    l'analyse du fichier.
+
+2.  **Mappage de types**
+
+    Par exemple, `letter` est mappé sur le type CSL
+    `personal_communication`, `image` et `artwork` sur `graphic`.
+
+    Des 55 types BibLaTeX utilisables, 46 sont mappés à \"quelque
+    chose\", alors que les 9 suivants sont mappés à \"pas de type\"
+    (i.e. `<entry key="type"><MetaString/></entry>`) :
+
+    - `@bibnote` (pas surprenant : présenté comme un type « spécial »)
+    - `@conference` (*A legacy alias for* `@inproceedings`)
+    - `@customa` -- `@customf`
+    - `@misc` (pourtant documenté dans le livre LaTeX comme un type en
+      bonne et due forme)
+
+    Je traiterai ces 9 types de la même façon:
+    `biblStruct[@type='misc']`, une fois rendus en TEI Métopes. On peut
+    arguer que pandoc devrait mapper `@conference` sur
+    `paper-conference`, puisque c'est sur ce type que `@inproceedings`
+    est mappé, mais on n'y peut rien.
+
+    Le mappage de types n'est cependant pas unique, il peut être affecté
+    par les champs présents dans la notice. En l'occurrence,
+    `@unpublished` est le plus souvent mappé à `manuscript`, mais si un
+    des champs `eventtitle`, `eventdate` et `venue` est présent, il est
+    mappé sur `speech`. Surprenamment, c'est le seul cas.
+
+    Aussi, tel que mentionné ailleurs, le mappage de types n'est pas
+    injectif : plusieurs types BibLaTeX sont mappés sur le même type
+    CSL.
+
+3.  **Mappage de noms de champ**
+
+    **REVOIR À PARTIR D'ICI**
+
+    La plupart des champs BibLaTeX sont mappés à des champs qui portent
+    un nom différent. Par exemple, `series` est mappé sur
+    `collection-title`, `shortjournal` sur `container-title-short`.
+
+    En l'absence du champ `address`, `location` est considéré comme son
+    synonyme. Cependant, si `address` est présent, `location` est
+    ignoré, sauf dans les types `patent`, où il est mappé sur
+    `jurisdiction`.
+
+    `annote` est synonyme d'`annotation`. Cependant, si ce dernier est
+    présent, `annote` est ignoré.
+
+    `journal` est synonyme de `journaltitle`. Cependant, si ce dernier
+    est présent, `journal` est ignoré.
+
+    Il y a des exceptions, par exemple : `abstract`, `doi`, `edition`
+    sont mappés sur des champs de même nom.
+
+4.  **Séparation sémantique de certains champs (les « noms »)**
+
+    Dans les champs susceptibles de contenir des noms, les noms sont
+    séparés l'un de l'autre sur présence du mot `and`. De plus, chaque
+    nom est découpé en `family`, `given`, de même que d'éventuelles
+    particules, comme `dropping-particle` ou `non-dropping-particle`.
+
+5.  **Modification sémantique de certains champs**
+
+    Dans certains champs, le mot `and` indique une séparation, mais ne
+    donne pas lieu à une subdivision du champ; le `and` est plutôt
+    remplacé par de la ponctuation. Par exemple, dans le champ
+    `address`, qui est mappé sur `publisher-place`, le `and` est
+    remplacé par un point-virgule.
+
+6.  **Regroupement de certains champs (avec ponctuation)**
+
+    Par exemple, les champs `issuetitle` et `issuesubtitle` sont
+    ignorés, sauf dans les types `periodical`, où ils sont fusionnés
+    (avec ponctuation) avec `maintitleaddon` et mappés sur `title`.
+
+7.  **Ignorance de certains champs**
+
+    92 des 148 champs BibLaTeX sont ignorés par pandoc. Voir ci-dessous.
+
+8.  **Actuation de la sémantique spécifique de certains champs
+    BibLaTeX**
+
+    Les champs `crossref` et `xref` se comportent de façon très
+    particulière, mise en application par pandoc.
+
+9.  **Actuation de la sémantique de certains types BibLaTeX (ou bogue de
+    pandoc)**
+
+    Certains types entraînent l'ajout automatique de certains champs
+    avec une valeur prédéterminée. Par exemple, le type `phdthesis` est
+    mappé à `thesis`, mais avec l'ajout automatique du champ `genre`
+    avec valeur `Master’s thesis` (à moins que le champ `type` soit
+    présent dans l'entrée, dans quel cas il est mappé à `genre`).
+
+    Le type `@xdata` se comporte de façon très particulière, mise en
+    application par pandoc.
+
+Tout ça peut devenir très complexe, et mes tests sont loin d'être
+exhaustifs, mais ils montrent qu'on peut faire confiance à pandoc pour
+la pertinence de ces prétraitements. Le plus important est donc d'être
+conscient que ces prétraitements sont possibles.
+
+### Mappage des types {#d2e660}
+
+Voici le mapping de types fait par pandoc :
+
+  ---------------- ------------------------
+  BibLaTeX         CSL
+  article          article-journal
+  artwork          graphic
+  audio            song
+  bibnote          
+  book             book
+  bookinbook       chapter
+  booklet          pamphlet
+  collection       book
+  commentary       book
+  conference       
+  customa          
+  customb          
+  customc          
+  customd          
+  custome          
+  customf          
+  dataset          dataset
+  electronic       webpage
+  image            graphic
+  inbook           chapter
+  incollection     chapter
+  inproceedings    paper-conference
+  inreference      entry-encyclopedia
+  jurisdiction     legal_case
+  legal            treaty
+  legislation      legislation
+  letter           personal_communication
+  manual           book
+  mastersthesis    thesis
+  misc             
+  movie            motion_picture
+  music            song
+  mvbook           book
+  mvcollection     book
+  mvproceedings    book
+  mvreference      book
+  online           webpage
+  patent           patent
+  performance      speech
+  periodical       article-journal
+  phdthesis        thesis
+  proceedings      book
+  reference        book
+  report           report
+  review           review
+  software         software
+  standard         legislation
+  suppbook         chapter
+  suppcollection   chapter
+  suppperiodical   article-journal
+  techreport       report
+  thesis           thesis
+  unpublished      manuscript *ou* speech
+  video            motion_picture
+  www              webpage
+  ---------------- ------------------------
+
+  : Mapping de types fait par pandoc
+
+Rappelons que le mapping de `unpublished` est affecté par les champs
+présents dans la notice (voir plus haut).
+
+### Mappage des champs {#d2e947}
+
+Certains des 148 champs BibLaTeX sont traités dans tous les 55 types de
+références bibliographiques. C'est le cas par exemple de `abstract`,
+`addendum` et `title`. D'autres ne sont traités que dans certains types
+de références ou lorsque d'autres champs spécifiques sont aussi
+présents. Par exemple, les champs `subtitle` et `titleaddon` ne sont en
+général traités que si le champ `title` est aussi présent. Cependant,
+dans certains types bibliographiques, comme par exemple `mastersthesis`
+et `phdthesis`, tous les champs sont traités, peu importe les autres
+champs éventuellement présents.
+
+Il faut aussi savoir que certains champs BibLaTeX sont parfois fusionnés
+dans l'extrant CSL. Ainsi, les
+
+seuls les 58 suivants sont traités par pandoc (vérifications faites avec
+`kilobib.bib`, ne comptant que mes 55 références à contenu contrôlé) :
 
 ``` {xml:space="preserve"}
-article
-artwork
-audio
-bibnote
-book
-bookinbook
-booklet
-collection
-commentary
-conference
-customa
-customb
-customc
-customd
-custome
-customf
-dataset
-electronic
-image
-inbook
-incollection
-inproceedings
-inreference
-jurisdiction
-legal
-legislation
-letter
-manual
-mastersthesis
-misc
-movie
-music
-mvbook
-mvcollection
-mvproceedings
-mvreference
-online
-patent
-performance
-periodical
-phdthesis
-proceedings
-reference
-report
-review
-software
-standard
-suppbook
-suppcollection
-suppperiodical
-techreport
-thesis
-unpublished
-video
-www
-xdata
+abstract
+addendum
+address
+annotation
+author
+bookauthor
+booksubtitle
+booktitle
+booktitleaddon
+chapter
+date
+doi
+edition
+editor
+eventtitle
+howpublished
+ids
+institution
+isbn
+issn
+issue
+issuesubtitle
+issuetitle
+journalsubtitle
+journaltitle
+keywords
+langid
+library
+location
+mainsubtitle
+maintitle
+maintitleaddon
+note
+number
+organization
+origlocation
+origpublisher
+origtitle
+pages
+pagetotal
+part
+publisher
+pubstate
+school
+series
+shortjournal
+shorttitle
+subtitle
+title
+titleaddon
+translator
+type
+url
+venue
+version
+volume
+volumes
+year
 ```
 
-Cependant le type `@xdata` n'est pas utilisé pour produire une
-référence, ce qui laisse 55 types utilisables.
-
-### Champs BibLaTeX {#d2e319}
-
-Le manuel BibLaTeX mentionne les 148 champs suivants :
+Requête XPath (sur `kilobib.xml`) pour liste précédente :
 
 ``` {xml:space="preserve"}
+for $mot in tokenize("
 abstract
 addendum
 address
@@ -582,549 +840,65 @@ volumes
 xdata
 xref
 year
+") return $mot || " " ||
+    count(/*/meta/entry[2]//*[(self::MetaInlines or self::MetaString) and tokenize(.)=$mot])
 ```
 
-Le manuel LaTeX précise qu'une entrée peut contenir d'autres champs (que
-ceux énumérés) et qu'ils sont simplement ignorés lorsque le style
-bibliographique ne les utilise pas.
+résultat auquel il faut ajouter `annote`, `date`, `journal` et `year` à
+la main (pour les raisons données plus haut).
 
-------------------------------------------------------------------------
+~~Les 92 autres champs sont ignorés. 2026-01-16 Faux, aucun des champs
+n'est complètement ignoré.~~
 
-## Aperçu de CSL {#d2e325}
+**Déplacé d'ailleurs, vérifier** **Un problème particulier**, découvert
+sur le tard 2026-01-27 et pour lequel je n'ai **rien modifié** est que
+l'article SP1436 comporte sept références (ndiaye_y_2011, cointe_y_2012,
+heymann_y_nodate, l.\_hart_nibbrig_voix_2008,
+angel-perez_spectropoetique_2006, angel-perez_introduction_2006,
+angel-perez_lyrismes_2006) utilisant les champs `editora` et
+`editoratype`, ou `editorb` et `editorbtype` (avec `collaborator` et
+`redactor` comme types), qui ne sont pas traités par pandoc, donc
+entièrement ignorés. Pourtant, leur utilisation ici est tout à fait en
+accord avec ce qui est dit sur le champ `editortype` en page 19 du
+manuel BibLaTeX, pour coder un `collaborator` ou `redactor` (bien que je
+ne suis pas convaincu que `redactor` soit utilisé à bon escient par
+SP1436).
 
-### Types bibliographiques CSL {#d2e326}
+pandoc pourrait très bien traiter le cas `editoratype = {collaborator}`
+en plaçant en extrant les noms des `editora` dans le champ CSL
+`contributor` et probablement trouver un champ CSL correspondant au cas
+`redactor`. À moins d'interdire par protocole l'utilisation de ces
+champs (et de proposer une solution de rechange), il faudrait
+probablement faire une issue pour demander à JGM que pandoc traite
+correctement ces cas.
 
-La doc de CSL -- en particulier son schéma RNG -- mentionne ces 45 types
-bibliographiques :
+Noter que l'article SP1436 comporte une huitième référence avec
+`editoratype = {collaborator}` (taieb_interview_nodate), mais il s'agit
+d'une erreur, car le champ `editora` n'y est pas renseigné.
+
+### Conclusions {#d2e1038}
+
+Traiter les 30 champs CSL identifiés ci-dessus.
+
+Voici ce qu'on peut retrouver directement sous `MetaInlines` dans le
+`-t xml` (`distinct-values(/*/meta/entry[2]//MetaInlines/*/name())`) :
 
 ``` {xml:space="preserve"}
-article
-article-journal
-article-magazine
-article-newspaper
-bill
-book
-broadcast
-chapter
-classic
-collection
-dataset
-document
-entry
-entry-dictionary
-entry-encyclopedia
-event
-figure
-graphic
-hearing
-interview
-legal_case
-legislation
-manuscript
-map
-motion_picture
-musical_score
-pamphlet
-paper-conference
-patent
-performance
-periodical
-personal_communication
-post
-post-weblog
-regulation
-report
-review
-review-book
-software
-song
-speech
-standard
-thesis
-treaty
-webpage
+Emph
+Math
+Quoted
+Space
+Span
+Str
 ```
 
-### Champs CSL {#d2e331}
-
-La doc de CSL -- en particulier son schéma RNG -- mentionne ces 98
-champs, qu'ils appellent « variables » :
-
-``` {xml:space="preserve"}
-abstract
-accessed
-annote
-archive
-archive-place
-archive_collection (sic)
-archive_location (sic)
-author
-authority
-available-date
-call-number
-chair
-chapter-number
-citation-key
-citation-label
-citation-number
-collection-editor
-collection-number
-collection-title
-compiler
-composer
-container-author
-container-title
-container-title-short
-contributor
-curator
-dimensions
-director
-division
-DOI
-edition
-editor
-editor-translator
-editorial-director
-event
-event-date
-event-place
-event-title
-executive-producer
-first-reference-note-number
-genre
-guest
-host
-illustrator
-interviewer
-ISBN
-ISSN
-issue
-issued
-jurisdiction
-keyword
-language
-license
-locator
-medium
-narrator
-note
-number
-number-of-pages
-number-of-volumes
-organizer
-original-author
-original-date
-original-publisher
-original-publisher-place
-original-title
-page
-page-first
-part-number
-part-title
-performer
-PMCID
-PMID
-printing-number
-producer
-publisher
-publisher-place
-recipient
-references
-reviewed-author
-reviewed-genre
-reviewed-title
-scale
-script-writer
-section
-series-creator
-source
-status
-submitted
-supplement-number
-title
-title-short
-translator
-URL
-version
-volume
-volume-title
-year-suffix
-```
-
-De son côté, pandoc gère les références bibliographiques avec ces mêmes
-variables, plus une : `container`, de type Date (donc 99 variables en
-tout). Je n'ai pas investigué comment pandoc utilise la variable
-additionnelle. (Source :
-<https://hackage.haskell.org/package/citeproc-0.12/docs/Citeproc-Types.html>)
-
-Noter que certaines variables sont composites, par exemple, tout ce qui
-est nom de personne peut se décliner en `family`, `given`, etc.
+Si on regarde tous les descendants
+(`distinct-values(/*/meta/entry[2]//MetaInlines//*/name())`), ça ajoute
+juste `RawInline`.
 
 ------------------------------------------------------------------------
 
-## Prétraitement du BibLaTeX par pandoc {#d2e349}
-
-### Généralités {#d2e350}
-
-Le prétraitement du BibLaTeX par pandoc est finalement assez alambiqué
-et loin d'être banal. J'ai analysé ce prétraitement avec de nombreux
-tests diversifiés, décrits avec plus ou moins de précision en
-[annexe](#annexe). Ce document présente les conclusions auxquelles
-j'arrive.
-
-### Vue d'ensemble {#d2e356}
-
-Le traitement effectué par pandoc est fortement influencé par trois
-spécifications : celle de BibLaTeX, exposée dans [The `biblatex`
-package](http://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf),
-celle de
-[CSL](https://citationstyles.org/developers/#/language-specification) et
-celle de
-[CSL-JSON](https://citeproc-js.readthedocs.io/en/latest/csl-json/markup.html).
-
-Même quand pandoc prépare les données pour un format autre que CSL-JSON
-(par exemple, pour XML lors d'un `-f biblatex -t xml` ou en préparation
-d'une bibliographie lors d'un `-t html --citeproc`), le traitement et la
-structuration résultante sont essentiellement les mêmes que pour une
-sortie en CSL-JSON.
-
-Spécifiquement entre `-t csljson` et `-t xml`, les seules différences
-notées sont :
-
-1.  Pour les champs BibLaTeX `date`, `eventdate` et `year`, lorsque la
-    date (ou l'année) est bien formée, elle est scindée en une liste de
-    trois nombres (un seul si l'info provient de `year`) appelée
-    `date-parts` dans le champ CSL-JSON `issued` ou `event-date`. Si la
-    date (ou l'année) est mal formée, l'info présente est simplement
-    copiée dans le XML (comme `MetaString`), alors que la liste
-    `date-parts` est laissée vide en CSL-JSON (`"date-parts": []`) et
-    l'info mal formée est perdue.
-
-    Tant pour `-t csljson` que pour `-t xml`, si `date` est indécodable
-    (ou absente), c'est `year` (bien ou mal formée) qui est utilisée.
-
-2.  Interprétation des formules LaTeX. Les formules LaTeX ne sont jamais
-    récupérables dans le CSL-JSON. Elles sont toujours reproduites comme
-    telles en caractères, mais dans certains cas les \"\$\" sont
-    éliminés. Dans le XML et dans *certains* champs, les formules LaTeX
-    sont taguées `Math` avec `@math-type="InlineMath"` ou
-    `"DisplayMath"`, selon que la formule est flanquée de \"\$\" simples
-    ou doubles. Dans les autres champs, cependant, elles sont traitées
-    comme en CSL-JSON, c'est-à-dire qu'elles sont reproduites comme des
-    suites de caractères avec, dans certains cas, les \"\$\" éliminés.
-
-Une réalité pour les deux formats de sortie (et pour toute forme de
-restitution de ce qui vient de BibLaTeX) est la non reconnaissance du
-Markdown ou du HTML imbriqué (de quelque façon que ce soit). Il n'est
-donc pas possible de jouer avec la typographie en utilisant du Markdown
-ou du HTML imbriqué dans les références BibLaTeX.
-
-### Commandes typographiques LaTeX {#d2e432}
-
-Cependant, il est possible de contrôler jusqu'à un certain point la
-typographie avec *quelques* commandes de formatage LaTeX et TeX
-reconnues *hors mode mathématique* (i.e. sans \$ ou \$\$ comme
-délimiteurs) et interprétées dans *certains* champs BibLaTeX. À 95% de
-certitude, selon mes tests sommaires, ce sont les mêmes champs que ceux
-où les *formules mathématiques* LaTeX sont permises et correctement
-interprétées.
-
-Tout indique que `citeproc` (et non un writer quelconque) traduit déjà
-ces commandes dans l'AST en éléments pandoc habituels, tels `<Emph>`,
-`<Strong>` et `<SmallCaps>`.
-
-Voici une recension préliminaire des commandes typographiques LaTeX qui
-fonctionnent *hors mode mathématique* dans *certains* champs BibLaTeX :
-
-  Commande        Traduction dans l'AST `-t xml`
-  --------------- --------------------------------
-  {\\rm ...}      \<Span\>
-  \\textrm{...}   \<Span class=\"roman\"\>
-  {\\em ...}      \<Emph\>
-  {\\it ...}      \<Emph\>
-  {\\sl ...}      \<Emph\>
-  \\textit{...}   \<Emph\>
-  {\\bf ...}      \<Strong\>
-  \\textbf{...}   \<Strong\>
-  {\\tt ...}      \<Code\>
-  \\texttt{...}   \<Code\>
-  \\textup{...}   \<Span class=\"upright\"\>
-  \\textsf{...}   \<Span class=\"sans-serif\"\>
-  \\textsc{...}   \<SmallCaps\>
-
-  : Commandes LaTeX reconnues en BibLaTeX
-
-Noter les deux formes différentes de commande LaTeX.
-
-Noter aussi qu'aucune de ces commandes ne fonctionne hors mode
-mathématique en Markdown; ceci ne concerne pas le BibLaTeX, où le MD est
-ignoré, mais s'applique à l'article lui-même et aux métadonnées
-(intégrées à l'article ou dans un YAML séparé).
-
-Noter enfin que ce traitement, très particulier, de ces commandes
-spécifiques n'a rien à voir avec le mode mathématique de LaTeX. En mode
-mathématique (i.e. avec \$ ou \$\$ comme délimiteurs), ces commandes
-peuvent ou non fonctionner. La question relève du sous-ensemble précis
-de LaTeX reconnu par `texmath` (le package utilisé par pandoc pour
-traiter le LaTeX). Je n'ai pas fait de test sur ce point.
-
-Dans le cas de bibliographies produites par `-t html --citeproc`, ces
-commandes, traduites en éléments AST, sont converties en équivalents
-HTML. Dans notre cas, elles seront récupérées de l'AST en XML (produit
-par `-f biblatex -t xml`) et traduites dans les équivalents Métopes.
-
-**Considération protocolaire pour auteurs :** Dans une bibliographie
-sémantique, ces commandes typographiques *ne devraient pas être
-utilisées*, puisque la présentation relève du CSL. Si elles sont
-utilisées, elles doivent l'être utilisées avec extrême parcimonie. En
-effet, il faut être conscient que, dans une bibliographie formatée, ces
-commandes typographiques peuvent interférer avec les directives de
-formatage du CSL appliqué. C'est bien sûr le cas des bibliographies
-produites par `-t html --citeproc`, mais ce pourrait aussi être le cas
-des versions formatées des références bibliographiques produites à
-partir du `-t xml --citeproc`, si le schéma (ODD) Métopes prévoit
-ultimement la coexistence des références bibliographiques formatées et
-sémantiques (ce qui correspond à ce que j'ai implanté en date du
-2025-12-04, et semble bien reçu par Métopes).
-
-Illustration de la structure de bibliographie proposée par mon
-implantation le 2025-12-04:
-
-``` {xml:space="preserve"}
-<listBibl>
-   <bibl subtype="formatted" xml:id="ref-rollet_bebes_2000">
-      <p>Rollet, Catherine, et Marie-France Morel. 2000.
-        <hi rend="italic">Des bébés et des hommes.
-        Traditions et modernité des soins aux tout-petits</hi>. Albin Michel.</p>
-   </bibl>
-   <biblStruct subtype="semantic" type="book" xml:id="semref-rollet_bebes_2000">
-      <monogr>
-         <title level="m">Des bébés et des hommes.
-           Traditions et modernité des soins aux tout-petits</title>
-         <imprint>
-            <date>2000</date>
-            <pubPlace>Paris</pubPlace>
-            <publisher>Albin Michel</publisher>
-         </imprint>
-      </monogr>
-   </biblStruct>
-</listBibl>
-```
-
-### Genres de prétraitement {#d2e563}
-
-Les prétraitements réellement effectués pour une référence (entrée)
-donnée varient en fonction du type de référence, des champs présents, de
-leurs valeurs et même parfois du fichier de références dans son ensemble
-(par exemple via le champ `crossref`).
-
-1.  **Traitement des abréviations**
-
-    S'il y a des commandes `@string{`*`abrev`*` = "`*`chaîne`*`"}`
-    (section B.1.3 du manuel LaTeX) n'importe où dans le fichier
-    BibLaTeX, elles sont exécutées et globalement prises en compte dans
-    l'analyse du fichier.
-
-2.  **Mappage de types**
-
-    Par exemple, `letter` est mappé sur le type CSL
-    `personal_communication`, `image` et `artwork` sur `graphic`.
-
-    Des 55 types BibLaTeX utilisables, 46 sont mappés à \"quelque
-    chose\", alors que les 9 suivants sont mappés à \"pas de type\"
-    (i.e. `<entry key="type"><MetaString/></entry>`) :
-
-    - `@bibnote` (pas surprenant : présenté comme un type « spécial »)
-    - `@conference` (*A legacy alias for* `@inproceedings`)
-    - `@customa` -- `@customf`
-    - `@misc` (pourtant documenté dans le livre LaTeX comme un type en
-      bonne et due forme)
-
-    Je traiterai ces 9 types de la même façon:
-    `biblStruct[@type='misc']`, une fois rendus en TEI Métopes. On peut
-    arguer que pandoc devrait mapper `@conference` sur
-    `paper-conference`, puisque c'est sur ce type que `@inproceedings`
-    est mappé, mais on n'y peut rien.
-
-    Le mappage de types n'est cependant pas unique, il peut être affecté
-    par les champs présents dans la notice. En l'occurrence,
-    `@unpublished` est le plus souvent mappé à `manuscript`, mais si un
-    des champs `eventtitle`, `eventdate` et `venue` est présent, il est
-    mappé sur `speech`. Surprenamment, c'est le seul cas.
-
-    Aussi, tel que mentionné ailleurs, le mappage de types n'est pas
-    injectif : plusieurs types BibLaTeX sont mappés sur le même type
-    CSL.
-
-3.  **Mappage de noms de champ**
-
-    **REVOIR À PARTIR D'ICI**
-
-    La plupart des champs BibLaTeX sont mappés à des champs qui portent
-    un nom différent. Par exemple, `series` est mappé sur
-    `collection-title`, `shortjournal` sur `container-title-short`.
-
-    En l'absence du champ `address`, `location` est considéré comme son
-    synonyme. Cependant, si `address` est présent, `location` est
-    ignoré, sauf dans les types `patent`, où il est mappé sur
-    `jurisdiction`.
-
-    `annote` est synonyme d'`annotation`. Cependant, si ce dernier est
-    présent, `annote` est ignoré.
-
-    `journal` est synonyme de `journaltitle`. Cependant, si ce dernier
-    est présent, `journal` est ignoré.
-
-    Il y a des exceptions, par exemple : `abstract`, `doi`, `edition`
-    sont mappés sur des champs de même nom.
-
-4.  **Séparation sémantique de certains champs (les « noms »)**
-
-    Dans les champs susceptibles de contenir des noms, les noms sont
-    séparés l'un de l'autre sur présence du mot `and`. De plus, chaque
-    nom est découpé en `family`, `given`, de même que d'éventuelles
-    particules, comme `dropping-particle` ou `non-dropping-particle`.
-
-5.  **Modification sémantique de certains champs**
-
-    Dans certains champs, le mot `and` indique une séparation, mais ne
-    donne pas lieu à une subdivision du champ; le `and` est plutôt
-    remplacé par de la ponctuation. Par exemple, dans le champ
-    `address`, qui est mappé sur `publisher-place`, le `and` est
-    remplacé par un point-virgule.
-
-6.  **Regroupement de certains champs (avec ponctuation)**
-
-    Par exemple, les champs `issuetitle` et `issuesubtitle` sont
-    ignorés, sauf dans les types `periodical`, où ils sont fusionnés
-    (avec ponctuation) avec `maintitleaddon` et mappés sur `title`.
-
-7.  **Ignorance de certains champs**
-
-    92 des 148 champs BibLaTeX sont ignorés par pandoc. Voir ci-dessous.
-
-8.  **Actuation de la sémantique spécifique de certains champs
-    BibLaTeX**
-
-    Les champs `crossref` et `xref` se comportent de façon très
-    particulière, mise en application par pandoc.
-
-9.  **Actuation de la sémantique de certains types BibLaTeX (ou bogue de
-    pandoc)**
-
-    Certains types entraînent l'ajout automatique de certains champs
-    avec une valeur prédéterminée. Par exemple, le type `phdthesis` est
-    mappé à `thesis`, mais avec l'ajout automatique du champ `genre`
-    avec valeur `Master’s thesis` (à moins que le champ `type` soit
-    présent dans l'entrée, dans quel cas il est mappé à `genre`).
-
-    Le type `@xdata` se comporte de façon très particulière, mise en
-    application par pandoc.
-
-Tout ça peut devenir très complexe, et mes tests sont loin d'être
-exhaustifs, mais ils montrent qu'on peut faire confiance à pandoc pour
-la pertinence de ces prétraitements. Le plus important est donc d'être
-conscient que ces prétraitements sont possibles.
-
-------------------------------------------------------------------------
-
-## Les formules mathématiques LaTeX / MathML {#d2e818}
-
-Mes essais avec les bibliographies me font bifurquer vers la question
-des formules mathématiques en général, pas seulement dans la
-bibliographie, qui risquent d'être un problème épineux, même si peu
-fréquent. Le problème est que le MathML en pandoc est pris en charge par
-le *writer HTML !* Ce qui veut dire que dans l'AST, tout ce qu'on a,
-c'est les formules LaTeX crues.
-
-L'extension `-f markdown+tex_math_dollars` (qui est activée par défaut
-pour du md en intrant) ne change pratiquement rien lorsque `-t XML`; ce
-que je retiens de mes tests, c'est qu'il ne faut pas la désactiver (sans
-l'extension, les `$` sont considérés comme du texte, notamment, ce qui
-n'est pas souhaitable; sinon, c'est pas mal du pareil au même, avec un
-balisage différent...) !
-
-Fait quand même étonnant : même quand on désactive `tex_math_dollars`
-(`-f markdown-tex_math_dollars`), elle est quand même appliquée dans le
-traitement de la bibliographie.
-
-L'option `--mathml`, sur laquelle on aurait pu fonder quelque espoir, ne
-change rigoureusement rien pour un `-f md -t XML` (vérification faite).
-
-J'avais pensé au départ (2025-11-06) de créer une issue sur pandoc pour
-demander qu'avec l'option `--mathml` et l'extension `+tex_math_dollars`,
-le `-t XML` (et, pourquoi pas, `-t json`) appelle texmath (une autre
-librairie de JGM, qui est déjà requise par pandoc) pour traduire le
-LaTeX en MathML et mettre le MathML (je ne sais pas encore sous quelle
-forme exactement) dans l'AST plutôt que les
-`<Math math-type="InlineMath">…</Math>` ou
-`<Math math-type="DisplayMath">…</Math>`.
-
-Finalement, j'ai eu une autre idée (ci-dessous), avalisée par Marcello,
-qui ne demande pas de modification a pandoc.
-
-Notes sur le LaTeX accepté par `texmath` (qui fait le travail pour
-pandoc) :
-
-1.  Il semble y avoir un bug avec `\textrm`, quand on veut l'utiliser
-    avec un seul caractère, il faut quand même mettre ce caractère entre
-    {}. Contrairement, p.ex., à `\texttt`, avec lequel on peut omettre
-    les {}. En fait, ça semble plutôt que `\texttt` bénéficie d'un
-    traitement de faveur, comparé aux autres.
-2.  Jusqu'ici, j'ai essayé `\textrm`, `\texttt` et `\textbf`;
-    probablement que d'autres marchent aussi (`\textit`).
-3.  Il ne reconnaît ni `\mit`, ni `\cal`.
-4.  On ne peut mettre aucune commande de police dans une `\mbox{}`.
-
-Cela dit, c'est extrêmement impressionnant tout ce qu'il arrive à gérer
-et, qui plus est, à traduire en MathML. Ce que les navigateurs (comme
-Firefox) arrivent à faire avec le MathML est aussi très impressionnant.
-
-### Une approche possible pour les formules mathématiques {#d2e894}
-
-pandoc est très accueillant pour LaTeX dans le md. Il serait donc
-naturel que les formules math. soient rédigées en LaTeX dans le md.
-
-Comme mentionné, c'est l'option `--mathml` du writer HTML qui gère la
-traduction en MathML (via le package `texmath`, aussi de JGM et intégré
-à pandoc). L'idée est d'ajouter des étapes à la chaîne de traitement
-pour faire du `-f md -t html` et récupérer le MathML. Ça semble tordu,
-mais ça marche, et avec un overhead très faible.
-
-Pour les formules dans l'article lui-même, c'est très simple. Mais pour
-les formules en bibliographie (dans un titre, par exemple, ou un
-sous-titre, en fait n'importe quel champ qui n'est pas traité par pandoc
-comme un simple chaîne de caractères^\*^), c'est tout aussi faisable,
-mais ça demande encore une ou peut-être deux étapes additionnelles (peu
-coûteuses, cependant, encore une fois).
-
-^\*^Il faut comprendre la limite suivante, intrinsèque au traitement
-sémantique que fait pandoc du BibLaTeX : certains champs (en général,
-les champs « courts ») sont traités comme de simples chaînes de
-caractères et ne peuvent donc pas avoir de formules, ni d'artifices
-typographiques MD (e.g. `*…*` pour l'italique). Ce type de champ inclut
-les différentes parties d'un nom de personne ou le nom d'une maison
-d'édition (même si on pourrait *a priori* légitimement appeler une
-maison d'édition "Les éditions √π").
-
-Le fin mot de l'histoire est que :
-
-- Nulle part dans une référence BibLaTeX le MD habituel n'est reconnu
-  comme tel (`*…*`, `**…**`, etc.).
-- Cependant, dans les champs qui sont convertis en `MetaInlines` (plutôt
-  qu'en `MetaString`), les formules LaTeX sont reconnues et taguées
-  comme telles dans l'AST de la bibliographie.
-
-> *2025-11-10* En visio avec Clara et Marcello, on décide qu'on va de
-> l'avant avec cette approche.
-
-Prochaine étape : répertorier exactement les champs BibLaTeX qui sont
-traduits en `MetaInlines`. Ça correspondra aux champs où il est possible
-de mettre des formules LaTeX (utile pour un éventuel protocole).
-
-------------------------------------------------------------------------
-
-## L'existant stylo une fois converti en CSL {#d2e939}
+## L'existant stylo une fois converti en CSL {#d2e1058}
 
 **RENDU ICI**
 
@@ -1393,7 +1167,7 @@ traiter en priorité. (Vérifié 2026-01-17.)
 
 ------------------------------------------------------------------------
 
-## L'existant Métopes {#d2e1229}
+## L'existant Métopes {#d2e1347}
 
 2025-11-26 Il n'y a actuellement *aucun* élément `biblStruct` dans la
 totalité des fichiers fournis comme exemples.
@@ -1463,164 +1237,293 @@ en conséquence (\"D:\_YmaProjets\\MarcelloVR\\codeblock.YMA.css\").
 
 ------------------------------------------------------------------------
 
-## Annexe {#annexe}
+## Commandes typographiques LaTeX {#d2e1396}
+
+Nulle part dans une référence BibLaTeX le MD habituel n'est reconnu
+comme tel (`*…*`, `**…**`, etc.). Cependant, tel que mentionné plus
+haut, il est possible de contrôler jusqu'à un certain point la
+typographie avec *quelques* commandes de formatage LaTeX et TeX
+reconnues *hors mode mathématique* (i.e. sans \$ ou \$\$ comme
+délimiteurs) et interprétées dans *certains* champs BibLaTeX. À 95% de
+certitude, selon mes tests sommaires, ce sont les mêmes champs que ceux
+où les *formules mathématiques* LaTeX sont permises et correctement
+représentées, soit aussi ceux représentés par un `MetaInlines` plutôt
+qu'un `MetaString` dans l'AST `-f biblatex -t xml`.
+
+Tout indique que `citeproc` (et non un writer quelconque) traduit déjà
+ces commandes dans l'AST en éléments pandoc habituels, tels `<Emph>`,
+`<Strong>` et `<SmallCaps>`.
+
+Voici une recension préliminaire des commandes typographiques LaTeX qui
+fonctionnent *hors mode mathématique* dans *certains* champs BibLaTeX :
+
+  Commande        Traduction dans l'AST `-t xml`
+  --------------- --------------------------------
+  {\\rm ...}      \<Span\>
+  \\textrm{...}   \<Span class=\"roman\"\>
+  {\\em ...}      \<Emph\>
+  {\\it ...}      \<Emph\>
+  {\\sl ...}      \<Emph\>
+  \\textit{...}   \<Emph\>
+  {\\bf ...}      \<Strong\>
+  \\textbf{...}   \<Strong\>
+  {\\tt ...}      \<Code\>
+  \\texttt{...}   \<Code\>
+  \\textup{...}   \<Span class=\"upright\"\>
+  \\textsf{...}   \<Span class=\"sans-serif\"\>
+  \\textsc{...}   \<SmallCaps\>
+
+  : Commandes LaTeX reconnues en BibLaTeX
+
+Noter les deux formes différentes de commande LaTeX.
+
+Noter aussi qu'aucune de ces commandes ne fonctionne hors mode
+mathématique en Markdown; ceci ne concerne pas le BibLaTeX, où le MD est
+ignoré, mais s'applique à l'article lui-même et aux métadonnées
+(intégrées à l'article ou dans un YAML séparé).
+
+Noter enfin que ce traitement, très particulier, de ces commandes
+spécifiques n'a rien à voir avec le mode mathématique de LaTeX. En mode
+mathématique (i.e. avec \$ ou \$\$ comme délimiteurs), ces commandes
+peuvent ou non fonctionner. La question relève du sous-ensemble précis
+de LaTeX reconnu par `texmath` (le package utilisé par pandoc pour
+traiter le LaTeX). Je n'ai pas fait de test sur ce point.
+
+Dans le cas de bibliographies produites par `-t html --citeproc`, ces
+commandes, traduites en éléments AST, sont converties en équivalents
+HTML. Dans notre cas, elles seront récupérées de l'AST en XML (produit
+par `-f biblatex -t xml`) et traduites dans les équivalents Métopes.
+
+**Considération protocolaire pour auteurs :** Dans une bibliographie
+sémantique, ces commandes typographiques *ne devraient pas être
+utilisées*, puisque la présentation relève du CSL. Si elles sont
+utilisées, elles doivent l'être utilisées avec extrême parcimonie. En
+effet, il faut être conscient que, dans une bibliographie formatée, ces
+commandes typographiques peuvent interférer avec les directives de
+formatage du CSL appliqué. C'est bien sûr le cas des bibliographies
+produites par `-t html --citeproc`, mais ce pourrait aussi être le cas
+des versions formatées des références bibliographiques produites à
+partir du `-t xml --citeproc`, si le schéma (ODD) Métopes prévoit
+ultimement la coexistence des références bibliographiques formatées et
+sémantiques (ce qui correspond à ce que j'ai implanté en date du
+2025-12-04, et semble bien reçu par Métopes).
+
+Illustration de la structure de bibliographie proposée par mon
+implantation le 2025-12-04:
+
+``` {xml:space="preserve"}
+<listBibl>
+   <bibl subtype="formatted" xml:id="ref-rollet_bebes_2000">
+      <p>Rollet, Catherine, et Marie-France Morel. 2000.
+        <hi rend="italic">Des bébés et des hommes.
+        Traditions et modernité des soins aux tout-petits</hi>. Albin Michel.</p>
+   </bibl>
+   <biblStruct subtype="semantic" type="book" xml:id="semref-rollet_bebes_2000">
+      <monogr>
+         <title level="m">Des bébés et des hommes.
+           Traditions et modernité des soins aux tout-petits</title>
+         <imprint>
+            <date>2000</date>
+            <pubPlace>Paris</pubPlace>
+            <publisher>Albin Michel</publisher>
+         </imprint>
+      </monogr>
+   </biblStruct>
+</listBibl>
+```
+
+------------------------------------------------------------------------
+
+## Les formules mathématiques LaTeX / MathML {#d2e1539}
+
+Mes essais avec les bibliographies me font bifurquer vers la question
+des formules mathématiques en général, pas seulement dans la
+bibliographie, qui risquent d'être un problème épineux, même si peu
+fréquent. Le problème est que le MathML en pandoc est pris en charge par
+le *writer HTML !* Ce qui veut dire que dans l'AST, tout ce qu'on a,
+c'est les formules LaTeX crues.
+
+L'extension `-f markdown+tex_math_dollars` (qui est activée par défaut
+pour du md en intrant) ne change pratiquement rien lorsque `-t XML`; ce
+que je retiens de mes tests, c'est qu'il ne faut pas la désactiver (sans
+l'extension, les `$` sont considérés comme du texte, notamment, ce qui
+n'est pas souhaitable; sinon, c'est pas mal du pareil au même, avec un
+balisage différent...) !
+
+Fait quand même étonnant : même quand on désactive `tex_math_dollars`
+(`-f markdown-tex_math_dollars`), elle est quand même appliquée dans le
+traitement de la bibliographie.
+
+L'option `--mathml`, sur laquelle on aurait pu fonder quelque espoir, ne
+change rigoureusement rien pour un `-f md -t XML` (vérification faite).
+
+J'avais pensé au départ (2025-11-06) de créer une issue sur pandoc pour
+demander qu'avec l'option `--mathml` et l'extension `+tex_math_dollars`,
+le `-t XML` (et, pourquoi pas, `-t json`) appelle texmath (une autre
+librairie de JGM, qui est déjà requise par pandoc) pour traduire le
+LaTeX en MathML et mettre le MathML (je ne sais pas encore sous quelle
+forme exactement) dans l'AST plutôt que les
+`<Math math-type="InlineMath">…</Math>` ou
+`<Math math-type="DisplayMath">…</Math>`.
+
+Finalement, j'ai eu une autre idée (ci-dessous), avalisée par Marcello,
+qui ne demande pas de modification a pandoc.
+
+Notes sur le LaTeX accepté par `texmath` (qui fait le travail pour
+pandoc) :
+
+1.  Il semble y avoir un bug avec `\textrm`, quand on veut l'utiliser
+    avec un seul caractère, il faut quand même mettre ce caractère entre
+    {}. Contrairement, p.ex., à `\texttt`, avec lequel on peut omettre
+    les {}. En fait, ça semble plutôt que `\texttt` bénéficie d'un
+    traitement de faveur, comparé aux autres.
+2.  Jusqu'ici, j'ai essayé `\textrm`, `\texttt` et `\textbf`;
+    probablement que d'autres marchent aussi (`\textit`).
+3.  Il ne reconnaît ni `\mit`, ni `\cal`.
+4.  On ne peut mettre aucune commande de police dans une `\mbox{}`.
+
+Cela dit, c'est extrêmement impressionnant tout ce qu'il arrive à gérer
+et, qui plus est, à traduire en MathML. Ce que les navigateurs (comme
+Firefox) arrivent à faire avec le MathML est aussi très impressionnant.
+
+**Approche retenue pour les formules mathématiques**
+
+pandoc est très accueillant pour LaTeX dans le md. Il serait donc
+naturel que les formules mathématiques soient rédigées en LaTeX dans le
+md.
+
+Comme mentionné, c'est l'option `--mathml` du writer HTML qui gère la
+traduction en MathML (via le package `texmath`, aussi de JGM et intégré
+à pandoc). L'idée est d'ajouter des étapes à la chaîne de traitement
+pour faire du `-f md -t html` et récupérer le MathML. Ça semble tordu,
+mais ça marche, et avec un overhead très faible.
+
+Pour les formules dans l'article lui-même, le concept est très simple,
+et on se rend vite compte qu'il marche aussi pour celles en
+bibliographie, pourvu qu'on spécifie `--citeproc` lors de la production
+de l'AST en XML. Il s'agit de :
+
+1.  Par XSLT, extraire toutes les formules de l'AST (ceci inclura celles
+    de l'article et de la bibliographie) et les écrire comme seuls
+    contenus d'un fichier texte, qui sera donc en fait du MD valide.
+2.  Faire convertir ce MD en « HTML », où chaque formule sera
+    représentée par une `formula` MathML.
+3.  Dans le traitement final XSLT, faire une substitution une-à-une des
+    formules dans l'AST (éléments `Math`) par les formules MathML
+    (éléments `formula`) correspondantes.
+
+> *2025-11-10* En visio avec Clara et Marcello, on décide qu'on va de
+> l'avant avec cette approche.
+
+Prochaine étape : répertorier exactement les champs BibLaTeX qui sont
+traduits en `MetaInlines`. Ça correspondra aux champs où il est possible
+de mettre des formules LaTeX (utile pour un éventuel protocole).
+
+Mais pour les formules en bibliographie (dans un titre, par exemple, ou
+un sous-titre, en fait n'importe quel champ qui n'est pas traité par
+pandoc comme une simple chaîne de caractères^\*^), c'est tout aussi
+faisable, mais ça demande encore une ou peut-être deux étapes
+additionnelles (peu coûteuses, cependant, encore une fois).
+
+^\*^Il faut comprendre la limite suivante, intrinsèque au traitement
+sémantique que fait pandoc du BibLaTeX : certains champs (en général,
+les champs « courts ») sont traités comme de simples chaînes de
+caractères et ne peuvent donc pas avoir de formules, ni d'artifices
+commandes typographiques LaTeX (e.g. `{\it …}` pour l'italique). Ce type
+de champ inclut les différentes parties d'un nom de personne ou le nom
+d'une maison d'édition (même si on pourrait *a priori* légitimement
+appeler une maison d'édition "Les éditions √π").
+
+- 
+- Cependant, dans les champs qui sont convertis en `MetaInlines` (plutôt
+  qu'en `MetaString`), les formules LaTeX sont reconnues et taguées
+  comme telles (éléments `Math`) dans l'AST de la bibliographie.
+
+------------------------------------------------------------------------
+
+## Annexe {#d2e1673}
+
+### Types bibliographiques BibLaTeX {#d2e1674}
 
 Analyses basées sur la référence ultime sur BibLaTeX : le manuel "The
 biblatex Package," disponible en PDF
 [ici](https://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf)
 (j'en ai une copie dans mes `ressources-diverses`).
 
-### Mappage des types {#d2e1287}
-
-Voici le mapping de types fait par pandoc :
-
-  ---------------- ------------------------
-  BibLaTeX         CSL
-  article          article-journal
-  artwork          graphic
-  audio            song
-  bibnote          
-  book             book
-  bookinbook       chapter
-  booklet          pamphlet
-  collection       book
-  commentary       book
-  conference       
-  customa          
-  customb          
-  customc          
-  customd          
-  custome          
-  customf          
-  dataset          dataset
-  electronic       webpage
-  image            graphic
-  inbook           chapter
-  incollection     chapter
-  inproceedings    paper-conference
-  inreference      entry-encyclopedia
-  jurisdiction     legal_case
-  legal            treaty
-  legislation      legislation
-  letter           personal_communication
-  manual           book
-  mastersthesis    thesis
-  misc             
-  movie            motion_picture
-  music            song
-  mvbook           book
-  mvcollection     book
-  mvproceedings    book
-  mvreference      book
-  online           webpage
-  patent           patent
-  performance      speech
-  periodical       article-journal
-  phdthesis        thesis
-  proceedings      book
-  reference        book
-  report           report
-  review           review
-  software         software
-  standard         legislation
-  suppbook         chapter
-  suppcollection   chapter
-  suppperiodical   article-journal
-  techreport       report
-  thesis           thesis
-  unpublished      manuscript *ou* speech
-  video            motion_picture
-  www              webpage
-  ---------------- ------------------------
-
-  : Mapping de types fait par pandoc
-
-Rappelons que le mapping de `unpublished` est affecté par les champs
-présents dans la notice (voir plus haut).
-
-### Mappage des champs {#d2e1574}
-
-Certains des 148 champs BibLaTeX sont traités dans tous les 55 types de
-références bibliographiques. C'est le cas par exemple de `abstract`,
-`addendum` et `title`. D'autres ne sont traités que dans certains types
-de références ou lorsque d'autres champs spécifiques sont aussi
-présents. Par exemple, les champs `subtitle` et `titleaddon` ne sont en
-général traités que si le champ `title` est aussi présent. Cependant,
-dans certains types bibliographiques, comme par exemple `mastersthesis`
-et `phdthesis`, tous les champs sont traités, peu importe les autres
-champs éventuellement présents.
-
-Il faut aussi savoir que certains champs BibLaTeX sont parfois fusionnés
-dans l'extrant CSL. Ainsi, les
-
-seuls les 58 suivants sont traités par pandoc (vérifications faites avec
-`kilobib.bib`, ne comptant que mes 55 références à contenu contrôlé) :
+Le manuel BibLaTeX mentionne 56 types bibliographiques suivants :
 
 ``` {xml:space="preserve"}
-abstract
-addendum
-address
-annotation
-author
-bookauthor
-booksubtitle
-booktitle
-booktitleaddon
-chapter
-date
-doi
-edition
-editor
-eventtitle
-howpublished
-ids
-institution
-isbn
-issn
-issue
-issuesubtitle
-issuetitle
-journalsubtitle
-journaltitle
-keywords
-langid
-library
-location
-mainsubtitle
-maintitle
-maintitleaddon
-note
-number
-organization
-origlocation
-origpublisher
-origtitle
-pages
-pagetotal
-part
-publisher
-pubstate
-school
-series
-shortjournal
-shorttitle
-subtitle
-title
-titleaddon
-translator
-type
-url
-venue
-version
-volume
-volumes
-year
+article
+artwork
+audio
+bibnote
+book
+bookinbook
+booklet
+collection
+commentary
+conference
+customa
+customb
+customc
+customd
+custome
+customf
+dataset
+electronic
+image
+inbook
+incollection
+inproceedings
+inreference
+jurisdiction
+legal
+legislation
+letter
+manual
+mastersthesis
+misc
+movie
+music
+mvbook
+mvcollection
+mvproceedings
+mvreference
+online
+patent
+performance
+periodical
+phdthesis
+proceedings
+reference
+report
+review
+software
+standard
+suppbook
+suppcollection
+suppperiodical
+techreport
+thesis
+unpublished
+video
+www
+xdata
 ```
 
-Requête XPath (sur `kilobib.xml`) pour liste précédente :
+Cependant le type `@xdata` n'est pas utilisé pour produire une
+référence, ce qui laisse 55 types utilisables.
+
+### Champs BibLaTeX {#d2e1689}
+
+Analyses basées sur la référence ultime sur BibLaTeX : le manuel "The
+biblatex Package," disponible en PDF
+[ici](https://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf)
+(j'en ai une copie dans mes `ressources-diverses`).
+
+Le manuel BibLaTeX mentionne les 148 champs suivants :
 
 ``` {xml:space="preserve"}
-for $mot in tokenize("
 abstract
 addendum
 address
@@ -1769,34 +1672,182 @@ volumes
 xdata
 xref
 year
-") return $mot || " " ||
-    count(/*/meta/entry[2]//*[(self::MetaInlines or self::MetaString) and tokenize(.)=$mot])
 ```
 
-résultat auquel il faut ajouter `annote`, `date`, `journal` et `year` à
-la main (pour les raisons données plus haut).
+Le manuel LaTeX précise qu'une entrée peut contenir d'autres champs (que
+ceux énumérés) et qu'ils sont simplement ignorés lorsque le style
+bibliographique ne les utilise pas.
 
-~~Les 92 autres champs sont ignorés.~~ 2026-01-16 Faux, aucun des champs
-n'est complètement ignoré.
+### Types bibliographiques CSL {#d2e1702}
 
-### Conclusions {#d2e1621}
-
-Traiter les 30 champs CSL identifiés ci-dessus.
-
-Voici ce qu'on peut retrouver directement sous `MetaInlines` dans le
-`-t xml` (`distinct-values(/*/meta/entry[2]//MetaInlines/*/name())`) :
+La doc de
+[CSL](https://citationstyles.org/developers/#/language-specification) --
+en particulier son schéma RNG -- mentionne ces 45 types
+bibliographiques :
 
 ``` {xml:space="preserve"}
-Emph
-Math
-Quoted
-Space
-Span
-Str
+article
+article-journal
+article-magazine
+article-newspaper
+bill
+book
+broadcast
+chapter
+classic
+collection
+dataset
+document
+entry
+entry-dictionary
+entry-encyclopedia
+event
+figure
+graphic
+hearing
+interview
+legal_case
+legislation
+manuscript
+map
+motion_picture
+musical_score
+pamphlet
+paper-conference
+patent
+performance
+periodical
+personal_communication
+post
+post-weblog
+regulation
+report
+review
+review-book
+software
+song
+speech
+standard
+thesis
+treaty
+webpage
 ```
 
-Si on regarde tous les descendants
-(`distinct-values(/*/meta/entry[2]//MetaInlines//*/name())`), ça ajoute
-juste `RawInline`.
+### Champs CSL {#d2e1710}
+
+La doc de
+[CSL](https://citationstyles.org/developers/#/language-specification) --
+en particulier son schéma RNG -- mentionne ces 98 champs, qu'ils
+appellent « variables » :
+
+``` {xml:space="preserve"}
+abstract
+accessed
+annote
+archive
+archive-place
+archive_collection ("_" sic)
+archive_location ("_" sic)
+author
+authority
+available-date
+call-number
+chair
+chapter-number
+citation-key
+citation-label
+citation-number
+collection-editor
+collection-number
+collection-title
+compiler
+composer
+container-author
+container-title
+container-title-short
+contributor
+curator
+dimensions
+director
+division
+DOI
+edition
+editor
+editor-translator
+editorial-director
+event
+event-date
+event-place
+event-title
+executive-producer
+first-reference-note-number
+genre
+guest
+host
+illustrator
+interviewer
+ISBN
+ISSN
+issue
+issued
+jurisdiction
+keyword
+language
+license
+locator
+medium
+narrator
+note
+number
+number-of-pages
+number-of-volumes
+organizer
+original-author
+original-date
+original-publisher
+original-publisher-place
+original-title
+page
+page-first
+part-number
+part-title
+performer
+PMCID
+PMID
+printing-number
+producer
+publisher
+publisher-place
+recipient
+references
+reviewed-author
+reviewed-genre
+reviewed-title
+scale
+script-writer
+section
+series-creator
+source
+status
+submitted
+supplement-number
+title
+title-short
+translator
+URL
+version
+volume
+volume-title
+year-suffix
+```
+
+De son côté, pandoc gère les références bibliographiques avec ces mêmes
+variables, plus une : `container`, de type Date (donc 99 variables en
+tout). Je n'ai pas investigué comment pandoc utilise la variable
+additionnelle. (Source :
+<https://hackage.haskell.org/package/citeproc-0.12/docs/Citeproc-Types.html>)
+
+Noter que certaines variables sont composites, par exemple, tout ce qui
+est nom de personne peut se décliner en `family`, `given`, etc.
 
 ------------------------------------------------------------------------
