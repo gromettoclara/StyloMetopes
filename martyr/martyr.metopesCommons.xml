@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:space="default">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title type="main">Au-delà du minotaure et de la mélancolie : écrire Dora Maar</title>
+            <title type="sub">un sous-titre</title>
+            <title type="trl" xml:lang="en">Above minautore and melancolia : subtitle</title>
+            <author role="aut">
+               <persName>
+                  <forename>Mathilde</forename>
+                  <surname>Savard-Corbeil</surname>
+               </persName>
+               <idno type="ISNI">0000000090646198</idno>
+               <idno type="ORCID">0009-0009-8799-1778</idno>
+               <idno type="VIAF">viafclaus</idno>
+               <affiliation>
+                  <orgName>Duke University</orgName>
+               </affiliation>
+            </author>
+            <editor role="trl">
+               <persName>
+                  <forename>Clara</forename>
+                  <surname>Grometto</surname>
+               </persName>
+               <idno type="ISNI">isni:traduc</idno>
+               <idno type="ORCID">23456789</idno>
+               <idno type="VIAF">viaftraduc</idno>
+               <affiliation>
+                  <orgName>Sorbonne</orgName>
+               </affiliation>
+            </editor>
+            <funder>
+               <orgName>Truc</orgName>
+            </funder>
+            <sponsor>
+               <orgName>Ce livre a été rendu possible grâce au soutien du CRSH.</orgName>
+            </sponsor>
+         </titleStmt>
+         <publicationStmt>
+            <ab>
+               <bibl>
+                  <publisher>Erudit</publisher>
+                  <publisher>OpenEdition</publisher>
+                  <date>2026-02-18</date>
+                  <availability>
+                     <licence>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</licence>
+                  </availability>
+                  <title level="j">MuseMedusa</title>
+               </bibl>
+            </ab>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Document créé sous forme numérique en Markdown dans Stylo.</p>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <langUsage>
+            <language ident="fr"/>
+         </langUsage>
+         <textClass>
+            <keywords scheme="keyword" xml:lang="fr">
+               <list>
+                  <item>Dora Maar</item>
+                  <item>Surréalisme</item>
+                  <item>Photomontage</item>
+                  <item>Autothéorie</item>
+                  <item>Écocritique</item>
+                  <item>Affect</item>
+                  <item>Subjectivité</item>
+                  <item>Dépression</item>
+                  <item>Féminisme</item>
+                  <item>Écrits sur l’art</item>
+               </list>
+            </keywords>
+            <keywords scheme="rameau" xml:lang="fr">
+               <list>
+                  <item>Féminisme</item>
+                  <item>Surréalisme (littérature)</item>
+               </list>
+            </keywords>
+            <keywords scheme="keyword" xml:lang="en">
+               <list>
+                  <item>Dora Maar</item>
+                  <item>Surréalism</item>
+                  <item>Photomontage</item>
+                  <item>Self-theory</item>
+                  <item>Ecocriticism</item>
+                  <item>Affect</item>
+                  <item>Subjectivity</item>
+                  <item>Depression</item>
+                  <item>Feminism</item>
+                  <item>Art Writing</item>
+               </list>
+            </keywords>
+         </textClass>
+      </profileDesc>
+   </teiHeader>
+   <text xml:id="text" type="article">
+      <front>
+         <div type="titlePage">
+            <p rend="title-main">Au-delà du minotaure et de la mélancolie : écrire Dora Maar</p>
+            <p rend="title-sub">un sous-titre</p>
+            <p rend="title-trl" xml:lang="en">Above minautore and melancolia : subtitle</p>
+            <p rend="author-aut">Mathilde Savard-Corbeil</p>
+            <p rend="authority_affiliation">Duke University</p>
+            <p rend="editor-trl">Clara Grometto</p>
+            <p rend="authority_affiliation">Sorbonne</p>
+         </div>
+         <div type="abstract" xml:lang="fr">
+            <p>Cet article s’intéresse à l’apport critique de l’affect et de la subjectivité dans les écrits sur l’art. En adoptant une approche autothéorique, mon enquête sur trois œuvres photographiques de Dora Maar, soit Père Ubu, 29 rue d’Astorg et Les années vous guettent, revisite les différentes perspectives biographiques, historiographiques et littéraires afin de déconstruire le discours sur son œuvre, entre autres dans des récits comme Je suis le carnet de Dora Maar de Brigitte Benkemoun et La femme qui pleure de Zoé Valdés. Je propose de penser l’intersection entre éco-critique et dépression comme génératrice d’un renouvellement du regard, autant en ce qui concerne l’art que la perception de soi, notamment à travers les contributions de Ann Cvetkovich et des savoirs situés féministes. C’est donc grâce à une hybridation générique qu’on comprend l’importance pour l’histoire culturelle de la dépression de la pratique créative comme étant réparatrice.</p>
+         </div>
+         <div type="keywords" xml:lang="fr">
+            <p>
+               <hi rend="bold">Mots-clés :</hi> Dora Maar, Surréalisme, Photomontage, Autothéorie, Écocritique, Affect, Subjectivité, Dépression, Féminisme, Écrits sur l’art</p>
+            <p>
+               <hi rend="bold">Mots-clés (RAMEAU) :</hi> Féminisme, Surréalisme (littérature)</p>
+         </div>
+         <div type="abstract" xml:lang="en">
+            <p>This article examines the critical contribution of affect and subjectivity in writing about art. Adopting an autotheoretical approach, my investigation of three photographic works by Dora Maar, Père Ubu, 29 rue d’Astorg, and Les années vous guettent, revisits different biographical, historiographical, and literary perspectives to deconstruct the discourse on her work, among others in narratives such as Brigitte Benkemoun’s Je suis le carnet de Dora Maar and Zoé Valdés’s La femme qui pleure. I propose to think of the intersection between eco-criticism and depression as generating a renewal of the gaze, in terms of both art and self-perception, notably through the critical contributions of Ann Cvetkovich’s work and feminist situated knowledges. Through this generic hybridization, we understand the importance of the cultural history of depression in restorative creative practice.</p>
+         </div>
+         <div type="keywords" xml:lang="en">
+            <p>
+               <hi rend="bold">Mots-clés (en) :</hi> Dora Maar, Surréalism, Photomontage, Self-theory, Ecocriticism, Affect, Subjectivity, Depression, Feminism, Art Writing</p>
+         </div>
+         <div type="ack">
+            <p>remerciements</p>
+         </div>
+         <epigraph>
+            <p>Tant qu’il existera, par le fait des lois et des mœurs, une damnation sociale créant artificiellement, en pleine civilisation, des enfers, et compliquant d’une fatalité humaine la destinée qui est divine ; tant que les trois problèmes du siècle, la dégradation de l’homme par le prolétariat, la déchéance de la femme par la faim, l’atrophie de l’enfant par la nuit, ne seront pas résolus ; tant que, dans de certaines régions, l’asphyxie sociale sera possible ; en d’autres termes, et à un point de vue plus étendu encore, tant qu’il y aura sur la terre ignorance et misère, des livres de la nature de celui-ci pourront ne pas être inutiles. (Hugo 1862)</p>
+         </epigraph>
+      </front>
+      <body>
+         <p>Ceci est le doc de référence, martyre, pour baliser du texte destiné à Commons dans Stylo.</p>
+         <div subtype="level2">
+            <head>Déjà on peut avoir plein de niveaux de titre, celui-ci est le premier…</head>
+            <div subtype="level3">
+               <head>Le deuxième</head>
+               <div subtype="level4">
+                  <head>Le troisième</head>
+               </div>
+            </div>
+         </div>
+         <div subtype="level2">
+            <head>Liminaires</head>
+            <div type="dedication">
+               <p>Voici une dédicace</p>
+            </div>
+            <div>
+               <p>Simple remarque : avec le schéma d’Érudit je suis confronté au problème suivant : ils sont très attaché à l’identité entre le pdf et le HTML produit à partie de leur XML. Or le markdown ne contraignant pas l’ordre des éléments, la dédicace ou les épigraphes se trouvent parfois mal placés dans l’article. C’est une idée à retenir et à enticiper pour la validation. Il faut « forcer » les écrivants et éditeurs sur stylo à placer ses blocs au bon endroit.</p>
+            </div>
+            <div type="notepre">
+               <p>Note préliminaire de l’auteur</p>
+            </div>
+            <div type="notepre">
+               <p>Note préliminaire de l’éditeur</p>
+            </div>
+            <div type="notepre">
+               <p>Note préliminaire du traducteur</p>
+            </div>
+            <div type="argument">
+               <p>ATTENTION: Ceci est un chapôt introductif</p>
+            </div>
+         </div>
+         <div subtype="level2">
+            <head>Texte</head>
+            <p>Du texte</p>
+            <p>Un saut de ligne</p>
+            <p>Une ligne<lb/>Une ligne à la suite</p>
+            <milestone unit="section" rend="horizontal-rule"/>
+            <p>Et là je veux citer Hugo (1862)</p>
+            <div type="sig">
+               <p>Ceci est une signature</p>
+            </div>
+            <div>
+               <list type="unordered">
+                  <item>liste</item>
+                  <item>liste<list type="unordered">
+                        <item>sous liste</item>
+                        <item>sous liste</item>
+                     </list>
+                  </item>
+               </list>
+               <list type="ordered">
+                  <item>liste numérotée</item>
+                  <item>liste numérotée<list type="ordered">
+                        <item>sous liste numérotée</item>
+                        <item>sous liste numérotée</item>
+                     </list>
+                  </item>
+               </list>
+               <p>
+                  <hi rend="bold">Il manque les contenus additionnels !!!</hi>
+               </p>
+            </div>
+         </div>
+         <div subtype="level2">
+            <head>Entretien</head>
+            <div>
+               <sp rend="question">
+                  <p>
+                     <name type="speaker">Clara</name> Une question est posée</p>
+               </sp>
+            </div>
+            <div type="answ">
+               <p>
+                  <name type="speaker">Marcello</name> Réponse à la question</p>
+            </div>
+         </div>
+         <div subtype="level2">
+            <head>Notes</head>
+            <p>Bablebliblablou, comme l’indique la note en bas de page.<note place="end">
+                  <p>Ceci est une note de bas de page.</p>
+               </note>
+            </p>
+            <p>Ou alors on peut faire cette syntaxe<note place="end">
+                  <p>Cette manière de faire des notes de bas de page est aussi possible.</p>
+               </note> aussi.</p>
+            <p>Il faut inventer une autre syntaxe si on veut que les notes soient les notes de fin (<code rend="inline">TEI/text/body//note[@place="end"][@n][@type="standard"][@xml:id"]</code>).</p>
+            <p>Il me semble plus propre d’inventer une nouvelle syntaxe que de détourner celle de Pandoc:</p>
+            <p>Par exemple je veux mattre une note de fin iciVoici ce que je veux dire et qui apparaît en fin de document.. Elle sera nmérotée incrémentalement.</p>
+         </div>
+         <div subtype="level2">
+            <head>Citations</head>
+            <cit>
+               <quote>
+                  <p>Ceci est une citation. (Hugo 1862, 123‑25)</p>
+               </quote>
+            </cit>
+            <p>Cette citation a une source référencée entre crochets.</p>
+            <p>Parfois j’écris un paragraphe et comme le disait Hugo (1862), « Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs. » De cette manière j’ai une citation innline.</p>
+            <div type="quote-alt">
+               <p>c’est une pratique d’open edition, pas de notion sémantique, elle s’appelle juste citation bis dans le schéma commons.</p>
+            </div>
+            <div>
+               <p>Il faut ensuite faire des citations plus complexes.</p>
+            </div>
+            <div type="quotcomplexe">
+               <cit>
+                  <quote>
+                     <p>tatitata (ça peut être des vers ou des didascalies)</p>
+                  </quote>
+               </cit>
+               <div type="trad">
+                  <p>tatitata dans une autre langue</p>
+               </div>
+               <div>
+                  <p>(Hugo 1862, 123‑25)</p>
+               </div>
+            </div>
+            <div>
+               <p>Cette dernière citation a une traduction et la langue de la traduction.</p>
+               <p>Que se passe-t-il quand on veut encoder des vers ?</p>
+               <cit>
+                  <quote>
+                     <p>Souvent, pour s’amuser, les hommes d’équipage Prennent des albatros, vastes oiseaux des mers, Qui suivent, indolents compagnons de voyage, (Baudelaire 1857, 1‑3)</p>
+                  </quote>
+               </cit>
+               <p>Ces vers peuvent être compris dans une citation complexe</p>
+            </div>
+            <div type="quotcomplexe">
+               <cit>
+                  <quote>
+                     <p>Souvent, pour s’amuser, les hommes d’équipage Prennent des albatros, vastes oiseaux des mers, Qui suivent, indolents compagnons de voyage,</p>
+                  </quote>
+               </cit>
+               <div type="trad">
+                  <cit>
+                     <quote>
+                        <p>Often, to amuse themselves, the sailors Catch albatrosses, vast birds of the seas, Who follow, indolent companions of the voyage,</p>
+                     </quote>
+                  </cit>
+               </div>
+               <div>
+                  <p>(Baudelaire 1857, 1‑3)</p>
+               </div>
+            </div>
+            <div>
+               <p>Nous nous sommes arrêtés ici en ce qui a trait aux citations. Il faudra penser à un système qui reste lisible et pas trop lours pour le théâtre et la linguistique.</p>
+            </div>
+         </div>
+         <div subtype="level2">
+            <head>Figures</head>
+            <p>Certains auteurs vont insérer des images sans enrichir comme ceci :</p>
+            <figure>
+               <p rend="caption">légende</p>
+               <graphic url="../icono/br/image.png"/>
+            </figure>
+            <p>Mais ce qu’on voudrait c’est qu’ils soient plus précis en insérant un snippet de code pour récupérer plus d’information.</p>
+            <div type="figure">
+               <p>Titre de l’image dans laquelle on devrait mettre aussi des crédits</p>
+               <figure>
+                  <p rend="caption">légende</p>
+                  <graphic url="../icono/br/image.png"/>
+               </figure>
+               <div type="credits">
+                  <p>Cette image est sous licence machin et est attribuée à Baudelaire (1857)</p>
+               </div>
+            </div>
+            <div>
+               <p>On voit que les crédits peuvent :</p>
+               <list type="unordered">
+                  <item>être au sein d’autres éléments</item>
+                  <item>l’élément rédigé en lui-même (logique du présentationnel)</item>
+               </list>
+               <p>L’idée ici est de <hi rend="bold">détourner l’alt de l’image pour récupérer la caption</hi>. Ainsi on alège un peu la syntaxe.</p>
+            </div>
+         </div>
+         <div subtype="level2">
+            <head>Encadrés</head>
+            <div type="encadre">
+               <p>nomprenom</p>
+               <p>Pour le moment on a un encadré minimal avec un titre et une autorité à récupérer dans <code rend="inline">TEI/text/body//bibl[@type="sec_authority"]/author/persName/surname|forename</code>
+               </p>
+            </div>
+         </div>
+         <div subtype="level2">
+            <head>Typographie</head>
+            <p>
+               <hi rend="italic">italique</hi> ou <hi rend="italic">italique</hi>
+            </p>
+            <p>
+               <hi rend="bold">gras</hi>
+            </p>
+            <p>
+               <hi rend="bold">
+                  <hi rend="italic">gras et italique</hi>
+               </hi>
+            </p>
+            <p>
+               <hi rend="small-caps">en petites majuscules</hi>
+            </p>
+            <p>
+               <hi rend="small-caps">
+                  <hi rend="italic">petites majuscules en italique</hi>
+               </hi>
+            </p>
+            <p>1<hi rend="sup">er</hi>
+            </p>
+            <p>3<hi rend="sup">
+                  <hi rend="italic">eme</hi>
+               </hi>
+            </p>
+            <p>A<hi rend="sub">a</hi>
+            </p>
+            <p>Trouver comment souligne ??</p>
+            <p>
+               <hi rend="strikethrough">texte barré</hi>
+            </p>
+         </div>
+         <div subtype="level2">
+            <head>Index</head>
+            <p>Platon est un philosophe de l’Antiquité grecque, élève de Socrate et maître d’Aristote.</p>
+            <p>Il fonda l’Académie à Athènes, vers 387 av. J.-C.</p>
+            <p>Ses œuvres majeures, comme la République ou le Banquet, ont profondément influencé la pensée occidentale.</p>
+            <p>Aristote, après avoir quitté l’Académie, devint le précepteur du jeune Alexandre le Grand, avant de fonder sa propre école, le Lycée, également à Athènes.</p>
+         </div>
+         <div subtype="level2">
+            <head>Le code</head>
+            <p>
+               <code lang="python">def bonjour(nom):
+    print(f"Bonjour, {nom} !")
+
+bonjour("monde")</code>
+            </p>
+            <p>On peut aussi mettre du code inline : <code rend="inline">&lt;div&gt;Voici du code inline&lt;/div&gt;</code>
+            </p>
+         </div>
+         <div subtype="level2">
+            <head>Titre choisi pour la bibliographie</head>
+            <p>Le snippet de code biblio rajoute un titre de niveau 2 comme ci-dessus, qui sert à renseigner le titre de la bibliographie. En dessous directement est inséré la syntaxe pandoc pour imprimer la biblio.</p>
+         </div>
+      </body>
+      <back>
+         <div subtype="bibliography">
+            <head>Bibliographie</head>
+            <listBibl>
+               <bibl xml:id="ref-baudelaire_albatros_1857">Baudelaire, Charles. 1857. « L’Albatros ». In <hi rend="italic">Les Fleurs du mal</hi>. Poulet-Malassis et de Broise.</bibl>
+               <biblStruct type="chapter" xml:id="semref-baudelaire_albatros_1857">
+                  <analytic>
+                     <author>
+                        <surname>Baudelaire</surname>
+                        <forename>Charles</forename>
+                     </author>
+                     <title level="a">L’albatros</title>
+                  </analytic>
+                  <monogr>
+                     <title level="m">Les fleurs du mal</title>
+                     <imprint>
+                        <date>1857</date>
+                        <pubPlace>Paris</pubPlace>
+                        <publisher>Poulet-Malassis et de Broise</publisher>
+                     </imprint>
+                     <biblScope unit="pages">45-47</biblScope>
+                  </monogr>
+               </biblStruct>
+            </listBibl>
+            <listBibl>
+               <bibl xml:id="ref-hugo1862miserables">Hugo, Victor. 1862. <hi rend="italic">Les Misérables</hi>. A. Lacroix, Verboeckhoven &amp; Cie.</bibl>
+               <biblStruct type="book" xml:id="semref-hugo1862miserables">
+                  <monogr>
+                     <author>
+                        <surname>Hugo</surname>
+                        <forename>Victor</forename>
+                     </author>
+                     <title level="m">Les misérables</title>
+                     <imprint>
+                        <date>1862</date>
+                        <pubPlace>Paris</pubPlace>
+                        <publisher>A. Lacroix, Verboeckhoven &amp; Cie</publisher>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+            </listBibl>
+         </div>
+      </back>
+   </text>
+</TEI>
