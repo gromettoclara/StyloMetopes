@@ -63,8 +63,6 @@ Ceci est une signature
     1. sous liste numérotée
     2. sous liste numérotée
 
-**Il manque  les contenus additionnels !!!**
-
 ## Entretien
 
 ::: {.question}
@@ -105,35 +103,6 @@ tatitata dans une autre langue
 [@hugo1862miserables, 123-125]
 :::
 
-Vérifions ce qui se passe quand on veut encoder des vers ou le théâtre.
-
-> [Souvent, pour s’amuser, les hommes d’équipage]{.verse num=1} 
-> [Prennent des albatros, vastes oiseaux des mers,]{.verse num=2}
-> [Qui suivent, indolents compagnons de voyage,]{.verse num=3}
-> [@baudelaire_albatros_1857, 1-3]
-
-
-**Le théâtre il faut trouver un meilleur système.**
-
-Voici la citation linguistique.
-
-::: {.ling lang=fr num=123 label=ex1 }
-
-[Titre de l'exemple]{.head}
-
-> pomme
-
-::: {.glose}
-fruit
-:::
-
-::: {.trl lang=en}
-apple
-:::
-
-[@moliere_misanthrope_1666]
-
-:::
 
 ## Figures
 
@@ -186,7 +155,7 @@ Trouver comment souligne ??
 
 ## Index 
 
-[Platon]{.personnalite idsp="Platon" idwiki="https://www.wikidata.org/wiki/Q859"}
+[Platon]{.personnalite id="Platon"}
 
 
 
