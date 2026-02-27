@@ -1,0 +1,240 @@
+<style>
+/* ─────────── LIMINAIRES ─────────── */
+
+.ack {
+  font-style: italic;
+  opacity: 0.8;
+  margin-top: 1.5em;
+}
+
+.dedication {
+  text-align: right;
+  font-style: italic;
+  margin: 2em 0;
+}
+
+.notepre .endnote {
+  font-style: italic;
+  border-left: 3px solid;
+  padding-left: 1em;
+  margin: 1.5em 0;
+}
+
+.argument {
+  background: rgba(0,0,0,0.04);
+  padding: 1em;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+}
+
+.epigraph {
+  font-style: italic;
+  margin: 2em 1em;
+  padding-left: 1em;
+  border-left: 2px solid;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+.sponsor {
+  font-size: 0.95em;
+  opacity: 0.8;
+  margin: 1.5em 0;
+}
+
+
+/* ─────────── SIGNATURE ─────────── */
+
+.sig, .sig p {
+  font-family: serif;
+  text-align: right;
+  font-style: italic;
+  margin-top: 2em;
+}
+
+/* ─────────── ENTRERTIENS ─────────── */
+
+.question, .answ {
+  margin: 1.5em 0;
+  padding: 1em;
+  border-left: 3px solid;
+  background: rgba(0,0,0,0.02);
+  border-radius: 4px;
+}
+
+.question .speaker {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.answ .speaker {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+
+/* ─────────── CITATIONS ─────────── */
+
+.quote-alt {
+  font-style: italic;
+  background: rgba(0,0,0,0.03);
+  padding: 1em;
+  border-radius: 6px;
+  margin: 1.5em 0;
+}
+
+.inlinequote::before {
+  content: "« ";
+}
+
+.inlinequote::after {
+  content: " »";
+}
+
+
+
+/* ─────────── FIGURES ─────────── */
+
+.figure {
+  margin: 2em 0;
+  padding: 1em;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  background: rgba(0,0,0,0.02);
+}
+
+.figure figure {
+  margin: 1em 0;
+  text-align: center;
+}
+
+.figure img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+.figure figcaption {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.figure .head {
+  font-weight: bold;
+}
+
+.figure .credits {
+  font-size: 0.85em;
+  opacity: 0.7;
+  margin-top: 1em;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding-top: 0.6em;
+}
+
+
+/* ─────────── ENCANDRÉS ─────────── */
+
+.encadre {
+  border: 2px solid;
+  padding: 1em;
+  border-radius: 8px;
+  margin: 2em 0;
+  background: rgba(0,0,0,0.02);
+}
+
+.auth .name, .auth .surname {
+  font-weight: bold;
+}
+
+.auth {
+  display: block;
+  margin-bottom: 0.8em;
+  font-variant: small-caps;
+}
+
+
+
+</style>
+
+
+<p>Ceci est le doc de référence pour vérifier comment pandoc gère le
+balisage infratextuel / sémantique</p>
+<h2 id="liminaires">Liminaires</h2>
+<div class="ack">
+<p>remerciements</p>
+</div>
+<div class="dedication">
+<p>Voici une dédicace</p>
+</div>
+<div class="notepre" data-origin="aut">
+<p>Note préliminaire de l’auteur</p>
+</div>
+<div class="argument">
+<p>ATTENTION: Ceci est un chapôt introductif</p>
+</div>
+<div class="epigraph">
+<p>Tant qu’il existera, par le fait des lois et des mœurs, une damnation
+sociale créant artificiellement, en pleine civilisation, des enfers, et
+compliquant d’une fatalité humaine la destinée qui est divine ; tant que
+les trois problèmes du siècle, la dégradation de l’homme par le
+prolétariat, la déchéance de la femme par la faim, l’atrophie de
+l’enfant par la nuit, ne seront pas résolus ; tant que, dans de
+certaines régions, l’asphyxie sociale sera possible ; en d’autres
+termes, et à un point de vue plus étendu encore, tant qu’il y aura sur
+la terre ignorance et misère, des livres de la nature de celui-ci
+pourront ne pas être inutiles. <span class="citation"
+data-cites="hugo1862miserables">(Hugo 1862)</span></p>
+</div>
+<div class="sponsor">
+<p>Ce livre a été rendu possible grâce au soutien du CRSH.</p>
+</div>
+<div class="endnote">
+<p>Note de fin.</p>
+</div>
+<div class="sig">
+<p>Ceci est une signature</p>
+</div>
+
+
+
+<h2 id="entretien">Entretien</h2>
+<div class="question">
+<p><span class="speaker">Ta sœur</span> Une question est posée</p>
+</div>
+<div class="answ">
+<p><span class="speaker">Ma grand-mère</span> Réponse à la question</p>
+</div>
+
+<h2 id="citations">Citations</h2>
+
+<p>Parfois j’écris un paragraphe et comme le disait <span
+class="citation" data-cites="hugo1862miserables">Hugo (1862)</span>,
+<span class="inlinequote">Il n’y a ni mauvaises herbes ni mauvais
+hommes. Il n’y a que de mauvais cultivateurs.</span></p>
+<div class="quote-alt">
+<p>c’est une pratique d’open edition, pas de notion sémantique, elle
+s’appelle juste citation bis</p>
+
+
+<h2 id="figures">Figures</h2>
+<div class="figure">
+<p><span class="head">Titre de l’image dans laquelle on devrait mettre
+aussi des <span class="credits">crédits</span></span></p>
+<figure>
+<img src="image.png" alt="légende" />
+<figcaption aria-hidden="true">légende</figcaption>
+</figure>
+<div class="credits">
+<p>Cette image est sous licence <span class="credits">machin</span> et
+est attribuée à <span class="citation"
+data-cites="baudelaire_albatros_1857">Baudelaire (1857)</span></p>
+</div>
+</div>
+<h2 id="encadrés">Encadrés</h2>
+<div class="encadre" data-titre="montitre">
+<p><span class="auth"><span class="name">nom</span><span
+class="surname">prenom</span></span></p>
+</div>
+</section>

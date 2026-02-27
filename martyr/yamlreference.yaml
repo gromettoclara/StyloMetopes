@@ -1,0 +1,208 @@
+---
+'@version': '1.0'
+abstract: >-
+  Cet article s’intéresse à l’apport critique de l’affect et de la subjectivité
+  dans les écrits sur l’art. En adoptant une approche autothéorique, mon enquête
+  sur trois œuvres photographiques de Dora Maar, soit Père Ubu, 29 rue d’Astorg
+  et Les années vous guettent, revisite les différentes perspectives
+  biographiques, historiographiques et littéraires afin de déconstruire le
+  discours sur son œuvre, entre autres dans des récits comme Je suis le carnet
+  de Dora Maar de Brigitte Benkemoun et La femme qui pleure de Zoé Valdés. Je
+  propose de penser l’intersection entre éco-critique et dépression comme
+  génératrice d’un renouvellement du regard, autant en ce qui concerne l’art que
+  la perception de soi, notamment à travers les contributions de Ann Cvetkovich
+  et des savoirs situés féministes. C’est donc grâce à une hybridation générique
+  qu’on comprend l’importance pour l’histoire culturelle de la dépression de la
+  pratique créative comme étant réparatrice. 
+# résumé dans la langue de l'article
+acknowledgements: Merci à la rédactrice en chef blabla
+# remerciements
+authors:
+  - affiliations: Duke University
+    biography: >-
+      Mathilde Savard-Corbeil enseigne au département d'études romanes à Duke
+      University. Elle a obtenu son doctorat à l'Université de Toronto en 2022
+      grâce à une thèse sur l'ekphrasis fictive dans les romans français du 21e
+      siècle. Ses recherches actuelles portent sur les récits des rencontres
+      entre œuvres d'art et autrices, et sur la manière dont ces expériences
+      esthétiques génèrent des innovations formelles. Ses articles les plus
+      récents explorent la présence de l'autothéorie comme outil d'insertion du
+      sujet-écrivain et comme approche féministe de la connaissance située.
+    email: truc@gmail.com
+    foaf: foaf:clauf
+    forename: Mathilde
+    isni: '0000000090646198'
+    orcid: 0009-0009-8799-1778
+    surname: Savard-Corbeil
+    viaf: viafclaus
+    wikidata: Q17634765
+#voici un exemple d'objet personne, qui aura toujours ces champs, pour le cas ci-dessus, l'auteur. Les objets personne peuvent être mutipliés. 
+controlledKeywords:
+  - idRameau: ''
+    label: Féminisme
+    uriRameau: >-
+      http://data.culture.fr/thesaurus/resource/ark:/67717/fb2c2351-7e1c-485d-9a31-41352b7973b1
+  - idRameau: ''
+    label: Surréalisme (littérature)
+    uriRameau: http://data.bnf.fr/ark:/12148/cb11933335p
+# Les info importantes dans les mots-clés contrôlés sont le label et l'uri. Je ne pense pas qu'ils sont exploités dans le schéma de Métopes. 
+funder:
+  id: '1234567898754'
+  organization: Truc
+# funder sont les information sur le financeur
+id: SP1800
+# id est l'identifiant de la revue, utile pour les export vers le schéma d'Erudit mais peut-être inutile pour Métopes
+issue:
+  identifier: mm1428
+  number: '13'
+  title: Soleil noir, créations et saccages d'Hélios
+# issue : les informations sur le numéro. L'identifiant est utile pour les exports Erudit, peut-être pas pour Métopes
+issueDirectors:
+  - affiliations: Brandon University
+    biography: biobiobio
+    forename: Eftihia
+    surname: Mihelakis
+  - affiliations: Université de Montréal
+    biography: biobio
+    email: clara.dupuis-morency@umontreal.ca
+    foaf: foaf:clara
+    forename: Clara
+    isni: isniclara
+    orcid: 0000-0002-9620-1936
+    surname: Dupuis-Morency
+    viaf: viafclara
+    wikidata: Q1358086
+# Les rédacteurices en chef.fe du numéro sont des objets personnes, donc avec tous les champs des personnes disponibles
+journal:
+  email: mm@umontreal.ca
+  name: MuseMedusa
+  publisher: OpenEd
+  url: https://muse-pmedusa.org
+# informations sur la revue
+journalDirectors:
+  - affiliations: Université de Montréal
+    biography: biobio
+    email: gromettoclara@gmail.com
+    foaf: foaf:marcello
+    forename: Andrea
+    isni: isni09876
+    orcid: 0000-0002-6651-1650
+    surname: Oberhuber
+    viaf: leviafdeMarcello
+    wikidata: Q17634765
+# objet personne : directeurice de la revue
+keywords:
+  - Dora Maar
+  - Surréalisme
+  - Photomontage
+  - Autothéorie
+  - Écocritique
+  - Affect
+  - Subjectivité
+  - Dépression
+  - Féminisme
+  - Écrits sur l'art
+# mots-clés dans la langue de l'article
+lang: fr
+# langue de l'artiicle
+license: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+# licence de l'article
+localizedContent:
+# désigne des traductions de certaines métadonnées 
+  - abstract: >-
+      This article examines the critical contribution of affect and subjectivity
+      in writing about art. Adopting an autotheoretical approach, my
+      investigation of three photographic works by Dora Maar, Père Ubu, 29 rue
+      d’Astorg, and Les années vous guettent, revisits different biographical,
+      historiographical, and literary perspectives to deconstruct the discourse
+      on her work, among others in narratives such as Brigitte Benkemoun's Je
+      suis le carnet de Dora Maar and Zoé Valdés's La femme qui pleure. I
+      propose to think of the intersection between eco-criticism and depression
+      as generating a renewal of the gaze, in terms of both art and
+      self-perception, notably through the critical contributions of Ann
+      Cvetkovich’s work and feminist situated knowledges. Through this generic
+      hybridization, we understand the importance of the cultural history of
+      depression in restorative creative practice.
+    keywords:
+      - Dora Maar
+      - Surréalism
+      - Photomontage
+      - Self-theory
+      - Ecocriticism
+      - Affect
+      - Subjectivity
+      - Depression
+      - Feminism
+      - Art Writing
+    lang: en
+    subtitle: subtitle
+    title: Above minautore and melancolia
+# On peut multiplier les objets localizedContent contenant abstract / keyword / lang / title et subtitles mais dans une autre langue. fr, en, it, es, pt, de, uk, ar
+production:
+  entities:
+    - media: digital
+      name: Erudit
+      type: publisher
+    - media: digital
+      name: OpenEdition
+      type: publisher
+# désigne la répartition des responsabilités entre les instances d'édition, de production et de diffusion, avec la possibilité defférencier selon le media (si plusieurs sorties)
+# les types possibles : editor / publisher / productor
+# les media possibles sont print ou digital : dans les faits j'ai écrémé stylo et je n'ai pas trouvé de cas avec print
+  issn: 2104-3272
+# identifiant pérenne de l'article (choix étrange, souvent ajouté a posteriori)
+publicationDate: '2026-02-18'
+# date de publication
+reviewers:
+  - affiliations: Université de Montréal
+    biography: biobio
+    email: gromettoclara@gmail.com
+    foaf: foaf:clara
+    forename: Clara
+    isni: isni23456-clara
+    orcid: 0000-0001-8347-134X
+    surname: Grometto
+    viaf: viafClara
+    wikidata: Q567876
+# encore des objets personne pour les réviseureuses
+senspublic:
+  categories:
+    - Création
+# la catégorie est une métadonnée propre à Sens Public et utile pour aller vers le schéma erudit ou leur propre plateforme (essai, création, entretien, sommaire de dossier...) Nul besoin de s'en occuper pour Métopes je pense. 
+subtitle: un sous-titre
+title: 'Au-delà du minotaure et de la mélancolie : écrire Dora Maar'
+# titres et sous-titres par défaut, entendu dans la langue de l'article
+transcribers:
+  - affiliations: Université de Montréal
+    biography: biobio
+    email: gromettoclara@gmail.com
+    foaf: foaf:chaix
+    forename: Clara
+    isni: isni5679-chaix
+    orcid: '456789'
+    surname: Grometto
+    viaf: viafchaix
+    wikidata: Q58098753
+# encore des objets personne pour les transcripteurs
+translationOf:
+  lang: it
+  title: Un article en italien
+  url: http://uneurl.fr
+# ce champs est utile pour relier un article à la traduction dont il est issu, si le cas se présente
+translators:
+  - affiliations: Sorbonne
+    biography: biobio
+    email: gromettoclara@gmail.com
+    foaf: foad:traduc
+    forename: Clara
+    isni: isni:traduc
+    orcid: '23456789'
+    surname: Grometto
+    viaf: viaftraduc
+    wikidata: Q678975
+# encore un/ des objet personne pour les traducteurices
+type: article
+# le type est inutile : vient de notre mise en place de masques de métadonnées pour faire des forulaires spécifiques 
+url: /articles/1800
+# url où trouver l'article (utile pour les revues avec un site, donc elles connaissent à l'avance la structure des url)
+---
