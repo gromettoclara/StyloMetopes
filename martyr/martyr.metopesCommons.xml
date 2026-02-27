@@ -202,9 +202,11 @@
                      <name type="speaker">Clara</name> Une question est posée</p>
                </sp>
             </div>
-            <div type="answ">
-               <p>
-                  <name type="speaker">Marcello</name> Réponse à la question</p>
+            <div>
+               <sp rend="answ">
+                  <p>
+                     <name type="speaker">Marcello</name> Réponse à la question</p>
+               </sp>
             </div>
          </div>
          <div subtype="level2">
