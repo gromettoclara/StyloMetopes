@@ -77,7 +77,7 @@ Ceci est une signature
 ::: {.question}
 [Clara]{.speaker} Une question est posée
 :::
-::: {.answ}
+::: {.answer}
 [Marcello]{.speaker} Réponse à la question
 :::
 
