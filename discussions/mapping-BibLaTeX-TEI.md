@@ -9,59 +9,66 @@ viewport: width=device-width, initial-scale=1.0
 
 Yves Marcoux
 
+Ce document est essentiellement un aide-mémoire pour moi; il n'est pas
+pensé comme outil de communication.
+
+Le Markdown est produit automatiquement (avec pandoc) à partir d'un HTML
+lui-même obtenu d'une source XHTML, ce qui explique la piètre qualité de
+présentation.
+
 ------------------------------------------------------------------------
 
 ::: {#tHe_TDM}
 # Table des matières
 
-## [Réflexions en date du 2025-11-22 -- 2026-01-27](#d2e20)
+## [Réflexions en date du 2025-11-22 -- 2026-01-27](#d2e22)
 
-## [`-f BibTeX` ou `-f BibLaTeX` ?](#d2e44)
+## [`-f BibTeX` ou `-f BibLaTeX` ?](#d2e46)
 
-## [`-t xml` ou `-t CSLJSON` ?](#d2e143)
+## [`-t xml` ou `-t CSLJSON` ?](#d2e145)
 
-## [L'existant bibliographique stylo](#d2e232)
+## [L'existant bibliographique stylo](#d2e240)
 
-### [Composition du corpus](#d2e235)
+### [Composition du corpus](#d2e243)
 
-### [Nettoyage du corpus](#d2e264)
+### [Nettoyage du corpus](#d2e272)
 
-### [Réflexions sur la qualité des données](#d2e333)
+### [Réflexions sur la qualité des données](#d2e341)
 
-## [Traitement du BibLaTeX par pandoc](#d2e397)
+## [Traitement du BibLaTeX par pandoc](#d2e405)
 
-### [Généralités](#d2e398)
+### [Généralités](#d2e406)
 
-### [Genres de traitement](#d2e405)
+### [Genres de traitement](#d2e413)
 
-### [Mappage des types](#d2e660)
+### [Mappage des types](#d2e674)
 
-### [Mappage des champs](#d2e947)
+### [Mappage des champs](#d2e961)
 
-### [Conclusions](#d2e1038)
+### [Conclusions](#d2e1052)
 
-## [L'existant stylo une fois converti en CSL](#d2e1058)
+## [L'existant stylo une fois converti en CSL](#d2e1072)
 
-## [L'existant Métopes](#d2e1347)
+## [L'existant Métopes](#d2e1362)
 
-## [Commandes typographiques LaTeX](#d2e1396)
+## [Commandes typographiques LaTeX](#d2e1410)
 
-## [Les formules mathématiques LaTeX / MathML](#d2e1539)
+## [Les formules mathématiques LaTeX / MathML](#d2e1558)
 
-## [Annexe](#d2e1673)
+## [Annexe](#d2e1692)
 
-### [Types bibliographiques BibLaTeX](#d2e1674)
+### [Types bibliographiques BibLaTeX](#d2e1693)
 
-### [Champs BibLaTeX](#d2e1689)
+### [Champs BibLaTeX](#d2e1709)
 
-### [Types bibliographiques CSL](#d2e1702)
+### [Types bibliographiques CSL](#d2e1721)
 
-### [Champs CSL](#d2e1710)
+### [Champs CSL](#d2e1729)
 
 ------------------------------------------------------------------------
 :::
 
-## Réflexions en date du 2025-11-22 -- 2026-01-27 {#d2e20}
+## Réflexions en date du 2025-11-22 -- 2026-01-27 {#d2e22}
 
 Je me questionne sur un titre approprié pour ce document. Oui, il
 s'agira de mapper du BibLaTeX en TEI, mais le fait que le mapping se
@@ -104,7 +111,7 @@ séparations d'information).
 
 ------------------------------------------------------------------------
 
-## `-f BibTeX` ou `-f BibLaTeX` ? {#d2e44}
+## `-f BibTeX` ou `-f BibLaTeX` ? {#d2e46}
 
 **Premier constat (2025-11-05) :** Les .bib de l'existant stylo, **sont
 en fait du BibLaTeX**, tant par les *types* de références (qui incluent
@@ -162,15 +169,15 @@ qu'il y ait d'autres différences.
 
 ------------------------------------------------------------------------
 
-## `-t xml` ou `-t CSLJSON` ? {#d2e143}
+## `-t xml` ou `-t CSLJSON` ? {#d2e145}
 
 Le traitement effectué par pandoc est fortement influencé par la
 spécification de
 [CSL](https://citationstyles.org/developers/#/language-specification).
 Quel que soit le format de sortie visé (notamment `-t xml`, `-t CSLJSON`
 et `-t html --citeproc`), pandoc commence toujours par convertir le
-BibLaTeX en une forme Haskell isomorphe à CSL à une variable près (voir
-en annexe).
+BibLaTeX en une forme Haskell isomorphe à CSL, à une variable
+supplémentaire près (voir en annexe).
 
 Sans trop de surprise, il y a très peu de différences entre `-t csljson`
 et `-t xml`; les seules que nous ayons notées sont :
@@ -201,9 +208,9 @@ et `-t xml`; les seules que nous ayons notées sont :
     champs BibLaTeX, *quelques* commandes de formatage LaTeX et TeX sont
     reconnues *hors mode mathématique*, i.e. sans \$ ou \$\$ comme
     délimiteurs (voir section à cet effet ci-dessous). En XML, elles
-    sont traduites en éléments standard de l'AST pandoc, alors qu'en
-    CSL-JSON, elles sont traduites en HTML de base, où les balises sont
-    directement en caractères, p.ex. :
+    sont traduites en éléments standard de l'AST pandoc (voir [la table
+    plus loin](#tex2ast)), alors qu'en CSL-JSON, elles sont traduites en
+    HTML de base, où les balises sont directement en caractères, p.ex. :
     `"title": "Du <i>digital naive</i> au bricoleur numérique"`. Ce
     n'est ni robuste (présuppose un traitement subséquent en HTML), ni
     élégant.
@@ -216,15 +223,15 @@ Le point 3 a aussi son importance. En effet, puisqu'il n'est pas
 possible d'imbriquer du Markdown ou du HTML dans du BibLaTeX, les
 commandes LaTeX demeurent la seule possibilité pour jouer avec la
 typographie dans les références BibLaTeX (dans certains champs
-seulement).
+seulement), et `-t xml` fait clairement une meilleure job.
 
 ------------------------------------------------------------------------
 
-## L'existant bibliographique stylo {#d2e232}
+## L'existant bibliographique stylo {#d2e240}
 
 *Section vérifiée courante 2026-01-17.*
 
-### Composition du corpus {#d2e235}
+### Composition du corpus {#d2e243}
 
 Je fusionne tout ce que j'ai comme fichiers `.bib` qui n'est pas de moi,
 pour me faire une idée des usages bibliographiques pratiqués
@@ -329,7 +336,7 @@ volume
 year
 ```
 
-### Nettoyage du corpus {#d2e264}
+### Nettoyage du corpus {#d2e272}
 
 Filtrer sur @ pour avoir les clés. Expression régulière à utiliser pour
 repérer les mauvais caractères dans les clés :
@@ -375,7 +382,7 @@ LaTeX reconnues par pandoc.
 Ce sont les **quatre seules modifs** que je fais aux bibliographies
 originelles; j'appelle le résultat `megabib-sans-doublon.bib`.
 
-### Réflexions sur la qualité des données {#d2e333}
+### Réflexions sur la qualité des données {#d2e341}
 
 Les points suivants devraient être considérés pour un éventuel protocole
 pour les données entrantes :
@@ -397,8 +404,10 @@ pour les données entrantes :
     les .bib ?
 
 4.  S'assurer que le champ `publisher` est renseigné comme un champ
-    \"nom\", i.e. que le mot `and`, si présent, doit être flanqué
-    d'accolades. Cela pourrait éventuellement être automatisé.
+    \"nom\", i.e. que le mot `and`, si utilisé autrement que comme
+    séparateur de noms, doit être flanqué d'accolades. Cela pourrait
+    éventuellement être automatisé, si on est sûr que la source est
+    BibTeX, et non BibLaTeX.
 
 5.  Serait-il pensable de passer les .bib dans une espèce de filtre de
     nettoyage avant ou après leur sauvegarde ?
@@ -410,9 +419,9 @@ pour les données entrantes :
 
 ------------------------------------------------------------------------
 
-## Traitement du BibLaTeX par pandoc {#d2e397}
+## Traitement du BibLaTeX par pandoc {#d2e405}
 
-### Généralités {#d2e398}
+### Généralités {#d2e406}
 
 Le traitement du BibLaTeX par pandoc est finalement assez alambiqué et
 loin d'être banal. J'ai analysé ce traitement avec de nombreux tests
@@ -426,21 +435,28 @@ BibLaTeX vers CSL ne peuvent être injectifs; autrement dit, plusieurs
 types et champs BibLaTeX distincts devront nécessairement être mappés à
 un même type ou champ CSL.
 
-### Genres de traitement {#d2e405}
+### Genres de traitement {#d2e413}
 
 Les prétraitements réellement effectués pour une référence (entrée)
 donnée varient en fonction du type de référence, des champs présents, de
 leurs valeurs et même parfois du fichier de références dans son ensemble
 (par exemple via le champ `crossref`).
 
-1.  **Traitement des abréviations**
+1.  **Traitement des doublons** En cas de références avec la même clé,
+    pandoc prend la dernière en ordre d'arrivée. À l'intérieur d'un
+    référence, même chose avec les champs : si un champ se répète, seule
+    la dernière occurrence (par ordre d'apparition) est considérée.
+    Donc, pas de fusion des champs répétés ou de références avec la même
+    clé.
+
+2.  **Traitement des abréviations**
 
     S'il y a des commandes `@string{`*`abrev`*` = "`*`chaîne`*`"}`
     (section B.1.3 du manuel LaTeX) n'importe où dans le fichier
     BibLaTeX, elles sont exécutées et globalement prises en compte dans
     l'analyse du fichier.
 
-2.  **Mappage de types**
+3.  **Mappage de types**
 
     Par exemple, `letter` est mappé sur le type CSL
     `personal_communication`, `image` et `artwork` sur `graphic`.
@@ -471,7 +487,7 @@ leurs valeurs et même parfois du fichier de références dans son ensemble
     injectif : plusieurs types BibLaTeX sont mappés sur le même type
     CSL.
 
-3.  **Mappage de noms de champ**
+4.  **Mappage de noms de champ**
 
     **REVOIR À PARTIR D'ICI**
 
@@ -493,14 +509,14 @@ leurs valeurs et même parfois du fichier de références dans son ensemble
     Il y a des exceptions, par exemple : `abstract`, `doi`, `edition`
     sont mappés sur des champs de même nom.
 
-4.  **Séparation sémantique de certains champs (les « noms »)**
+5.  **Séparation sémantique de certains champs (les « noms »)**
 
     Dans les champs susceptibles de contenir des noms, les noms sont
     séparés l'un de l'autre sur présence du mot `and`. De plus, chaque
     nom est découpé en `family`, `given`, de même que d'éventuelles
     particules, comme `dropping-particle` ou `non-dropping-particle`.
 
-5.  **Modification sémantique de certains champs**
+6.  **Modification sémantique de certains champs**
 
     Dans certains champs, le mot `and` indique une séparation, mais ne
     donne pas lieu à une subdivision du champ; le `and` est plutôt
@@ -508,23 +524,23 @@ leurs valeurs et même parfois du fichier de références dans son ensemble
     `address`, qui est mappé sur `publisher-place`, le `and` est
     remplacé par un point-virgule.
 
-6.  **Regroupement de certains champs (avec ponctuation)**
+7.  **Regroupement de certains champs (avec ponctuation)**
 
     Par exemple, les champs `issuetitle` et `issuesubtitle` sont
     ignorés, sauf dans les types `periodical`, où ils sont fusionnés
     (avec ponctuation) avec `maintitleaddon` et mappés sur `title`.
 
-7.  **Ignorance de certains champs**
+8.  **Ignorance de certains champs**
 
     92 des 148 champs BibLaTeX sont ignorés par pandoc. Voir ci-dessous.
 
-8.  **Actuation de la sémantique spécifique de certains champs
+9.  **Actuation de la sémantique spécifique de certains champs
     BibLaTeX**
 
     Les champs `crossref` et `xref` se comportent de façon très
     particulière, mise en application par pandoc.
 
-9.  **Actuation de la sémantique de certains types BibLaTeX (ou bogue de
+10. **Actuation de la sémantique de certains types BibLaTeX (ou bogue de
     pandoc)**
 
     Certains types entraînent l'ajout automatique de certains champs
@@ -541,7 +557,7 @@ exhaustifs, mais ils montrent qu'on peut faire confiance à pandoc pour
 la pertinence de ces prétraitements. Le plus important est donc d'être
 conscient que ces prétraitements sont possibles.
 
-### Mappage des types {#d2e660}
+### Mappage des types {#d2e674}
 
 Voici le mapping de types fait par pandoc :
 
@@ -609,7 +625,7 @@ Voici le mapping de types fait par pandoc :
 Rappelons que le mapping de `unpublished` est affecté par les champs
 présents dans la notice (voir plus haut).
 
-### Mappage des champs {#d2e947}
+### Mappage des champs {#d2e961}
 
 Certains des 148 champs BibLaTeX sont traités dans tous les 55 types de
 références bibliographiques. C'est le cas par exemple de `abstract`,
@@ -876,7 +892,7 @@ Noter que l'article SP1436 comporte une huitième référence avec
 `editoratype = {collaborator}` (taieb_interview_nodate), mais il s'agit
 d'une erreur, car le champ `editora` n'y est pas renseigné.
 
-### Conclusions {#d2e1038}
+### Conclusions {#d2e1052}
 
 Traiter les 30 champs CSL identifiés ci-dessus.
 
@@ -898,7 +914,7 @@ juste `RawInline`.
 
 ------------------------------------------------------------------------
 
-## L'existant stylo une fois converti en CSL {#d2e1058}
+## L'existant stylo une fois converti en CSL {#d2e1072}
 
 **RENDU ICI**
 
@@ -1167,7 +1183,7 @@ traiter en priorité. (Vérifié 2026-01-17.)
 
 ------------------------------------------------------------------------
 
-## L'existant Métopes {#d2e1347}
+## L'existant Métopes {#d2e1362}
 
 2025-11-26 Il n'y a actuellement *aucun* élément `biblStruct` dans la
 totalité des fichiers fournis comme exemples.
@@ -1237,7 +1253,7 @@ en conséquence (\"D:\_YmaProjets\\MarcelloVR\\codeblock.YMA.css\").
 
 ------------------------------------------------------------------------
 
-## Commandes typographiques LaTeX {#d2e1396}
+## Commandes typographiques LaTeX {#d2e1410}
 
 Nulle part dans une référence BibLaTeX le MD habituel n'est reconnu
 comme tel (`*…*`, `**…**`, etc.). Cependant, tel que mentionné plus
@@ -1259,6 +1275,7 @@ fonctionnent *hors mode mathématique* dans *certains* champs BibLaTeX :
 
   Commande        Traduction dans l'AST `-t xml`
   --------------- --------------------------------
+  \\\\            \<LineBreak /\>
   {\\rm ...}      \<Span\>
   \\textrm{...}   \<Span class=\"roman\"\>
   {\\em ...}      \<Emph\>
@@ -1273,7 +1290,7 @@ fonctionnent *hors mode mathématique* dans *certains* champs BibLaTeX :
   \\textsf{...}   \<Span class=\"sans-serif\"\>
   \\textsc{...}   \<SmallCaps\>
 
-  : Commandes LaTeX reconnues en BibLaTeX
+  : Commandes LaTeX reconnues en BibLaTeX {#tex2ast}
 
 Noter les deux formes différentes de commande LaTeX.
 
@@ -1334,7 +1351,7 @@ implantation le 2025-12-04:
 
 ------------------------------------------------------------------------
 
-## Les formules mathématiques LaTeX / MathML {#d2e1539}
+## Les formules mathématiques LaTeX / MathML {#d2e1558}
 
 Mes essais avec les bibliographies me font bifurquer vers la question
 des formules mathématiques en général, pas seulement dans la
@@ -1441,9 +1458,9 @@ appeler une maison d'édition "Les éditions √π").
 
 ------------------------------------------------------------------------
 
-## Annexe {#d2e1673}
+## Annexe {#d2e1692}
 
-### Types bibliographiques BibLaTeX {#d2e1674}
+### Types bibliographiques BibLaTeX {#d2e1693}
 
 Analyses basées sur la référence ultime sur BibLaTeX : le manuel "The
 biblatex Package," disponible en PDF
@@ -1514,7 +1531,7 @@ xdata
 Cependant le type `@xdata` n'est pas utilisé pour produire une
 référence, ce qui laisse 55 types utilisables.
 
-### Champs BibLaTeX {#d2e1689}
+### Champs BibLaTeX {#d2e1709}
 
 Analyses basées sur la référence ultime sur BibLaTeX : le manuel "The
 biblatex Package," disponible en PDF
@@ -1678,7 +1695,7 @@ Le manuel LaTeX précise qu'une entrée peut contenir d'autres champs (que
 ceux énumérés) et qu'ils sont simplement ignorés lorsque le style
 bibliographique ne les utilise pas.
 
-### Types bibliographiques CSL {#d2e1702}
+### Types bibliographiques CSL {#d2e1721}
 
 La doc de
 [CSL](https://citationstyles.org/developers/#/language-specification) --
@@ -1733,7 +1750,7 @@ treaty
 webpage
 ```
 
-### Champs CSL {#d2e1710}
+### Champs CSL {#d2e1729}
 
 La doc de
 [CSL](https://citationstyles.org/developers/#/language-specification) --
