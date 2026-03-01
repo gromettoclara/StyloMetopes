@@ -1,4 +1,4 @@
-
+---
 '@version': '1.0'
 abstract: >-
   Cet article présente IEML (*Information Economy MetaLanguage*), un système de
@@ -19,13 +19,13 @@ abstract: >-
   l'intelligence collective, de l'intelligence artificielle et des humanités
   numériques. Je conclus en indiquant quelques directions de recherche. Ce texte
   présente la synthèse de plusieurs décennies de recherches.
-acknowledgements: Je remercie tous les gens qui ont collaboré avec moi
+acknowledgements: Je remercie tous les gens qui ont collaboré avec moi.
 authors:
   - affiliations: >-
       Membre de la Société Royale du Canada Chercheur associé à l'Université de
       Montréal (CRC sur les écritures numériques et Centre de Recherche
       Interuniversitaire sur les Humanités Numériques). Montréal, Canada. 
-    biography: Encore un homme blanc hétéro
+    biography: Encore un homme blanc hétéro.
     email: pierre.levy@mac.com
     foaf: foaf:levy
     forename: Pierre
@@ -170,3 +170,4 @@ translators:
     wikidata: Q12345678
 type: article
 url: /articles/HN120
+---
