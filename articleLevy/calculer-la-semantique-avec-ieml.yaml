@@ -1,156 +1,172 @@
----
-abstract:
-- lang: fr
-  text: "Cet article pr\xE9sente IEML (Information Economy MetaLanguage), un syst\xE8\
-    me\nde repr\xE9sentation uniforme de la signification et de la connaissances\n\
-    humaine qui peut \xEAtre lu et trait\xE9 automatiquement par les machines.\nDistingu\xE9\
-    e des s\xE9mantiques pragmatique et r\xE9f\xE9rentielle, la s\xE9mantique\nlinguistique\
-    \ est aujourd'hui formalis\xE9e de mani\xE8re incompl\xE8te. Seule sa\ndimension\
-    \ syntagmatique a \xE9t\xE9 math\xE9matis\xE9e sous la forme des langages\nr\xE9\
-    guliers. Il restait \xE0 formaliser sa dimension paradigmatique. Pour\nr\xE9soudre\
-    \ le probl\xE8me de la math\xE9matisation compl\xE8te du langage, y\ncompris sa\
-    \ dimension paradigmatique, je propose de coder le sens\nlinguistique en IEML.\
-    \ IEML a la m\xEAme capacit\xE9 expressive qu'une langue\nnaturelle et poss\xE8\
-    de une structure alg\xE9brique permettant le calcul de sa\ns\xE9mantique. L'article\
-    \ explique son dictionnaire, sa grammaire formelle\net ses outils int\xE9gr\xE9\
-    s de construction de graphes s\xE9mantiques. Au titre\nde ses applications, IEML\
-    \ pourrait \xEAtre le vecteur d'un calcul et d'une\ncommunication fluide du sens\
-    \ -- l'interop\xE9rabilit\xE9 s\xE9mantique -- capable\nde d\xE9cloisonner la\
-    \ m\xE9moire num\xE9rique et de nourrir les progr\xE8s de\nl'intelligence collective,\
-    \ de l'intelligence artificielle et des\nhumanit\xE9s num\xE9riques. Je conclus\
-    \ en indiquant quelques directions de\nrecherche."
-  text_f: "Cet article pr\xE9sente IEML (Information Economy MetaLanguage), un syst\xE8\
-    me\nde repr\xE9sentation uniforme de la signification et de la connaissances\n\
-    humaine qui peut \xEAtre lu et trait\xE9 automatiquement par les machines.\nDistingu\xE9\
-    e des s\xE9mantiques pragmatique et r\xE9f\xE9rentielle, la s\xE9mantique\nlinguistique\
-    \ est aujourd'hui formalis\xE9e de mani\xE8re incompl\xE8te. Seule sa\ndimension\
-    \ syntagmatique a \xE9t\xE9 math\xE9matis\xE9e sous la forme des langages\nr\xE9\
-    guliers. Il restait \xE0 formaliser sa dimension paradigmatique. Pour\nr\xE9soudre\
-    \ le probl\xE8me de la math\xE9matisation compl\xE8te du langage, y\ncompris sa\
-    \ dimension paradigmatique, je propose de coder le sens\nlinguistique en IEML.\
-    \ IEML a la m\xEAme capacit\xE9 expressive qu'une langue\nnaturelle et poss\xE8\
-    de une structure alg\xE9brique permettant le calcul de sa\ns\xE9mantique. L'article\
-    \ explique son dictionnaire, sa grammaire formelle\net ses outils int\xE9gr\xE9\
-    s de construction de graphes s\xE9mantiques. Au titre\nde ses applications, IEML\
-    \ pourrait \xEAtre le vecteur d'un calcul et d'une\ncommunication fluide du sens\
-    \ -- l'interop\xE9rabilit\xE9 s\xE9mantique -- capable\nde d\xE9cloisonner la\
-    \ m\xE9moire num\xE9rique et de nourrir les progr\xE8s de\nl'intelligence collective,\
-    \ de l'intelligence artificielle et des\nhumanit\xE9s num\xE9riques. Je conclus\
-    \ en indiquant quelques directions de\nrecherche."
-- lang: en
-  text: 'This paper presents IEML (Information Economy MetaLanguage), a uniform
 
-    representation of human meaning and knowledge that can be read and
-
-    processed automatically by machines. Distinguished from pragmatic and
-
-    referential semantics, linguistic semantics is today incompletely
-
-    formalized. Only its syntagmatic dimension has been mathematized in the
-
-    form of regular languages. Its paradigmatic dimension remained to be
-
-    formalized. To solve the problem of the complete mathematizing of
-
-    language, including its paradigmatic dimension, I propose to code the
-
-    linguistic meaning in IEML. IEML has the same expressive capacity as a
-
-    natural language and has an algebraic structure allowing the calculation
-
-    of its semantics. The article explains its dictionary, its formal
-
-    grammar, and its integrated tools for building semantic graphs. As far
-
-    as its applications are concerned, IEML could be the vector of a fluid
-
-    calculation and communication of meaning -- semantic interoperability --
-
-    capable of decompartmentalizing the digital memory and feeding the
-
-    progress of collective intelligence, artificial intelligence, and
-
-    digital humanities. I conclude by indicating some research directions.'
-  text_f: 'This paper presents IEML (Information Economy MetaLanguage), a uniform
-
-    representation of human meaning and knowledge that can be read and
-
-    processed automatically by machines. Distinguished from pragmatic and
-
-    referential semantics, linguistic semantics is today incompletely
-
-    formalized. Only its syntagmatic dimension has been mathematized in the
-
-    form of regular languages. Its paradigmatic dimension remained to be
-
-    formalized. To solve the problem of the complete mathematizing of
-
-    language, including its paradigmatic dimension, I propose to code the
-
-    linguistic meaning in IEML. IEML has the same expressive capacity as a
-
-    natural language and has an algebraic structure allowing the calculation
-
-    of its semantics. The article explains its dictionary, its formal
-
-    grammar, and its integrated tools for building semantic graphs. As far
-
-    as its applications are concerned, IEML could be the vector of a fluid
-
-    calculation and communication of meaning -- semantic interoperability --
-
-    capable of decompartmentalizing the digital memory and feeding the
-
-    progress of collective intelligence, artificial intelligence, and
-
-    digital humanities. I conclude by indicating some research directions.'
-articleslies:
-- auteur: ''
-  titre: ''
-  url: ''
+'@version': '1.0'
+abstract: >-
+  Cet article présente IEML (*Information Economy MetaLanguage*), un système de
+  représentation uniforme de la signification et de la connaissance humaine qui
+  peut être lu et traité automatiquement par les machines. Distinguée des
+  sémantiques pragmatique et référentielle, la sémantique linguistique est
+  aujourd'hui formalisée de manière incomplète. Seule sa dimension syntagmatique
+  a été mathématisée sous la forme des langages réguliers. Il restait à
+  formaliser sa dimension paradigmatique. Pour résoudre le problème de la
+  mathématisation complète du langage, y compris sa dimension paradigmatique, je
+  propose de coder le sens linguistique en IEML. IEML a la même capacité
+  expressive qu'une langue naturelle et possède une structure algébrique
+  permettant le calcul de sa sémantique. L'article explique son dictionnaire, sa
+  grammaire formelle et ses outils intégrés de construction de graphes
+  sémantiques. Au titre de ses applications, IEML pourrait être le vecteur d'un
+  calcul et d'une communication fluide du sens -- l'interopérabilité sémantique
+  -- capable de décloisonner la mémoire numérique et de nourrir les progrès de
+  l'intelligence collective, de l'intelligence artificielle et des humanités
+  numériques. Je conclus en indiquant quelques directions de recherche. Ce texte
+  présente la synthèse de plusieurs décennies de recherches.
+acknowledgements: Je remercie tous les gens qui ont collaboré avec moi
 authors:
-- forename: Pierre
-  orcid: 0000-0003-1599-221X
-  surname: "L\xE9vy"
-bibliography: calculer-la-semantique-avec-ieml.bib
-date: 2022/12/19
-day: '19'
-director:
-- foaf: ''
-  forename: ''
-  gender: ''
-  isni: ''
-  orcid: ''
-  surname: ''
-  viaf: ''
-dossier:
-- id: ''
-  title: ''
-  title_f: ''
+  - affiliations: >-
+      Membre de la Société Royale du Canada Chercheur associé à l'Université de
+      Montréal (CRC sur les écritures numériques et Centre de Recherche
+      Interuniversitaire sur les Humanités Numériques). Montréal, Canada. 
+    biography: Encore un homme blanc hétéro
+    email: pierre.levy@mac.com
+    foaf: foaf:levy
+    forename: Pierre
+    isni: isnilevy
+    orcid: 0000-0003-1599-221X
+    surname: Lévy
+    viaf: viaflevy
+    wikidata: Q17634765
+controlledKeywords:
+  - idRameau: ''
+    label: Linguistique
+    uriRameau: http://data.culture.fr/thesaurus/resource/ark:/67717/T990-1209
+  - idRameau: ''
+    label: Intelligence
+    uriRameau: http://data.bnf.fr/ark:/12148/cb119321305
+funder:
+  id: '123'
+  organization: Truc
+id: HN120
+issue:
+  identifier: '120'
+  number: '34'
+  title: Numérique et Sémantique
+issueDirectors:
+  - affiliations: Sorbonne Université
+    biography: Doctorante de Marcello
+    email: mjrserv@gmail.com
+    foaf: foaf:servanne
+    forename: Servanne
+    isni: isni7533-servanne
+    orcid: 0000-0001-6278-8735
+    surname: Monjour
+    viaf: viaf-servanne
+    wikidata: Q3457
+journal:
+  email: hn@gmail.com
+  name: Humanité Numérique
+  publisher: OpenEdition
+  url: https://journals.openedition.org/revuehn/
+journalDirectors:
+  - affiliations: sherbrook
+    biography: biobiobio
+    email: servannemjr@gmail.com
+    foaf: foaf:servanne
+    forename: Monjour
+    gender: ''
+    isni: isni098765servanne
+    orcid: 0000-0002-6651-1650
+    surname: Servanne
+    viaf: viaf-servanne
+    wikidata: Q17634765
 keywords:
-- lang: fr
-  list: "linguistique, s\xE9mantique, intelligence collective, intelligence artificielle,\
-    \ IEML"
-  list_f: "linguistique, s\xE9mantique, intelligence collective, intelligence artificielle,\
-    \ IEML"
-- lang: en
-  list: linguistics, semantics, collective intelligence, artificial intelligence,
-    IEML
-  list_f: linguistics, semantics, collective intelligence, artificial intelligence,
-    IEML
+  - linguistique
+  - intelligence collective
+  - 'apprentissage automatique '
 lang: fr
+license: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 link-citations: true
-month: '12'
+localizedContent:
+  - abstract: >-
+      This paper presents IEML (Information Economy MetaLanguage), a uniform
+      representation of human meaning and knowledge that can be read and
+      processed automatically by machines. Distinguished from pragmatic and
+      referential semantics, linguistic semantics is today incompletely
+      formalised. Only its syntagmatic dimension has been mathematised in the
+      form of regular languages. Its paradigmatic dimension remained to be
+      formalised. To solve the problem of the complete mathematising of
+      language, including its paradigmatic dimension, I propose to code the
+      linguistic meaning in IEML. IEML has the same expressive capacity as a
+      natural language and has an algebraic structure allowing the calculation
+      of its semantics. The article explains its dictionary, its formal grammar,
+      and its integrated tools for building semantic graphs. As far as its
+      applications are concerned, IEML could be the vector of a fluid
+      calculation and communication of meaning -- semantic interoperability --
+      capable of decompartmentalising the digital memory and feeding the
+      progress of collective intelligence, artificial intelligence, and digital
+      humanities. I conclude by indicating some research directions. This paper
+      presents a synthesis of several decades of research.
+    keywords:
+      - linguistics
+      - collective intelligence
+      - machine learning
+    lang: en
+    subtitle: an impossible mission
+    title: Semantic Computing with IEML
 nocite: '@*'
-rights: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
-title: "Calculer la s\xE9mantique avec IEML"
-title_f: "Calculer la s\xE9mantique avec IEML"
-translations:
-- lang: ''
-  titre: ''
-  url: ''
-translator:
-- forename: ''
-  surname: ''
-year: '2022'
---- 
+production:
+  entities:
+    - media: digital
+      name: OpenEdition
+      type: publisher
+  issn: '987654323456'
+publicationDate: '2022-12-19'
+reviewers:
+  - affiliations: Université de Montréal
+    biography: Biographie
+    email: gromettoclara@gmail.com
+    foaf: foaf:clara
+    forename: Clara
+    isni: isni23456-clara
+    orcid: 0009-0001-2687-342X
+    surname: Grometto
+    viaf: viafClara
+    wikidata: Q567876
+senspublic:
+  categories: null
+  linkedArticles:
+    - auteur: ''
+      titre: ''
+      url: ''
+  translations:
+    - lang: ''
+      titre: ''
+      url: ''
+subtitle: Une mission impossible
+title: Calculer la sémantique avec IEML
+transcribers:
+  - affiliations: Université de Montréal
+    biography: Biobio
+    email: chaixvictor1@gmail.com
+    foaf: foaf:chaix
+    forename: Victor
+    isni: isni5679-chaix
+    orcid: 0009-0006-7823-3404
+    surname: Chaix
+    viaf: viafchaix
+    wikidata: Q58098753
+translationOf:
+  lang: es
+  title: My other unbelievable article
+  url: http://uneurl.fr
+translators:
+  - affiliations: PSL -Paris
+    biography: Paris
+    email: clemencebrouchou@gmail.com
+    foaf: foaf:clem
+    forename: Clémence
+    isni: isni5794-clem
+    orcid: 0009-0008-5963-2585
+    surname: Brouchou
+    viaf: viafclem
+    wikidata: Q12345678
+type: article
+url: /articles/HN120
