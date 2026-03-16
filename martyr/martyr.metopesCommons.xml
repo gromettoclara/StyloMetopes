@@ -32,10 +32,8 @@
             </editor>
             <funder>
                <orgName>Truc</orgName>
+               <idno>XXXX</idno>
             </funder>
-            <sponsor>
-               <orgName>Ce livre a été rendu possible grâce au soutien du CRSH.</orgName>
-            </sponsor>
          </titleStmt>
          <publicationStmt>
             <ab>
@@ -123,165 +121,153 @@
             <p>
                <hi rend="bold">Mots-clés (en) :</hi> Dora Maar, Surréalism, Photomontage, Self-theory, Ecocriticism, Affect, Subjectivity, Depression, Feminism, Art Writing</p>
          </div>
+         <div type="funder">
+            <p>Truc</p>
+         </div>
+         <div type="sponsor">
+            <p>Ce livre a été rendu possible grâce au soutien du CRSH.</p>
+         </div>
          <div type="ack">
             <p>remerciements</p>
          </div>
+         <div type="dedication">
+            <p>Voici une dédicace</p>
+         </div>
+         <note type="aut">
+            <p>Note préliminaire de l’auteur</p>
+         </note>
+         <note type="pbl">
+            <p>Note préliminaire de l’éditeur</p>
+         </note>
+         <note type="trl">
+            <p>Note préliminaire du traducteur</p>
+         </note>
+         <argument>
+            <p>ATTENTION: Ceci est un chapôt introductif</p>
+         </argument>
          <epigraph>
-            <p>Tant qu’il existera, par le fait des lois et des mœurs, une damnation sociale créant artificiellement, en pleine civilisation, des enfers, et compliquant d’une fatalité humaine la destinée qui est divine ; tant que les trois problèmes du siècle, la dégradation de l’homme par le prolétariat, la déchéance de la femme par la faim, l’atrophie de l’enfant par la nuit, ne seront pas résolus ; tant que, dans de certaines régions, l’asphyxie sociale sera possible ; en d’autres termes, et à un point de vue plus étendu encore, tant qu’il y aura sur la terre ignorance et misère, des livres de la nature de celui-ci pourront ne pas être inutiles. (Hugo 1862)</p>
+            <p>Tant qu’il existera, par le fait des lois et des mœurs, une damnation sociale créant artificiellement, en pleine civilisation, des enfers, et compliquant d’une fatalité humaine la destinée qui est divine ; tant que les trois problèmes du siècle, la dégradation de l’homme par le prolétariat, la déchéance de la femme par la faim, l’atrophie de l’enfant par la nuit, ne seront pas résolus ; tant que, dans de certaines régions, l’asphyxie sociale sera possible ; en d’autres termes, et à un point de vue plus étendu encore, tant qu’il y aura sur la terre ignorance et misère, des livres de la nature de celui-ci pourront ne pas être inutiles. (<ref target="#ref-hugo1862miserables">Hugo 1862</ref>)</p>
          </epigraph>
       </front>
       <body>
          <p>Ceci est le doc de référence, martyre, pour baliser du texte destiné à Commons dans Stylo.</p>
-         <div subtype="level2">
+         <div type="section1">
             <head>Déjà on peut avoir plein de niveaux de titre, celui-ci est le premier…</head>
-            <div subtype="level3">
+            <div type="section2">
                <head>Le deuxième</head>
-               <div subtype="level4">
+               <div type="section3">
                   <head>Le troisième</head>
                </div>
             </div>
          </div>
-         <div subtype="level2">
+         <div type="section1">
             <head>Liminaires</head>
-            <div type="dedication">
-               <p>Voici une dédicace</p>
-            </div>
-            <div>
-               <p>Simple remarque : avec le schéma d’Érudit je suis confronté au problème suivant : ils sont très attaché à l’identité entre le pdf et le HTML produit à partie de leur XML. Or le markdown ne contraignant pas l’ordre des éléments, la dédicace ou les épigraphes se trouvent parfois mal placés dans l’article. C’est une idée à retenir et à enticiper pour la validation. Il faut « forcer » les écrivants et éditeurs sur stylo à placer ses blocs au bon endroit.</p>
-            </div>
-            <div type="notepre">
-               <p>Note préliminaire de l’auteur</p>
-            </div>
-            <div type="notepre">
-               <p>Note préliminaire de l’éditeur</p>
-            </div>
-            <div type="notepre">
-               <p>Note préliminaire du traducteur</p>
-            </div>
-            <div type="argument">
-               <p>ATTENTION: Ceci est un chapôt introductif</p>
-            </div>
+            <p>Simple remarque : avec le schéma d’Érudit je suis confronté au problème suivant : ils sont très attaché à l’identité entre le pdf et le HTML produit à partie de leur XML. Or le markdown ne contraignant pas l’ordre des éléments, la dédicace ou les épigraphes se trouvent parfois mal placés dans l’article. C’est une idée à retenir et à enticiper pour la validation. Il faut « forcer » les écrivants et éditeurs sur stylo à placer ses blocs au bon endroit.</p>
          </div>
-         <div subtype="level2">
+         <div type="section1">
             <head>Texte</head>
             <p>Du texte</p>
             <p>Un saut de ligne</p>
             <p>Une ligne<lb/>Une ligne à la suite</p>
-            <milestone unit="section" rend="horizontal-rule"/>
-            <p>Et là je veux citer Hugo (1862)</p>
-            <div type="sig">
-               <p>Ceci est une signature</p>
-            </div>
-            <div>
-               <list type="unordered">
-                  <item>liste</item>
-                  <item>liste<list type="unordered">
-                        <item>sous liste</item>
-                        <item>sous liste</item>
-                     </list>
-                  </item>
-               </list>
-               <list type="ordered">
-                  <item>liste numérotée</item>
-                  <item>liste numérotée<list type="ordered">
-                        <item>sous liste numérotée</item>
-                        <item>sous liste numérotée</item>
-                     </list>
-                  </item>
-               </list>
-               <p>
-                  <hi rend="bold">Il manque les contenus additionnels !!!</hi>
-               </p>
-            </div>
+            <p rend="break">- - -</p>
+            <p>Et là je veux citer Hugo (<ref target="#ref-hugo1862miserables">1862</ref>)</p>
+            <p rend="signature">Ceci est une signature</p>
+            <list type="unordered">
+               <item>liste</item>
+               <item>liste<list type="unordered">
+                     <item>sous liste</item>
+                     <item>sous liste</item>
+                  </list>
+               </item>
+            </list>
+            <list type="ordered">
+               <item>liste numérotée</item>
+               <item>liste numérotée<list type="ordered">
+                     <item>sous liste numérotée</item>
+                     <item>sous liste numérotée</item>
+                  </list>
+               </item>
+            </list>
+            <p>
+               <hi rend="bold">Il manque les contenus additionnels !!!</hi>
+            </p>
          </div>
-         <div subtype="level2">
+         <div type="section1">
             <head>Entretien</head>
-            <div>
-               <sp rend="question">
-                  <p>
-                     <name type="speaker">Clara</name> Une question est posée</p>
-               </sp>
-            </div>
-            <div>
-               <sp rend="answer">
-                  <p>
-                     <name type="speaker">Marcello</name> Réponse à la question</p>
-               </sp>
-            </div>
+            <sp rend="question">
+               <p>
+                  <name type="speaker">Clara</name> Une question est posée</p>
+            </sp>
+            <sp rend="answer">
+               <p>
+                  <name type="speaker">Marcello</name> Réponse à la question</p>
+            </sp>
          </div>
-         <div subtype="level2">
+         <div type="section1">
             <head>Notes</head>
-            <p>Bablebliblablou, comme l’indique la note en bas de page.<note place="end">
+            <p>Bablebliblablou, comme l’indique la note en bas de page.<note place="foot">
                   <p>Ceci est une note de bas de page.</p>
                </note>
             </p>
-            <p>Ou alors on peut faire cette syntaxe<note place="end">
+            <p>Ou alors on peut faire cette syntaxe<note place="foot">
                   <p>Cette manière de faire des notes de bas de page est aussi possible.</p>
                </note> aussi.</p>
             <p>Il faut inventer une autre syntaxe si on veut que les notes soient les notes de fin (<code rend="inline">TEI/text/body//note[@place="end"][@n][@type="standard"][@xml:id"]</code>).</p>
             <p>Il me semble plus propre d’inventer une nouvelle syntaxe que de détourner celle de Pandoc:</p>
-            <p>Par exemple je veux mattre une note de fin iciVoici ce que je veux dire et qui apparaît en fin de document.. Elle sera nmérotée incrémentalement.</p>
+            <p>Par exemple je veux mattre une note de fin ici<note place="end">
+                  <p>Voici ce que je veux dire et qui apparaît en fin de document.</p>
+               </note>. Elle sera nmérotée incrémentalement.</p>
          </div>
-         <div subtype="level2">
+         <div type="section1">
             <head>Citations</head>
             <cit>
                <quote>
-                  <p>Ceci est une citation. (Hugo 1862, 123‑25)</p>
+                  <p>Ceci est une citation. (<ref target="#ref-hugo1862miserables">Hugo 1862, 123‑25</ref>)</p>
                </quote>
             </cit>
             <p>Cette citation a une source référencée entre crochets.</p>
-            <p>Parfois j’écris un paragraphe et comme le disait Hugo (1862), « Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs. » De cette manière j’ai une citation innline.</p>
-            <div type="quote-alt">
-               <p>c’est une pratique d’open edition, pas de notion sémantique, elle s’appelle juste citation bis dans le schéma commons.</p>
-            </div>
-            <div>
-               <p>Il faut ensuite faire des citations plus complexes.</p>
-            </div>
-            <div type="quotcomplexe">
-               <cit>
-                  <quote>
-                     <p>tatitata (ça peut être des vers ou des didascalies)</p>
-                  </quote>
-               </cit>
-               <div type="trad">
-                  <p>tatitata dans une autre langue</p>
-               </div>
-               <div>
-                  <p>(Hugo 1862, 123‑25)</p>
-               </div>
-            </div>
-            <div>
-               <p>Cette dernière citation a une traduction et la langue de la traduction.</p>
-               <p>Que se passe-t-il quand on veut encoder des vers ?</p>
-               <cit>
-                  <quote>
-                     <p>Souvent, pour s’amuser, les hommes d’équipage Prennent des albatros, vastes oiseaux des mers, Qui suivent, indolents compagnons de voyage, (Baudelaire 1857, 1‑3)</p>
-                  </quote>
-               </cit>
-               <p>Ces vers peuvent être compris dans une citation complexe</p>
-            </div>
-            <div type="quotcomplexe">
-               <cit>
-                  <quote>
-                     <p>Souvent, pour s’amuser, les hommes d’équipage Prennent des albatros, vastes oiseaux des mers, Qui suivent, indolents compagnons de voyage,</p>
-                  </quote>
-               </cit>
-               <div type="trad">
-                  <cit>
-                     <quote>
-                        <p>Often, to amuse themselves, the sailors Catch albatrosses, vast birds of the seas, Who follow, indolent companions of the voyage,</p>
-                     </quote>
-                  </cit>
-               </div>
-               <div>
-                  <p>(Baudelaire 1857, 1‑3)</p>
-               </div>
-            </div>
-            <div>
-               <p>Nous nous sommes arrêtés ici en ce qui a trait aux citations. Il faudra penser à un système qui reste lisible et pas trop lours pour le théâtre et la linguistique.</p>
-            </div>
+            <p>Parfois j’écris un paragraphe et comme le disait Hugo (<ref target="#ref-hugo1862miserables">1862</ref>), <cit>
+                  <quote>Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs.</quote>
+               </cit> De cette manière j’ai une citation innline.</p>
+            <cit>
+               <quote type="quotation2">
+                  <p>c’est une pratique d’open edition, pas de notion sémantique, elle s’appelle juste citation bis dans le schéma commons.</p>
+               </quote>
+            </cit>
+            <p>Il faut ensuite faire des citations plus complexes.</p>
+            <cit>
+               <quote>
+                  <p>tatitata (ça peut être des vers ou des didascalies)</p>
+               </quote>
+            </cit>
+
+            <p>tatitata dans une autre langue</p>
+
+            <p>(<ref target="#ref-hugo1862miserables">Hugo 1862, 123‑25</ref>)</p>
+            <p>Cette dernière citation a une traduction et la langue de la traduction.</p>
+            <p>Que se passe-t-il quand on veut encoder des vers ?</p>
+            <cit>
+               <quote>
+                  <p>Souvent, pour s’amuser, les hommes d’équipage Prennent des albatros, vastes oiseaux des mers, Qui suivent, indolents compagnons de voyage, (<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>)</p>
+               </quote>
+            </cit>
+            <p>Ces vers peuvent être compris dans une citation complexe</p>
+            <cit>
+               <quote>
+                  <p>Souvent, pour s’amuser, les hommes d’équipage Prennent des albatros, vastes oiseaux des mers, Qui suivent, indolents compagnons de voyage,</p>
+               </quote>
+            </cit>
+
+            <cit>
+               <quote>
+                  <p>Often, to amuse themselves, the sailors Catch albatrosses, vast birds of the seas, Who follow, indolent companions of the voyage,</p>
+               </quote>
+            </cit>
+
+            <p>(<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>)</p>
+            <p>Nous nous sommes arrêtés ici en ce qui a trait aux citations. Il faudra penser à un système qui reste lisible et pas trop lours pour le théâtre et la linguistique.</p>
          </div>
-         <div subtype="level2">
+         <div type="section1">
             <head>Figures</head>
             <p>Certains auteurs vont insérer des images sans enrichir comme ceci :</p>
             <figure>
@@ -289,34 +275,39 @@
                <graphic url="../icono/br/image.png"/>
             </figure>
             <p>Mais ce qu’on voudrait c’est qu’ils soient plus précis en insérant un snippet de code pour récupérer plus d’information.</p>
-            <div type="figure">
-               <p>Titre de l’image dans laquelle on devrait mettre aussi des crédits</p>
-               <figure>
-                  <p rend="caption">légende</p>
-                  <graphic url="../icono/br/image.png"/>
-               </figure>
-               <div type="credits">
-                  <p>Cette image est sous licence machin et est attribuée à Baudelaire (1857)</p>
-               </div>
-            </div>
-            <div>
-               <p>On voit que les crédits peuvent :</p>
-               <list type="unordered">
-                  <item>être au sein d’autres éléments</item>
-                  <item>l’élément rédigé en lui-même (logique du présentationnel)</item>
-               </list>
-               <p>L’idée ici est de <hi rend="bold">détourner l’alt de l’image pour récupérer la caption</hi>. Ainsi on alège un peu la syntaxe.</p>
-            </div>
+            <p>Titre de l’image dans laquelle on devrait mettre aussi des crédits</p>
+            <figure>
+               <p rend="caption">légende</p>
+               <graphic url="../icono/br/image.png"/>
+            </figure>
+
+            <p>Cette image est sous licence machin et est attribuée à Baudelaire (<ref target="#ref-baudelaire_albatros_1857">1857</ref>)</p>
+
+            <p>On voit que les crédits peuvent :</p>
+            <list type="unordered">
+               <item>être au sein d’autres éléments</item>
+               <item>l’élément rédigé en lui-même (logique du présentationnel)</item>
+            </list>
+            <p>L’idée ici est de <hi rend="bold">détourner l’alt de l’image pour récupérer la caption</hi>. Ainsi on alège un peu la syntaxe.</p>
          </div>
-         <div subtype="level2">
+         <div type="section1">
             <head>Encadrés</head>
-            <div type="encadre">
-               <p>nomprenom</p>
-               <p>Pour le moment on a un encadré minimal avec un titre et une autorité à récupérer dans <code rend="inline">TEI/text/body//bibl[@type="sec_authority"]/author/persName/surname|forename</code>
-               </p>
-            </div>
+            <floatingText type="encadre">
+               <body>
+                  <p>Pour le moment on a un encadré minimal avec un titre et une autorité à récupérer dans <code rend="inline">TEI/text/body//bibl[@type="sec_authority"]/author/persName/surname|forename</code>
+                     <bibl type="sec_authority">
+                        <author>
+                           <persName>
+                              <surname>nom</surname>
+                              <forename>prenom</forename>
+                           </persName>
+                        </author>
+                     </bibl>
+                  </p>
+               </body>
+            </floatingText>
          </div>
-         <div subtype="level2">
+         <div type="section1">
             <head>Typographie</head>
             <p>
                <hi rend="italic">italique</hi> ou <hi rend="italic">italique</hi>
@@ -350,14 +341,14 @@
                <hi rend="strikethrough">texte barré</hi>
             </p>
          </div>
-         <div subtype="level2">
+         <div type="section1">
             <head>Index</head>
             <p>Platon est un philosophe de l’Antiquité grecque, élève de Socrate et maître d’Aristote.</p>
             <p>Il fonda l’Académie à Athènes, vers 387 av. J.-C.</p>
             <p>Ses œuvres majeures, comme la République ou le Banquet, ont profondément influencé la pensée occidentale.</p>
             <p>Aristote, après avoir quitté l’Académie, devint le précepteur du jeune Alexandre le Grand, avant de fonder sa propre école, le Lycée, également à Athènes.</p>
          </div>
-         <div subtype="level2">
+         <div type="section1">
             <head>Le code</head>
             <p>
                <code lang="python">def bonjour(nom):
@@ -368,13 +359,13 @@ bonjour("monde")</code>
             <p>On peut aussi mettre du code inline : <code rend="inline">&lt;div&gt;Voici du code inline&lt;/div&gt;</code>
             </p>
          </div>
-         <div subtype="level2">
+         <div type="section1">
             <head>Titre choisi pour la bibliographie</head>
             <p>Le snippet de code biblio rajoute un titre de niveau 2 comme ci-dessus, qui sert à renseigner le titre de la bibliographie. En dessous directement est inséré la syntaxe pandoc pour imprimer la biblio.</p>
          </div>
       </body>
       <back>
-         <div subtype="bibliography">
+         <div type="bibliography" xml:id="bibliography">
             <head>Bibliographie</head>
             <listBibl>
                <bibl xml:id="ref-baudelaire_albatros_1857">Baudelaire, Charles. 1857. « L’Albatros ». In <hi rend="italic">Les Fleurs du mal</hi>. Poulet-Malassis et de Broise.</bibl>
