@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:space="default">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:space="default" xml:lang="fr">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -31,8 +31,8 @@
                </affiliation>
             </editor>
             <funder>
-               <orgName>Truc</orgName>
-               <idno>XXXX</idno>
+               <orgName>CRSH</orgName>
+               <idno>501100000155</idno>
             </funder>
          </titleStmt>
          <publicationStmt>
@@ -93,6 +93,11 @@
             </keywords>
          </textClass>
       </profileDesc>
+      <revisionDesc>
+         <listChange>
+            <change type="creation" when="2026-04-11">XML-TEI file creation</change>
+         </listChange>
+      </revisionDesc>
    </teiHeader>
    <text xml:id="text" type="article">
       <front>
@@ -122,16 +127,16 @@
                <hi rend="bold">Mots-clés (en) :</hi> Dora Maar, Surréalism, Photomontage, Self-theory, Ecocriticism, Affect, Subjectivity, Depression, Feminism, Art Writing</p>
          </div>
          <div type="funder">
-            <p>Truc</p>
+            <p>CRSH</p>
          </div>
          <div type="sponsor">
             <p>Ce livre a été rendu possible grâce au soutien du CRSH.</p>
          </div>
          <div type="ack">
-            <p>remerciements</p>
+            <p>Remerciements.</p>
          </div>
          <div type="dedication">
-            <p>Voici une dédicace</p>
+            <p>Voici une dédicace.</p>
          </div>
          <note type="aut">
             <p>Note préliminaire de l’auteur</p>
@@ -146,7 +151,10 @@
             <p>ATTENTION: Ceci est un chapôt introductif</p>
          </argument>
          <epigraph>
-            <p>Tant qu’il existera, par le fait des lois et des mœurs, une damnation sociale créant artificiellement, en pleine civilisation, des enfers, et compliquant d’une fatalité humaine la destinée qui est divine ; tant que les trois problèmes du siècle, la dégradation de l’homme par le prolétariat, la déchéance de la femme par la faim, l’atrophie de l’enfant par la nuit, ne seront pas résolus ; tant que, dans de certaines régions, l’asphyxie sociale sera possible ; en d’autres termes, et à un point de vue plus étendu encore, tant qu’il y aura sur la terre ignorance et misère, des livres de la nature de celui-ci pourront ne pas être inutiles. (<ref target="#ref-hugo1862miserables">Hugo 1862</ref>)</p>
+            <p>Tant qu’il existera, par le fait des lois et des mœurs, une damnation sociale créant artificiellement, en pleine civilisation, des enfers, et compliquant d’une fatalité humaine la destinée qui est divine ; tant que les trois problèmes du siècle, la dégradation de l’homme par le prolétariat, la déchéance de la femme par la faim, l’atrophie de l’enfant par la nuit, ne seront pas résolus ; tant que, dans de certaines régions, l’asphyxie sociale sera possible ; en d’autres termes, et à un point de vue plus étendu encore, tant qu’il y aura sur la terre ignorance et misère, des livres de la nature de celui-ci pourront ne pas être inutiles. <bibl rend="inline">
+                  <ref target="#ref-hugo1862miserables">Hugo 1862</ref>
+               </bibl>
+            </p>
          </epigraph>
       </front>
       <body>
@@ -162,7 +170,7 @@
          </div>
          <div type="section1">
             <head>Liminaires</head>
-            <p>Simple remarque : avec le schéma d’Érudit je suis confronté au problème suivant : ils sont très attaché à l’identité entre le pdf et le HTML produit à partie de leur XML. Or le markdown ne contraignant pas l’ordre des éléments, la dédicace ou les épigraphes se trouvent parfois mal placés dans l’article. C’est une idée à retenir et à enticiper pour la validation. Il faut « forcer » les écrivants et éditeurs sur stylo à placer ses blocs au bon endroit.</p>
+            <p>Simple remarque : avec le schéma d’Érudit je suis confronté au problème suivant : ils sont très attaché à l’identité entre le pdf et le HTML produit à partie de leur XML. Or le markdown ne contraignant pas l’ordre des éléments, la dédicace ou les épigraphes se trouvent parfois mal placés dans l’article. C’est une idée à retenir et à enticiper pour la validation. Il faut « forcer » les écrivants et éditeurs sur stylo à placer ses blocs au bon endroit.</p>
          </div>
          <div type="section1">
             <head>Texte</head>
@@ -170,7 +178,10 @@
             <p>Un saut de ligne</p>
             <p>Une ligne<lb/>Une ligne à la suite</p>
             <p rend="break">- - -</p>
-            <p>Et là je veux citer Hugo (<ref target="#ref-hugo1862miserables">1862</ref>)</p>
+            <pb/>
+            <p>Et là je veux citer <bibl rend="inline">
+                  <ref target="#ref-hugo1862miserables">1862</ref>
+               </bibl> (sans les crochets [], ça ne met pas le nom de l’auteur dans la référence; à n’utiliser que si on inscrit soi-même le nom de l’auteur dans le texte avoisinant).</p>
             <p rend="signature">Ceci est une signature</p>
             <list type="unordered">
                <item>liste</item>
@@ -221,51 +232,174 @@
          <div type="section1">
             <head>Citations</head>
             <cit>
-               <quote>
-                  <p>Ceci est une citation. (<ref target="#ref-hugo1862miserables">Hugo 1862, 123‑25</ref>)</p>
+               <quote>Ceci est une citation (qui inclut une référence, mais ce n’est pas obligatoire). <bibl rend="inline">
+                     <ref target="#ref-hugo1862miserables">Hugo 1862, 123‑25</ref>
+                  </bibl>
                </quote>
             </cit>
             <p>Cette citation a une source référencée entre crochets.</p>
-            <p>Parfois j’écris un paragraphe et comme le disait Hugo (<ref target="#ref-hugo1862miserables">1862</ref>), <cit>
+            <p>Parfois j’écris un paragraphe et comme le disait Hugo dans <bibl rend="inline">
+                  <ref target="#ref-hugo1862miserables">1862</ref>
+               </bibl>, <cit>
                   <quote>Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs.</quote>
                </cit> De cette manière j’ai une citation innline.</p>
+            <p>Si on voulait une référence, on l’inscrirait simplement avec le reste du texte cité :</p>
+            <p>Comme le disait Hugo, <cit>
+                  <quote>Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs. <bibl rend="inline">
+                        <ref target="#ref-hugo1862miserables">Hugo 1862</ref>
+                     </bibl>
+                  </quote>
+               </cit> Ensuite, le paragraphe continue.</p>
             <cit>
-               <quote type="quotation2">
-                  <p>c’est une pratique d’open edition, pas de notion sémantique, elle s’appelle juste citation bis dans le schéma commons.</p>
+               <quote type="quotation2">c’est une pratique d’open edition, pas de notion sémantique, elle s’appelle juste citation bis dans le schéma commons. Si on veut une référence, on l’inscrit simplement avec le reste du texte cité. <bibl rend="inline">
+                     <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
+                  </bibl>
                </quote>
             </cit>
-            <p>Il faut ensuite faire des citations plus complexes.</p>
-            <cit>
-               <quote>
-                  <p>tatitata (ça peut être des vers ou des didascalies)</p>
-               </quote>
-            </cit>
-
-            <p>tatitata dans une autre langue</p>
-
-            <p>(<ref target="#ref-hugo1862miserables">Hugo 1862, 123‑25</ref>)</p>
-            <p>Cette dernière citation a une traduction et la langue de la traduction.</p>
-            <p>Que se passe-t-il quand on veut encoder des vers ?</p>
-            <cit>
-               <quote>
-                  <p>Souvent, pour s’amuser, les hommes d’équipage Prennent des albatros, vastes oiseaux des mers, Qui suivent, indolents compagnons de voyage, (<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>)</p>
-               </quote>
-            </cit>
-            <p>Ces vers peuvent être compris dans une citation complexe</p>
-            <cit>
-               <quote>
-                  <p>Souvent, pour s’amuser, les hommes d’équipage Prennent des albatros, vastes oiseaux des mers, Qui suivent, indolents compagnons de voyage,</p>
-               </quote>
-            </cit>
-
-            <cit>
-               <quote>
-                  <p>Often, to amuse themselves, the sailors Catch albatrosses, vast birds of the seas, Who follow, indolent companions of the voyage,</p>
-               </quote>
-            </cit>
-
-            <p>(<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>)</p>
-            <p>Nous nous sommes arrêtés ici en ce qui a trait aux citations. Il faudra penser à un système qui reste lisible et pas trop lours pour le théâtre et la linguistique.</p>
+            <div type="section2">
+               <head>Citations complexes</head>
+               <p>Il faut ensuite faire des citations plus complexes.</p>
+               <p>Commençons doucement :</p>
+               <cit>
+                  <quote>
+                     <p>Un premier paragraphe.</p>
+                     <p>Un second paragraphe dans la même citation.</p>
+                  </quote>
+               </cit>
+               <p>On note que, comparativement aux citations simple (&gt;) ou « quot-alt », une « quotcomplexe » peut comporter plusieurs paragaphes.</p>
+               <p>On peut ajouter une référence bibli :</p>
+               <cit>
+                  <quote>
+                     <p>Un premier paragraphe.</p>
+                     <p>Un second paragraphe dans la même citation.</p>
+                     <bibl rend="inline">
+                        <ref target="#ref-hugo1862miserables">Hugo 1862, 12‑135</ref>
+                     </bibl>
+                  </quote>
+               </cit>
+               <p>On peut maintenant ajouter des traductions + références :</p>
+               <cit>
+                  <quote xml:lang="fr">
+                     <p>tatitata (ça peut être des vers ou des didascalies)</p>
+                     <quote type="trl" xml:lang="no">
+                        <p>tatitata dans une autre langue</p>
+                        <bibl rend="inline">
+                           <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
+                        </bibl>
+                     </quote>
+                     <bibl rend="inline">
+                        <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
+                     </bibl>
+                  </quote>
+               </cit>
+               <p>Cette dernière citation a traduction et références.</p>
+               <p>Si on préfère, la référence générale au texte en langue originale peut être donnée avant la sous-section pour la traduction :</p>
+               <cit>
+                  <quote>
+                     <p>tatitata (ça peut être des vers ou des didascalies)</p>
+                     <bibl rend="inline">
+                        <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
+                     </bibl>
+                     <quote type="trl" xml:lang="fr">
+                        <p>tatitata dans une autre langue</p>
+                        <bibl rend="inline">
+                           <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
+                        </bibl>
+                     </quote>
+                  </quote>
+               </cit>
+            </div>
+            <div type="section2">
+               <head>Citations complexes de vers</head>
+               <p>Que se passe-t-il quand on veut citer des vers ?</p>
+               <cit>
+                  <quote>
+                     <lg>
+                        <l n="1">
+                           <num>1</num> Souvent, pour s’amuser, les hommes d’équipage</l>
+                        <l n="2">
+                           <num>2</num> Prennent des albatros, vastes oiseaux des mers,</l>
+                        <l n="3">
+                           <num>3</num> Qui suivent, indolents compagnons de voyage,</l>
+                     </lg> 
+                  </quote>
+               </cit>
+               <p>Pour ajouter une référence, on la met à la fin, dans la citation :</p>
+               <cit>
+                  <quote>
+                     <lg>
+                        <l n="1">
+                           <num>1</num> Souvent, pour s’amuser, les hommes d’équipage</l>
+                        <l n="2">
+                           <num>2</num> Prennent des albatros, vastes oiseaux des mers,</l>
+                        <l n="3">
+                           <num>3</num> Qui suivent, indolents compagnons de voyage,</l>
+                     </lg>  
+                     <bibl rend="inline">
+                        <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>
+                     </bibl>
+                  </quote>
+               </cit>
+               <p>Ces vers peuvent être compris dans une citation complexe :</p>
+               <cit>
+                  <quote>
+                     <lg>
+                        <l n="1">
+                           <num>1</num> Souvent, pour s’amuser, les hommes d’équipage</l>
+                        <l n="2">
+                           <num>2</num> Prennent des albatros, vastes oiseaux des mers,</l>
+                        <l n="3">
+                           <num>3</num> Qui suivent, indolents compagnons de voyage,</l>
+                     </lg> 
+                     <quote type="trl" xml:lang="en">
+                        <lg>
+                           <l n="1">
+                              <num>1</num> Often, to amuse themselves, the sailors</l>
+                           <l n="2">
+                              <num>2</num> Catch albatrosses, vast birds of the seas,</l>
+                           <l n="3">
+                              <num>3</num> Who follow, indolent companions of the voyage,</l>
+                        </lg> 
+                        <bibl rend="inline">
+                           <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
+                        </bibl>
+                     </quote>
+                     <bibl rend="inline">
+                        <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>
+                     </bibl>
+                  </quote>
+               </cit>
+               <p>Si on préfère, la référence générale au texte en langue originale peut être donnée avant la sous-section pour la traduction :</p>
+               <cit>
+                  <quote>
+                     <lg>
+                        <l n="1">
+                           <num>1</num> Souvent, pour s’amuser, les hommes d’équipage</l>
+                        <l n="2">
+                           <num>2</num> Prennent des albatros, vastes oiseaux des mers,</l>
+                        <l n="3">
+                           <num>3</num> Qui suivent, indolents compagnons de voyage,</l>
+                     </lg>  
+                     <bibl rend="inline">
+                        <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>
+                     </bibl>
+                     <quote type="trl" xml:lang="en">
+                        <lg>
+                           <l n="1">
+                              <num>1</num> Often, to amuse themselves, the sailors</l>
+                           <l n="2">
+                              <num>2</num> Catch albatrosses, vast birds of the seas,</l>
+                           <l n="3">
+                              <num>3</num> Who follow, indolent companions of the voyage,</l>
+                        </lg>  
+                        <bibl rend="inline">
+                           <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 90‑99</ref>
+                        </bibl>
+                     </quote>
+                  </quote>
+               </cit>
+               <p>Nous nous sommes arrêtés ici en ce qui a trait aux citations. Il faudra penser à un système qui reste lisible et pas trop lours pour le théâtre et la linguistique.</p>
+            </div>
          </div>
          <div type="section1">
             <head>Figures</head>
@@ -275,20 +409,27 @@
                <graphic url="../icono/br/image.png"/>
             </figure>
             <p>Mais ce qu’on voudrait c’est qu’ils soient plus précis en insérant un snippet de code pour récupérer plus d’information.</p>
-            <p>Titre de l’image dans laquelle on devrait mettre aussi des crédits</p>
             <figure>
+               <head>Titre de l’image dans laquelle on devrait mettre aussi des crédits</head>
                <p rend="caption">légende</p>
                <graphic url="../icono/br/image.png"/>
+               <p rend="credits">Cette image est sous licence machin et est attribuée à <bibl rend="inline">
+                     <ref target="#ref-baudelaire_albatros_1857">1857</ref>
+                  </bibl>
+               </p>
             </figure>
-
-            <p>Cette image est sous licence machin et est attribuée à Baudelaire (<ref target="#ref-baudelaire_albatros_1857">1857</ref>)</p>
-
             <p>On voit que les crédits peuvent :</p>
             <list type="unordered">
                <item>être au sein d’autres éléments</item>
                <item>l’élément rédigé en lui-même (logique du présentationnel)</item>
             </list>
-            <p>L’idée ici est de <hi rend="bold">détourner l’alt de l’image pour récupérer la caption</hi>. Ainsi on alège un peu la syntaxe.</p>
+            <p>Exemple illustrant le premier cas de figure (mauvais jeu de mot) :</p>
+            <figure>
+               <head>L’image dans sa splendeur, telle qu’on peut l’admirer au Musée du Louvre</head>
+               <p rend="caption">Image mirobolante</p>
+               <graphic url="../icono/br/image.png"/>
+               <p rend="credits">Musée du Louvre</p>
+            </figure>
          </div>
          <div type="section1">
             <head>Encadrés</head>
@@ -336,7 +477,9 @@
             </p>
             <p>A<hi rend="sub">a</hi>
             </p>
-            <p>Trouver comment souligne ??</p>
+            <p>
+               <hi rend="underline">Trouver comment souligne ??</hi>
+            </p>
             <p>
                <hi rend="strikethrough">texte barré</hi>
             </p>
@@ -401,6 +544,22 @@ bonjour("monde")</code>
                         <date>1862</date>
                         <pubPlace>Paris</pubPlace>
                         <publisher>A. Lacroix, Verboeckhoven &amp; Cie</publisher>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+            </listBibl>
+            <listBibl>
+               <bibl xml:id="ref-moliere_misanthrope_1666">Molière. 1666. <hi rend="italic">Le Misanthrope</hi>. Jean Ribou.</bibl>
+               <biblStruct type="book" xml:id="semref-moliere_misanthrope_1666">
+                  <monogr>
+                     <author>
+                        <surname>Molière</surname>
+                     </author>
+                     <title level="m">Le misanthrope</title>
+                     <imprint>
+                        <date>1666</date>
+                        <pubPlace>Paris</pubPlace>
+                        <publisher>Jean Ribou</publisher>
                      </imprint>
                   </monogr>
                </biblStruct>

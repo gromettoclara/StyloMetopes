@@ -9,14 +9,14 @@ Ceci est le doc de référence, martyre, pour baliser du texte destiné à Commo
 ## Liminaires
 
 ::: {.ack}
-remerciements
+Remerciements.
 :::
 
 ::: {.dedication}
-Voici une dédicace
+Voici une dédicace.
 :::
 
-Simple remarque : avec le schéma d'Érudit je suis confronté au problème suivant : ils sont très attaché à l'identité entre le pdf et le HTML produit à partie de leur XML. Or le markdown ne contraignant pas l'ordre des éléments, la dédicace ou les épigraphes se trouvent parfois mal placés dans l'article. C'est une idée à retenir et à enticiper pour la validation. Il faut "forcer" les écrivants et éditeurs sur stylo à placer ses blocs au bon endroit. 
+Simple remarque : avec le schéma d'Érudit je suis confronté au problème suivant : ils sont très attaché à l'identité entre le pdf et le HTML produit à partie de leur XML. Or le markdown ne contraignant pas l'ordre des éléments, la dédicace ou les épigraphes se trouvent parfois mal placés dans l'article. C'est une idée à retenir et à enticiper pour la validation. Il faut "forcer" les écrivants et éditeurs sur stylo à placer ses blocs au bon endroit. 
 
 ::: {.notepre origin=aut}
 Note préliminaire de l'auteur
@@ -53,7 +53,9 @@ Une ligne à la suite
 
 - - -
 
-Et là je veux citer @hugo1862miserables
+Et là je veux citer @hugo1862miserables (sans les crochets \[\], ça ne met pas
+le nom de l’auteur dans la référence; à n’utiliser que si on inscrit soi-même
+le nom de l’auteur dans le texte avoisinant).
 
 ::: {.sig}
 Ceci est une signature
@@ -97,39 +99,93 @@ Par exemple je veux mattre une note de fin ici[Voici ce que je veux dire et qui 
 
 ## Citations
 
-> Ceci est une citation. [@hugo1862miserables, 123-125]
+> Ceci est une citation (qui inclut une référence, mais ce n’est pas obligatoire). [@hugo1862miserables, 123-125]
 
 Cette citation a une source référencée entre crochets.
 
-Parfois j'écris un paragraphe et comme le disait @hugo1862miserables, [Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs.]{.inlinequote} De cette manière j'ai une citation innline. 
+Parfois j'écris un paragraphe et comme le disait Hugo dans @hugo1862miserables, [Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs.]{.inlinequote} De cette manière j'ai une citation innline.
+
+Si on voulait une référence, on l’inscrirait simplement avec le reste du texte cité :
+
+Comme le disait Hugo, [Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs. [@hugo1862miserables]]{.inlinequote} Ensuite, le paragraphe continue.
 
 :::{.quote-alt}
 c’est une pratique d’open edition, pas de notion sémantique, elle s’appelle juste citation bis  dans le schéma commons.
+Si on veut une référence, on l’inscrit simplement avec le reste du texte cité. [@baudelaire_albatros_1857]
 :::
 
+### Citations complexes
 
-Il faut ensuite faire des citations plus complexes. 
+Il faut ensuite faire des citations plus complexes.
+
+Commençons doucement :
+
+:::{.quotcomplexe}
+> Un premier paragraphe.
+>
+> Un second paragraphe dans la même citation.
+:::
+
+On note que, comparativement aux citations simple (>) ou 'quot-alt', une 
+'quotcomplexe' peut comporter plusieurs paragaphes.
+
+On peut ajouter une référence bibli :
+
+:::{.quotcomplexe}
+> Un premier paragraphe.
+>
+> Un second paragraphe dans la même citation.
+
+[@hugo1862miserables, 12-135]
+:::
+
+On peut maintenant ajouter des traductions + références :
+
+:::{.quotcomplexe lang=fr}
+> tatitata (ça peut être des vers ou des didascalies)
+
+:::{.trad lang=no}
+> tatitata dans une autre langue
+
+[@baudelaire_albatros_1857]
+:::
+
+[@moliere_misanthrope_1666]
+:::
+
+Cette dernière citation a traduction et références.
+
+Si on préfère, la référence générale au texte en langue originale peut être
+donnée avant la sous-section pour la traduction :
 
 :::{.quotcomplexe}
 > tatitata (ça peut être des vers ou des didascalies)
 
+[@moliere_misanthrope_1666]
+
 :::{.trad lang=fr}
-tatitata dans une autre langue
+> tatitata dans une autre langue
+
+[@baudelaire_albatros_1857]
+:::
 :::
 
-[@hugo1862miserables, 123-125]
-:::
+### Citations complexes de vers
 
-Cette dernière citation a une traduction et la langue de la traduction.
+Que se passe-t-il quand on veut citer des vers ?
 
-Que se passe-t-il quand on veut encoder des vers ? 
+> [Souvent, pour s’amuser, les hommes d’équipage]{.verse num=1} 
+> [Prennent des albatros, vastes oiseaux des mers,]{.verse num=2}
+> [Qui suivent, indolents compagnons de voyage,]{.verse num=3}
+
+Pour ajouter une référence, on la met à la fin, dans la citation :
 
 > [Souvent, pour s’amuser, les hommes d’équipage]{.verse num=1} 
 > [Prennent des albatros, vastes oiseaux des mers,]{.verse num=2}
 > [Qui suivent, indolents compagnons de voyage,]{.verse num=3}
 > [@baudelaire_albatros_1857, 1-3]
 
-Ces vers peuvent être compris dans une citation complexe
+Ces vers peuvent être compris dans une citation complexe :
 
 :::{.quotcomplexe}
 > [Souvent, pour s’amuser, les hommes d’équipage]{.verse num=1} 
@@ -140,9 +196,29 @@ Ces vers peuvent être compris dans une citation complexe
 > [Often, to amuse themselves, the sailors]{.verse num=1}
 > [Catch albatrosses, vast birds of the seas,]{.verse num=2}
 > [Who follow, indolent companions of the voyage,]{.verse num=3}
+
+[@moliere_misanthrope_1666]
 :::
 
 [@baudelaire_albatros_1857, 1-3]
+:::
+
+Si on préfère, la référence générale au texte en langue originale peut être
+donnée avant la sous-section pour la traduction :
+
+:::{.quotcomplexe}
+> [Souvent, pour s’amuser, les hommes d’équipage]{.verse num=1} 
+> [Prennent des albatros, vastes oiseaux des mers,]{.verse num=2}
+> [Qui suivent, indolents compagnons de voyage,]{.verse num=3}
+> [@baudelaire_albatros_1857, 1-3]
+
+:::{.trad lang=en}
+> [Often, to amuse themselves, the sailors]{.verse num=1}
+> [Catch albatrosses, vast birds of the seas,]{.verse num=2}
+> [Who follow, indolent companions of the voyage,]{.verse num=3}
+> [@baudelaire_albatros_1857, 90-99]
+:::
+
 :::
 
 Nous nous sommes arrêtés ici en ce qui a trait aux citations. Il faudra penser à un système qui reste lisible et pas trop lours pour le théâtre et la linguistique. 
@@ -171,7 +247,13 @@ On voit que les crédits peuvent :
 - être au sein d'autres éléments
 - l'élément rédigé en lui-même (logique du présentationnel)
 
-L'idée ici est de **détourner l'alt de l'image pour récupérer la caption**. Ainsi on alège un peu la syntaxe. 
+Exemple illustrant le premier cas de figure (mauvais jeu de mot) :
+
+:::{.figure}
+[L’image dans sa splendeur, telle qu’on peut l’admirer au [Musée du Louvre]{.credits}]{.head}
+
+![Image mirobolante](mkdreference/medias/image.png)
+:::
 
 ## Encadrés
 
@@ -203,7 +285,7 @@ _italique_ ou *italique*
 
 A~a~
 
-Trouver comment souligne ?? 
+[Trouver comment souligne ??]{.underline}
 
 ~~texte barré~~
 

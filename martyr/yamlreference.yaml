@@ -15,7 +15,7 @@ abstract: >-
   qu’on comprend l’importance pour l’histoire culturelle de la dépression de la
   pratique créative comme étant réparatrice. 
 # résumé dans la langue de l'article
-acknowledgements: Merci à la rédactrice en chef blabla
+acknowledgements: Merci à la rédactrice en chef blabla.
 # remerciements
 authors:
   - affiliations: Duke University
@@ -47,8 +47,8 @@ controlledKeywords:
     uriRameau: http://data.bnf.fr/ark:/12148/cb11933335p
 # Les info importantes dans les mots-clés contrôlés sont le label et l'uri. Je ne pense pas qu'ils sont exploités dans le schéma de Métopes. 
 funder:
-  id: '1234567898754'
-  organization: Truc
+  id: '501100000155'
+  organization: CRSH
 # funder sont les information sur le financeur
 id: SP1800
 # id est l'identifiant de la revue, utile pour les export vers le schéma d'Erudit mais peut-être inutile pour Métopes
