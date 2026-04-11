@@ -144,13 +144,13 @@ On peut maintenant ajouter des traductions + références :
 :::{.quotcomplexe lang=fr}
 > tatitata (ça peut être des vers ou des didascalies)
 
-:::{.trad lang=no}
+:::{.trad lang=en}
 > tatitata dans une autre langue
 
-[@baudelaire_albatros_1857]
+[@moliere_misanthrope_1666]
 :::
 
-[@moliere_misanthrope_1666]
+[@baudelaire_albatros_1857]
 :::
 
 Cette dernière citation a traduction et références.
