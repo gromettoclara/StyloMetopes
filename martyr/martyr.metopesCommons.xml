@@ -95,7 +95,7 @@
       </profileDesc>
       <revisionDesc>
          <listChange>
-            <change type="creation" when="2026-04-11">XML-TEI file creation</change>
+            <change type="creation" when="2026-04-10">XML-TEI file creation</change>
          </listChange>
       </revisionDesc>
    </teiHeader>
@@ -281,29 +281,29 @@
                <cit>
                   <quote xml:lang="fr">
                      <p>tatitata (ça peut être des vers ou des didascalies)</p>
-                     <quote type="trl" xml:lang="en">
+                     <quote type="trl" xml:lang="no">
                         <p>tatitata dans une autre langue</p>
                         <bibl rend="inline">
-                           <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
+                           <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
                         </bibl>
                      </quote>
                      <bibl rend="inline">
-                        <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
+                        <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
                      </bibl>
                   </quote>
                </cit>
                <p>Cette dernière citation a traduction et références.</p>
-               <p>Si on préfère, la référence au texte en langue originale peut être donnée avant la sous-section pour la traduction :</p>
+               <p>Si on préfère, la référence générale au texte en langue originale peut être donnée avant la sous-section pour la traduction :</p>
                <cit>
                   <quote>
                      <p>tatitata (ça peut être des vers ou des didascalies)</p>
                      <bibl rend="inline">
-                        <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
+                        <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
                      </bibl>
-                     <quote type="trl" xml:lang="en">
+                     <quote type="trl" xml:lang="fr">
                         <p>tatitata dans une autre langue</p>
                         <bibl rend="inline">
-                           <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
+                           <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
                         </bibl>
                      </quote>
                   </quote>
@@ -369,7 +369,7 @@
                      </bibl>
                   </quote>
                </cit>
-               <p>Si on préfère, la référence au texte en langue originale peut être donnée avant la sous-section pour la traduction :</p>
+               <p>Si on préfère, la référence générale au texte en langue originale peut être donnée avant la sous-section pour la traduction :</p>
                <cit>
                   <quote>
                      <lg>
@@ -393,7 +393,7 @@
                               <num>3</num> Who follow, indolent companions of the voyage,</l>
                         </lg>  
                         <bibl rend="inline">
-                           <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
+                           <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 90‑99</ref>
                         </bibl>
                      </quote>
                   </quote>
