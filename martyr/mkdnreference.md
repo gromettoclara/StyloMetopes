@@ -35,7 +35,11 @@ ATTENTION: Ceci est un chapôt introductif
 :::
 
 ::: {.epigraph}
-Tant qu’il existera, par le fait des lois et des mœurs, une damnation sociale créant artificiellement, en pleine civilisation, des enfers, et compliquant d’une fatalité humaine la destinée qui est divine ; tant que les trois problèmes du siècle, la dégradation de l’homme par le prolétariat, la déchéance de la femme par la faim, l’atrophie de l’enfant par la nuit, ne seront pas résolus ; tant que, dans de certaines régions, l’asphyxie sociale sera possible ; en d’autres termes, et à un point de vue plus étendu encore, tant qu’il y aura sur la terre ignorance et misère, des livres de la nature de celui-ci pourront ne pas être inutiles. [@hugo1862miserables]
+::: {.quotcomplexe}
+> Tant qu’il existera, par le fait des lois et des mœurs, une damnation sociale créant artificiellement, en pleine civilisation, des enfers, et compliquant d’une fatalité humaine la destinée qui est divine ; tant que les trois problèmes du siècle, la dégradation de l’homme par le prolétariat, la déchéance de la femme par la faim, l’atrophie de l’enfant par la nuit, ne seront pas résolus ; tant que, dans de certaines régions, l’asphyxie sociale sera possible ; en d’autres termes, et à un point de vue plus étendu encore, tant qu’il y aura sur la terre ignorance et misère, des livres de la nature de celui-ci pourront ne pas être inutiles.
+
+[@hugo1862miserables]
+:::
 :::
 
 :::{.sponsor}
@@ -129,7 +133,10 @@ Commençons doucement :
 On note que, comparativement aux citations simple (>) ou 'quot-alt', une 
 'quotcomplexe' peut comporter plusieurs paragaphes.
 
-On peut ajouter une référence bibli :
+En plus des références bibli inline intégrées aux paragraphes,
+on peut aussi en ajouter des non inline, qui
+apparaîtront alors dissociées des paragraphes cités, mais toujours à l’intérieur
+de l’élément quote :
 
 :::{.quotcomplexe}
 > Un premier paragraphe.
