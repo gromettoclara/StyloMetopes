@@ -240,19 +240,19 @@ Mais ce qu'on voudrait c'est qu'ils soient plus précis en insérant un snippet 
 
 :::{.figure}
 
-[Titre de l'image dans laquelle on devrait mettre aussi des [crédits]{.credits}]{.head}
+[Titre de l'image dans laquelle on ~~devrait~~ pourrait mettre aussi des [crédits]{.credits}]{.head}
 
 ![légende](mkdreference/medias/image.png)
 
 :::{.credits}
-Cette image est sous licence [machin]{.credits} et est attribuée à @baudelaire_albatros_1857
+Cette image est sous licence [machin]{.credits} et est attribuée à [@baudelaire_albatros_1857].
 :::
 :::
 
 On voit que les crédits peuvent : 
 
 - être au sein d'autres éléments
-- l'élément rédigé en lui-même (logique du présentationnel)
+- une sous-section 'credits' (qui a alors préséance sur les spans 'credits' éventuels)
 
 Exemple illustrant le premier cas de figure (mauvais jeu de mot) :
 

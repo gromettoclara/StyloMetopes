@@ -414,18 +414,17 @@
             </figure>
             <p>Mais ce qu’on voudrait c’est qu’ils soient plus précis en insérant un snippet de code pour récupérer plus d’information.</p>
             <figure>
-               <head>Titre de l’image dans laquelle on devrait mettre aussi des crédits</head>
+               <head>Titre de l’image dans laquelle on <hi rend="strikethrough">devrait</hi> pourrait mettre aussi des crédits</head>
                <p rend="caption">légende</p>
                <graphic url="../icono/br/image.png"/>
                <p rend="credits">Cette image est sous licence machin et est attribuée à <bibl rend="inline">
-                     <ref target="#ref-baudelaire_albatros_1857">1857</ref>
-                  </bibl>
-               </p>
+                     <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
+                  </bibl>.</p>
             </figure>
             <p>On voit que les crédits peuvent :</p>
             <list type="unordered">
                <item>être au sein d’autres éléments</item>
-               <item>l’élément rédigé en lui-même (logique du présentationnel)</item>
+               <item>une sous-section « credits » (qui a alors préséance sur les spans « credits » éventuels)</item>
             </list>
             <p>Exemple illustrant le premier cas de figure (mauvais jeu de mot) :</p>
             <figure>
