@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:space="default" xml:lang="fr">
+<?xml version="1.0" encoding="UTF-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:space="default" xml:lang="fr">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -37,7 +36,7 @@
          </titleStmt>
          <publicationStmt>
             <ab>
-               <bibl>
+               <bibl xml:id="bibl1">
                   <publisher>Erudit</publisher>
                   <publisher>OpenEdition</publisher>
                   <date>2026-02-18</date>
@@ -49,7 +48,7 @@
             </ab>
          </publicationStmt>
          <sourceDesc>
-            <p>Document créé sous forme numérique en Markdown dans Stylo.</p>
+            <p xml:id="p1">Document créé sous forme numérique en Markdown dans Stylo.</p>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -58,7 +57,7 @@
          </langUsage>
          <textClass>
             <keywords scheme="keyword" xml:lang="fr">
-               <list>
+               <list xml:id="list1">
                   <item>Dora Maar</item>
                   <item>Surréalisme</item>
                   <item>Photomontage</item>
@@ -72,13 +71,13 @@
                </list>
             </keywords>
             <keywords scheme="rameau" xml:lang="fr">
-               <list>
+               <list xml:id="list2">
                   <item>Féminisme</item>
                   <item>Surréalisme (littérature)</item>
                </list>
             </keywords>
             <keywords scheme="keyword" xml:lang="en">
-               <list>
+               <list xml:id="list3">
                   <item>Dora Maar</item>
                   <item>Surréalism</item>
                   <item>Photomontage</item>
@@ -101,60 +100,60 @@
    </teiHeader>
    <text xml:id="text" type="article">
       <front>
-         <div type="titlePage">
-            <p rend="title-main">Au-delà du minotaure et de la mélancolie : écrire Dora Maar</p>
-            <p rend="title-sub">un sous-titre</p>
-            <p rend="title-trl" xml:lang="en">Above minautore and melancolia : subtitle</p>
-            <p rend="author-aut">Mathilde Savard-Corbeil</p>
-            <p rend="authority_affiliation">Duke University</p>
-            <p rend="editor-trl">Clara Grometto</p>
-            <p rend="authority_affiliation">Sorbonne</p>
+         <div xml:id="div1" type="titlePage">
+            <p xml:id="p2" rend="title-main">Au-delà du minotaure et de la mélancolie : écrire Dora Maar</p>
+            <p xml:id="p3" rend="title-sub">un sous-titre</p>
+            <p xml:id="p4" rend="title-trl" xml:lang="en">Above minautore and melancolia : subtitle</p>
+            <p xml:id="p5" rend="author-aut">Mathilde Savard-Corbeil</p>
+            <p xml:id="p6" rend="authority_affiliation">Duke University</p>
+            <p xml:id="p7" rend="editor-trl">Clara Grometto</p>
+            <p xml:id="p8" rend="authority_affiliation">Sorbonne</p>
          </div>
-         <div type="abstract" xml:lang="fr">
-            <p>Cet article s’intéresse à l’apport critique de l’affect et de la subjectivité dans les écrits sur l’art. En adoptant une approche autothéorique, mon enquête sur trois œuvres photographiques de Dora Maar, soit Père Ubu, 29 rue d’Astorg et Les années vous guettent, revisite les différentes perspectives biographiques, historiographiques et littéraires afin de déconstruire le discours sur son œuvre, entre autres dans des récits comme Je suis le carnet de Dora Maar de Brigitte Benkemoun et La femme qui pleure de Zoé Valdés. Je propose de penser l’intersection entre éco-critique et dépression comme génératrice d’un renouvellement du regard, autant en ce qui concerne l’art que la perception de soi, notamment à travers les contributions de Ann Cvetkovich et des savoirs situés féministes. C’est donc grâce à une hybridation générique qu’on comprend l’importance pour l’histoire culturelle de la dépression de la pratique créative comme étant réparatrice.</p>
+         <div xml:id="div2" type="abstract" xml:lang="fr">
+            <p xml:id="p9">Cet article s’intéresse à l’apport critique de l’affect et de la subjectivité dans les écrits sur l’art. En adoptant une approche autothéorique, mon enquête sur trois œuvres photographiques de Dora Maar, soit Père Ubu, 29 rue d’Astorg et Les années vous guettent, revisite les différentes perspectives biographiques, historiographiques et littéraires afin de déconstruire le discours sur son œuvre, entre autres dans des récits comme Je suis le carnet de Dora Maar de Brigitte Benkemoun et La femme qui pleure de Zoé Valdés. Je propose de penser l’intersection entre éco-critique et dépression comme génératrice d’un renouvellement du regard, autant en ce qui concerne l’art que la perception de soi, notamment à travers les contributions de Ann Cvetkovich et des savoirs situés féministes. C’est donc grâce à une hybridation générique qu’on comprend l’importance pour l’histoire culturelle de la dépression de la pratique créative comme étant réparatrice.</p>
          </div>
-         <div type="keywords" xml:lang="fr">
-            <p>
+         <div xml:id="div3" type="keywords" xml:lang="fr">
+            <p xml:id="p10">
                <hi rend="bold">Mots-clés :</hi> Dora Maar, Surréalisme, Photomontage, Autothéorie, Écocritique, Affect, Subjectivité, Dépression, Féminisme, Écrits sur l’art</p>
-            <p>
+            <p xml:id="p11">
                <hi rend="bold">Mots-clés (RAMEAU) :</hi> Féminisme, Surréalisme (littérature)</p>
          </div>
-         <div type="abstract" xml:lang="en">
-            <p>This article examines the critical contribution of affect and subjectivity in writing about art. Adopting an autotheoretical approach, my investigation of three photographic works by Dora Maar, Père Ubu, 29 rue d’Astorg, and Les années vous guettent, revisits different biographical, historiographical, and literary perspectives to deconstruct the discourse on her work, among others in narratives such as Brigitte Benkemoun’s Je suis le carnet de Dora Maar and Zoé Valdés’s La femme qui pleure. I propose to think of the intersection between eco-criticism and depression as generating a renewal of the gaze, in terms of both art and self-perception, notably through the critical contributions of Ann Cvetkovich’s work and feminist situated knowledges. Through this generic hybridization, we understand the importance of the cultural history of depression in restorative creative practice.</p>
+         <div xml:id="div4" type="abstract" xml:lang="en">
+            <p xml:id="p12">This article examines the critical contribution of affect and subjectivity in writing about art. Adopting an autotheoretical approach, my investigation of three photographic works by Dora Maar, Père Ubu, 29 rue d’Astorg, and Les années vous guettent, revisits different biographical, historiographical, and literary perspectives to deconstruct the discourse on her work, among others in narratives such as Brigitte Benkemoun’s Je suis le carnet de Dora Maar and Zoé Valdés’s La femme qui pleure. I propose to think of the intersection between eco-criticism and depression as generating a renewal of the gaze, in terms of both art and self-perception, notably through the critical contributions of Ann Cvetkovich’s work and feminist situated knowledges. Through this generic hybridization, we understand the importance of the cultural history of depression in restorative creative practice.</p>
          </div>
-         <div type="keywords" xml:lang="en">
-            <p>
+         <div xml:id="div5" type="keywords" xml:lang="en">
+            <p xml:id="p13">
                <hi rend="bold">Mots-clés (en) :</hi> Dora Maar, Surréalism, Photomontage, Self-theory, Ecocriticism, Affect, Subjectivity, Depression, Feminism, Art Writing</p>
          </div>
-         <div type="funder">
-            <p>CRSH</p>
+         <div xml:id="div6" type="funder">
+            <p xml:id="p14">CRSH</p>
          </div>
-         <div type="sponsor">
-            <p>Ce livre a été rendu possible grâce au soutien du CRSH.</p>
+         <div xml:id="div7" type="sponsor">
+            <p xml:id="p15">Ce livre a été rendu possible grâce au soutien du CRSH.</p>
          </div>
-         <div type="ack">
-            <p>Remerciements.</p>
+         <div xml:id="div8" type="ack">
+            <p xml:id="p16">Remerciements.</p>
          </div>
-         <div type="dedication">
-            <p>Voici une dédicace.</p>
+         <div xml:id="div9" type="dedication">
+            <p xml:id="p17">Voici une dédicace.</p>
          </div>
          <note type="aut">
-            <p>Note préliminaire de l’auteur</p>
+            <p xml:id="p18">Note préliminaire de l’auteur</p>
          </note>
          <note type="pbl">
-            <p>Note préliminaire de l’éditeur</p>
+            <p xml:id="p19">Note préliminaire de l’éditeur</p>
          </note>
          <note type="trl">
-            <p>Note préliminaire du traducteur</p>
+            <p xml:id="p20">Note préliminaire du traducteur</p>
          </note>
          <argument>
-            <p>ATTENTION: Ceci est un chapôt introductif</p>
+            <p xml:id="p21">ATTENTION: Ceci est un chapôt introductif</p>
          </argument>
          <epigraph>
-            <cit>
+            <cit xml:id="cit1">
                <quote>
-                  <p>Tant qu’il existera, par le fait des lois et des mœurs, une damnation sociale créant artificiellement, en pleine civilisation, des enfers, et compliquant d’une fatalité humaine la destinée qui est divine ; tant que les trois problèmes du siècle, la dégradation de l’homme par le prolétariat, la déchéance de la femme par la faim, l’atrophie de l’enfant par la nuit, ne seront pas résolus ; tant que, dans de certaines régions, l’asphyxie sociale sera possible ; en d’autres termes, et à un point de vue plus étendu encore, tant qu’il y aura sur la terre ignorance et misère, des livres de la nature de celui-ci pourront ne pas être inutiles.</p>
-                  <bibl>
+                  <p xml:id="p22">Tant qu’il existera, par le fait des lois et des mœurs, une damnation sociale créant artificiellement, en pleine civilisation, des enfers, et compliquant d’une fatalité humaine la destinée qui est divine ; tant que les trois problèmes du siècle, la dégradation de l’homme par le prolétariat, la déchéance de la femme par la faim, l’atrophie de l’enfant par la nuit, ne seront pas résolus ; tant que, dans de certaines régions, l’asphyxie sociale sera possible ; en d’autres termes, et à un point de vue plus étendu encore, tant qu’il y aura sur la terre ignorance et misère, des livres de la nature de celui-ci pourront ne pas être inutiles.</p>
+                  <bibl xml:id="bibl2">
                      <ref target="#ref-hugo1862miserables">Hugo 1862</ref>
                   </bibl>
                </quote>
@@ -162,161 +161,161 @@
          </epigraph>
       </front>
       <body>
-         <p>Ceci est le doc de référence, martyre, pour baliser du texte destiné à Commons dans Stylo.</p>
-         <div type="section1">
+         <p xml:id="p23">Ceci est le doc de référence, martyre, pour baliser du texte destiné à Commons dans Stylo.</p>
+         <div xml:id="div10" type="section1">
             <head>Déjà on peut avoir plein de niveaux de titre, celui-ci est le premier…</head>
-            <div type="section2">
+            <div xml:id="div11" type="section2">
                <head>Le deuxième</head>
-               <div type="section3">
+               <div xml:id="div12" type="section3">
                   <head>Le troisième</head>
                </div>
             </div>
          </div>
-         <div type="section1">
+         <div xml:id="div13" type="section1">
             <head>Liminaires</head>
-            <p>Simple remarque : avec le schéma d’Érudit je suis confronté au problème suivant : ils sont très attaché à l’identité entre le pdf et le HTML produit à partie de leur XML. Or le markdown ne contraignant pas l’ordre des éléments, la dédicace ou les épigraphes se trouvent parfois mal placés dans l’article. C’est une idée à retenir et à enticiper pour la validation. Il faut « forcer » les écrivants et éditeurs sur stylo à placer ses blocs au bon endroit.</p>
+            <p xml:id="p24">Simple remarque : avec le schéma d’Érudit je suis confronté au problème suivant : ils sont très attaché à l’identité entre le pdf et le HTML produit à partie de leur XML. Or le markdown ne contraignant pas l’ordre des éléments, la dédicace ou les épigraphes se trouvent parfois mal placés dans l’article. C’est une idée à retenir et à enticiper pour la validation. Il faut « forcer » les écrivants et éditeurs sur stylo à placer ses blocs au bon endroit.</p>
          </div>
-         <div type="section1">
+         <div xml:id="div14" type="section1">
             <head>Texte</head>
-            <p>Du texte</p>
-            <p>Un saut de ligne</p>
-            <p>Une ligne<lb/>Une ligne à la suite</p>
-            <p rend="break">- - -</p>
+            <p xml:id="p25">Du texte</p>
+            <p xml:id="p26">Un saut de ligne</p>
+            <p xml:id="p27">Une ligne<lb/>Une ligne à la suite</p>
+            <p xml:id="p28" rend="break">- - -</p>
             <pb/>
-            <p>Et là je veux citer <bibl rend="inline">
+            <p xml:id="p29">Et là je veux citer <bibl xml:id="bibl3" rend="inline">
                   <ref target="#ref-hugo1862miserables">1862</ref>
                </bibl> (sans les crochets [], ça ne met pas le nom de l’auteur dans la référence; à n’utiliser que si on inscrit soi-même le nom de l’auteur dans le texte avoisinant).</p>
-            <p rend="signature">Ceci est une signature</p>
-            <list type="unordered">
+            <p xml:id="p30" rend="signature">Ceci est une signature</p>
+            <list xml:id="list4" type="unordered">
                <item>liste</item>
-               <item>liste<list type="unordered">
+               <item>liste<list xml:id="list5" type="unordered">
                      <item>sous liste</item>
                      <item>sous liste</item>
                   </list>
                </item>
             </list>
-            <list type="ordered">
+            <list xml:id="list6" type="ordered">
                <item>liste numérotée</item>
-               <item>liste numérotée<list type="ordered">
+               <item>liste numérotée<list xml:id="list7" type="ordered">
                      <item>sous liste numérotée</item>
                      <item>sous liste numérotée</item>
                   </list>
                </item>
             </list>
-            <p>
+            <p xml:id="p31">
                <hi rend="bold">Il manque les contenus additionnels !!!</hi>
             </p>
          </div>
-         <div type="section1">
+         <div xml:id="div15" type="section1">
             <head>Entretien</head>
             <sp rend="question">
-               <p>
+               <p xml:id="p32">
                   <name type="speaker">Clara</name> Une question est posée</p>
             </sp>
             <sp rend="answer">
-               <p>
+               <p xml:id="p33">
                   <name type="speaker">Marcello</name> Réponse à la question</p>
             </sp>
          </div>
-         <div type="section1">
+         <div xml:id="div16" type="section1">
             <head>Notes</head>
-            <p>Bablebliblablou, comme l’indique la note en bas de page.<note place="foot">
-                  <p>Ceci est une note de bas de page.</p>
+            <p xml:id="p34">Bablebliblablou, comme l’indique la note en bas de page.<note xml:id="ftn1" n="1" place="foot">
+                  <p xml:id="p35">Ceci est une note de bas de page.</p>
                </note>
             </p>
-            <p>Ou alors on peut faire cette syntaxe<note place="foot">
-                  <p>Cette manière de faire des notes de bas de page est aussi possible.</p>
+            <p xml:id="p36">Ou alors on peut faire cette syntaxe<note xml:id="ftn2" n="2" place="foot">
+                  <p xml:id="p37">Cette manière de faire des notes de bas de page est aussi possible.</p>
                </note> aussi.</p>
-            <p>Il faut inventer une autre syntaxe si on veut que les notes soient les notes de fin (<code rend="inline">TEI/text/body//note[@place="end"][@n][@type="standard"][@xml:id"]</code>).</p>
-            <p>Il me semble plus propre d’inventer une nouvelle syntaxe que de détourner celle de Pandoc:</p>
-            <p>Par exemple je veux mattre une note de fin ici<note place="end">
-                  <p>Voici ce que je veux dire et qui apparaît en fin de document.</p>
+            <p xml:id="p38">Il faut inventer une autre syntaxe si on veut que les notes soient les notes de fin (<code rend="inline">TEI/text/body//note[@place="end"][@n][@type="standard"][@xml:id"]</code>).</p>
+            <p xml:id="p39">Il me semble plus propre d’inventer une nouvelle syntaxe que de détourner celle de Pandoc:</p>
+            <p xml:id="p40">Par exemple je veux mattre une note de fin ici<note xml:id="ftn3" n="i" place="end">
+                  <p xml:id="p41">Voici ce que je veux dire et qui apparaît en fin de document.</p>
                </note>. Elle sera nmérotée incrémentalement.</p>
          </div>
-         <div type="section1">
+         <div xml:id="div17" type="section1">
             <head>Citations</head>
-            <cit>
-               <quote>Ceci est une citation (qui inclut une référence, mais ce n’est pas obligatoire). <bibl rend="inline">
+            <cit xml:id="cit2">
+               <quote>Ceci est une citation (qui inclut une référence, mais ce n’est pas obligatoire). <bibl xml:id="bibl4" rend="inline">
                      <ref target="#ref-hugo1862miserables">Hugo 1862, 123‑25</ref>
                   </bibl>
                </quote>
             </cit>
-            <p>Cette citation a une source référencée entre crochets.</p>
-            <p>Parfois j’écris un paragraphe et comme le disait Hugo dans <bibl rend="inline">
+            <p xml:id="p42">Cette citation a une source référencée entre crochets.</p>
+            <p xml:id="p43">Parfois j’écris un paragraphe et comme le disait Hugo dans <bibl xml:id="bibl5" rend="inline">
                   <ref target="#ref-hugo1862miserables">1862</ref>
-               </bibl>, <cit>
+               </bibl>, <cit xml:id="cit3">
                   <quote>Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs.</quote>
                </cit> De cette manière j’ai une citation innline.</p>
-            <p>Si on voulait une référence, on l’inscrirait simplement avec le reste du texte cité :</p>
-            <p>Comme le disait Hugo, <cit>
-                  <quote>Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs. <bibl rend="inline">
+            <p xml:id="p44">Si on voulait une référence, on l’inscrirait simplement avec le reste du texte cité :</p>
+            <p xml:id="p45">Comme le disait Hugo, <cit xml:id="cit4">
+                  <quote>Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs. <bibl xml:id="bibl6" rend="inline">
                         <ref target="#ref-hugo1862miserables">Hugo 1862</ref>
                      </bibl>
                   </quote>
                </cit> Ensuite, le paragraphe continue.</p>
-            <cit>
-               <quote type="quotation2">c’est une pratique d’open edition, pas de notion sémantique, elle s’appelle juste citation bis dans le schéma commons. Si on veut une référence, on l’inscrit simplement avec le reste du texte cité. <bibl rend="inline">
+            <cit xml:id="cit5">
+               <quote type="quotation2">c’est une pratique d’open edition, pas de notion sémantique, elle s’appelle juste citation bis dans le schéma commons. Si on veut une référence, on l’inscrit simplement avec le reste du texte cité. <bibl xml:id="bibl7" rend="inline">
                      <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
                   </bibl>
                </quote>
             </cit>
-            <div type="section2">
+            <div xml:id="div18" type="section2">
                <head>Citations complexes</head>
-               <p>Il faut ensuite faire des citations plus complexes.</p>
-               <p>Commençons doucement :</p>
-               <cit>
+               <p xml:id="p46">Il faut ensuite faire des citations plus complexes.</p>
+               <p xml:id="p47">Commençons doucement :</p>
+               <cit xml:id="cit6">
                   <quote>
-                     <p>Un premier paragraphe.</p>
-                     <p>Un second paragraphe dans la même citation.</p>
+                     <p xml:id="p48">Un premier paragraphe.</p>
+                     <p xml:id="p49">Un second paragraphe dans la même citation.</p>
                   </quote>
                </cit>
-               <p>On note que, comparativement aux citations simple (&gt;) ou « quot-alt », une « quotcomplexe » peut comporter plusieurs paragaphes.</p>
-               <p>En plus des références bibli inline intégrées aux paragraphes, on peut aussi en ajouter des non inline, qui apparaîtront alors dissociées des paragraphes cités, mais toujours à l’intérieur de l’élément quote :</p>
-               <cit>
+               <p xml:id="p50">On note que, comparativement aux citations simple (&gt;) ou « quot-alt », une « quotcomplexe » peut comporter plusieurs paragaphes.</p>
+               <p xml:id="p51">En plus des références bibli inline intégrées aux paragraphes, on peut aussi en ajouter des non inline, qui apparaîtront alors dissociées des paragraphes cités, mais toujours à l’intérieur de l’élément quote :</p>
+               <cit xml:id="cit7">
                   <quote>
-                     <p>Un premier paragraphe.</p>
-                     <p>Un second paragraphe dans la même citation.</p>
-                     <bibl>
+                     <p xml:id="p52">Un premier paragraphe.</p>
+                     <p xml:id="p53">Un second paragraphe dans la même citation.</p>
+                     <bibl xml:id="bibl8">
                         <ref target="#ref-hugo1862miserables">Hugo 1862, 12‑135</ref>
                      </bibl>
                   </quote>
                </cit>
-               <p>On peut maintenant ajouter des traductions + références :</p>
-               <cit>
+               <p xml:id="p54">On peut maintenant ajouter des traductions + références :</p>
+               <cit xml:id="cit8">
                   <quote xml:lang="fr">
-                     <p>tatitata (ça peut être des vers ou des didascalies)</p>
+                     <p xml:id="p55">tatitata (ça peut être des vers ou des didascalies)</p>
                      <quote type="trl" xml:lang="en">
-                        <p>tatitata dans une autre langue</p>
-                        <bibl>
+                        <p xml:id="p56">tatitata dans une autre langue</p>
+                        <bibl xml:id="bibl9">
                            <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
                         </bibl>
                      </quote>
-                     <bibl>
+                     <bibl xml:id="bibl10">
                         <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
                      </bibl>
                   </quote>
                </cit>
-               <p>Cette dernière citation a traduction et références.</p>
-               <p>Si on préfère, la référence au texte en langue originale peut être donnée avant la sous-section pour la traduction :</p>
-               <cit>
+               <p xml:id="p57">Cette dernière citation a traduction et références.</p>
+               <p xml:id="p58">Si on préfère, la référence au texte en langue originale peut être donnée avant la sous-section pour la traduction :</p>
+               <cit xml:id="cit9">
                   <quote>
-                     <p>tatitata (ça peut être des vers ou des didascalies)</p>
-                     <bibl>
+                     <p xml:id="p59">tatitata (ça peut être des vers ou des didascalies)</p>
+                     <bibl xml:id="bibl11">
                         <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
                      </bibl>
                      <quote type="trl" xml:lang="en">
-                        <p>tatitata dans une autre langue</p>
-                        <bibl>
+                        <p xml:id="p60">tatitata dans une autre langue</p>
+                        <bibl xml:id="bibl12">
                            <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
                         </bibl>
                      </quote>
                   </quote>
                </cit>
             </div>
-            <div type="section2">
+            <div xml:id="div19" type="section2">
                <head>Citations complexes de vers</head>
-               <p>Que se passe-t-il quand on veut citer des vers ?</p>
-               <cit>
+               <p xml:id="p61">Que se passe-t-il quand on veut citer des vers ?</p>
+               <cit xml:id="cit10">
                   <quote>
                      <lg>
                         <l n="1">
@@ -328,8 +327,8 @@
                      </lg> 
                   </quote>
                </cit>
-               <p>Pour ajouter une référence, on la met à la fin, dans la citation :</p>
-               <cit>
+               <p xml:id="p62">Pour ajouter une référence, on la met à la fin, dans la citation :</p>
+               <cit xml:id="cit11">
                   <quote>
                      <lg>
                         <l n="1">
@@ -339,13 +338,13 @@
                         <l n="3">
                            <num>3</num> Qui suivent, indolents compagnons de voyage,</l>
                      </lg>  
-                     <bibl>
+                     <bibl xml:id="bibl13">
                         <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>
                      </bibl>
                   </quote>
                </cit>
-               <p>Ces vers peuvent être compris dans une citation complexe :</p>
-               <cit>
+               <p xml:id="p63">Ces vers peuvent être compris dans une citation complexe :</p>
+               <cit xml:id="cit12">
                   <quote>
                      <lg>
                         <l n="1">
@@ -364,17 +363,17 @@
                            <l n="3">
                               <num>3</num> Who follow, indolent companions of the voyage,</l>
                         </lg> 
-                        <bibl>
+                        <bibl xml:id="bibl14">
                            <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
                         </bibl>
                      </quote>
-                     <bibl>
+                     <bibl xml:id="bibl15">
                         <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>
                      </bibl>
                   </quote>
                </cit>
-               <p>Si on préfère, la référence au texte en langue originale peut être donnée avant la sous-section pour la traduction :</p>
-               <cit>
+               <p xml:id="p64">Si on préfère, la référence au texte en langue originale peut être donnée avant la sous-section pour la traduction :</p>
+               <cit xml:id="cit13">
                   <quote>
                      <lg>
                         <l n="1">
@@ -384,7 +383,7 @@
                         <l n="3">
                            <num>3</num> Qui suivent, indolents compagnons de voyage,</l>
                      </lg>  
-                     <bibl>
+                     <bibl xml:id="bibl16">
                         <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>
                      </bibl>
                      <quote type="trl" xml:lang="en">
@@ -396,50 +395,50 @@
                            <l n="3">
                               <num>3</num> Who follow, indolent companions of the voyage,</l>
                         </lg>  
-                        <bibl>
+                        <bibl xml:id="bibl17">
                            <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
                         </bibl>
                      </quote>
                   </quote>
                </cit>
-               <p>Nous nous sommes arrêtés ici en ce qui a trait aux citations. Il faudra penser à un système qui reste lisible et pas trop lours pour le théâtre et la linguistique.</p>
+               <p xml:id="p65">Nous nous sommes arrêtés ici en ce qui a trait aux citations. Il faudra penser à un système qui reste lisible et pas trop lours pour le théâtre et la linguistique.</p>
             </div>
          </div>
-         <div type="section1">
+         <div xml:id="div20" type="section1">
             <head>Figures</head>
-            <p>Certains auteurs vont insérer des images sans enrichir comme ceci :</p>
-            <figure>
-               <p rend="caption">légende</p>
+            <p xml:id="p66">Certains auteurs vont insérer des images sans enrichir comme ceci :</p>
+            <figure xml:id="figure1">
+               <p xml:id="p67" rend="caption">légende</p>
                <graphic url="../icono/br/image.png"/>
             </figure>
-            <p>Mais ce qu’on voudrait c’est qu’ils soient plus précis en insérant un snippet de code pour récupérer plus d’information.</p>
-            <figure>
+            <p xml:id="p68">Mais ce qu’on voudrait c’est qu’ils soient plus précis en insérant un snippet de code pour récupérer plus d’information.</p>
+            <figure xml:id="figure2">
                <head>Titre de l’image dans laquelle on <hi rend="strikethrough">devrait</hi> pourrait mettre aussi des crédits</head>
-               <p rend="caption">légende</p>
+               <p xml:id="p69" rend="caption">légende</p>
                <graphic url="../icono/br/image.png"/>
-               <p rend="credits">Cette image est sous licence machin et est attribuée à <bibl rend="inline">
+               <p xml:id="p70" rend="credits">Cette image est sous licence machin et est attribuée à <bibl xml:id="bibl18" rend="inline">
                      <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
                   </bibl>.</p>
             </figure>
-            <p>On voit que les crédits peuvent :</p>
-            <list type="unordered">
+            <p xml:id="p71">On voit que les crédits peuvent :</p>
+            <list xml:id="list8" type="unordered">
                <item>être au sein d’autres éléments</item>
                <item>une sous-section « credits » (qui a alors préséance sur les spans « credits » éventuels)</item>
             </list>
-            <p>Exemple illustrant le premier cas de figure (mauvais jeu de mot) :</p>
-            <figure>
+            <p xml:id="p72">Exemple illustrant le premier cas de figure (mauvais jeu de mot) :</p>
+            <figure xml:id="figure3">
                <head>L’image dans sa splendeur, telle qu’on peut l’admirer au Musée du Louvre</head>
-               <p rend="caption">Image mirobolante</p>
+               <p xml:id="p73" rend="caption">Image mirobolante</p>
                <graphic url="../icono/br/image.png"/>
-               <p rend="credits">Musée du Louvre</p>
+               <p xml:id="p74" rend="credits">Musée du Louvre</p>
             </figure>
          </div>
-         <div type="section1">
+         <div xml:id="div21" type="section1">
             <head>Encadrés</head>
-            <floatingText type="encadre">
+            <floatingText xml:id="floatingText1" type="encadre">
                <body>
-                  <p>Pour le moment on a un encadré minimal avec un titre et une autorité à récupérer dans <code rend="inline">TEI/text/body//bibl[@type="sec_authority"]/author/persName/surname|forename</code>
-                     <bibl type="sec_authority">
+                  <p xml:id="p75">Pour le moment on a un encadré minimal avec un titre et une autorité à récupérer dans <code rend="inline">TEI/text/body//bibl[@type="sec_authority"]/author/persName/surname|forename</code>
+                     <bibl xml:id="bibl19" type="sec_authority">
                         <author>
                            <persName>
                               <surname>nom</surname>
@@ -451,62 +450,62 @@
                </body>
             </floatingText>
          </div>
-         <div type="section1">
+         <div xml:id="div22" type="section1">
             <head>Typographie</head>
-            <p>
+            <p xml:id="p76">
                <hi rend="italic">italique</hi> ou <hi rend="italic">italique</hi>
             </p>
-            <p>
+            <p xml:id="p77">
                <hi rend="bold">gras</hi>
             </p>
-            <p>
+            <p xml:id="p78">
                <hi rend="bold">
                   <hi rend="italic">gras et italique</hi>
                </hi>
             </p>
-            <p>
+            <p xml:id="p79">
                <hi rend="small-caps">en petites majuscules</hi>
             </p>
-            <p>
+            <p xml:id="p80">
                <hi rend="small-caps">
                   <hi rend="italic">petites majuscules en italique</hi>
                </hi>
             </p>
-            <p>1<hi rend="sup">er</hi>
+            <p xml:id="p81">1<hi rend="sup">er</hi>
             </p>
-            <p>3<hi rend="sup">
+            <p xml:id="p82">3<hi rend="sup">
                   <hi rend="italic">eme</hi>
                </hi>
             </p>
-            <p>A<hi rend="sub">a</hi>
+            <p xml:id="p83">A<hi rend="sub">a</hi>
             </p>
-            <p>
+            <p xml:id="p84">
                <hi rend="underline">Trouver comment souligne ??</hi>
             </p>
-            <p>
+            <p xml:id="p85">
                <hi rend="strikethrough">texte barré</hi>
             </p>
          </div>
-         <div type="section1">
+         <div xml:id="div23" type="section1">
             <head>Index</head>
-            <p>Platon<index indexName="Index des noms propres">
+            <p xml:id="p86">Platon<index indexName="Index des noms propres">
                   <term>Platon</term>
                </index> est un philosophe de l’Antiquité grecque, élève de Socrate<index indexName="Index des noms propres">
                   <term>Socrate</term>
                </index> et maître d’Aristote<index indexName="Index des noms propres">
                   <term>Aristote</term>
                </index>.</p>
-            <p>Il fonda l’Académie<index indexName="Index thématique:Institution">
+            <p xml:id="p87">Il fonda l’Académie<index indexName="Index thématique:Institution">
                   <term>Academie</term>
                </index> à Athènes<index indexName="Index géographique">
                   <term>Athenes</term>
                </index>, vers 387 av. J.-C.</p>
-            <p>Ses œuvres majeures, comme la République<index indexName="Index thématique:Œuvre">
+            <p xml:id="p88">Ses œuvres majeures, comme la République<index indexName="Index thématique:Œuvre">
                   <term>Republique_Platon</term>
                </index> ou le Banquet<index indexName="Index thématique:Œuvre">
                   <term>Banquet_Platon</term>
                </index>, ont profondément influencé la pensée occidentale.</p>
-            <p>Aristote<index indexName="Index des noms propres">
+            <p xml:id="p89">Aristote<index indexName="Index des noms propres">
                   <term>Aristote</term>
                </index>, après avoir quitté l’Académie, devint le précepteur du jeune Alexandre le Grand<index indexName="Index des noms propres">
                   <term>Alexandre_le_Grand</term>
@@ -516,24 +515,24 @@
                   <term>Athenes</term>
                </index>.</p>
          </div>
-         <div type="section1">
+         <div xml:id="div24" type="section1">
             <head>Le code</head>
-            <p>
+            <p xml:id="p90">
                <code lang="python">def bonjour(nom):
     print(f"Bonjour, {nom} !")
 
 bonjour("monde")</code>
             </p>
-            <p>On peut aussi mettre du code inline : <code rend="inline">&lt;div&gt;Voici du code inline&lt;/div&gt;</code>
+            <p xml:id="p91">On peut aussi mettre du code inline : <code rend="inline">&lt;div&gt;Voici du code inline&lt;/div&gt;</code>
             </p>
          </div>
-         <div type="section1">
+         <div xml:id="div25" type="section1">
             <head>Titre choisi pour la bibliographie</head>
-            <p>Le snippet de code biblio rajoute un titre de niveau 2 comme ci-dessus, qui sert à renseigner le titre de la bibliographie. En dessous directement est inséré la syntaxe pandoc pour imprimer la biblio.</p>
+            <p xml:id="p92">Le snippet de code biblio rajoute un titre de niveau 2 comme ci-dessus, qui sert à renseigner le titre de la bibliographie. En dessous directement est inséré la syntaxe pandoc pour imprimer la biblio.</p>
          </div>
       </body>
       <back>
-         <div type="bibliography" xml:id="bibliography">
+         <div xml:id="bibliography" type="bibliography">
             <head>Bibliographie</head>
             <listBibl>
                <bibl xml:id="ref-baudelaire_albatros_1857">Baudelaire, Charles. 1857. « L’Albatros ». In <hi rend="italic">Les Fleurs du mal</hi>. Poulet-Malassis et de Broise.</bibl>

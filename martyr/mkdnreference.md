@@ -300,11 +300,11 @@ A~a~
 
 [Platon]{.personnalite id=Platon} est un philosophe de l'Antiquité grecque, élève de [Socrate]{.personnalite id=Socrate} et maître d'[Aristote]{.personnalite id=Aristote}.
 
-Il fonda l'[Académie]{.lieu id=Academie} à [Athènes]{.lieu id=Athenes}, vers 387 av. J.-C.
+Il fonda l'[Académie]{.institution id=Academie} à [Athènes]{.lieu id=Athenes}, vers 387 av. J.-C.
 
 Ses œuvres majeures, comme la [République]{.oeuvre id=Republique_Platon} ou le [Banquet]{.oeuvre id=Banquet_Platon}, ont profondément influencé la pensée occidentale.
 
-[Aristote]{.personnalite id=Aristote}, après avoir quitté l'Académie, devint le précepteur du jeune [Alexandre le Grand]{.personnalite id=Alexandre_le_Grand}, avant de fonder sa propre école, le [Lycée]{.lieu id=Lycee}, également à [Athènes]{.lieu id=Athenes}.
+[Aristote]{.personnalite id=Aristote}, après avoir quitté l'Académie, devint le précepteur du jeune [Alexandre le Grand]{.personnalite id=Alexandre_le_Grand}, avant de fonder sa propre école, le [Lycée]{.institution id=Lycee}, également à [Athènes]{.lieu id=Athenes}.
 
 ## Le code 
 
