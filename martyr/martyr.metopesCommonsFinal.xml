@@ -94,7 +94,7 @@
       </profileDesc>
       <revisionDesc>
          <listChange>
-            <change type="creation" when="2026-04-14">XML-TEI file creation</change>
+            <change type="creation" when="2026-04-16">XML-TEI file creation</change>
          </listChange>
       </revisionDesc>
    </teiHeader>
@@ -147,7 +147,7 @@
             <p xml:id="p20">Note préliminaire du traducteur</p>
          </note>
          <argument>
-            <p xml:id="p21">ATTENTION: Ceci est un chapôt introductif</p>
+            <p xml:id="p21">ATTENTION: Ceci est un chapô introductif</p>
          </argument>
          <epigraph>
             <cit xml:id="cit1">
@@ -173,19 +173,20 @@
          </div>
          <div xml:id="div13" type="section1">
             <head>Liminaires</head>
-            <p xml:id="p24">Simple remarque : avec le schéma d’Érudit je suis confronté au problème suivant : ils sont très attaché à l’identité entre le pdf et le HTML produit à partie de leur XML. Or le markdown ne contraignant pas l’ordre des éléments, la dédicace ou les épigraphes se trouvent parfois mal placés dans l’article. C’est une idée à retenir et à enticiper pour la validation. Il faut « forcer » les écrivants et éditeurs sur stylo à placer ses blocs au bon endroit.</p>
+            <p xml:id="p24">Notez que les sections « liminaires » sont relocalisées en « front » en conformité avec le schéma Métopes. Elles n’apparaîtront donc pas en séquence ici. Il ne restera que la « simple remarque ».</p>
+            <p xml:id="p25">Simple remarque : avec le schéma d’Érudit je suis confronté au problème suivant : ils sont très attaché à l’identité entre le pdf et le HTML produit à partie de leur XML. Or le markdown ne contraignant pas l’ordre des éléments, la dédicace ou les épigraphes se trouvent parfois mal placés dans l’article. C’est une idée à retenir et à enticiper pour la validation. Il faut « forcer » les écrivants et éditeurs sur stylo à placer ses blocs au bon endroit.</p>
          </div>
          <div xml:id="div14" type="section1">
             <head>Texte</head>
-            <p xml:id="p25">Du texte</p>
-            <p xml:id="p26">Un saut de ligne</p>
-            <p xml:id="p27">Une ligne<lb/>Une ligne à la suite</p>
-            <p xml:id="p28" rend="break">- - -</p>
+            <p xml:id="p26">Du texte</p>
+            <p xml:id="p27">Un saut de ligne</p>
+            <p xml:id="p28">Une ligne<lb/>Une ligne à la suite</p>
+            <p xml:id="p29" rend="break">- - -</p>
             <pb/>
-            <p xml:id="p29">Et là je veux citer <bibl xml:id="bibl3" rend="inline">
+            <p xml:id="p30">Et là je veux citer <bibl xml:id="bibl3" rend="inline">
                   <ref target="#ref-hugo1862miserables">1862</ref>
-               </bibl> (sans les crochets [], ça ne met pas le nom de l’auteur dans la référence; à n’utiliser que si on inscrit soi-même le nom de l’auteur dans le texte avoisinant).</p>
-            <p xml:id="p30" rend="signature">Ceci est une signature</p>
+               </bibl> (sans les crochets [], ça ne met pas le nom de l’auteur dans la référence; à n’utiliser que si on inscrit soi-même le nom de l’auteur dans le texte avoisinant, donc, pas comme ici !).</p>
+            <p xml:id="p31" rend="signature">Ceci est une signature</p>
             <list xml:id="list4" type="unordered">
                <item>liste</item>
                <item>liste<list xml:id="list5" type="unordered">
@@ -202,34 +203,34 @@
                   </list>
                </item>
             </list>
-            <p xml:id="p31">
+            <p xml:id="p32">
                <hi rend="bold">Il manque les contenus additionnels !!!</hi>
             </p>
          </div>
          <div xml:id="div15" type="section1">
             <head>Entretien</head>
             <sp rend="question">
-               <p xml:id="p32">
+               <p xml:id="p33">
                   <name type="speaker">Clara</name> Une question est posée</p>
             </sp>
             <sp rend="answer">
-               <p xml:id="p33">
+               <p xml:id="p34">
                   <name type="speaker">Marcello</name> Réponse à la question</p>
             </sp>
          </div>
          <div xml:id="div16" type="section1">
             <head>Notes</head>
-            <p xml:id="p34">Bablebliblablou, comme l’indique la note en bas de page.<note xml:id="ftn1" n="1" place="foot">
-                  <p xml:id="p35">Ceci est une note de bas de page.</p>
+            <p xml:id="p35">Bablebliblablou, comme l’indique la note en bas de page.<note xml:id="ftn1" n="1" place="foot">
+                  <p xml:id="p36">Ceci est une note de bas de page.</p>
                </note>
             </p>
-            <p xml:id="p36">Ou alors on peut faire cette syntaxe<note xml:id="ftn2" n="2" place="foot">
-                  <p xml:id="p37">Cette manière de faire des notes de bas de page est aussi possible.</p>
+            <p xml:id="p37">Ou alors on peut faire cette syntaxe<note xml:id="ftn2" n="2" place="foot">
+                  <p xml:id="p38">Cette manière de faire des notes de bas de page est aussi possible.</p>
                </note> aussi.</p>
-            <p xml:id="p38">Il faut inventer une autre syntaxe si on veut que les notes soient les notes de fin (<code rend="inline">TEI/text/body//note[@place="end"][@n][@type="standard"][@xml:id"]</code>).</p>
-            <p xml:id="p39">Il me semble plus propre d’inventer une nouvelle syntaxe que de détourner celle de Pandoc:</p>
-            <p xml:id="p40">Par exemple je veux mattre une note de fin ici<note xml:id="ftn3" n="i" place="end">
-                  <p xml:id="p41">Voici ce que je veux dire et qui apparaît en fin de document.</p>
+            <p xml:id="p39">Il faut inventer une autre syntaxe si on veut que les notes soient les notes de fin (<code rend="inline">TEI/text/body//note[@place="end"][@n][@type="standard"][@xml:id"]</code>).</p>
+            <p xml:id="p40">Il me semble plus propre d’inventer une nouvelle syntaxe que de détourner celle de Pandoc:</p>
+            <p xml:id="p41">Par exemple je veux mattre une note de fin ici<note xml:id="ftn3" n="i" place="end">
+                  <p xml:id="p42">Voici ce que je veux dire et qui apparaît en fin de document.</p>
                </note>. Elle sera nmérotée incrémentalement.</p>
          </div>
          <div xml:id="div17" type="section1">
@@ -240,14 +241,14 @@
                   </bibl>
                </quote>
             </cit>
-            <p xml:id="p42">Cette citation a une source référencée entre crochets.</p>
-            <p xml:id="p43">Parfois j’écris un paragraphe et comme le disait Hugo dans <bibl xml:id="bibl5" rend="inline">
+            <p xml:id="p43">Cette citation a une source référencée entre crochets.</p>
+            <p xml:id="p44">Parfois j’écris un paragraphe et comme le disait Hugo dans <bibl xml:id="bibl5" rend="inline">
                   <ref target="#ref-hugo1862miserables">1862</ref>
                </bibl>, <cit xml:id="cit3">
                   <quote>Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs.</quote>
                </cit> De cette manière j’ai une citation innline.</p>
-            <p xml:id="p44">Si on voulait une référence, on l’inscrirait simplement avec le reste du texte cité :</p>
-            <p xml:id="p45">Comme le disait Hugo, <cit xml:id="cit4">
+            <p xml:id="p45">Si on voulait une référence, on l’inscrirait simplement avec le reste du texte cité :</p>
+            <p xml:id="p46">Comme le disait Hugo, <cit xml:id="cit4">
                   <quote>Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs. <bibl xml:id="bibl6" rend="inline">
                         <ref target="#ref-hugo1862miserables">Hugo 1862</ref>
                      </bibl>
@@ -261,31 +262,31 @@
             </cit>
             <div xml:id="div18" type="section2">
                <head>Citations complexes</head>
-               <p xml:id="p46">Il faut ensuite faire des citations plus complexes.</p>
-               <p xml:id="p47">Commençons doucement :</p>
+               <p xml:id="p47">Il faut ensuite faire des citations plus complexes.</p>
+               <p xml:id="p48">Commençons doucement :</p>
                <cit xml:id="cit6">
                   <quote>
-                     <p xml:id="p48">Un premier paragraphe.</p>
-                     <p xml:id="p49">Un second paragraphe dans la même citation.</p>
+                     <p xml:id="p49">Un premier paragraphe.</p>
+                     <p xml:id="p50">Un second paragraphe dans la même citation.</p>
                   </quote>
                </cit>
-               <p xml:id="p50">On note que, comparativement aux citations simple (&gt;) ou « quot-alt », une « quotcomplexe » peut comporter plusieurs paragaphes.</p>
-               <p xml:id="p51">En plus des références bibli inline intégrées aux paragraphes, on peut aussi en ajouter des non inline, qui apparaîtront alors dissociées des paragraphes cités, mais toujours à l’intérieur de l’élément quote :</p>
+               <p xml:id="p51">On note que, comparativement aux citations simple (&gt;) ou « quot-alt », une « quotcomplexe » peut comporter plusieurs paragaphes.</p>
+               <p xml:id="p52">En plus des références bibli inline intégrées aux paragraphes, on peut aussi en ajouter des non inline, qui apparaîtront alors dissociées des paragraphes cités, mais toujours à l’intérieur de l’élément quote :</p>
                <cit xml:id="cit7">
                   <quote>
-                     <p xml:id="p52">Un premier paragraphe.</p>
-                     <p xml:id="p53">Un second paragraphe dans la même citation.</p>
+                     <p xml:id="p53">Un premier paragraphe.</p>
+                     <p xml:id="p54">Un second paragraphe dans la même citation.</p>
                      <bibl xml:id="bibl8">
                         <ref target="#ref-hugo1862miserables">Hugo 1862, 12‑135</ref>
                      </bibl>
                   </quote>
                </cit>
-               <p xml:id="p54">On peut maintenant ajouter des traductions + références :</p>
+               <p xml:id="p55">On peut maintenant ajouter des traductions + références :</p>
                <cit xml:id="cit8">
                   <quote xml:lang="fr">
-                     <p xml:id="p55">tatitata (ça peut être des vers ou des didascalies)</p>
+                     <p xml:id="p56">tatitata (ça peut être des vers ou des didascalies)</p>
                      <quote type="trl" xml:lang="en">
-                        <p xml:id="p56">tatitata dans une autre langue</p>
+                        <p xml:id="p57">tatitata dans une autre langue</p>
                         <bibl xml:id="bibl9">
                            <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
                         </bibl>
@@ -295,16 +296,16 @@
                      </bibl>
                   </quote>
                </cit>
-               <p xml:id="p57">Cette dernière citation a traduction et références.</p>
-               <p xml:id="p58">Si on préfère, la référence au texte en langue originale peut être donnée avant la sous-section pour la traduction :</p>
+               <p xml:id="p58">Cette dernière citation a traduction et références.</p>
+               <p xml:id="p59">Si on préfère, la référence au texte en langue originale peut être donnée avant la sous-section pour la traduction :</p>
                <cit xml:id="cit9">
                   <quote>
-                     <p xml:id="p59">tatitata (ça peut être des vers ou des didascalies)</p>
+                     <p xml:id="p60">tatitata (ça peut être des vers ou des didascalies)</p>
                      <bibl xml:id="bibl11">
                         <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
                      </bibl>
                      <quote type="trl" xml:lang="en">
-                        <p xml:id="p60">tatitata dans une autre langue</p>
+                        <p xml:id="p61">tatitata dans une autre langue</p>
                         <bibl xml:id="bibl12">
                            <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
                         </bibl>
@@ -314,7 +315,7 @@
             </div>
             <div xml:id="div19" type="section2">
                <head>Citations complexes de vers</head>
-               <p xml:id="p61">Que se passe-t-il quand on veut citer des vers ?</p>
+               <p xml:id="p62">Que se passe-t-il quand on veut citer des vers ?</p>
                <cit xml:id="cit10">
                   <quote>
                      <lg>
@@ -327,7 +328,7 @@
                      </lg> 
                   </quote>
                </cit>
-               <p xml:id="p62">Pour ajouter une référence, on la met à la fin, dans la citation :</p>
+               <p xml:id="p63">Pour ajouter une référence, on la met à la fin, dans la citation :</p>
                <cit xml:id="cit11">
                   <quote>
                      <lg>
@@ -343,7 +344,7 @@
                      </bibl>
                   </quote>
                </cit>
-               <p xml:id="p63">Ces vers peuvent être compris dans une citation complexe :</p>
+               <p xml:id="p64">Ces vers peuvent être compris dans une citation complexe :</p>
                <cit xml:id="cit12">
                   <quote>
                      <lg>
@@ -372,7 +373,7 @@
                      </bibl>
                   </quote>
                </cit>
-               <p xml:id="p64">Si on préfère, la référence au texte en langue originale peut être donnée avant la sous-section pour la traduction :</p>
+               <p xml:id="p65">Si on préfère, la référence au texte en langue originale peut être donnée avant la sous-section pour la traduction :</p>
                <cit xml:id="cit13">
                   <quote>
                      <lg>
@@ -401,43 +402,43 @@
                      </quote>
                   </quote>
                </cit>
-               <p xml:id="p65">Nous nous sommes arrêtés ici en ce qui a trait aux citations. Il faudra penser à un système qui reste lisible et pas trop lours pour le théâtre et la linguistique.</p>
+               <p xml:id="p66">Nous nous sommes arrêtés ici en ce qui a trait aux citations. Il faudra penser à un système qui reste lisible et pas trop lours pour le théâtre et la linguistique.</p>
             </div>
          </div>
          <div xml:id="div20" type="section1">
             <head>Figures</head>
-            <p xml:id="p66">Certains auteurs vont insérer des images sans enrichir comme ceci :</p>
+            <p xml:id="p67">Certains auteurs vont insérer des images sans enrichir comme ceci :</p>
             <figure xml:id="figure1">
-               <p xml:id="p67" rend="caption">légende</p>
+               <p xml:id="p68" rend="caption">légende</p>
                <graphic url="../icono/br/image.png"/>
             </figure>
-            <p xml:id="p68">Mais ce qu’on voudrait c’est qu’ils soient plus précis en insérant un snippet de code pour récupérer plus d’information.</p>
+            <p xml:id="p69">Mais ce qu’on voudrait c’est qu’ils soient plus précis en insérant un snippet de code pour récupérer plus d’information.</p>
             <figure xml:id="figure2">
                <head>Titre de l’image dans laquelle on <hi rend="strikethrough">devrait</hi> pourrait mettre aussi des crédits</head>
-               <p xml:id="p69" rend="caption">légende</p>
+               <p xml:id="p70" rend="caption">légende</p>
                <graphic url="../icono/br/image.png"/>
-               <p xml:id="p70" rend="credits">Cette image est sous licence machin et est attribuée à <bibl xml:id="bibl18" rend="inline">
+               <p xml:id="p71" rend="credits">Cette image est sous licence machin et est attribuée à <bibl xml:id="bibl18" rend="inline">
                      <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
                   </bibl>.</p>
             </figure>
-            <p xml:id="p71">On voit que les crédits peuvent :</p>
+            <p xml:id="p72">On voit que les crédits peuvent :</p>
             <list xml:id="list8" type="unordered">
                <item>être au sein d’autres éléments</item>
                <item>une sous-section « credits » (qui a alors préséance sur les spans « credits » éventuels)</item>
             </list>
-            <p xml:id="p72">Exemple illustrant le premier cas de figure (mauvais jeu de mot) :</p>
+            <p xml:id="p73">Exemple illustrant le premier cas de figure (mauvais jeu de mot) :</p>
             <figure xml:id="figure3">
                <head>L’image dans sa splendeur, telle qu’on peut l’admirer au Musée du Louvre</head>
-               <p xml:id="p73" rend="caption">Image mirobolante</p>
+               <p xml:id="p74" rend="caption">Image mirobolante</p>
                <graphic url="../icono/br/image.png"/>
-               <p xml:id="p74" rend="credits">Musée du Louvre</p>
+               <p xml:id="p75" rend="credits">Musée du Louvre</p>
             </figure>
          </div>
          <div xml:id="div21" type="section1">
             <head>Encadrés</head>
             <floatingText xml:id="floatingText1" type="encadre">
                <body>
-                  <p xml:id="p75">Pour le moment on a un encadré minimal avec un titre et une autorité à récupérer dans <code rend="inline">TEI/text/body//bibl[@type="sec_authority"]/author/persName/surname|forename</code>
+                  <p xml:id="p76">Pour le moment on a un encadré minimal avec un titre et une autorité à récupérer dans <code rend="inline">TEI/text/body//bibl[@type="sec_authority"]/author/persName/surname|forename</code>
                      <bibl xml:id="bibl19" type="sec_authority">
                         <author>
                            <persName>
@@ -452,60 +453,60 @@
          </div>
          <div xml:id="div22" type="section1">
             <head>Typographie</head>
-            <p xml:id="p76">
+            <p xml:id="p77">
                <hi rend="italic">italique</hi> ou <hi rend="italic">italique</hi>
             </p>
-            <p xml:id="p77">
+            <p xml:id="p78">
                <hi rend="bold">gras</hi>
             </p>
-            <p xml:id="p78">
+            <p xml:id="p79">
                <hi rend="bold">
                   <hi rend="italic">gras et italique</hi>
                </hi>
             </p>
-            <p xml:id="p79">
+            <p xml:id="p80">
                <hi rend="small-caps">en petites majuscules</hi>
             </p>
-            <p xml:id="p80">
+            <p xml:id="p81">
                <hi rend="small-caps">
                   <hi rend="italic">petites majuscules en italique</hi>
                </hi>
             </p>
-            <p xml:id="p81">1<hi rend="sup">er</hi>
+            <p xml:id="p82">1<hi rend="sup">er</hi>
             </p>
-            <p xml:id="p82">3<hi rend="sup">
+            <p xml:id="p83">3<hi rend="sup">
                   <hi rend="italic">eme</hi>
                </hi>
             </p>
-            <p xml:id="p83">A<hi rend="sub">a</hi>
-            </p>
-            <p xml:id="p84">
-               <hi rend="underline">Trouver comment souligne ??</hi>
+            <p xml:id="p84">A<hi rend="sub">a</hi>
             </p>
             <p xml:id="p85">
+               <hi rend="underline">Trouvé comment souligner</hi>
+            </p>
+            <p xml:id="p86">
                <hi rend="strikethrough">texte barré</hi>
             </p>
          </div>
          <div xml:id="div23" type="section1">
             <head>Index</head>
-            <p xml:id="p86">Platon<index indexName="Index des noms propres">
+            <p xml:id="p87">Platon<index indexName="Index des noms propres">
                   <term>Platon</term>
                </index> est un philosophe de l’Antiquité grecque, élève de Socrate<index indexName="Index des noms propres">
                   <term>Socrate</term>
                </index> et maître d’Aristote<index indexName="Index des noms propres">
                   <term>Aristote</term>
                </index>.</p>
-            <p xml:id="p87">Il fonda l’Académie<index indexName="Index thématique:Institution">
+            <p xml:id="p88">Il fonda l’Académie<index indexName="Index thématique:Institution">
                   <term>Academie</term>
                </index> à Athènes<index indexName="Index géographique">
                   <term>Athenes</term>
                </index>, vers 387 av. J.-C.</p>
-            <p xml:id="p88">Ses œuvres majeures, comme la République<index indexName="Index thématique:Œuvre">
+            <p xml:id="p89">Ses œuvres majeures, comme la République<index indexName="Index thématique:Œuvre">
                   <term>Republique_Platon</term>
                </index> ou le Banquet<index indexName="Index thématique:Œuvre">
                   <term>Banquet_Platon</term>
                </index>, ont profondément influencé la pensée occidentale.</p>
-            <p xml:id="p89">Aristote<index indexName="Index des noms propres">
+            <p xml:id="p90">Aristote<index indexName="Index des noms propres">
                   <term>Aristote</term>
                </index>, après avoir quitté l’Académie, devint le précepteur du jeune Alexandre le Grand<index indexName="Index des noms propres">
                   <term>Alexandre_le_Grand</term>
@@ -517,18 +518,171 @@
          </div>
          <div xml:id="div24" type="section1">
             <head>Le code</head>
-            <p xml:id="p90">
+            <p xml:id="p91">
                <code lang="python">def bonjour(nom):
     print(f"Bonjour, {nom} !")
 
 bonjour("monde")</code>
             </p>
-            <p xml:id="p91">On peut aussi mettre du code inline : <code rend="inline">&lt;div&gt;Voici du code inline&lt;/div&gt;</code>
+            <p xml:id="p92">On peut aussi mettre du code inline : <code rend="inline">&lt;div&gt;Voici du code inline&lt;/div&gt;</code>
             </p>
          </div>
          <div xml:id="div25" type="section1">
+            <head>Formules mathématiques</head>
+            <p xml:id="p93">Voici des formules « inline », <formula notation="mml">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                     <semantics>
+                        <msup>
+                           <mi>π</mi>
+                           <mn>2</mn>
+                        </msup>
+                        <annotation encoding="application/x-tex">\pi^2</annotation>
+                     </semantics>
+                  </math>
+               </formula>, <formula notation="mml">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                     <semantics>
+                        <mrow>
+                           <mi>π</mi>
+                           <mo>×</mo>
+                           <msqrt>
+                              <mn>2</mn>
+                           </msqrt>
+                        </mrow>
+                        <annotation encoding="application/x-tex">\pi \times {\sqrt 2}</annotation>
+                     </semantics>
+                  </math>
+               </formula>, <formula notation="mml">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                     <semantics>
+                        <msup>
+                           <mi>π</mi>
+                           <mn>2</mn>
+                        </msup>
+                        <annotation encoding="application/x-tex">\pi^2</annotation>
+                     </semantics>
+                  </math>
+               </formula> et <formula notation="mml">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                     <semantics>
+                        <mrow>
+                           <mi>π</mi>
+                           <mo>×</mo>
+                           <mroot>
+                              <mn>7</mn>
+                              <mn>3</mn>
+                           </mroot>
+                        </mrow>
+                        <annotation encoding="application/x-tex">\pi \times {\sqrt[3] 7}</annotation>
+                     </semantics>
+                  </math>
+               </formula>.</p>
+            <p xml:id="p94">Voici trois formules en blocs : <formula notation="mml">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                     <semantics>
+                        <mrow>
+                           <mi>π</mi>
+                           <mo>×</mo>
+                           <msqrt>
+                              <mn>2</mn>
+                           </msqrt>
+                        </mrow>
+                        <annotation encoding="application/x-tex">\pi \times {\sqrt 2}</annotation>
+                     </semantics>
+                  </math>
+               </formula>
+               <formula notation="mml">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                     <semantics>
+                        <msup>
+                           <mi>π</mi>
+                           <mn>2</mn>
+                        </msup>
+                        <annotation encoding="application/x-tex">\pi^2</annotation>
+                     </semantics>
+                  </math>
+               </formula>
+               <formula notation="mml">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                     <semantics>
+                        <mrow>
+                           <mi>π</mi>
+                           <mo>×</mo>
+                           <mroot>
+                              <mn>7</mn>
+                              <mn>3</mn>
+                           </mroot>
+                        </mrow>
+                        <annotation encoding="application/x-tex">\pi \times {\sqrt[3] 7}</annotation>
+                     </semantics>
+                  </math>
+               </formula>
+            </p>
+            <p xml:id="p95">Cela conclut notre section sur les formules.</p>
+         </div>
+         <div xml:id="div26" type="section1">
+            <head>Tableaux</head>
+            <p xml:id="p96">Les tableaux suivants me semblent d’une complexité suffisante pour illustrer pas mal de choses.</p>
+            <figure xml:id="figure4">
+               <p xml:id="p97" rend="caption">Tableau <hi rend="italic">trafiqué</hi> du manuel de pandoc</p>
+               <table xml:id="table1" rows="4" cols="3">
+                  <row>
+                     <cell cols="2">Property</cell>
+                     <cell>-89.2 °C</cell>
+                  </row>
+                  <row>
+                     <cell rows="3">Temperature 1961-1990</cell>
+                     <cell>min</cell>
+                     <cell>
+                        <list xml:id="list9" type="ordered">
+                           <item>Earth</item>
+                           <item>Mercury</item>
+                           <item>Jupiter</item>
+                        </list>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>mean</cell>
+                     <cell>14 °C</cell>
+                  </row>
+                  <row>
+                     <cell>max</cell>
+                     <cell>56.7 °C</cell>
+                  </row>
+               </table>
+            </figure>
+            <figure xml:id="figure5">
+               <p xml:id="p98" rend="caption">Tableau <hi rend="bold">ultra-trificoté</hi> du manuel de pandoc</p>
+               <table xml:id="table2" rows="5" cols="3">
+                  <row>
+                     <cell cols="2">Property</cell>
+                     <cell>-89.2 °C</cell>
+                  </row>
+                  <row>
+                     <cell rows="2">Temperature 1961-1990</cell>
+                     <cell cols="2">
+                        <hi rend="italic">minimum</hi> on Earth</cell>
+                  </row>
+                  <row>
+                     <cell cols="2" rows="2">
+                        <p xml:id="p99">maximum de 56.7 °C</p>
+                        <p xml:id="p100">minimum de 14 °C</p>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>Alpinisme</cell>
+                  </row>
+                  <row>
+                     <cell>1961-1990</cell>
+                     <cell cols="2">moyenne de 28 °C</cell>
+                  </row>
+               </table>
+            </figure>
+            <p xml:id="p101">Fin de la section sur les tableaux.</p>
+         </div>
+         <div xml:id="div27" type="section1">
             <head>Titre choisi pour la bibliographie</head>
-            <p xml:id="p92">Le snippet de code biblio rajoute un titre de niveau 2 comme ci-dessus, qui sert à renseigner le titre de la bibliographie. En dessous directement est inséré la syntaxe pandoc pour imprimer la biblio.</p>
+            <p xml:id="p102">Le snippet de code biblio rajoute un titre de niveau 2 comme ci-dessus, qui sert à renseigner le titre de la bibliographie. En dessous directement est inséré la syntaxe pandoc pour imprimer la biblio.</p>
          </div>
       </body>
       <back>

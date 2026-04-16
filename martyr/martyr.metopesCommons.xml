@@ -95,7 +95,7 @@
       </profileDesc>
       <revisionDesc>
          <listChange>
-            <change type="creation" when="2026-04-14">XML-TEI file creation</change>
+            <change type="creation" when="2026-04-16">XML-TEI file creation</change>
          </listChange>
       </revisionDesc>
    </teiHeader>
@@ -148,7 +148,7 @@
             <p>Note préliminaire du traducteur</p>
          </note>
          <argument>
-            <p>ATTENTION: Ceci est un chapôt introductif</p>
+            <p>ATTENTION: Ceci est un chapô introductif</p>
          </argument>
          <epigraph>
             <cit>
@@ -174,6 +174,7 @@
          </div>
          <div type="section1">
             <head>Liminaires</head>
+            <p>Notez que les sections « liminaires » sont relocalisées en « front » en conformité avec le schéma Métopes. Elles n’apparaîtront donc pas en séquence ici. Il ne restera que la « simple remarque ».</p>
             <p>Simple remarque : avec le schéma d’Érudit je suis confronté au problème suivant : ils sont très attaché à l’identité entre le pdf et le HTML produit à partie de leur XML. Or le markdown ne contraignant pas l’ordre des éléments, la dédicace ou les épigraphes se trouvent parfois mal placés dans l’article. C’est une idée à retenir et à enticiper pour la validation. Il faut « forcer » les écrivants et éditeurs sur stylo à placer ses blocs au bon endroit.</p>
          </div>
          <div type="section1">
@@ -185,7 +186,7 @@
             <pb/>
             <p>Et là je veux citer <bibl rend="inline">
                   <ref target="#ref-hugo1862miserables">1862</ref>
-               </bibl> (sans les crochets [], ça ne met pas le nom de l’auteur dans la référence; à n’utiliser que si on inscrit soi-même le nom de l’auteur dans le texte avoisinant).</p>
+               </bibl> (sans les crochets [], ça ne met pas le nom de l’auteur dans la référence; à n’utiliser que si on inscrit soi-même le nom de l’auteur dans le texte avoisinant, donc, pas comme ici !).</p>
             <p rend="signature">Ceci est une signature</p>
             <list type="unordered">
                <item>liste</item>
@@ -481,7 +482,7 @@
             <p>A<hi rend="sub">a</hi>
             </p>
             <p>
-               <hi rend="underline">Trouver comment souligne ??</hi>
+               <hi rend="underline">Trouvé comment souligner</hi>
             </p>
             <p>
                <hi rend="strikethrough">texte barré</hi>
@@ -526,6 +527,159 @@ bonjour("monde")</code>
             </p>
             <p>On peut aussi mettre du code inline : <code rend="inline">&lt;div&gt;Voici du code inline&lt;/div&gt;</code>
             </p>
+         </div>
+         <div type="section1">
+            <head>Formules mathématiques</head>
+            <p>Voici des formules « inline », <formula notation="mml">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                     <semantics>
+                        <msup>
+                           <mi>π</mi>
+                           <mn>2</mn>
+                        </msup>
+                        <annotation encoding="application/x-tex">\pi^2</annotation>
+                     </semantics>
+                  </math>
+               </formula>, <formula notation="mml">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                     <semantics>
+                        <mrow>
+                           <mi>π</mi>
+                           <mo>×</mo>
+                           <msqrt>
+                              <mn>2</mn>
+                           </msqrt>
+                        </mrow>
+                        <annotation encoding="application/x-tex">\pi \times {\sqrt 2}</annotation>
+                     </semantics>
+                  </math>
+               </formula>, <formula notation="mml">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                     <semantics>
+                        <msup>
+                           <mi>π</mi>
+                           <mn>2</mn>
+                        </msup>
+                        <annotation encoding="application/x-tex">\pi^2</annotation>
+                     </semantics>
+                  </math>
+               </formula> et <formula notation="mml">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
+                     <semantics>
+                        <mrow>
+                           <mi>π</mi>
+                           <mo>×</mo>
+                           <mroot>
+                              <mn>7</mn>
+                              <mn>3</mn>
+                           </mroot>
+                        </mrow>
+                        <annotation encoding="application/x-tex">\pi \times {\sqrt[3] 7}</annotation>
+                     </semantics>
+                  </math>
+               </formula>.</p>
+            <p>Voici trois formules en blocs : <formula notation="mml">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                     <semantics>
+                        <mrow>
+                           <mi>π</mi>
+                           <mo>×</mo>
+                           <msqrt>
+                              <mn>2</mn>
+                           </msqrt>
+                        </mrow>
+                        <annotation encoding="application/x-tex">\pi \times {\sqrt 2}</annotation>
+                     </semantics>
+                  </math>
+               </formula>
+               <formula notation="mml">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                     <semantics>
+                        <msup>
+                           <mi>π</mi>
+                           <mn>2</mn>
+                        </msup>
+                        <annotation encoding="application/x-tex">\pi^2</annotation>
+                     </semantics>
+                  </math>
+               </formula>
+               <formula notation="mml">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                     <semantics>
+                        <mrow>
+                           <mi>π</mi>
+                           <mo>×</mo>
+                           <mroot>
+                              <mn>7</mn>
+                              <mn>3</mn>
+                           </mroot>
+                        </mrow>
+                        <annotation encoding="application/x-tex">\pi \times {\sqrt[3] 7}</annotation>
+                     </semantics>
+                  </math>
+               </formula>
+            </p>
+            <p>Cela conclut notre section sur les formules.</p>
+         </div>
+         <div type="section1">
+            <head>Tableaux</head>
+            <p>Les tableaux suivants me semblent d’une complexité suffisante pour illustrer pas mal de choses.</p>
+            <figure>
+               <p rend="caption">Tableau <hi rend="italic">trafiqué</hi> du manuel de pandoc</p>
+               <table rows="4" cols="3">
+                  <row>
+                     <cell cols="2">Property</cell>
+                     <cell>-89.2 °C</cell>
+                  </row>
+                  <row>
+                     <cell rows="3">Temperature 1961-1990</cell>
+                     <cell>min</cell>
+                     <cell>
+                        <list type="ordered">
+                           <item>Earth</item>
+                           <item>Mercury</item>
+                           <item>Jupiter</item>
+                        </list>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>mean</cell>
+                     <cell>14 °C</cell>
+                  </row>
+                  <row>
+                     <cell>max</cell>
+                     <cell>56.7 °C</cell>
+                  </row>
+               </table>
+            </figure>
+            <figure>
+               <p rend="caption">Tableau <hi rend="bold">ultra-trificoté</hi> du manuel de pandoc</p>
+               <table rows="5" cols="3">
+                  <row>
+                     <cell cols="2">Property</cell>
+                     <cell>-89.2 °C</cell>
+                  </row>
+                  <row>
+                     <cell rows="2">Temperature 1961-1990</cell>
+                     <cell cols="2">
+                        <hi rend="italic">minimum</hi> on Earth</cell>
+                  </row>
+                  <row>
+                     <cell cols="2" rows="2">
+                        <p>maximum de 56.7 °C</p>
+                        <p>minimum de 14 °C</p>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>Alpinisme</cell>
+                  </row>
+                  <row>
+                     <cell>1961-1990</cell>
+                     <cell cols="2">moyenne de 28 °C</cell>
+                  </row>
+               </table>
+            </figure>
+            <p>Fin de la section sur les tableaux.</p>
          </div>
          <div type="section1">
             <head>Titre choisi pour la bibliographie</head>

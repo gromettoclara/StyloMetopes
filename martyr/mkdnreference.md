@@ -8,6 +8,10 @@ Ceci est le doc de référence, martyre, pour baliser du texte destiné à Commo
 
 ## Liminaires
 
+Notez que les sections "liminaires" sont relocalisées en "front" en conformité avec le
+schéma Métopes. Elles n’apparaîtront donc pas en séquence ici. Il ne restera que
+la "simple remarque".
+
 ::: {.ack}
 Remerciements.
 :::
@@ -31,7 +35,7 @@ Note préliminaire du traducteur
 :::
 
 ::: {.argument}
-ATTENTION: Ceci est un chapôt introductif
+ATTENTION: Ceci est un chapô introductif
 :::
 
 ::: {.epigraph}
@@ -59,7 +63,7 @@ Une ligne à la suite
 
 Et là je veux citer @hugo1862miserables (sans les crochets \[\], ça ne met pas
 le nom de l’auteur dans la référence; à n’utiliser que si on inscrit soi-même
-le nom de l’auteur dans le texte avoisinant).
+le nom de l’auteur dans le texte avoisinant, donc, pas comme ici !).
 
 ::: {.sig}
 Ceci est une signature
@@ -292,7 +296,7 @@ _italique_ ou *italique*
 
 A~a~
 
-[Trouver comment souligne ??]{.underline}
+[Trouvé comment souligner]{.underline}
 
 ~~texte barré~~
 
@@ -316,6 +320,48 @@ bonjour("monde")
 ```
 
 On peut aussi mettre du code inline : `<div>Voici du code inline</div>`
+
+## Formules mathématiques
+
+Voici des formules "inline", $\pi^2$, $\pi \times {\sqrt 2}$, $\pi^2$ et $\pi \times {\sqrt[3] 7}$.
+
+Voici trois formules en blocs : $$\pi \times {\sqrt 2}$$ $$\pi^2$$
+$$\pi \times {\sqrt[3] 7}$$
+
+Cela conclut notre section sur les formules.
+
+## Tableaux
+
+Les tableaux suivants me semblent d’une complexité suffisante pour illustrer pas
+mal de choses.
+
++---------------------+------------+
+| Property            | -89.2 °C   |
++=============+=======+============+
+|             | min   | 1. Earth   |
+|             |       | 2. Mercury |
+|             |       | 3. Jupiter |
+| Temperature +-------+------------+
+| 1961-1990   | mean  | 14 °C      |
+|             +-------+------------+
+|             | max   | 56.7 °C    |
++-------------+-------+------------+
+: Tableau _trafiqué_ du manuel de pandoc
+
++---------------------+------------+
+| Property            | -89.2 °C   |
++=============+=======+============+
+|             | *minimum* on Earth |
+| Temperature +--------------------+
+| 1961-1990   | maximum de 56.7 °C |
++-------------+                    |
+| Alpinisme   | minimum de 14 °C   |
++=============+====================+
+| 1961-1990   | moyenne de 28 °C   |
++=============+====================+
+: Tableau **ultra-trificoté** du manuel de pandoc
+
+Fin de la section sur les tableaux.
 
 ## Titre choisi pour la bibliographie 
 
