@@ -1,4 +1,4 @@
-Ceci est le doc de référence, martyre, pour baliser du texte destiné à Commons dans Stylo.
+Ceci est le doc de référence, martyr, pour baliser du texte destiné à Commons dans Stylo.
 
 ## Déjà on peut avoir plein de niveaux de titre, celui-ci est le premier... 
 
@@ -61,9 +61,8 @@ Une ligne à la suite
 
 - - -
 
-Et là je veux citer @hugo1862miserables (sans les crochets \[\], ça ne met pas
-le nom de l’auteur dans la référence; à n’utiliser que si on inscrit soi-même
-le nom de l’auteur dans le texte avoisinant, donc, pas comme ici !).
+Et là je veux citer @hugo1862miserables (sans les crochets \[\], ça met le
+nom de l’auteur *avant* le lien cliquable entre parenthèses, plutôt que dedans).
 
 ::: {.sig}
 Ceci est une signature
@@ -111,11 +110,11 @@ Par exemple je veux mattre une note de fin ici[Voici ce que je veux dire et qui 
 
 Cette citation a une source référencée entre crochets.
 
-Parfois j'écris un paragraphe et comme le disait Hugo dans @hugo1862miserables, [Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs.]{.inlinequote} De cette manière j'ai une citation innline.
+Parfois j'écris un paragraphe et comme le disait @hugo1862miserables, [Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs.]{.inlinequote} De cette manière j'ai une citation inline.
 
-Si on voulait une référence, on l’inscrirait simplement avec le reste du texte cité :
+On peut aussi inscrire la référence dans le texte cité (habituellement à la fin) :
 
-Comme le disait Hugo, [Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs. [@hugo1862miserables]]{.inlinequote} Ensuite, le paragraphe continue.
+Comme le disait l’*Homme Océan*, [Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs. [@hugo1862miserables]]{.inlinequote} Ensuite, le paragraphe continue.
 
 :::{.quote-alt}
 c’est une pratique d’open edition, pas de notion sémantique, elle s’appelle juste citation bis  dans le schéma commons.
@@ -135,19 +134,20 @@ Commençons doucement :
 :::
 
 On note que, comparativement aux citations simple (>) ou 'quot-alt', une 
-'quotcomplexe' peut comporter plusieurs paragaphes.
+'quotcomplexe' peut comporter plusieurs paragraphes.
 
-En plus des références bibli inline intégrées aux paragraphes,
-on peut aussi en ajouter des non inline, qui
+En plus des références bibliographiques intégrées aux paragraphes,
+on peut aussi en ajouter comme paragraphe(s) autonomes; elles
 apparaîtront alors dissociées des paragraphes cités, mais toujours à l’intérieur
-de l’élément quote :
+de l’élément quote (celles sans [] seront mises dans un \<p>, car elles
+contiennent du texte en plus d'un \<bibl>) :
 
 :::{.quotcomplexe}
-> Un premier paragraphe.
+> Un premier paragraphe [@baudelaire_albatros_1857].
 >
 > Un second paragraphe dans la même citation.
 
-[@hugo1862miserables, 12-135]
+[@moliere_misanthrope_1666]
 :::
 
 On peut maintenant ajouter des traductions + références :
@@ -359,7 +359,7 @@ mal de choses.
 +=============+====================+
 | 1961-1990   | moyenne de 28 °C   |
 +=============+====================+
-: Tableau **ultra-trificoté** du manuel de pandoc
+: Tableau **ultra-traficoté** du manuel de pandoc
 
 Fin de la section sur les tableaux.
 

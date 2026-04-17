@@ -94,7 +94,7 @@
       </profileDesc>
       <revisionDesc>
          <listChange>
-            <change type="creation" when="2026-04-16">XML-TEI file creation</change>
+            <change type="creation" when="2026-04-17">XML-TEI file creation</change>
          </listChange>
       </revisionDesc>
    </teiHeader>
@@ -161,7 +161,7 @@
          </epigraph>
       </front>
       <body>
-         <p xml:id="p23">Ceci est le doc de référence, martyre, pour baliser du texte destiné à Commons dans Stylo.</p>
+         <p xml:id="p23">Ceci est le doc de référence, martyr, pour baliser du texte destiné à Commons dans Stylo.</p>
          <div xml:id="div10" type="section1">
             <head>Déjà on peut avoir plein de niveaux de titre, celui-ci est le premier…</head>
             <div xml:id="div11" type="section2">
@@ -183,9 +183,7 @@
             <p xml:id="p28">Une ligne<lb/>Une ligne à la suite</p>
             <p xml:id="p29" rend="break">- - -</p>
             <pb/>
-            <p xml:id="p30">Et là je veux citer <bibl xml:id="bibl3" rend="inline">
-                  <ref target="#ref-hugo1862miserables">1862</ref>
-               </bibl> (sans les crochets [], ça ne met pas le nom de l’auteur dans la référence; à n’utiliser que si on inscrit soi-même le nom de l’auteur dans le texte avoisinant, donc, pas comme ici !).</p>
+            <p xml:id="p30">Et là je veux citer <bibl xml:id="bibl3" rend="inline">Hugo (<ref target="#ref-hugo1862miserables">1862</ref>)</bibl> (sans les crochets [], ça met le nom de l’auteur <hi rend="italic">avant</hi> le lien cliquable entre parenthèses, plutôt que dedans).</p>
             <p xml:id="p31" rend="signature">Ceci est une signature</p>
             <list xml:id="list4" type="unordered">
                <item>liste</item>
@@ -210,10 +208,12 @@
          <div xml:id="div15" type="section1">
             <head>Entretien</head>
             <sp rend="question">
+
                <p xml:id="p33">
                   <name type="speaker">Clara</name> Une question est posée</p>
             </sp>
             <sp rend="answer">
+
                <p xml:id="p34">
                   <name type="speaker">Marcello</name> Réponse à la question</p>
             </sp>
@@ -236,26 +236,24 @@
          <div xml:id="div17" type="section1">
             <head>Citations</head>
             <cit xml:id="cit2">
-               <quote>Ceci est une citation (qui inclut une référence, mais ce n’est pas obligatoire). <bibl xml:id="bibl4" rend="inline">
+               <quote>Ceci est une citation (qui inclut une référence, mais ce n’est pas obligatoire). <bibl xml:id="bibl4">
                      <ref target="#ref-hugo1862miserables">Hugo 1862, 123‑25</ref>
                   </bibl>
                </quote>
             </cit>
             <p xml:id="p43">Cette citation a une source référencée entre crochets.</p>
-            <p xml:id="p44">Parfois j’écris un paragraphe et comme le disait Hugo dans <bibl xml:id="bibl5" rend="inline">
-                  <ref target="#ref-hugo1862miserables">1862</ref>
-               </bibl>, <cit xml:id="cit3">
+            <p xml:id="p44">Parfois j’écris un paragraphe et comme le disait <bibl xml:id="bibl5" rend="inline">Hugo (<ref target="#ref-hugo1862miserables">1862</ref>)</bibl>, <cit xml:id="cit3">
                   <quote>Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs.</quote>
-               </cit> De cette manière j’ai une citation innline.</p>
-            <p xml:id="p45">Si on voulait une référence, on l’inscrirait simplement avec le reste du texte cité :</p>
-            <p xml:id="p46">Comme le disait Hugo, <cit xml:id="cit4">
-                  <quote>Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs. <bibl xml:id="bibl6" rend="inline">
+               </cit> De cette manière j’ai une citation inline.</p>
+            <p xml:id="p45">On peut aussi inscrire la référence dans le texte cité (habituellement à la fin) :</p>
+            <p xml:id="p46">Comme le disait l’<hi rend="italic">Homme Océan</hi>, <cit xml:id="cit4">
+                  <quote>Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs. <bibl xml:id="bibl6">
                         <ref target="#ref-hugo1862miserables">Hugo 1862</ref>
                      </bibl>
                   </quote>
                </cit> Ensuite, le paragraphe continue.</p>
             <cit xml:id="cit5">
-               <quote type="quotation2">c’est une pratique d’open edition, pas de notion sémantique, elle s’appelle juste citation bis dans le schéma commons. Si on veut une référence, on l’inscrit simplement avec le reste du texte cité. <bibl xml:id="bibl7" rend="inline">
+               <quote type="quotation2">c’est une pratique d’open edition, pas de notion sémantique, elle s’appelle juste citation bis dans le schéma commons. Si on veut une référence, on l’inscrit simplement avec le reste du texte cité. <bibl xml:id="bibl7">
                      <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
                   </bibl>
                </quote>
@@ -270,14 +268,14 @@
                      <p xml:id="p50">Un second paragraphe dans la même citation.</p>
                   </quote>
                </cit>
-               <p xml:id="p51">On note que, comparativement aux citations simple (&gt;) ou « quot-alt », une « quotcomplexe » peut comporter plusieurs paragaphes.</p>
-               <p xml:id="p52">En plus des références bibli inline intégrées aux paragraphes, on peut aussi en ajouter des non inline, qui apparaîtront alors dissociées des paragraphes cités, mais toujours à l’intérieur de l’élément quote :</p>
+               <p xml:id="p51">On note que, comparativement aux citations simple (&gt;) ou « quot-alt », une « quotcomplexe » peut comporter plusieurs paragraphes.</p>
+               <p xml:id="p52">En plus des références bibliographiques intégrées aux paragraphes, on peut aussi en ajouter comme paragraphe(s) autonomes; elles apparaîtront alors dissociées des paragraphes cités, mais toujours à l’intérieur de l’élément quote (celles sans [] seront mises dans un &lt;p&gt;, car elles contiennent du texte en plus d’un &lt;bibl&gt;) :</p>
                <cit xml:id="cit7">
                   <quote>
-                     <p xml:id="p53">Un premier paragraphe.</p>
+                     <p xml:id="p53">Un premier paragraphe <bibl xml:id="bibl8" rend="inline">(<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>)</bibl>.</p>
                      <p xml:id="p54">Un second paragraphe dans la même citation.</p>
-                     <bibl xml:id="bibl8">
-                        <ref target="#ref-hugo1862miserables">Hugo 1862, 12‑135</ref>
+                     <bibl xml:id="bibl9">
+                        <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
                      </bibl>
                   </quote>
                </cit>
@@ -287,11 +285,11 @@
                      <p xml:id="p56">tatitata (ça peut être des vers ou des didascalies)</p>
                      <quote type="trl" xml:lang="en">
                         <p xml:id="p57">tatitata dans une autre langue</p>
-                        <bibl xml:id="bibl9">
+                        <bibl xml:id="bibl10">
                            <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
                         </bibl>
                      </quote>
-                     <bibl xml:id="bibl10">
+                     <bibl xml:id="bibl11">
                         <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
                      </bibl>
                   </quote>
@@ -301,12 +299,12 @@
                <cit xml:id="cit9">
                   <quote>
                      <p xml:id="p60">tatitata (ça peut être des vers ou des didascalies)</p>
-                     <bibl xml:id="bibl11">
+                     <bibl xml:id="bibl12">
                         <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
                      </bibl>
                      <quote type="trl" xml:lang="en">
                         <p xml:id="p61">tatitata dans une autre langue</p>
-                        <bibl xml:id="bibl12">
+                        <bibl xml:id="bibl13">
                            <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
                         </bibl>
                      </quote>
@@ -325,7 +323,7 @@
                            <num>2</num> Prennent des albatros, vastes oiseaux des mers,</l>
                         <l n="3">
                            <num>3</num> Qui suivent, indolents compagnons de voyage,</l>
-                     </lg> 
+                     </lg>
                   </quote>
                </cit>
                <p xml:id="p63">Pour ajouter une référence, on la met à la fin, dans la citation :</p>
@@ -338,8 +336,8 @@
                            <num>2</num> Prennent des albatros, vastes oiseaux des mers,</l>
                         <l n="3">
                            <num>3</num> Qui suivent, indolents compagnons de voyage,</l>
-                     </lg>  
-                     <bibl xml:id="bibl13">
+                     </lg>
+                     <bibl xml:id="bibl14">
                         <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>
                      </bibl>
                   </quote>
@@ -354,7 +352,7 @@
                            <num>2</num> Prennent des albatros, vastes oiseaux des mers,</l>
                         <l n="3">
                            <num>3</num> Qui suivent, indolents compagnons de voyage,</l>
-                     </lg> 
+                     </lg>
                      <quote type="trl" xml:lang="en">
                         <lg>
                            <l n="1">
@@ -363,12 +361,12 @@
                               <num>2</num> Catch albatrosses, vast birds of the seas,</l>
                            <l n="3">
                               <num>3</num> Who follow, indolent companions of the voyage,</l>
-                        </lg> 
-                        <bibl xml:id="bibl14">
+                        </lg>
+                        <bibl xml:id="bibl15">
                            <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
                         </bibl>
                      </quote>
-                     <bibl xml:id="bibl15">
+                     <bibl xml:id="bibl16">
                         <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>
                      </bibl>
                   </quote>
@@ -383,10 +381,8 @@
                            <num>2</num> Prennent des albatros, vastes oiseaux des mers,</l>
                         <l n="3">
                            <num>3</num> Qui suivent, indolents compagnons de voyage,</l>
-                     </lg>  
-                     <bibl xml:id="bibl16">
-                        <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>
-                     </bibl>
+                     </lg>
+                     <bibl xml:id="bibl17" rend="inline">(<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>)</bibl>
                      <quote type="trl" xml:lang="en">
                         <lg>
                            <l n="1">
@@ -395,8 +391,8 @@
                               <num>2</num> Catch albatrosses, vast birds of the seas,</l>
                            <l n="3">
                               <num>3</num> Who follow, indolent companions of the voyage,</l>
-                        </lg>  
-                        <bibl xml:id="bibl17">
+                        </lg>
+                        <bibl xml:id="bibl18">
                            <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
                         </bibl>
                      </quote>
@@ -417,9 +413,7 @@
                <head>Titre de l’image dans laquelle on <hi rend="strikethrough">devrait</hi> pourrait mettre aussi des crédits</head>
                <p xml:id="p70" rend="caption">légende</p>
                <graphic url="../icono/br/image.png"/>
-               <p xml:id="p71" rend="credits">Cette image est sous licence machin et est attribuée à <bibl xml:id="bibl18" rend="inline">
-                     <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
-                  </bibl>.</p>
+               <p xml:id="p71" rend="credits">Cette image est sous licence machin et est attribuée à <bibl xml:id="bibl19" rend="inline">(<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>)</bibl>.</p>
             </figure>
             <p xml:id="p72">On voit que les crédits peuvent :</p>
             <list xml:id="list8" type="unordered">
@@ -439,7 +433,7 @@
             <floatingText xml:id="floatingText1" type="encadre">
                <body>
                   <p xml:id="p76">Pour le moment on a un encadré minimal avec un titre et une autorité à récupérer dans <code rend="inline">TEI/text/body//bibl[@type="sec_authority"]/author/persName/surname|forename</code>
-                     <bibl xml:id="bibl19" type="sec_authority">
+                     <bibl xml:id="bibl20" type="sec_authority">
                         <author>
                            <persName>
                               <surname>nom</surname>
@@ -652,7 +646,7 @@ bonjour("monde")</code>
                </table>
             </figure>
             <figure xml:id="figure5">
-               <p xml:id="p98" rend="caption">Tableau <hi rend="bold">ultra-trificoté</hi> du manuel de pandoc</p>
+               <p xml:id="p98" rend="caption">Tableau <hi rend="bold">ultra-traficoté</hi> du manuel de pandoc</p>
                <table xml:id="table2" rows="5" cols="3">
                   <row>
                      <cell cols="2">Property</cell>

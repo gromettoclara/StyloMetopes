@@ -95,7 +95,7 @@
       </profileDesc>
       <revisionDesc>
          <listChange>
-            <change type="creation" when="2026-04-16">XML-TEI file creation</change>
+            <change type="creation" when="2026-04-17">XML-TEI file creation</change>
          </listChange>
       </revisionDesc>
    </teiHeader>
@@ -162,7 +162,7 @@
          </epigraph>
       </front>
       <body>
-         <p>Ceci est le doc de référence, martyre, pour baliser du texte destiné à Commons dans Stylo.</p>
+         <p>Ceci est le doc de référence, martyr, pour baliser du texte destiné à Commons dans Stylo.</p>
          <div type="section1">
             <head>Déjà on peut avoir plein de niveaux de titre, celui-ci est le premier…</head>
             <div type="section2">
@@ -184,9 +184,7 @@
             <p>Une ligne<lb/>Une ligne à la suite</p>
             <p rend="break">- - -</p>
             <pb/>
-            <p>Et là je veux citer <bibl rend="inline">
-                  <ref target="#ref-hugo1862miserables">1862</ref>
-               </bibl> (sans les crochets [], ça ne met pas le nom de l’auteur dans la référence; à n’utiliser que si on inscrit soi-même le nom de l’auteur dans le texte avoisinant, donc, pas comme ici !).</p>
+            <p>Et là je veux citer <bibl rend="inline">Hugo (<ref target="#ref-hugo1862miserables">1862</ref>)</bibl> (sans les crochets [], ça met le nom de l’auteur <hi rend="italic">avant</hi> le lien cliquable entre parenthèses, plutôt que dedans).</p>
             <p rend="signature">Ceci est une signature</p>
             <list type="unordered">
                <item>liste</item>
@@ -211,10 +209,12 @@
          <div type="section1">
             <head>Entretien</head>
             <sp rend="question">
+
                <p>
                   <name type="speaker">Clara</name> Une question est posée</p>
             </sp>
             <sp rend="answer">
+
                <p>
                   <name type="speaker">Marcello</name> Réponse à la question</p>
             </sp>
@@ -237,26 +237,24 @@
          <div type="section1">
             <head>Citations</head>
             <cit>
-               <quote>Ceci est une citation (qui inclut une référence, mais ce n’est pas obligatoire). <bibl rend="inline">
+               <quote>Ceci est une citation (qui inclut une référence, mais ce n’est pas obligatoire). <bibl>
                      <ref target="#ref-hugo1862miserables">Hugo 1862, 123‑25</ref>
                   </bibl>
                </quote>
             </cit>
             <p>Cette citation a une source référencée entre crochets.</p>
-            <p>Parfois j’écris un paragraphe et comme le disait Hugo dans <bibl rend="inline">
-                  <ref target="#ref-hugo1862miserables">1862</ref>
-               </bibl>, <cit>
+            <p>Parfois j’écris un paragraphe et comme le disait <bibl rend="inline">Hugo (<ref target="#ref-hugo1862miserables">1862</ref>)</bibl>, <cit>
                   <quote>Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs.</quote>
-               </cit> De cette manière j’ai une citation innline.</p>
-            <p>Si on voulait une référence, on l’inscrirait simplement avec le reste du texte cité :</p>
-            <p>Comme le disait Hugo, <cit>
-                  <quote>Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs. <bibl rend="inline">
+               </cit> De cette manière j’ai une citation inline.</p>
+            <p>On peut aussi inscrire la référence dans le texte cité (habituellement à la fin) :</p>
+            <p>Comme le disait l’<hi rend="italic">Homme Océan</hi>, <cit>
+                  <quote>Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs. <bibl>
                         <ref target="#ref-hugo1862miserables">Hugo 1862</ref>
                      </bibl>
                   </quote>
                </cit> Ensuite, le paragraphe continue.</p>
             <cit>
-               <quote type="quotation2">c’est une pratique d’open edition, pas de notion sémantique, elle s’appelle juste citation bis dans le schéma commons. Si on veut une référence, on l’inscrit simplement avec le reste du texte cité. <bibl rend="inline">
+               <quote type="quotation2">c’est une pratique d’open edition, pas de notion sémantique, elle s’appelle juste citation bis dans le schéma commons. Si on veut une référence, on l’inscrit simplement avec le reste du texte cité. <bibl>
                      <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
                   </bibl>
                </quote>
@@ -271,14 +269,14 @@
                      <p>Un second paragraphe dans la même citation.</p>
                   </quote>
                </cit>
-               <p>On note que, comparativement aux citations simple (&gt;) ou « quot-alt », une « quotcomplexe » peut comporter plusieurs paragaphes.</p>
-               <p>En plus des références bibli inline intégrées aux paragraphes, on peut aussi en ajouter des non inline, qui apparaîtront alors dissociées des paragraphes cités, mais toujours à l’intérieur de l’élément quote :</p>
+               <p>On note que, comparativement aux citations simple (&gt;) ou « quot-alt », une « quotcomplexe » peut comporter plusieurs paragraphes.</p>
+               <p>En plus des références bibliographiques intégrées aux paragraphes, on peut aussi en ajouter comme paragraphe(s) autonomes; elles apparaîtront alors dissociées des paragraphes cités, mais toujours à l’intérieur de l’élément quote (celles sans [] seront mises dans un &lt;p&gt;, car elles contiennent du texte en plus d’un &lt;bibl&gt;) :</p>
                <cit>
                   <quote>
-                     <p>Un premier paragraphe.</p>
+                     <p>Un premier paragraphe <bibl rend="inline">(<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>)</bibl>.</p>
                      <p>Un second paragraphe dans la même citation.</p>
                      <bibl>
-                        <ref target="#ref-hugo1862miserables">Hugo 1862, 12‑135</ref>
+                        <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
                      </bibl>
                   </quote>
                </cit>
@@ -326,7 +324,7 @@
                            <num>2</num> Prennent des albatros, vastes oiseaux des mers,</l>
                         <l n="3">
                            <num>3</num> Qui suivent, indolents compagnons de voyage,</l>
-                     </lg> 
+                     </lg>
                   </quote>
                </cit>
                <p>Pour ajouter une référence, on la met à la fin, dans la citation :</p>
@@ -339,7 +337,7 @@
                            <num>2</num> Prennent des albatros, vastes oiseaux des mers,</l>
                         <l n="3">
                            <num>3</num> Qui suivent, indolents compagnons de voyage,</l>
-                     </lg>  
+                     </lg>
                      <bibl>
                         <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>
                      </bibl>
@@ -355,7 +353,7 @@
                            <num>2</num> Prennent des albatros, vastes oiseaux des mers,</l>
                         <l n="3">
                            <num>3</num> Qui suivent, indolents compagnons de voyage,</l>
-                     </lg> 
+                     </lg>
                      <quote type="trl" xml:lang="en">
                         <lg>
                            <l n="1">
@@ -364,7 +362,7 @@
                               <num>2</num> Catch albatrosses, vast birds of the seas,</l>
                            <l n="3">
                               <num>3</num> Who follow, indolent companions of the voyage,</l>
-                        </lg> 
+                        </lg>
                         <bibl>
                            <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
                         </bibl>
@@ -384,10 +382,8 @@
                            <num>2</num> Prennent des albatros, vastes oiseaux des mers,</l>
                         <l n="3">
                            <num>3</num> Qui suivent, indolents compagnons de voyage,</l>
-                     </lg>  
-                     <bibl>
-                        <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>
-                     </bibl>
+                     </lg>
+                     <bibl rend="inline">(<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>)</bibl>
                      <quote type="trl" xml:lang="en">
                         <lg>
                            <l n="1">
@@ -396,7 +392,7 @@
                               <num>2</num> Catch albatrosses, vast birds of the seas,</l>
                            <l n="3">
                               <num>3</num> Who follow, indolent companions of the voyage,</l>
-                        </lg>  
+                        </lg>
                         <bibl>
                            <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
                         </bibl>
@@ -418,9 +414,7 @@
                <head>Titre de l’image dans laquelle on <hi rend="strikethrough">devrait</hi> pourrait mettre aussi des crédits</head>
                <p rend="caption">légende</p>
                <graphic url="../icono/br/image.png"/>
-               <p rend="credits">Cette image est sous licence machin et est attribuée à <bibl rend="inline">
-                     <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
-                  </bibl>.</p>
+               <p rend="credits">Cette image est sous licence machin et est attribuée à <bibl rend="inline">(<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>)</bibl>.</p>
             </figure>
             <p>On voit que les crédits peuvent :</p>
             <list type="unordered">
@@ -653,7 +647,7 @@ bonjour("monde")</code>
                </table>
             </figure>
             <figure>
-               <p rend="caption">Tableau <hi rend="bold">ultra-trificoté</hi> du manuel de pandoc</p>
+               <p rend="caption">Tableau <hi rend="bold">ultra-traficoté</hi> du manuel de pandoc</p>
                <table rows="5" cols="3">
                   <row>
                      <cell cols="2">Property</cell>
