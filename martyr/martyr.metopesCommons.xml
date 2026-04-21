@@ -95,7 +95,7 @@
       </profileDesc>
       <revisionDesc>
          <listChange>
-            <change type="creation" when="2026-04-17">XML-TEI file creation</change>
+            <change type="creation" when="2026-04-20">XML-TEI file creation</change>
          </listChange>
       </revisionDesc>
    </teiHeader>
@@ -175,7 +175,7 @@
          <div type="section1">
             <head>Liminaires</head>
             <p>Notez que les sections « liminaires » sont relocalisées en « front » en conformité avec le schéma Métopes. Elles n’apparaîtront donc pas en séquence ici. Il ne restera que la « simple remarque ».</p>
-            <p>Simple remarque : avec le schéma d’Érudit je suis confronté au problème suivant : ils sont très attaché à l’identité entre le pdf et le HTML produit à partie de leur XML. Or le markdown ne contraignant pas l’ordre des éléments, la dédicace ou les épigraphes se trouvent parfois mal placés dans l’article. C’est une idée à retenir et à enticiper pour la validation. Il faut « forcer » les écrivants et éditeurs sur stylo à placer ses blocs au bon endroit.</p>
+            <p>Simple remarque : avec le schéma d’Érudit je suis confronté au problème suivant : ils sont très attaché à l’identité entre le pdf et le HTML produit à partie de leur XML. Or le markdown ne contraignant pas l’ordre des éléments, la dédicace ou les épigraphes se trouvent parfois mal placés dans l’article. C’est une idée à retenir et à anticiper pour la validation. Il faut « forcer » les écrivants et éditeurs sur stylo à placer ses blocs au bon endroit.</p>
          </div>
          <div type="section1">
             <head>Texte</head>
@@ -184,8 +184,8 @@
             <p>Une ligne<lb/>Une ligne à la suite</p>
             <p rend="break">- - -</p>
             <pb/>
-            <p>Et là je veux citer <bibl rend="inline">Hugo (<ref target="#ref-hugo1862miserables">1862</ref>)</bibl> (sans les crochets [], ça met le nom de l’auteur <hi rend="italic">avant</hi> le lien cliquable entre parenthèses, plutôt que dedans).</p>
-            <p rend="signature">Ceci est une signature</p>
+            <p>Et là je veux citer <bibl rend="inline">Hugo (<ref target="#ref-hugo1862miserables">1862</ref>)</bibl> (sans les crochets [], ça met le nom de l’auteur <hi rend="italic">avant</hi> le lien cliquable, plutôt que dedans).</p>
+            <p rend="signature">Ceci est une signature.</p>
             <list type="unordered">
                <item>liste</item>
                <item>liste<list type="unordered">
@@ -211,12 +211,12 @@
             <sp rend="question">
 
                <p>
-                  <name type="speaker">Clara</name> Une question est posée</p>
+                  <name type="speaker">Clara</name> Une question est posée.</p>
             </sp>
             <sp rend="answer">
 
                <p>
-                  <name type="speaker">Marcello</name> Réponse à la question</p>
+                  <name type="speaker">Marcello</name> Réponse à la question.</p>
             </sp>
          </div>
          <div type="section1">
@@ -230,62 +230,170 @@
                </note> aussi.</p>
             <p>Il faut inventer une autre syntaxe si on veut que les notes soient les notes de fin (<code rend="inline">TEI/text/body//note[@place="end"][@n][@type="standard"][@xml:id"]</code>).</p>
             <p>Il me semble plus propre d’inventer une nouvelle syntaxe que de détourner celle de Pandoc:</p>
-            <p>Par exemple je veux mattre une note de fin ici<note place="end">
+            <p>Par exemple je veux mettre une note de fin ici<note place="end">
                   <p>Voici ce que je veux dire et qui apparaît en fin de document.</p>
-               </note>. Elle sera nmérotée incrémentalement.</p>
+               </note>. Elle sera numérotée séquentiellement.</p>
          </div>
          <div type="section1">
             <head>Citations</head>
-            <cit>
-               <quote>Ceci est une citation (qui inclut une référence, mais ce n’est pas obligatoire). <bibl>
-                     <ref target="#ref-hugo1862miserables">Hugo 1862, 123‑25</ref>
-                  </bibl>
-               </quote>
-            </cit>
-            <p>Cette citation a une source référencée entre crochets.</p>
-            <p>Parfois j’écris un paragraphe et comme le disait <bibl rend="inline">Hugo (<ref target="#ref-hugo1862miserables">1862</ref>)</bibl>, <cit>
-                  <quote>Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs.</quote>
-               </cit> De cette manière j’ai une citation inline.</p>
-            <p>On peut aussi inscrire la référence dans le texte cité (habituellement à la fin) :</p>
-            <p>Comme le disait l’<hi rend="italic">Homme Océan</hi>, <cit>
-                  <quote>Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs. <bibl>
-                        <ref target="#ref-hugo1862miserables">Hugo 1862</ref>
+            <p>Une citation est un bout de texte présenté comme provenant d’une source externe.</p>
+            <p>Une citation est codée différemment selon qu’elle :</p>
+            <list type="ordered">
+               <item>contient un ou plusieurs paragraphes ou éléments structurels tels figure, liste, tableau; ou</item>
+               <item>ne constitue qu’une partie d’un paragraphe.</item>
+            </list>
+            <p>Appelons les premières « conteneurs » et les secondes « inline ».</p>
+            <div type="section2">
+               <head>Citations conteneurs</head>
+               <p>Les citations conteneurs peuvent être codées de deux façons : comme citations normales pandoc-MD (&gt;), ou comme sections <code rend="inline">:::{.quote-alt}</code> (ou, de façon équivalente, <code rend="inline">:::quote-alt</code>), ces dernières correspondant aux citations « alternatives » de Métopes :</p>
+               <cit>
+                  <quote>Ceci est une citation normale pandoc-MD. Elle consiste en exactement un paragraphe.</quote>
+               </cit>
+               <cit>
+                  <quote type="quotation2">Ceci est une citation alternative de Métopes. Encore ici, un seul paragraphe.</quote>
+               </cit>
+               <p>Exemples un peu plus complexes :</p>
+               <cit>
+                  <quote>
+                     <p>Ceci est une citation normale pandoc-MD.</p>
+                     <p>Elle consiste en deux paragraphes suivis d’une liste.</p>
+                     <list type="ordered">
+                        <item>Le soleil.</item>
+                        <item>La lune.</item>
+                     </list>
+                  </quote>
+               </cit>
+               <cit>
+                  <quote type="quotation2">
+                     <p>Ceci est une citation alternative de Métopes.</p>
+                     <figure>
+                        <table rows="3" cols="2">
+                           <row>
+                              <cell rows="2">Pizza</cell>
+                              <cell>Toute garnie</cell>
+                           </row>
+                           <row>
+                              <cell>Hawaïenne</cell>
+                           </row>
+                           <row>
+                              <cell>Spaghetti</cell>
+                              <cell>Bolognese</cell>
+                           </row>
+                        </table>
+                     </figure>
+                     <p>Elle contient un tableau entre deux paragraphes.</p>
+                  </quote>
+               </cit>
+               <p>Les citations conteneurs contenant exactement un paragraphe (et rien d’autre) sont traitées de façon particulière par la moulinette d’exportation et donnent lieu à la forme « normale » de citation Métopes. Toutes les autres « étirent » un peu le modèle Métopes et pourraient donner des résultats sous-optimaux (bien qu’entièrement valides selon le schéma Métopes). Le mot d’ordre est ici « essai et erreur ».</p>
+            </div>
+            <div type="section2">
+               <head>Citations inline</head>
+               <p>Les citations inline (ne constituant qu’un segment d’un paragraphe) sont codées comme des <hi rend="italic">segments</hi> (span) <code rend="inline">[…]{.inlinequote}</code>. Elles peuvent survenir partout où un span peut se trouver. Voici un exemple :</p>
+               <p>Comme le disait l’<hi rend="italic">Homme Océan</hi>, <cit>
+                     <quote>Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs.</quote>
+                  </cit> Ensuite, le paragraphe continue.</p>
+            </div>
+            <div type="section2">
+               <head>Références bibliographiques</head>
+               <p>Pour inclure une <hi rend="italic">référence bibliographique</hi> dans une citation, il suffit de l’inscrire à l’endroit voulu dans le texte.</p>
+               <p>Une référence bibliographique prend une des deux formes <code rend="inline">@cléIdRessource</code> et <code rend="inline">[@cléIdRessource]</code>. La forme avec crochets accepte un préfixe et/ou suffixe en plus de la <code rend="inline">@cléIdRessource</code>, par exemple :</p>
+               <p>
+                  <code rend="inline">[@baudelaire_albatros_1857 1-3]</code>
+               </p>
+               <p>
+                  <code rend="inline">[Voir @hugo1862miserables, *passim*]</code>
+               </p>
+               <p>Les deux formes (avec et sans <code rend="inline">[…]</code>) sont traitées légèrement différemment par pandoc; les différences sont subtiles et se découvrent à l’usage.</p>
+               <p>Habituellement, on met une seule référence par citation et on la met à la fin, mais il n’y a pas de règle sur ces deux points.</p>
+               <p>Voici quelques exemples de citations avec références bibliographiques :</p>
+               <cit>
+                  <quote>Ceci est une citation d’un grand écrivain. <bibl>
+                        <ref target="#ref-hugo1862miserables">Hugo 1862, 123‑25</ref>
                      </bibl>
                   </quote>
-               </cit> Ensuite, le paragraphe continue.</p>
-            <cit>
-               <quote type="quotation2">c’est une pratique d’open edition, pas de notion sémantique, elle s’appelle juste citation bis dans le schéma commons. Si on veut une référence, on l’inscrit simplement avec le reste du texte cité. <bibl>
-                     <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
-                  </bibl>
-               </quote>
-            </cit>
+               </cit>
+               <cit>
+                  <quote type="quotation2">Citation alternative, avec référence bibliographique. <bibl>
+                        <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>
+                     </bibl>
+                  </quote>
+               </cit>
+               <cit>
+                  <quote>
+                     <p>« Les outardes sont bleues, » dit-il.</p>
+                     <p>« Bleues sont les outardes, » répondit l’autre.</p>
+                     <p>
+                        <bibl>
+                           <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
+                        </bibl>
+                     </p>
+                  </quote>
+               </cit>
+               <p>Comme le disait l’<hi rend="italic">Homme Océan</hi>, <cit>
+                     <quote>Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs. <bibl>
+                           <ref target="#ref-hugo1862miserables">Hugo 1862, 10‑12</ref>
+                        </bibl>
+                     </quote>
+                  </cit>. Que peut-on dire de plus ?</p>
+               <p>L’exemple suivant ne contient pas de référence dans une citation, mais il illustre une façon courante d’articuler une référence et une citation :</p>
+               <p>Comme le disait <bibl rend="inline">Hugo (<ref target="#ref-hugo1862miserables">1862</ref>)</bibl>, <cit>
+                     <quote>Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs.</quote>
+                  </cit>. Que peut-on ajouter ?</p>
+               <p>L’exemple démontre aussi qu’une référence bibliographique peut survenir ailleurs que dans une citation. Il s’agit alors d’une référence <hi rend="italic">inline</hi>, identifiée dans Métopes par la valeur d’attribut <code rend="inline">@rend="inline"</code>.</p>
+            </div>
             <div type="section2">
                <head>Citations complexes</head>
-               <p>Il faut ensuite faire des citations plus complexes.</p>
-               <p>Commençons doucement :</p>
+               <p>Métopes possède ce qu’on appelle des citations « complexes ». Il s’agit d’un type de citation conteneur ayant la propriété de pouvoir contenir d’autres citations conteneurs, qui sont des traductions de la citation principale.</p>
+               <p>Un citation complexe est codée comme section <code rend="inline">:::{.quotcomplexe}</code>, ou <code rend="inline">:::{.quotecomplexe lang="zz"}</code>, si on veut spécifier la langue de la citation principale.</p>
+               <p>Le contenu de la citation complexe <hi rend="italic">doit</hi> commencer par la citation principale, laquelle <hi rend="italic">doit</hi> être donnée sous la forme d’une citation normale pandoc-MD (&gt;) à l’intérieur de la citation complexe :</p>
+               <cit>
+                  <quote xml:lang="fr">
+                     <p>Ceci est la citation principale; un premier paragraphe.</p>
+                     <p>Et un second paragraphe.</p>
+                  </quote>
+               </cit>
+               <p>La citation principale peut contenir tout ce qui peut se retrouver dans une citation normale pandoc-MD.</p>
+               <p>
+                  <hi rend="italic">Après</hi> la citation principale, la citation complexe contiendra normalement (mais facultativement) une ou plusieurs sous-sections <code rend="inline">:::{.trad lang="zz"}</code>, chacune donnant une traduction de la citation principale, codée de la même façon que la citation principale :</p>
+               <cit>
+                  <quote xml:lang="fr">
+                     <p>Tatitata en francais.</p>
+                     <p>Sur deux paragraphes.</p>
+                     <quote type="trl" xml:lang="en">
+                        <p>Tatitata in English.</p>
+                        <p>On two paragraphs.</p>
+                     </quote>
+                     <quote type="trl" xml:lang="no">
+                        <p>Tatitata på norsk bokmål.</p>
+                        <p>På to avsnitt.</p>
+                     </quote>
+                  </quote>
+               </cit>
+               <p>Des références bibliographiques peuvent être insérées un peu partout, notamment après la citation principale, à la fin des sections des traductions et après la dernière traduction. Par exemple :</p>
                <cit>
                   <quote>
                      <p>Un premier paragraphe.</p>
-                     <p>Un second paragraphe dans la même citation.</p>
-                  </quote>
-               </cit>
-               <p>On note que, comparativement aux citations simple (&gt;) ou « quot-alt », une « quotcomplexe » peut comporter plusieurs paragraphes.</p>
-               <p>En plus des références bibliographiques intégrées aux paragraphes, on peut aussi en ajouter comme paragraphe(s) autonomes; elles apparaîtront alors dissociées des paragraphes cités, mais toujours à l’intérieur de l’élément quote (celles sans [] seront mises dans un &lt;p&gt;, car elles contiennent du texte en plus d’un &lt;bibl&gt;) :</p>
-               <cit>
-                  <quote>
-                     <p>Un premier paragraphe <bibl rend="inline">(<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>)</bibl>.</p>
                      <p>Un second paragraphe dans la même citation.</p>
                      <bibl>
                         <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
                      </bibl>
                   </quote>
                </cit>
-               <p>On peut maintenant ajouter des traductions + références :</p>
+               <p>Autre exemple :</p>
                <cit>
                   <quote xml:lang="fr">
-                     <p>tatitata (ça peut être des vers ou des didascalies)</p>
+                     <p>Tatitata en français.</p>
+                     <p>Sur deux paragraphes.</p>
                      <quote type="trl" xml:lang="en">
-                        <p>tatitata dans une autre langue</p>
+                        <p>Tatitata in English.</p>
+                        <p>On two paragraphs.</p>
+                        <bibl>
+                           <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
+                        </bibl>
+                     </quote>
+                     <quote type="trl" xml:lang="no">
+                        <p>Tatitata på norsk bokmål.</p>
+                        <p>På to avsnitt.</p>
                         <bibl>
                            <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
                         </bibl>
@@ -295,16 +403,25 @@
                      </bibl>
                   </quote>
                </cit>
-               <p>Cette dernière citation a traduction et références.</p>
-               <p>Si on préfère, la référence au texte en langue originale peut être donnée avant la sous-section pour la traduction :</p>
+               <p>Dans ce dernier exemple, la citation principale a deux traductions avec chacune sa référence, et la référence à la citation originale est donnée <hi rend="italic">après</hi> la dernière traduction.</p>
+               <p>Si on préfère, la référence à la citation en langue originale pourrait être donnée <hi rend="italic">avant</hi> les sous-sections pour les traductions :</p>
                <cit>
-                  <quote>
-                     <p>tatitata (ça peut être des vers ou des didascalies)</p>
+                  <quote xml:lang="fr">
+                     <p>Tatitata en français.</p>
+                     <p>Sur deux paragraphes.</p>
                      <bibl>
                         <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
                      </bibl>
                      <quote type="trl" xml:lang="en">
-                        <p>tatitata dans une autre langue</p>
+                        <p>Tatitata in English.</p>
+                        <p>On two paragraphs.</p>
+                        <bibl>
+                           <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
+                        </bibl>
+                     </quote>
+                     <quote type="trl" xml:lang="no">
+                        <p>Tatitata på norsk bokmål.</p>
+                        <p>På to avsnitt.</p>
                         <bibl>
                            <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
                         </bibl>
@@ -314,7 +431,7 @@
             </div>
             <div type="section2">
                <head>Citations complexes de vers</head>
-               <p>Que se passe-t-il quand on veut citer des vers ?</p>
+               <p>Comment citer des vers ? On utilise cette forme spéciale de citation normale pandoc-MD :</p>
                <cit>
                   <quote>
                      <lg>
@@ -323,11 +440,11 @@
                         <l n="2">
                            <num>2</num> Prennent des albatros, vastes oiseaux des mers,</l>
                         <l n="3">
-                           <num>3</num> Qui suivent, indolents compagnons de voyage,</l>
+                           <num>5</num> Qui suivent, indolents compagnons de voyage,</l>
                      </lg>
                   </quote>
                </cit>
-               <p>Pour ajouter une référence, on la met à la fin, dans la citation :</p>
+               <p>Pour ajouter une référence, on la met à la fin de la citation :</p>
                <cit>
                   <quote>
                      <lg>
@@ -336,14 +453,14 @@
                         <l n="2">
                            <num>2</num> Prennent des albatros, vastes oiseaux des mers,</l>
                         <l n="3">
-                           <num>3</num> Qui suivent, indolents compagnons de voyage,</l>
+                           <num>5</num> Qui suivent, indolents compagnons de voyage,</l>
                      </lg>
                      <bibl>
                         <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>
                      </bibl>
                   </quote>
                </cit>
-               <p>Ces vers peuvent être compris dans une citation complexe :</p>
+               <p>Si on veut donner une ou plusieurs traductions de la citation, il faut utiliser une citation complexe. Les références sont alors données de la façon prévue pour les citations complexes :</p>
                <cit>
                   <quote>
                      <lg>
@@ -352,7 +469,7 @@
                         <l n="2">
                            <num>2</num> Prennent des albatros, vastes oiseaux des mers,</l>
                         <l n="3">
-                           <num>3</num> Qui suivent, indolents compagnons de voyage,</l>
+                           <num>5</num> Qui suivent, indolents compagnons de voyage,</l>
                      </lg>
                      <quote type="trl" xml:lang="en">
                         <lg>
@@ -361,7 +478,7 @@
                            <l n="2">
                               <num>2</num> Catch albatrosses, vast birds of the seas,</l>
                            <l n="3">
-                              <num>3</num> Who follow, indolent companions of the voyage,</l>
+                              <num>5</num> Who follow, indolent companions of the voyage,</l>
                         </lg>
                         <bibl>
                            <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
@@ -372,7 +489,7 @@
                      </bibl>
                   </quote>
                </cit>
-               <p>Si on préfère, la référence au texte en langue originale peut être donnée avant la sous-section pour la traduction :</p>
+               <p>Si on préfère, la référence au texte en langue originale peut être donnée avant la sous-section pour la traduction, ainsi :</p>
                <cit>
                   <quote>
                      <lg>
@@ -381,9 +498,11 @@
                         <l n="2">
                            <num>2</num> Prennent des albatros, vastes oiseaux des mers,</l>
                         <l n="3">
-                           <num>3</num> Qui suivent, indolents compagnons de voyage,</l>
+                           <num>5</num> Qui suivent, indolents compagnons de voyage,</l>
                      </lg>
-                     <bibl rend="inline">(<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>)</bibl>
+                     <bibl>
+                        <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>
+                     </bibl>
                      <quote type="trl" xml:lang="en">
                         <lg>
                            <l n="1">
@@ -391,7 +510,7 @@
                            <l n="2">
                               <num>2</num> Catch albatrosses, vast birds of the seas,</l>
                            <l n="3">
-                              <num>3</num> Who follow, indolent companions of the voyage,</l>
+                              <num>5</num> Who follow, indolent companions of the voyage,</l>
                         </lg>
                         <bibl>
                            <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
@@ -399,7 +518,7 @@
                      </quote>
                   </quote>
                </cit>
-               <p>Nous nous sommes arrêtés ici en ce qui a trait aux citations. Il faudra penser à un système qui reste lisible et pas trop lours pour le théâtre et la linguistique.</p>
+               <p>Nous nous sommes arrêtés ici en ce qui a trait aux citations. Il faudra penser à un système qui reste lisible et pas trop lourd pour le théâtre et la linguistique.</p>
             </div>
          </div>
          <div type="section1">
@@ -676,13 +795,14 @@ bonjour("monde")</code>
             <p>Fin de la section sur les tableaux.</p>
          </div>
          <div type="section1">
-            <head>Titre choisi pour la bibliographie</head>
-            <p>Le snippet de code biblio rajoute un titre de niveau 2 comme ci-dessus, qui sert à renseigner le titre de la bibliographie. En dessous directement est inséré la syntaxe pandoc pour imprimer la biblio.</p>
+            <head>À propos du titre de la bibliographie</head>
+            <p>Si le MD se termine par un titre, ce dernier sera utilisé comme titre de la bibliographie. Autrement, le mot « Bibliographie » ou « Bibliography » sera utilisé, selon que la métadonnée <code rend="inline">lang</code> commence par <code rend="inline">fr</code> ou non.</p>
+            <p>Avec le titre ci-après, la bibliographie sera intitulée « Références ».</p>
          </div>
       </body>
       <back>
          <div type="bibliography" xml:id="bibliography">
-            <head>Bibliographie</head>
+            <head>Références</head>
             <listBibl>
                <bibl xml:id="ref-baudelaire_albatros_1857">Baudelaire, Charles. 1857. « L’Albatros ». In <hi rend="italic">Les Fleurs du mal</hi>. Poulet-Malassis et de Broise.</bibl>
                <biblStruct type="chapter" xml:id="semref-baudelaire_albatros_1857">
