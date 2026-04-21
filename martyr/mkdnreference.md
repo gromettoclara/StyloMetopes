@@ -331,7 +331,7 @@ donnée *avant* les sous-sections pour les traductions :
 :::
 :::
 
-### Citations complexes de vers
+### Citations de vers
 
 Comment citer des vers ? On utilise cette forme spéciale
 de citation normale pandoc-MD :
@@ -392,33 +392,44 @@ Nous nous sommes arrêtés ici en ce qui a trait aux citations. Il faudra penser
 
 Certains auteurs vont insérer des images sans enrichir comme ceci : 
 
-![légende](mkdreference/medias/image.png)
+![Légende](mkdreference/medias/image.png)
 
-Mais ce qu'on voudrait c'est qu'ils soient plus précis en insérant un snippet de code pour récupérer plus d'information. 
+Mais ce qu'on voudrait c'est qu'ils soient plus précis en insérant un snippet de code pour récupérer plus d'information.
+
+**Exemples :**
 
 :::{.figure}
 
-[Titre de l'image dans laquelle on ~~devrait~~ pourrait mettre aussi des [crédits]{.credits}]{.head}
+[Titre de l'image]{.head}
 
-![légende](mkdreference/medias/image.png)
+![Légende](mkdreference/medias/image.png)
 
 :::{.credits}
-Cette image est sous licence [machin]{.credits} et est attribuée à [@baudelaire_albatros_1857].
+Cette image est sous licence machin et est attribuée à [@baudelaire_albatros_1857].
 :::
+
 :::
 
-On voit que les crédits peuvent : 
+:::{.figure}
 
-- être au sein d'autres éléments
-- une sous-section 'credits' (qui a alors préséance sur les spans 'credits' éventuels)
+[Titre de l'image]{.head}
 
-Exemple illustrant le premier cas de figure (mauvais jeu de mot) :
+![Photo de Montréal, [Collection privée Jean Valjean]{.credits}](mkdreference/medias/image.png)
+
+:::
 
 :::{.figure}
 [L’image dans sa splendeur, telle qu’on peut l’admirer au [Musée du Louvre]{.credits}]{.head}
 
 ![Image mirobolante](mkdreference/medias/image.png)
 :::
+
+On voit que les crédits peuvent être : 
+
+- une sous-section 'credits'.
+- intégrés au sein du titre (.head) ou de la légende, dans un span 'credits'.
+
+Notons qu’une sous-section 'credits' a préséance sur d’éventuels spans 'credits'.
 
 ## Encadrés
 
@@ -430,7 +441,6 @@ Pour le moment on a un encadré minimal avec un titre et une autorité à récup
 dans `TEI/text/body//bibl[@type="sec_authority"]/author/persName/surname|forename`
 
 :::
-
 
 ## Typographie
 

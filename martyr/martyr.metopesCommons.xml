@@ -95,7 +95,7 @@
       </profileDesc>
       <revisionDesc>
          <listChange>
-            <change type="creation" when="2026-04-20">XML-TEI file creation</change>
+            <change type="creation" when="2026-04-21">XML-TEI file creation</change>
          </listChange>
       </revisionDesc>
    </teiHeader>
@@ -430,7 +430,7 @@
                </cit>
             </div>
             <div type="section2">
-               <head>Citations complexes de vers</head>
+               <head>Citations de vers</head>
                <p>Comment citer des vers ? On utilise cette forme spéciale de citation normale pandoc-MD :</p>
                <cit>
                   <quote>
@@ -525,28 +525,37 @@
             <head>Figures</head>
             <p>Certains auteurs vont insérer des images sans enrichir comme ceci :</p>
             <figure>
-               <p rend="caption">légende</p>
+               <p rend="caption">Légende</p>
                <graphic url="../icono/br/image.png"/>
             </figure>
             <p>Mais ce qu’on voudrait c’est qu’ils soient plus précis en insérant un snippet de code pour récupérer plus d’information.</p>
+            <p>
+               <hi rend="bold">Exemples :</hi>
+            </p>
             <figure>
-               <head>Titre de l’image dans laquelle on <hi rend="strikethrough">devrait</hi> pourrait mettre aussi des crédits</head>
-               <p rend="caption">légende</p>
+               <head>Titre de l’image</head>
+               <p rend="caption">Légende</p>
                <graphic url="../icono/br/image.png"/>
                <p rend="credits">Cette image est sous licence machin et est attribuée à <bibl rend="inline">(<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>)</bibl>.</p>
             </figure>
-            <p>On voit que les crédits peuvent :</p>
-            <list type="unordered">
-               <item>être au sein d’autres éléments</item>
-               <item>une sous-section « credits » (qui a alors préséance sur les spans « credits » éventuels)</item>
-            </list>
-            <p>Exemple illustrant le premier cas de figure (mauvais jeu de mot) :</p>
+            <figure>
+               <head>Titre de l’image</head>
+               <p rend="caption">Photo de Montréal, Collection privée Jean Valjean</p>
+               <graphic url="../icono/br/image.png"/>
+               <p rend="credits">Collection privée Jean Valjean</p>
+            </figure>
             <figure>
                <head>L’image dans sa splendeur, telle qu’on peut l’admirer au Musée du Louvre</head>
                <p rend="caption">Image mirobolante</p>
                <graphic url="../icono/br/image.png"/>
                <p rend="credits">Musée du Louvre</p>
             </figure>
+            <p>On voit que les crédits peuvent être :</p>
+            <list type="unordered">
+               <item>une sous-section « credits ».</item>
+               <item>intégrés au sein du titre (.head) ou de la légende, dans un span « credits ».</item>
+            </list>
+            <p>Notons qu’une sous-section « credits » a préséance sur d’éventuels spans « credits ».</p>
          </div>
          <div type="section1">
             <head>Encadrés</head>

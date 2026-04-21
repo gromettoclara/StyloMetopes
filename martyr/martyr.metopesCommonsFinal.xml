@@ -94,7 +94,7 @@
       </profileDesc>
       <revisionDesc>
          <listChange>
-            <change type="creation" when="2026-04-20">XML-TEI file creation</change>
+            <change type="creation" when="2026-04-21">XML-TEI file creation</change>
          </listChange>
       </revisionDesc>
    </teiHeader>
@@ -429,7 +429,7 @@
                </cit>
             </div>
             <div xml:id="div22" type="section2">
-               <head>Citations complexes de vers</head>
+               <head>Citations de vers</head>
                <p xml:id="p100">Comment citer des vers ? On utilise cette forme spéciale de citation normale pandoc-MD :</p>
                <cit xml:id="cit17">
                   <quote>
@@ -524,34 +524,43 @@
             <head>Figures</head>
             <p xml:id="p105">Certains auteurs vont insérer des images sans enrichir comme ceci :</p>
             <figure xml:id="figure2">
-               <p xml:id="p106" rend="caption">légende</p>
+               <p xml:id="p106" rend="caption">Légende</p>
                <graphic url="../icono/br/image.png"/>
             </figure>
             <p xml:id="p107">Mais ce qu’on voudrait c’est qu’ils soient plus précis en insérant un snippet de code pour récupérer plus d’information.</p>
+            <p xml:id="p108">
+               <hi rend="bold">Exemples :</hi>
+            </p>
             <figure xml:id="figure3">
-               <head>Titre de l’image dans laquelle on <hi rend="strikethrough">devrait</hi> pourrait mettre aussi des crédits</head>
-               <p xml:id="p108" rend="caption">légende</p>
+               <head>Titre de l’image</head>
+               <p xml:id="p109" rend="caption">Légende</p>
                <graphic url="../icono/br/image.png"/>
-               <p xml:id="p109" rend="credits">Cette image est sous licence machin et est attribuée à <bibl xml:id="bibl21" rend="inline">(<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>)</bibl>.</p>
+               <p xml:id="p110" rend="credits">Cette image est sous licence machin et est attribuée à <bibl xml:id="bibl21" rend="inline">(<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>)</bibl>.</p>
             </figure>
-            <p xml:id="p110">On voit que les crédits peuvent :</p>
-            <list xml:id="list10" type="unordered">
-               <item>être au sein d’autres éléments</item>
-               <item>une sous-section « credits » (qui a alors préséance sur les spans « credits » éventuels)</item>
-            </list>
-            <p xml:id="p111">Exemple illustrant le premier cas de figure (mauvais jeu de mot) :</p>
             <figure xml:id="figure4">
-               <head>L’image dans sa splendeur, telle qu’on peut l’admirer au Musée du Louvre</head>
-               <p xml:id="p112" rend="caption">Image mirobolante</p>
+               <head>Titre de l’image</head>
+               <p xml:id="p111" rend="caption">Photo de Montréal, Collection privée Jean Valjean</p>
                <graphic url="../icono/br/image.png"/>
-               <p xml:id="p113" rend="credits">Musée du Louvre</p>
+               <p xml:id="p112" rend="credits">Collection privée Jean Valjean</p>
             </figure>
+            <figure xml:id="figure5">
+               <head>L’image dans sa splendeur, telle qu’on peut l’admirer au Musée du Louvre</head>
+               <p xml:id="p113" rend="caption">Image mirobolante</p>
+               <graphic url="../icono/br/image.png"/>
+               <p xml:id="p114" rend="credits">Musée du Louvre</p>
+            </figure>
+            <p xml:id="p115">On voit que les crédits peuvent être :</p>
+            <list xml:id="list10" type="unordered">
+               <item>une sous-section « credits ».</item>
+               <item>intégrés au sein du titre (.head) ou de la légende, dans un span « credits ».</item>
+            </list>
+            <p xml:id="p116">Notons qu’une sous-section « credits » a préséance sur d’éventuels spans « credits ».</p>
          </div>
          <div xml:id="div24" type="section1">
             <head>Encadrés</head>
             <floatingText xml:id="floatingText1" type="encadre">
                <body>
-                  <p xml:id="p114">Pour le moment on a un encadré minimal avec un titre et une autorité à récupérer dans <code rend="inline">TEI/text/body//bibl[@type="sec_authority"]/author/persName/surname|forename</code>
+                  <p xml:id="p117">Pour le moment on a un encadré minimal avec un titre et une autorité à récupérer dans <code rend="inline">TEI/text/body//bibl[@type="sec_authority"]/author/persName/surname|forename</code>
                      <bibl xml:id="bibl22" type="sec_authority">
                         <author>
                            <persName>
@@ -566,60 +575,60 @@
          </div>
          <div xml:id="div25" type="section1">
             <head>Typographie</head>
-            <p xml:id="p115">
+            <p xml:id="p118">
                <hi rend="italic">italique</hi> ou <hi rend="italic">italique</hi>
             </p>
-            <p xml:id="p116">
+            <p xml:id="p119">
                <hi rend="bold">gras</hi>
             </p>
-            <p xml:id="p117">
+            <p xml:id="p120">
                <hi rend="bold">
                   <hi rend="italic">gras et italique</hi>
                </hi>
             </p>
-            <p xml:id="p118">
+            <p xml:id="p121">
                <hi rend="small-caps">en petites majuscules</hi>
             </p>
-            <p xml:id="p119">
+            <p xml:id="p122">
                <hi rend="small-caps">
                   <hi rend="italic">petites majuscules en italique</hi>
                </hi>
             </p>
-            <p xml:id="p120">1<hi rend="sup">er</hi>
+            <p xml:id="p123">1<hi rend="sup">er</hi>
             </p>
-            <p xml:id="p121">3<hi rend="sup">
+            <p xml:id="p124">3<hi rend="sup">
                   <hi rend="italic">eme</hi>
                </hi>
             </p>
-            <p xml:id="p122">A<hi rend="sub">a</hi>
+            <p xml:id="p125">A<hi rend="sub">a</hi>
             </p>
-            <p xml:id="p123">
+            <p xml:id="p126">
                <hi rend="underline">Trouvé comment souligner</hi>
             </p>
-            <p xml:id="p124">
+            <p xml:id="p127">
                <hi rend="strikethrough">texte barré</hi>
             </p>
          </div>
          <div xml:id="div26" type="section1">
             <head>Index</head>
-            <p xml:id="p125">Platon<index indexName="Index des noms propres">
+            <p xml:id="p128">Platon<index indexName="Index des noms propres">
                   <term>Platon</term>
                </index> est un philosophe de l’Antiquité grecque, élève de Socrate<index indexName="Index des noms propres">
                   <term>Socrate</term>
                </index> et maître d’Aristote<index indexName="Index des noms propres">
                   <term>Aristote</term>
                </index>.</p>
-            <p xml:id="p126">Il fonda l’Académie<index indexName="Index thématique:Institution">
+            <p xml:id="p129">Il fonda l’Académie<index indexName="Index thématique:Institution">
                   <term>Academie</term>
                </index> à Athènes<index indexName="Index géographique">
                   <term>Athenes</term>
                </index>, vers 387 av. J.-C.</p>
-            <p xml:id="p127">Ses œuvres majeures, comme la République<index indexName="Index thématique:Œuvre">
+            <p xml:id="p130">Ses œuvres majeures, comme la République<index indexName="Index thématique:Œuvre">
                   <term>Republique_Platon</term>
                </index> ou le Banquet<index indexName="Index thématique:Œuvre">
                   <term>Banquet_Platon</term>
                </index>, ont profondément influencé la pensée occidentale.</p>
-            <p xml:id="p128">Aristote<index indexName="Index des noms propres">
+            <p xml:id="p131">Aristote<index indexName="Index des noms propres">
                   <term>Aristote</term>
                </index>, après avoir quitté l’Académie, devint le précepteur du jeune Alexandre le Grand<index indexName="Index des noms propres">
                   <term>Alexandre_le_Grand</term>
@@ -631,18 +640,18 @@
          </div>
          <div xml:id="div27" type="section1">
             <head>Le code</head>
-            <p xml:id="p129">
+            <p xml:id="p132">
                <code lang="python">def bonjour(nom):
     print(f"Bonjour, {nom} !")
 
 bonjour("monde")</code>
             </p>
-            <p xml:id="p130">On peut aussi mettre du code inline : <code rend="inline">&lt;div&gt;Voici du code inline&lt;/div&gt;</code>
+            <p xml:id="p133">On peut aussi mettre du code inline : <code rend="inline">&lt;div&gt;Voici du code inline&lt;/div&gt;</code>
             </p>
          </div>
          <div xml:id="div28" type="section1">
             <head>Formules mathématiques</head>
-            <p xml:id="p131">Voici des formules « inline », <formula notation="mml">
+            <p xml:id="p134">Voici des formules « inline », <formula notation="mml">
                   <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline">
                      <semantics>
                         <msup>
@@ -690,7 +699,7 @@ bonjour("monde")</code>
                      </semantics>
                   </math>
                </formula>.</p>
-            <p xml:id="p132">Voici trois formules en blocs : <formula notation="mml">
+            <p xml:id="p135">Voici trois formules en blocs : <formula notation="mml">
                   <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
                      <semantics>
                         <mrow>
@@ -731,13 +740,13 @@ bonjour("monde")</code>
                   </math>
                </formula>
             </p>
-            <p xml:id="p133">Cela conclut notre section sur les formules.</p>
+            <p xml:id="p136">Cela conclut notre section sur les formules.</p>
          </div>
          <div xml:id="div29" type="section1">
             <head>Tableaux</head>
-            <p xml:id="p134">Les tableaux suivants me semblent d’une complexité suffisante pour illustrer pas mal de choses.</p>
-            <figure xml:id="figure5">
-               <p xml:id="p135" rend="caption">Tableau <hi rend="italic">trafiqué</hi> du manuel de pandoc</p>
+            <p xml:id="p137">Les tableaux suivants me semblent d’une complexité suffisante pour illustrer pas mal de choses.</p>
+            <figure xml:id="figure6">
+               <p xml:id="p138" rend="caption">Tableau <hi rend="italic">trafiqué</hi> du manuel de pandoc</p>
                <table xml:id="table2" rows="4" cols="3">
                   <row>
                      <cell cols="2">Property</cell>
@@ -764,8 +773,8 @@ bonjour("monde")</code>
                   </row>
                </table>
             </figure>
-            <figure xml:id="figure6">
-               <p xml:id="p136" rend="caption">Tableau <hi rend="bold">ultra-traficoté</hi> du manuel de pandoc</p>
+            <figure xml:id="figure7">
+               <p xml:id="p139" rend="caption">Tableau <hi rend="bold">ultra-traficoté</hi> du manuel de pandoc</p>
                <table xml:id="table3" rows="5" cols="3">
                   <row>
                      <cell cols="2">Property</cell>
@@ -778,8 +787,8 @@ bonjour("monde")</code>
                   </row>
                   <row>
                      <cell cols="2" rows="2">
-                        <p xml:id="p137">maximum de 56.7 °C</p>
-                        <p xml:id="p138">minimum de 14 °C</p>
+                        <p xml:id="p140">maximum de 56.7 °C</p>
+                        <p xml:id="p141">minimum de 14 °C</p>
                      </cell>
                   </row>
                   <row>
@@ -791,12 +800,12 @@ bonjour("monde")</code>
                   </row>
                </table>
             </figure>
-            <p xml:id="p139">Fin de la section sur les tableaux.</p>
+            <p xml:id="p142">Fin de la section sur les tableaux.</p>
          </div>
          <div xml:id="div30" type="section1">
             <head>À propos du titre de la bibliographie</head>
-            <p xml:id="p140">Si le MD se termine par un titre, ce dernier sera utilisé comme titre de la bibliographie. Autrement, le mot « Bibliographie » ou « Bibliography » sera utilisé, selon que la métadonnée <code rend="inline">lang</code> commence par <code rend="inline">fr</code> ou non.</p>
-            <p xml:id="p141">Avec le titre ci-après, la bibliographie sera intitulée « Références ».</p>
+            <p xml:id="p143">Si le MD se termine par un titre, ce dernier sera utilisé comme titre de la bibliographie. Autrement, le mot « Bibliographie » ou « Bibliography » sera utilisé, selon que la métadonnée <code rend="inline">lang</code> commence par <code rend="inline">fr</code> ou non.</p>
+            <p xml:id="p144">Avec le titre ci-après, la bibliographie sera intitulée « Références ».</p>
          </div>
       </body>
       <back>
