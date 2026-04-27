@@ -240,7 +240,7 @@ normale pandoc-MD.
 
 *Après* la citation principale, la citation complexe contiendra normalement
 (mais facultativement) une ou plusieurs
-sous-sections `:::{.trad lang="zz"}`, chacune donnant une traduction de la citation
+sous-sections `:::{.translation lang="zz"}`, chacune donnant une traduction de la citation
 principale, codée de la même façon que la citation principale :
 
 :::{.quotcomplexe lang=fr}
@@ -248,13 +248,13 @@ principale, codée de la même façon que la citation principale :
 >
 > Sur deux paragraphes.
 
-:::{.trad lang=en}
+:::{.translation lang=en}
 > Tatitata in English.
 >
 > On two paragraphs.
 :::
 
-:::{.trad lang=no}
+:::{.translation lang=no}
 > Tatitata på norsk bokmål.
 >
 > På to avsnitt.
@@ -281,7 +281,7 @@ Autre exemple :
 >
 > Sur deux paragraphes.
 
-:::{.trad lang=en}
+:::{.translation lang=en}
 > Tatitata in English.
 >
 > On two paragraphs.
@@ -289,7 +289,7 @@ Autre exemple :
 [@moliere_misanthrope_1666]
 :::
 
-:::{.trad lang=no}
+:::{.translation lang=no}
 > Tatitata på norsk bokmål.
 >
 > På to avsnitt.
@@ -314,7 +314,7 @@ donnée *avant* les sous-sections pour les traductions :
 
 [@baudelaire_albatros_1857]
 
-:::{.trad lang=en}
+:::{.translation lang=en}
 > Tatitata in English.
 >
 > On two paragraphs.
@@ -322,7 +322,7 @@ donnée *avant* les sous-sections pour les traductions :
 [@moliere_misanthrope_1666]
 :::
 
-:::{.trad lang=no}
+:::{.translation lang=no}
 > Tatitata på norsk bokmål.
 >
 > På to avsnitt.
@@ -356,7 +356,7 @@ de la façon prévue pour les citations complexes :
 > [Prennent des albatros, vastes oiseaux des mers,]{.verse num=2}
 > [Qui suivent, indolents compagnons de voyage,]{.verse num=5}
 
-:::{.trad lang=en}
+:::{.translation lang=en}
 > [Often, to amuse themselves, the sailors]{.verse num=1}
 > [Catch albatrosses, vast birds of the seas,]{.verse num=2}
 > [Who follow, indolent companions of the voyage,]{.verse num=5}
@@ -377,7 +377,7 @@ donnée avant la sous-section pour la traduction, ainsi :
 
 [@baudelaire_albatros_1857, 1-3]
 
-:::{.trad lang=en}
+:::{.translation lang=en}
 > [Often, to amuse themselves, the sailors]{.verse num=1}
 > [Catch albatrosses, vast birds of the seas,]{.verse num=2}
 > [Who follow, indolent companions of the voyage,]{.verse num=5}
