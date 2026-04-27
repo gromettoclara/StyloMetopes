@@ -229,7 +229,7 @@ Le contenu de la citation complexe *doit* commencer par la citation principale,
 laquelle *doit* être donnée sous la forme d’une citation normale pandoc-MD (>)
 à l’intérieur de la citation complexe :
 
-:::{.quotcomplexe lang=fr}
+:::{.quotecomplexe lang=fr}
 > Ceci est la citation principale; un premier paragraphe.
 >
 > Et un second paragraphe.
@@ -266,7 +266,7 @@ Des références bibliographiques peuvent être insérées un peu
 partout, notamment après la citation principale, à la fin des sections des traductions
 et après la dernière traduction. Par exemple :
 
-:::{.quotcomplexe}
+:::{.quotecomplexe}
 > Un premier paragraphe.
 >
 > Un second paragraphe dans la même citation.
@@ -276,7 +276,7 @@ et après la dernière traduction. Par exemple :
 
 Autre exemple :
 
-:::{.quotcomplexe lang=fr}
+:::{.quotecomplexe lang=fr}
 > Tatitata en français.
 >
 > Sur deux paragraphes.
