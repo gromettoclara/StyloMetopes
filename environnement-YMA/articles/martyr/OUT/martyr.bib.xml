@@ -1,0 +1,430 @@
+<?xml version='1.0' ?>
+<Pandoc api-version="1,23,1,1">
+<meta>
+<entry key="nocite">
+<MetaInlines><Cite><citations>
+<Citation id="*" mode="NormalCitation" note-num="0" hash="0" />
+</citations>[@*]</Cite></MetaInlines>
+</entry>
+<entry key="references">
+<MetaList>
+<MetaMap>
+<entry key="author">
+<MetaList>
+<MetaMap>
+<entry key="family">
+<MetaString>Hugo</MetaString>
+</entry>
+<entry key="given">
+<MetaString>Victor</MetaString>
+</entry>
+</MetaMap>
+</MetaList>
+</entry>
+<entry key="id">
+<MetaString>hugo1862miserables</MetaString>
+</entry>
+<entry key="issued">
+<MetaString>1862</MetaString>
+</entry>
+<entry key="publisher">
+<MetaInlines>A. Lacroix, Verboeckhoven &amp; Cie</MetaInlines>
+</entry>
+<entry key="publisher-place">
+<MetaInlines>Paris</MetaInlines>
+</entry>
+<entry key="title">
+<MetaInlines>Les misérables</MetaInlines>
+</entry>
+<entry key="type">
+<MetaString>book</MetaString>
+</entry>
+</MetaMap>
+<MetaMap>
+<entry key="author">
+<MetaList>
+<MetaMap>
+<entry key="family">
+<MetaString>Baudelaire</MetaString>
+</entry>
+<entry key="given">
+<MetaString>Charles</MetaString>
+</entry>
+</MetaMap>
+</MetaList>
+</entry>
+<entry key="container-title">
+<MetaInlines>Les fleurs du mal</MetaInlines>
+</entry>
+<entry key="id">
+<MetaString>baudelaire_albatros_1857</MetaString>
+</entry>
+<entry key="issued">
+<MetaString>1857</MetaString>
+</entry>
+<entry key="page">
+<MetaInlines>45-47</MetaInlines>
+</entry>
+<entry key="publisher">
+<MetaInlines>Poulet-Malassis et de Broise</MetaInlines>
+</entry>
+<entry key="publisher-place">
+<MetaInlines>Paris</MetaInlines>
+</entry>
+<entry key="title">
+<MetaInlines>L’albatros</MetaInlines>
+</entry>
+<entry key="type">
+<MetaString>chapter</MetaString>
+</entry>
+</MetaMap>
+<MetaMap>
+<entry key="author">
+<MetaList>
+<MetaMap>
+<entry key="family">
+<MetaString>Molière</MetaString>
+</entry>
+</MetaMap>
+</MetaList>
+</entry>
+<entry key="id">
+<MetaString>moliere_misanthrope_1666</MetaString>
+</entry>
+<entry key="issued">
+<MetaString>1666</MetaString>
+</entry>
+<entry key="publisher">
+<MetaInlines>Jean Ribou</MetaInlines>
+</entry>
+<entry key="publisher-place">
+<MetaInlines>Paris</MetaInlines>
+</entry>
+<entry key="title">
+<MetaInlines>Le misanthrope</MetaInlines>
+</entry>
+<entry key="type">
+<MetaString>book</MetaString>
+</entry>
+</MetaMap>
+<MetaMap>
+<entry key="abstract">
+<MetaInlines>Since Electric Pencil first debuted in 1976, more than 400 other word processing packages have emerged, most fading into oblivion. This article recounts the history of microcomputer word processing software - focuses on three of the earliest word processing software packages, Electric Pencil, EasyWriter, and WordStar, which was the mid-1980s leader in the CP/M, PC-DOS, and MS-DOS operating system environments</MetaInlines>
+</entry>
+<entry key="accessed">
+<MetaString>2025-01-19</MetaString>
+</entry>
+<entry key="author">
+<MetaList>
+<MetaMap>
+<entry key="family">
+<MetaString>Bergin</MetaString>
+</entry>
+<entry key="given">
+<MetaString>Thomas J.</MetaString>
+</entry>
+</MetaMap>
+</MetaList>
+</entry>
+<entry key="container-title">
+<MetaInlines>IEEE Annals of the History of Computing</MetaInlines>
+</entry>
+<entry key="doi">
+<MetaString>10.1109/MAHC.2006.76</MetaString>
+</entry>
+<entry key="event">
+<MetaInlines><Span>IEEE Annals</Span> of the <Span>History</Span> of <Span>Computing</Span></MetaInlines>
+</entry>
+<entry key="id">
+<MetaString>berginOriginsWordProcessing2006</MetaString>
+</entry>
+<entry key="issn">
+<MetaString>1934-1547</MetaString>
+</entry>
+<entry key="issue">
+<MetaInlines>4</MetaInlines>
+</entry>
+<entry key="issued">
+<MetaString>2006-10</MetaString>
+</entry>
+<entry key="keyword">
+<MetaInlines>Application software,Computer aided manufacturing,Easy Writer,Electric Pencil,Electrostatic precipitators,Home computing,John Draper,Michael Shrayer,Microcomputers,Microsoft Windows,Microsoft Word,Packaging,Pervasive computing,Programming profession,Seymour Rubinstein,Software packages,Text processing,Word Perfect,word processing software,WordStar</MetaInlines>
+</entry>
+<entry key="page">
+<MetaInlines>32-47</MetaInlines>
+</entry>
+<entry key="title">
+<MetaInlines>The <Span>Origins</Span> of <Span>Word Processing Software</Span> for <Span>Personal Computers</Span>: 1976-1985</MetaInlines>
+</entry>
+<entry key="title-short">
+<MetaInlines>The <Span>Origins</Span> of <Span>Word Processing Software</Span> for <Span>Personal Computers</Span></MetaInlines>
+</entry>
+<entry key="type">
+<MetaString>article-journal</MetaString>
+</entry>
+<entry key="url">
+<MetaString>https://ieeexplore.ieee.org/document/4042484</MetaString>
+</entry>
+<entry key="volume">
+<MetaInlines>28</MetaInlines>
+</entry>
+</MetaMap>
+<MetaMap>
+<entry key="abstract">
+<MetaInlines>This paper focuses on the practical realities of implementing the most common minimal computing methods for web development. It addresses the amount of technically-oriented detail-work required to configure the complex set of components that underpin widely-used platforms for static site generation. When going <Quoted quote-type="DoubleQuote">minimal</Quoted> requires a great deal of technical labor, what implications does that have for its adoption by scholars without ongoing technical support, or the money or connections to delegate that work? What is the added emotional labor for technical collaborators who are only allowed to <Quoted quote-type="DoubleQuote">consult</Quoted> with scholars, when they attempt to coach scholars through implementing a minimal computing site on their own? What opportunities are lost when a web development methodology cannot reasonably be taught in a hands-on way in a short workshop? After describing these challenges, this paper proposes that an infrastructural intervention — encompassing everything from writing better documentation, tutorials, and templates, to developing interfaces that mediate between users and technical complexity — is necessary to realize the potential of minimal computing as a framework for sustainable websites.</MetaInlines>
+</entry>
+<entry key="accessed">
+<MetaString>2025-02-23</MetaString>
+</entry>
+<entry key="author">
+<MetaList>
+<MetaMap>
+<entry key="family">
+<MetaString>Dombrowski</MetaString>
+</entry>
+<entry key="given">
+<MetaString>Quinn</MetaString>
+</entry>
+</MetaMap>
+</MetaList>
+</entry>
+<entry key="container-title">
+<MetaInlines>Digital Humanities Quarterly</MetaInlines>
+</entry>
+<entry key="id">
+<MetaString>dombrowskiMinimizingComputingMaximizes2022</MetaString>
+</entry>
+<entry key="issn">
+<MetaString>1938-4122</MetaString>
+</entry>
+<entry key="issue">
+<MetaInlines>2</MetaInlines>
+</entry>
+<entry key="issued">
+<MetaString>2022</MetaString>
+</entry>
+<entry key="title">
+<MetaInlines>Minimizing <Span>Computing Maximizes Labor</Span></MetaInlines>
+</entry>
+<entry key="type">
+<MetaString>article-journal</MetaString>
+</entry>
+<entry key="url">
+<MetaString>https://www.digitalhumanities.org/dhq/vol/16/2/000594/000594.html</MetaString>
+</entry>
+<entry key="volume">
+<MetaInlines>16</MetaInlines>
+</entry>
+</MetaMap>
+<MetaMap>
+<entry key="accessed">
+<MetaString>2021-06-02</MetaString>
+</entry>
+<entry key="author">
+<MetaList>
+<MetaMap>
+<entry key="family">
+<MetaString>Fox</MetaString>
+</entry>
+<entry key="given">
+<MetaString>Sarah</MetaString>
+</entry>
+</MetaMap>
+<MetaMap>
+<entry key="family">
+<MetaString>Ulgado</MetaString>
+</entry>
+<entry key="given">
+<MetaString>Rachel Rose</MetaString>
+</entry>
+</MetaMap>
+<MetaMap>
+<entry key="family">
+<MetaString>Rosner</MetaString>
+</entry>
+<entry key="given">
+<MetaString>Daniela</MetaString>
+</entry>
+</MetaMap>
+</MetaList>
+</entry>
+<entry key="container-title">
+<MetaInlines>Proceedings of the 18th <Span>ACM Conference</Span> on <Span>Computer Supported Cooperative Work</Span> &amp; <Span>Social Computing</Span></MetaInlines>
+</entry>
+<entry key="doi">
+<MetaString>10.1145/2675133.2675223</MetaString>
+</entry>
+<entry key="event">
+<MetaInlines><Span>CSCW</Span> ’15: <Span>Computer Supported Cooperative Work</Span> and <Span>Social Computing</Span></MetaInlines>
+</entry>
+<entry key="id">
+<MetaString>foxHackingCultureNot2015</MetaString>
+</entry>
+<entry key="isbn">
+<MetaString>978-1-4503-2922-4</MetaString>
+</entry>
+<entry key="issued">
+<MetaString>2015-02-28</MetaString>
+</entry>
+<entry key="language">
+<MetaString>en-US</MetaString>
+</entry>
+<entry key="page">
+<MetaInlines>56-68</MetaInlines>
+</entry>
+<entry key="publisher">
+<MetaInlines>ACM</MetaInlines>
+</entry>
+<entry key="publisher-place">
+<MetaInlines>Vancouver BC Canada</MetaInlines>
+</entry>
+<entry key="title">
+<MetaInlines>Hacking <Span>Culture</Span>, <Span>Not Devices</Span>: <Span>Access</Span> and <Span>Recognition</Span> in <Span>Feminist Hackerspaces</Span></MetaInlines>
+</entry>
+<entry key="title-short">
+<MetaInlines>Hacking <Span>Culture</Span>, <Span>Not Devices</Span></MetaInlines>
+</entry>
+<entry key="type">
+<MetaString>paper-conference</MetaString>
+</entry>
+<entry key="url">
+<MetaString>https://dl.acm.org/doi/10.1145/2675133.2675223</MetaString>
+</entry>
+</MetaMap>
+<MetaMap>
+<entry key="author">
+<MetaList>
+<MetaMap>
+<entry key="family">
+<MetaString>Haas</MetaString>
+</entry>
+<entry key="given">
+<MetaString>Christina</MetaString>
+</entry>
+</MetaMap>
+</MetaList>
+</entry>
+<entry key="id">
+<MetaString>haasWritingTechnologyStudies1996a</MetaString>
+</entry>
+<entry key="isbn">
+<MetaString>978-1-136-68754-9</MetaString>
+</entry>
+<entry key="issued">
+<MetaString>1996</MetaString>
+</entry>
+<entry key="language">
+<MetaString>en-US</MetaString>
+</entry>
+<entry key="publisher">
+<MetaInlines>L. Erlbaum Associates</MetaInlines>
+</entry>
+<entry key="publisher-place">
+<MetaInlines>Mahwah, N.J.</MetaInlines>
+</entry>
+<entry key="title">
+<MetaInlines>Writing technology: Studies on the materiality of literacy</MetaInlines>
+</entry>
+<entry key="title-short">
+<MetaInlines>Writing technology</MetaInlines>
+</entry>
+<entry key="type">
+<MetaString>book</MetaString>
+</entry>
+</MetaMap>
+<MetaMap>
+<entry key="abstract">
+<MetaInlines>Les œuvres d’art revêtent deux modes d’existence, qui sont l’immanence et la transcendance. L’immanence est définie par le type d’objet en lequel l’œuvre</MetaInlines>
+</entry>
+<entry key="author">
+<MetaList>
+<MetaMap>
+<entry key="family">
+<MetaString>Genette</MetaString>
+</entry>
+<entry key="given">
+<MetaString>Gérard</MetaString>
+</entry>
+</MetaMap>
+</MetaList>
+</entry>
+<entry key="edition">
+<MetaInlines>Seuil</MetaInlines>
+</entry>
+<entry key="id">
+<MetaString>genetteLoeuvreLartImmanence2010</MetaString>
+</entry>
+<entry key="issued">
+<MetaString>2010-04-22</MetaString>
+</entry>
+<entry key="language">
+<MetaString>fr-FR</MetaString>
+</entry>
+<entry key="title">
+<MetaInlines>L’œuvre de l’art : immanence et transcendance</MetaInlines>
+</entry>
+<entry key="title-short">
+<MetaInlines>L’œuvre de l’art<Space /></MetaInlines>
+</entry>
+<entry key="type">
+<MetaString>book</MetaString>
+</entry>
+</MetaMap>
+<MetaMap>
+<entry key="accessed">
+<MetaString>2026-01-08</MetaString>
+</entry>
+<entry key="author">
+<MetaList>
+<MetaMap>
+<entry key="family">
+<MetaString>Hawisher</MetaString>
+</entry>
+<entry key="given">
+<MetaString>Gail E.</MetaString>
+</entry>
+</MetaMap>
+</MetaList>
+</entry>
+<entry key="container-title">
+<MetaInlines>Computers and Composition</MetaInlines>
+</entry>
+<entry key="container-title-short">
+<MetaInlines>Computers and Composition</MetaInlines>
+</entry>
+<entry key="doi">
+<MetaString>10.1016/S8755-4615(86)80003-2</MetaString>
+</entry>
+<entry key="id">
+<MetaString>hawisherStudiesWordProcessing1986a</MetaString>
+</entry>
+<entry key="issn">
+<MetaString>8755-4615</MetaString>
+</entry>
+<entry key="issue">
+<MetaInlines>1</MetaInlines>
+</entry>
+<entry key="issued">
+<MetaString>1986-11-01</MetaString>
+</entry>
+<entry key="page">
+<MetaInlines>6-31</MetaInlines>
+</entry>
+<entry key="title">
+<MetaInlines>Studies in word processing</MetaInlines>
+</entry>
+<entry key="type">
+<MetaString>article-journal</MetaString>
+</entry>
+<entry key="url">
+<MetaString>https://www.sciencedirect.com/science/article/pii/S8755461586800032</MetaString>
+</entry>
+<entry key="volume">
+<MetaInlines>4</MetaInlines>
+</entry>
+</MetaMap>
+</MetaList>
+</entry>
+</meta>
+<blocks />
+</Pandoc>

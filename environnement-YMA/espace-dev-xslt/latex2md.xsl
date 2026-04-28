@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright © 2026 Yves Marcoux - Licence MIT -->
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:ym="http://www.marcouxmedias.com"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"

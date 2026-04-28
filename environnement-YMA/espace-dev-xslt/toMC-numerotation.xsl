@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright © 2026 Yves Marcoux - Licence GNU GPL -->
+<!-- Copyright © 2026 Yves Marcoux - Licence MIT -->
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xpath-default-namespace="http://www.tei-c.org/ns/1.0"
   xml:lang="fr-CA" xml:space="ignore"

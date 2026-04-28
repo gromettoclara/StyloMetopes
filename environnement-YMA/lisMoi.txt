@@ -1,0 +1,30 @@
+2026-04-24 Yves Marcoux
+
+Le script (go.bat) est en .bat Windows.
+(Désolé de la longue série de "if" au début, je ne suis pas expert en scripts
+Windows; il y aurait sûrement moyen de faire plus court.)
+
+Exemple : go martyr bib ast lat met num html
+
+Chaque étape est conditionnelle à la présence de l’argument correspondant sur
+la ligne commande. C’est très utile pour les tests, mais en prod, les 5
+premières étapes doivent être exécutées (donc, les "if" correspondant
+pourraient être retirés). L’étape "html" ne devrait pas servir; je l’ai mise
+juste pour avoir un point de comparaison pendant mes tests.
+
+Il ne devrait pas être trop dur de convertir ce script en un bash tenant compte
+des idiosyncrasies de votre installation (notamment le paramètre "imagePath"
+en ligne 90).
+
+Le script produit par défaut des extrants en XML indenté. Pour produire du XML 
+non indenté, il suffit de modifier le paramètre !indent=yes en !indent=no aussi
+en ligne 90.
+
+Le paramètre -Dfile.encoding=UTF-8 est nécessaire pour que les écritures au
+log par Saxon soient en UTF-8.
+
+Noter que j’utilise pandoc 3.9 et Saxon HE 12.9.
+
+S’il y a un problème, n’hésitez pas !
+
+Yves

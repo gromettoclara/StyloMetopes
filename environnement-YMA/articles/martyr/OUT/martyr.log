@@ -1,0 +1,18 @@
+#### Début job #### 
+#### Fin BIB XML #### 
+[INFO] Running filter citeproc
+[INFO] Loaded espace-dev-xslt\chicago-author-date-YMA.csl from espace-dev-xslt\chicago-author-date-YMA.csl
+[INFO] Loaded articles\martyr\martyr.bib from articles\martyr\martyr.bib
+[INFO] Completed filter citeproc in 78 ms
+#### Fin AST XML #### 
+[INFO] Loaded espace-dev-xslt\template-body.txt from espace-dev-xslt\template-body.txt
+#### Fin md2mathml #### 
+ATTENTION : Au moins une citation normale (❯​) contient plus d’un paragraphe.
+ATTENTION : Au moins une citation 'quote-alt' contient plus d’un paragraphe.
+#### Fin XML Métopes #### 
+#### Fin Métopes numérotation #### 
+[INFO] Running filter citeproc
+[INFO] Loaded espace-dev-xslt\chicago-author-date-YMA.csl from espace-dev-xslt\chicago-author-date-YMA.csl
+[INFO] Loaded articles\martyr\martyr.bib from articles\martyr\martyr.bib
+[INFO] Completed filter citeproc in 93 ms
+#### Fin HTML #### 

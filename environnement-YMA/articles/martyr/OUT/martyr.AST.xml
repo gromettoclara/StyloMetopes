@@ -1,0 +1,1012 @@
+<?xml version='1.0' ?>
+<Pandoc api-version="1,23,1,1">
+<meta>
+<entry key="@version">
+<MetaInlines>1.0</MetaInlines>
+</entry>
+<entry key="abstract">
+<MetaInlines>Cet article s’intéresse à l’apport critique de l’affect et de la subjectivité dans les écrits sur l’art. En adoptant une approche autothéorique, mon enquête sur trois œuvres photographiques de Dora Maar, soit Père Ubu, 29 rue d’Astorg et Les années vous guettent, revisite les différentes perspectives biographiques, historiographiques et littéraires afin de déconstruire le discours sur son œuvre, entre autres dans des récits comme Je suis le carnet de Dora Maar de Brigitte Benkemoun et La femme qui pleure de Zoé Valdés. Je propose de penser l’intersection entre éco-critique et dépression comme génératrice d’un renouvellement du regard, autant en ce qui concerne l’art que la perception de soi, notamment à travers les contributions de Ann Cvetkovich et des savoirs situés féministes. C’est donc grâce à une hybridation générique qu’on comprend l’importance pour l’histoire culturelle de la dépression de la pratique créative comme étant réparatrice.</MetaInlines>
+</entry>
+<entry key="acknowledgements">
+<MetaInlines>Merci à la rédactrice en chef blabla.</MetaInlines>
+</entry>
+<entry key="authors">
+<MetaList>
+<MetaMap>
+<entry key="affiliations">
+<MetaInlines>Duke University</MetaInlines>
+</entry>
+<entry key="biography">
+<MetaInlines>Mathilde Savard-Corbeil enseigne au département d’études romanes à Duke University. Elle a obtenu son doctorat à l’Université de Toronto en 2022 grâce à une thèse sur l’ekphrasis fictive dans les romans français du 21e siècle. Ses recherches actuelles portent sur les récits des rencontres entre œuvres d’art et autrices, et sur la manière dont ces expériences esthétiques génèrent des innovations formelles. Ses articles les plus récents explorent la présence de l’autothéorie comme outil d’insertion du sujet-écrivain et comme approche féministe de la connaissance située.</MetaInlines>
+</entry>
+<entry key="email">
+<MetaInlines>truc@gmail.com</MetaInlines>
+</entry>
+<entry key="foaf">
+<MetaInlines>foaf:clauf</MetaInlines>
+</entry>
+<entry key="forename">
+<MetaInlines>Mathilde</MetaInlines>
+</entry>
+<entry key="isni">
+<MetaInlines>0000000090646198</MetaInlines>
+</entry>
+<entry key="orcid">
+<MetaInlines>0009-0009-8799-1778</MetaInlines>
+</entry>
+<entry key="surname">
+<MetaInlines>Savard-Corbeil</MetaInlines>
+</entry>
+<entry key="viaf">
+<MetaInlines>viafclaus</MetaInlines>
+</entry>
+<entry key="wikidata">
+<MetaInlines>Q17634765</MetaInlines>
+</entry>
+</MetaMap>
+</MetaList>
+</entry>
+<entry key="bibliography">
+<MetaString>articles\martyr\martyr.bib</MetaString>
+</entry>
+<entry key="controlledKeywords">
+<MetaList>
+<MetaMap>
+<entry key="idRameau">
+<MetaInlines />
+</entry>
+<entry key="label">
+<MetaInlines>Féminisme</MetaInlines>
+</entry>
+<entry key="uriRameau">
+<MetaInlines>http://data.culture.fr/thesaurus/resource/ark:/67717/fb2c2351-7e1c-485d-9a31-41352b7973b1</MetaInlines>
+</entry>
+</MetaMap>
+<MetaMap>
+<entry key="idRameau">
+<MetaInlines />
+</entry>
+<entry key="label">
+<MetaInlines>Surréalisme (littérature)</MetaInlines>
+</entry>
+<entry key="uriRameau">
+<MetaInlines>http://data.bnf.fr/ark:/12148/cb11933335p</MetaInlines>
+</entry>
+</MetaMap>
+</MetaList>
+</entry>
+<entry key="csl">
+<MetaString>espace-dev-xslt\chicago-author-date-YMA.csl</MetaString>
+</entry>
+<entry key="funder">
+<MetaMap>
+<entry key="id">
+<MetaInlines>501100000155</MetaInlines>
+</entry>
+<entry key="organization">
+<MetaInlines>CRSH</MetaInlines>
+</entry>
+</MetaMap>
+</entry>
+<entry key="id">
+<MetaInlines>SP1800</MetaInlines>
+</entry>
+<entry key="issue">
+<MetaMap>
+<entry key="identifier">
+<MetaInlines>mm1428</MetaInlines>
+</entry>
+<entry key="number">
+<MetaInlines>13</MetaInlines>
+</entry>
+<entry key="title">
+<MetaInlines>Soleil noir, créations et saccages d’Hélios</MetaInlines>
+</entry>
+</MetaMap>
+</entry>
+<entry key="issueDirectors">
+<MetaList>
+<MetaMap>
+<entry key="affiliations">
+<MetaInlines>Brandon University</MetaInlines>
+</entry>
+<entry key="biography">
+<MetaInlines>biobiobio</MetaInlines>
+</entry>
+<entry key="forename">
+<MetaInlines>Eftihia</MetaInlines>
+</entry>
+<entry key="surname">
+<MetaInlines>Mihelakis</MetaInlines>
+</entry>
+</MetaMap>
+<MetaMap>
+<entry key="affiliations">
+<MetaInlines>Université de Montréal</MetaInlines>
+</entry>
+<entry key="biography">
+<MetaInlines>biobio</MetaInlines>
+</entry>
+<entry key="email">
+<MetaInlines>clara.dupuis-morency@umontreal.ca</MetaInlines>
+</entry>
+<entry key="foaf">
+<MetaInlines>foaf:clara</MetaInlines>
+</entry>
+<entry key="forename">
+<MetaInlines>Clara</MetaInlines>
+</entry>
+<entry key="isni">
+<MetaInlines>isniclara</MetaInlines>
+</entry>
+<entry key="orcid">
+<MetaInlines>0000-0002-9620-1936</MetaInlines>
+</entry>
+<entry key="surname">
+<MetaInlines>Dupuis-Morency</MetaInlines>
+</entry>
+<entry key="viaf">
+<MetaInlines>viafclara</MetaInlines>
+</entry>
+<entry key="wikidata">
+<MetaInlines>Q1358086</MetaInlines>
+</entry>
+</MetaMap>
+</MetaList>
+</entry>
+<entry key="journal">
+<MetaMap>
+<entry key="email">
+<MetaInlines>mm@umontreal.ca</MetaInlines>
+</entry>
+<entry key="name">
+<MetaInlines>MuseMedusa</MetaInlines>
+</entry>
+<entry key="publisher">
+<MetaInlines>OpenEd</MetaInlines>
+</entry>
+<entry key="url">
+<MetaInlines>https://muse-pmedusa.org</MetaInlines>
+</entry>
+</MetaMap>
+</entry>
+<entry key="journalDirectors">
+<MetaList>
+<MetaMap>
+<entry key="affiliations">
+<MetaInlines>Université de Montréal</MetaInlines>
+</entry>
+<entry key="biography">
+<MetaInlines>biobio</MetaInlines>
+</entry>
+<entry key="email">
+<MetaInlines>gromettoclara@gmail.com</MetaInlines>
+</entry>
+<entry key="foaf">
+<MetaInlines>foaf:marcello</MetaInlines>
+</entry>
+<entry key="forename">
+<MetaInlines>Andrea</MetaInlines>
+</entry>
+<entry key="isni">
+<MetaInlines>isni09876</MetaInlines>
+</entry>
+<entry key="orcid">
+<MetaInlines>0000-0002-6651-1650</MetaInlines>
+</entry>
+<entry key="surname">
+<MetaInlines>Oberhuber</MetaInlines>
+</entry>
+<entry key="viaf">
+<MetaInlines>leviafdeMarcello</MetaInlines>
+</entry>
+<entry key="wikidata">
+<MetaInlines>Q17634765</MetaInlines>
+</entry>
+</MetaMap>
+</MetaList>
+</entry>
+<entry key="keywords">
+<MetaList>
+<MetaInlines>Dora Maar</MetaInlines>
+<MetaInlines>Surréalisme</MetaInlines>
+<MetaInlines>Photomontage</MetaInlines>
+<MetaInlines>Autothéorie</MetaInlines>
+<MetaInlines>Écocritique</MetaInlines>
+<MetaInlines>Affect</MetaInlines>
+<MetaInlines>Subjectivité</MetaInlines>
+<MetaInlines>Dépression</MetaInlines>
+<MetaInlines>Féminisme</MetaInlines>
+<MetaInlines>Écrits sur l’art</MetaInlines>
+</MetaList>
+</entry>
+<entry key="lang">
+<MetaInlines>fr</MetaInlines>
+</entry>
+<entry key="license">
+<MetaInlines>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</MetaInlines>
+</entry>
+<entry key="link-citations">
+<MetaBool value="true" />
+</entry>
+<entry key="localizedContent">
+<MetaList>
+<MetaMap>
+<entry key="abstract">
+<MetaInlines>This article examines the critical contribution of affect and subjectivity in writing about art. Adopting an autotheoretical approach, my investigation of three photographic works by Dora Maar, Père Ubu, 29 rue d’Astorg, and Les années vous guettent, revisits different biographical, historiographical, and literary perspectives to deconstruct the discourse on her work, among others in narratives such as Brigitte Benkemoun’s Je suis le carnet de Dora Maar and Zoé Valdés’s La femme qui pleure. I propose to think of the intersection between eco-criticism and depression as generating a renewal of the gaze, in terms of both art and self-perception, notably through the critical contributions of Ann Cvetkovich’s work and feminist situated knowledges. Through this generic hybridization, we understand the importance of the cultural history of depression in restorative creative practice.</MetaInlines>
+</entry>
+<entry key="keywords">
+<MetaList>
+<MetaInlines>Dora Maar</MetaInlines>
+<MetaInlines>Surréalism</MetaInlines>
+<MetaInlines>Photomontage</MetaInlines>
+<MetaInlines>Self-theory</MetaInlines>
+<MetaInlines>Ecocriticism</MetaInlines>
+<MetaInlines>Affect</MetaInlines>
+<MetaInlines>Subjectivity</MetaInlines>
+<MetaInlines>Depression</MetaInlines>
+<MetaInlines>Feminism</MetaInlines>
+<MetaInlines>Art Writing</MetaInlines>
+</MetaList>
+</entry>
+<entry key="lang">
+<MetaInlines>en</MetaInlines>
+</entry>
+<entry key="subtitle">
+<MetaInlines>subtitle</MetaInlines>
+</entry>
+<entry key="title">
+<MetaInlines>Above minautore and melancolia</MetaInlines>
+</entry>
+</MetaMap>
+</MetaList>
+</entry>
+<entry key="production">
+<MetaMap>
+<entry key="entities">
+<MetaList>
+<MetaMap>
+<entry key="media">
+<MetaInlines>digital</MetaInlines>
+</entry>
+<entry key="name">
+<MetaInlines>Erudit</MetaInlines>
+</entry>
+<entry key="type">
+<MetaInlines>publisher</MetaInlines>
+</entry>
+</MetaMap>
+<MetaMap>
+<entry key="media">
+<MetaInlines>digital</MetaInlines>
+</entry>
+<entry key="name">
+<MetaInlines>OpenEdition</MetaInlines>
+</entry>
+<entry key="type">
+<MetaInlines>publisher</MetaInlines>
+</entry>
+</MetaMap>
+</MetaList>
+</entry>
+<entry key="issn">
+<MetaInlines>2104-3272</MetaInlines>
+</entry>
+</MetaMap>
+</entry>
+<entry key="publicationDate">
+<MetaInlines>2026-02-18</MetaInlines>
+</entry>
+<entry key="reviewers">
+<MetaList>
+<MetaMap>
+<entry key="affiliations">
+<MetaInlines>Université de Montréal</MetaInlines>
+</entry>
+<entry key="biography">
+<MetaInlines>biobio</MetaInlines>
+</entry>
+<entry key="email">
+<MetaInlines>gromettoclara@gmail.com</MetaInlines>
+</entry>
+<entry key="foaf">
+<MetaInlines>foaf:clara</MetaInlines>
+</entry>
+<entry key="forename">
+<MetaInlines>Clara</MetaInlines>
+</entry>
+<entry key="isni">
+<MetaInlines>isni23456-clara</MetaInlines>
+</entry>
+<entry key="orcid">
+<MetaInlines>0000-0001-8347-134X</MetaInlines>
+</entry>
+<entry key="surname">
+<MetaInlines>Grometto</MetaInlines>
+</entry>
+<entry key="viaf">
+<MetaInlines>viafClara</MetaInlines>
+</entry>
+<entry key="wikidata">
+<MetaInlines>Q567876</MetaInlines>
+</entry>
+</MetaMap>
+</MetaList>
+</entry>
+<entry key="senspublic">
+<MetaMap>
+<entry key="categories">
+<MetaList>
+<MetaInlines>Création</MetaInlines>
+</MetaList>
+</entry>
+</MetaMap>
+</entry>
+<entry key="subtitle">
+<MetaInlines>un sous-titre</MetaInlines>
+</entry>
+<entry key="title">
+<MetaInlines>Au-delà du minotaure et de la mélancolie : écrire Dora Maar</MetaInlines>
+</entry>
+<entry key="transcribers">
+<MetaList>
+<MetaMap>
+<entry key="affiliations">
+<MetaInlines>Université de Montréal</MetaInlines>
+</entry>
+<entry key="biography">
+<MetaInlines>biobio</MetaInlines>
+</entry>
+<entry key="email">
+<MetaInlines>gromettoclara@gmail.com</MetaInlines>
+</entry>
+<entry key="foaf">
+<MetaInlines>foaf:chaix</MetaInlines>
+</entry>
+<entry key="forename">
+<MetaInlines>Clara</MetaInlines>
+</entry>
+<entry key="isni">
+<MetaInlines>isni5679-chaix</MetaInlines>
+</entry>
+<entry key="orcid">
+<MetaInlines>456789</MetaInlines>
+</entry>
+<entry key="surname">
+<MetaInlines>Grometto</MetaInlines>
+</entry>
+<entry key="viaf">
+<MetaInlines>viafchaix</MetaInlines>
+</entry>
+<entry key="wikidata">
+<MetaInlines>Q58098753</MetaInlines>
+</entry>
+</MetaMap>
+</MetaList>
+</entry>
+<entry key="translationOf">
+<MetaMap>
+<entry key="lang">
+<MetaInlines>it</MetaInlines>
+</entry>
+<entry key="title">
+<MetaInlines>Un article en italien</MetaInlines>
+</entry>
+<entry key="url">
+<MetaInlines>http://uneurl.fr</MetaInlines>
+</entry>
+</MetaMap>
+</entry>
+<entry key="translators">
+<MetaList>
+<MetaMap>
+<entry key="affiliations">
+<MetaInlines>Sorbonne</MetaInlines>
+</entry>
+<entry key="biography">
+<MetaInlines>biobio</MetaInlines>
+</entry>
+<entry key="email">
+<MetaInlines>gromettoclara@gmail.com</MetaInlines>
+</entry>
+<entry key="foaf">
+<MetaInlines>foad:traduc</MetaInlines>
+</entry>
+<entry key="forename">
+<MetaInlines>Clara</MetaInlines>
+</entry>
+<entry key="isni">
+<MetaInlines>isni:traduc</MetaInlines>
+</entry>
+<entry key="orcid">
+<MetaInlines>23456789</MetaInlines>
+</entry>
+<entry key="surname">
+<MetaInlines>Grometto</MetaInlines>
+</entry>
+<entry key="viaf">
+<MetaInlines>viaftraduc</MetaInlines>
+</entry>
+<entry key="wikidata">
+<MetaInlines>Q678975</MetaInlines>
+</entry>
+</MetaMap>
+</MetaList>
+</entry>
+<entry key="type">
+<MetaInlines>article</MetaInlines>
+</entry>
+<entry key="url">
+<MetaInlines>/articles/1800</MetaInlines>
+</entry>
+</meta>
+<blocks>
+<Para>Ceci est le doc de référence, martyr, pour baliser du texte destiné à Commons dans Stylo.</Para>
+<Header id="déjà-on-peut-avoir-plein-de-niveaux-de-titre-celui-ci-est-le-premier" level="2">Déjà on peut avoir plein de niveaux de titre, celui-ci est le premier…</Header>
+<Header id="le-deuxième" level="3">Le deuxième</Header>
+<Header id="le-troisième" level="4">Le troisième</Header>
+<Header id="liminaires" level="2">Liminaires</Header>
+<Para>Notez que les sections <Quoted quote-type="DoubleQuote">liminaires</Quoted> sont relocalisées en <Quoted quote-type="DoubleQuote">front</Quoted> en conformité avec le<SoftBreak />schéma Métopes. Elles n’apparaîtront donc pas en séquence ici. Il ne restera que<SoftBreak />la <Quoted quote-type="DoubleQuote">simple remarque</Quoted>.</Para>
+<Div class="ack">
+<Para>Remerciements.</Para>
+</Div>
+<Div class="dedication">
+<Para>Voici une dédicace.</Para>
+</Div>
+<Para>Simple remarque : avec le schéma d’Érudit je suis confronté au problème suivant : ils sont très attaché à l’identité entre le pdf et le HTML produit à partie de leur XML. Or le markdown ne contraignant pas l’ordre des éléments, la dédicace ou les épigraphes se trouvent parfois mal placés dans l’article. C’est une idée à retenir et à anticiper pour la validation. Il faut <Quoted quote-type="DoubleQuote">forcer</Quoted> les écrivants et éditeurs sur stylo à placer ses blocs au bon endroit.</Para>
+<Div class="notepre" origin="aut">
+<Para>Note préliminaire de l’auteur</Para>
+</Div>
+<Div class="notepre" origin="pb">
+<Para>Note préliminaire de l’éditeur</Para>
+</Div>
+<Div class="notepre" origin="trl">
+<Para>Note préliminaire du traducteur</Para>
+</Div>
+<Div class="argument">
+<Para>ATTENTION: Ceci est un chapô introductif</Para>
+</Div>
+<Div class="epigraph">
+<Div class="quotecomplexe">
+<BlockQuote>
+<Para>Tant qu’il existera, par le fait des lois et des mœurs, une damnation sociale créant artificiellement, en pleine civilisation, des enfers, et compliquant d’une fatalité humaine la destinée qui est divine ; tant que les trois problèmes du siècle, la dégradation de l’homme par le prolétariat, la déchéance de la femme par la faim, l’atrophie de l’enfant par la nuit, ne seront pas résolus ; tant que, dans de certaines régions, l’asphyxie sociale sera possible ; en d’autres termes, et à un point de vue plus étendu encore, tant qu’il y aura sur la terre ignorance et misère, des livres de la nature de celui-ci pourront ne pas être inutiles.</Para>
+</BlockQuote>
+<Para><Cite><citations>
+<Citation id="hugo1862miserables" mode="NormalCitation" note-num="1" hash="0" />
+</citations>(<Link href="#ref-hugo1862miserables">Hugo 1862</Link>)</Cite></Para>
+</Div>
+</Div>
+<Div class="sponsor">
+<Para>Ce livre a été rendu possible grâce au soutien du CRSH.</Para>
+</Div>
+<Header id="texte" level="2">Texte</Header>
+<Para>Du texte</Para>
+<Para>Un saut de ligne</Para>
+<Para>Une ligne<LineBreak />Une ligne à la suite</Para>
+<HorizontalRule />
+<Para>Et là je veux citer <Cite><citations>
+<Citation id="hugo1862miserables" mode="AuthorInText" note-num="2" hash="0" />
+</citations>Hugo (<Link href="#ref-hugo1862miserables">1862</Link>)</Cite> (sans les crochets [], ça met le<SoftBreak />nom de l’auteur <Emph>avant</Emph> le lien cliquable, plutôt que dedans).</Para>
+<Div class="sig">
+<Para>Ceci est une signature.</Para>
+</Div>
+<BulletList>
+<item>
+<Plain>liste</Plain>
+</item>
+<item>
+<Plain>liste</Plain>
+<BulletList>
+<item>
+<Plain>sous liste</Plain>
+</item>
+<item>
+<Plain>sous liste</Plain>
+</item>
+</BulletList>
+</item>
+</BulletList>
+<OrderedList start="1" number-style="Decimal" number-delim="Period">
+<item>
+<Plain>liste numérotée</Plain>
+</item>
+<item>
+<Plain>liste numérotée</Plain>
+<OrderedList start="1" number-style="Decimal" number-delim="Period">
+<item>
+<Plain>sous liste numérotée</Plain>
+</item>
+<item>
+<Plain>sous liste numérotée</Plain>
+</item>
+</OrderedList>
+</item>
+</OrderedList>
+<Para><Strong>Il manque les contenus additionnels !!!</Strong></Para>
+<Header id="entretien" level="2">Entretien</Header>
+<Div class="question">
+<Para><Span class="speaker">Clara</Span> Une question est posée.</Para>
+</Div>
+<Div class="answer">
+<Para><Span class="speaker">Marcello</Span> Réponse à la question.</Para>
+</Div>
+<Header id="notes" level="2">Notes</Header>
+<Para>Bablebliblablou, comme l’indique la note en bas de page.<Note><Para>Ceci est une note de bas de page.</Para>
+</Note></Para>
+<Para>Ou alors on peut faire cette syntaxe<Note><Para>Cette manière de faire des notes de bas de page est aussi possible.</Para>
+</Note> aussi.</Para>
+<Para>Il faut inventer une autre syntaxe si on veut que les notes soient les notes de fin (<Code>TEI/text/body//note[@place=&quot;end&quot;][@n][@type=&quot;standard&quot;][@xml:id&quot;]</Code>).</Para>
+<Para>Il me semble plus propre d’inventer une nouvelle syntaxe que de détourner celle de Pandoc:</Para>
+<Para>Par exemple je veux mettre une note de fin ici<Span class="endnote">Voici ce que je veux dire et qui apparaît en fin de document.</Span>. Elle sera numérotée séquentiellement.</Para>
+<Header id="citations" level="2">Citations</Header>
+<Para>Une citation est un bout de texte présenté comme provenant d’une source externe.</Para>
+<Para>Une citation est codée différemment selon qu’elle :</Para>
+<OrderedList start="1" number-style="Decimal" number-delim="Period">
+<item>
+<Plain>contient un ou plusieurs paragraphes ou éléments<SoftBreak />structurels tels figure, liste, tableau; ou</Plain>
+</item>
+<item>
+<Plain>ne constitue qu’une partie d’un paragraphe.</Plain>
+</item>
+</OrderedList>
+<Para>Appelons les premières <Quoted quote-type="DoubleQuote">conteneurs</Quoted> et les secondes <Quoted quote-type="DoubleQuote">inline</Quoted>.</Para>
+<Header id="citations-conteneurs" level="3">Citations conteneurs</Header>
+<Para>Les citations conteneurs peuvent être codées de deux façons : comme<SoftBreak />citations normales pandoc-MD (&gt;), ou comme sections <Code>:::{.quote-alt}</Code> (ou, de façon<SoftBreak />équivalente, <Code>:::quote-alt</Code>), ces dernières correspondant aux citations <Quoted quote-type="DoubleQuote">alternatives</Quoted><SoftBreak />de Métopes :</Para>
+<BlockQuote>
+<Para>Ceci est une citation normale pandoc-MD. Elle consiste en<SoftBreak />exactement un paragraphe.</Para>
+</BlockQuote>
+<Div class="quote-alt">
+<Para>Ceci est une citation alternative de Métopes. Encore ici,<SoftBreak />un seul paragraphe.</Para>
+</Div>
+<Para>Exemples un peu plus complexes :</Para>
+<BlockQuote>
+<Para>Ceci est une citation normale pandoc-MD.</Para>
+<Para>Elle consiste en<SoftBreak />deux paragraphes suivis d’une liste.</Para>
+<OrderedList start="1" number-style="Decimal" number-delim="Period">
+<item>
+<Plain>Le soleil.</Plain>
+</item>
+<item>
+<Plain>La lune.</Plain>
+</item>
+</OrderedList>
+</BlockQuote>
+<Div class="quote-alt">
+<Para>Ceci est une citation alternative de Métopes.</Para>
+<Table>
+<Caption />
+<colspecs>
+<ColSpec alignment="AlignDefault" col-width="0.18055555555555555" />
+<ColSpec alignment="AlignDefault" col-width="0.20833333333333334" />
+</colspecs>
+<TableHead />
+<TableBody row-head-columns="0">
+<header />
+<body>
+<Row>
+<Cell row-span="2" alignment="AlignDefault">
+<Plain>Pizza</Plain>
+</Cell>
+<Cell alignment="AlignDefault">
+<Plain>Toute garnie</Plain>
+</Cell>
+</Row>
+<Row>
+<Cell alignment="AlignDefault">
+<Plain>Hawaïenne</Plain>
+</Cell>
+</Row>
+<Row>
+<Cell alignment="AlignDefault">
+<Plain>Spaghetti</Plain>
+</Cell>
+<Cell alignment="AlignDefault">
+<Plain>Bolognese</Plain>
+</Cell>
+</Row>
+</body>
+</TableBody>
+<TableFoot />
+</Table>
+<Para>Elle contient un tableau entre deux paragraphes.</Para>
+</Div>
+<Para>Les citations conteneurs contenant exactement un paragraphe (et rien d’autre)<SoftBreak />sont traitées de façon particulière par la moulinette d’exportation et donnent<SoftBreak />lieu à la forme <Quoted quote-type="DoubleQuote">normale</Quoted> de citation Métopes. Toutes les autres <Quoted quote-type="DoubleQuote">étirent</Quoted> un<SoftBreak />peu le modèle Métopes et pourraient donner des résultats sous-optimaux (bien<SoftBreak />qu’entièrement valides selon le schéma Métopes). Le mot d’ordre est ici <Quoted quote-type="DoubleQuote">essai<SoftBreak />et erreur</Quoted>.</Para>
+<Header id="citations-inline" level="3">Citations inline</Header>
+<Para>Les citations inline (ne constituant qu’un segment d’un paragraphe) sont codées comme des<SoftBreak /><Emph>segments</Emph> (span) <Code>[…]{.inlinequote}</Code>. Elles peuvent survenir partout où un<SoftBreak />span peut se trouver. Voici un exemple :</Para>
+<Para>Comme le disait l’<Emph>Homme Océan</Emph>, <Span class="inlinequote">Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs.</Span> Ensuite, le paragraphe continue.</Para>
+<Header id="références-bibliographiques" level="3">Références bibliographiques</Header>
+<Para>Pour inclure une <Emph>référence bibliographique</Emph> dans une citation, il suffit de l’inscrire<SoftBreak />à l’endroit voulu dans le texte.</Para>
+<Para>Une référence bibliographique prend une des deux formes <Code>@cléIdRessource</Code> et <Code>[@cléIdRessource]</Code>.<SoftBreak />La forme avec crochets accepte un préfixe et/ou suffixe en plus de la<SoftBreak /><Code>@cléIdRessource</Code>, par exemple :</Para>
+<Para><Code>[@baudelaire_albatros_1857 1-3]</Code></Para>
+<Para><Code>[Voir @hugo1862miserables, *passim*]</Code></Para>
+<Para>Les deux formes (avec et sans <Code>[…]</Code>) sont traitées légèrement différemment par pandoc; les différences<SoftBreak />sont subtiles et se découvrent à l’usage.</Para>
+<Para>Habituellement, on met une seule référence par citation et on la met à la fin, mais<SoftBreak />il n’y a pas de règle sur ces deux points.</Para>
+<Para>Voici quelques exemples de citations avec références bibliographiques :</Para>
+<BlockQuote>
+<Para>Ceci est une citation d’un grand écrivain. <Cite><citations>
+<Citation id="hugo1862miserables" mode="NormalCitation" note-num="5" hash="0"><suffix>, 123-125</suffix></Citation>
+</citations>(<Link href="#ref-hugo1862miserables">Hugo 1862, 123‑25</Link>)</Cite></Para>
+</BlockQuote>
+<Div class="quote-alt">
+<Para>Citation alternative, avec référence bibliographique. <Cite><citations>
+<Citation id="baudelaire_albatros_1857" mode="NormalCitation" note-num="6" hash="0"><suffix>, 1-3</suffix></Citation>
+</citations>(<Link href="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</Link>)</Cite></Para>
+</Div>
+<BlockQuote>
+<Para><Quoted quote-type="DoubleQuote">Les outardes sont bleues,</Quoted> dit-il.</Para>
+<Para><Quoted quote-type="DoubleQuote">Bleues sont les outardes,</Quoted> répondit l’autre.</Para>
+<Para><Cite><citations>
+<Citation id="moliere_misanthrope_1666" mode="NormalCitation" note-num="7" hash="0" />
+</citations>(<Link href="#ref-moliere_misanthrope_1666">Molière 1666</Link>)</Cite></Para>
+</BlockQuote>
+<Para>Comme le disait l’<Emph>Homme Océan</Emph>, <Span class="inlinequote">Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs. <Cite><citations>
+<Citation id="hugo1862miserables" mode="NormalCitation" note-num="8" hash="0"><suffix><Space />10-12</suffix></Citation>
+</citations>(<Link href="#ref-hugo1862miserables">Hugo 1862, 10‑12</Link>)</Cite></Span>. Que peut-on dire de plus ?</Para>
+<Para>L’exemple suivant ne contient pas de référence dans une citation, mais il illustre<SoftBreak />une façon courante d’articuler une référence et une citation :</Para>
+<Para>Comme le disait <Cite><citations>
+<Citation id="hugo1862miserables" mode="AuthorInText" note-num="9" hash="0" />
+</citations>Hugo (<Link href="#ref-hugo1862miserables">1862</Link>)</Cite>, <Span class="inlinequote">Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs.</Span>. Que peut-on ajouter ?</Para>
+<Para>L’exemple démontre aussi qu’une référence bibliographique peut survenir ailleurs que dans<SoftBreak />une citation. Il s’agit alors d’une référence <Emph>inline</Emph>, identifiée dans<SoftBreak />Métopes par la valeur d’attribut <Code>@rend=&quot;inline&quot;</Code>.</Para>
+<Header id="citations-complexes" level="3">Citations complexes</Header>
+<Para>Métopes possède ce qu’on appelle des citations <Quoted quote-type="DoubleQuote">complexes</Quoted>.<SoftBreak />Il s’agit d’un type de citation conteneur ayant la propriété de pouvoir<SoftBreak />contenir d’autres citations conteneurs, qui sont des traductions de la<SoftBreak />citation principale.</Para>
+<Para>Un citation complexe est codée comme section <Code>:::{.quotecomplexe}</Code>, ou<SoftBreak /><Code>:::{.quotecomplexe lang=&quot;zz&quot;}</Code>, si on veut spécifier la langue de la citation<SoftBreak />principale.</Para>
+<Para>Le contenu de la citation complexe <Emph>doit</Emph> commencer par la citation principale,<SoftBreak />laquelle <Emph>doit</Emph> être donnée sous la forme d’une citation normale pandoc-MD (&gt;)<SoftBreak />à l’intérieur de la citation complexe :</Para>
+<Div class="quotecomplexe" lang="fr">
+<BlockQuote>
+<Para>Ceci est la citation principale; un premier paragraphe.</Para>
+<Para>Et un second paragraphe.</Para>
+</BlockQuote>
+</Div>
+<Para>La citation principale peut contenir tout ce qui peut se retrouver dans une citation<SoftBreak />normale pandoc-MD.</Para>
+<Para><Emph>Après</Emph> la citation principale, la citation complexe contiendra normalement<SoftBreak />(mais facultativement) une ou plusieurs<SoftBreak />sous-sections <Code>:::{.translation lang=&quot;zz&quot;}</Code>, chacune donnant une traduction de la citation<SoftBreak />principale, codée de la même façon que la citation principale :</Para>
+<Div class="quotecomplexe" lang="fr">
+<BlockQuote>
+<Para>Tatitata en francais.</Para>
+<Para>Sur deux paragraphes.</Para>
+</BlockQuote>
+<Div class="translation" lang="en">
+<BlockQuote>
+<Para>Tatitata in English.</Para>
+<Para>On two paragraphs.</Para>
+</BlockQuote>
+</Div>
+<Div class="translation" lang="no">
+<BlockQuote>
+<Para>Tatitata på norsk bokmål.</Para>
+<Para>På to avsnitt.</Para>
+</BlockQuote>
+</Div>
+</Div>
+<Para>Des références bibliographiques peuvent être insérées un peu<SoftBreak />partout, notamment après la citation principale, à la fin des sections des traductions<SoftBreak />et après la dernière traduction. Par exemple :</Para>
+<Div class="quotecomplexe">
+<BlockQuote>
+<Para>Un premier paragraphe.</Para>
+<Para>Un second paragraphe dans la même citation.</Para>
+</BlockQuote>
+<Para><Cite><citations>
+<Citation id="moliere_misanthrope_1666" mode="NormalCitation" note-num="10" hash="0" />
+</citations>(<Link href="#ref-moliere_misanthrope_1666">Molière 1666</Link>)</Cite></Para>
+</Div>
+<Para>Autre exemple :</Para>
+<Div class="quotecomplexe" lang="fr">
+<BlockQuote>
+<Para>Tatitata en français.</Para>
+<Para>Sur deux paragraphes.</Para>
+</BlockQuote>
+<Div class="translation" lang="en">
+<BlockQuote>
+<Para>Tatitata in English.</Para>
+<Para>On two paragraphs.</Para>
+</BlockQuote>
+<Para><Cite><citations>
+<Citation id="moliere_misanthrope_1666" mode="NormalCitation" note-num="11" hash="0" />
+</citations>(<Link href="#ref-moliere_misanthrope_1666">Molière 1666</Link>)</Cite></Para>
+</Div>
+<Div class="translation" lang="no">
+<BlockQuote>
+<Para>Tatitata på norsk bokmål.</Para>
+<Para>På to avsnitt.</Para>
+</BlockQuote>
+<Para><Cite><citations>
+<Citation id="moliere_misanthrope_1666" mode="NormalCitation" note-num="12" hash="0" />
+</citations>(<Link href="#ref-moliere_misanthrope_1666">Molière 1666</Link>)</Cite></Para>
+</Div>
+<Para><Cite><citations>
+<Citation id="baudelaire_albatros_1857" mode="NormalCitation" note-num="13" hash="0" />
+</citations>(<Link href="#ref-baudelaire_albatros_1857">Baudelaire 1857</Link>)</Cite></Para>
+</Div>
+<Para>Dans ce dernier exemple, la citation principale a deux traductions avec chacune<SoftBreak />sa référence, et la référence à la citation originale est donnée <Emph>après</Emph> la<SoftBreak />dernière traduction.</Para>
+<Para>Si on préfère, la référence à la citation en langue originale pourrait être<SoftBreak />donnée <Emph>avant</Emph> les sous-sections pour les traductions :</Para>
+<Div class="quotecomplexe" lang="fr">
+<BlockQuote>
+<Para>Tatitata en français.</Para>
+<Para>Sur deux paragraphes.</Para>
+</BlockQuote>
+<Para><Cite><citations>
+<Citation id="baudelaire_albatros_1857" mode="NormalCitation" note-num="14" hash="0" />
+</citations>(<Link href="#ref-baudelaire_albatros_1857">Baudelaire 1857</Link>)</Cite></Para>
+<Div class="translation" lang="en">
+<BlockQuote>
+<Para>Tatitata in English.</Para>
+<Para>On two paragraphs.</Para>
+</BlockQuote>
+<Para><Cite><citations>
+<Citation id="moliere_misanthrope_1666" mode="NormalCitation" note-num="15" hash="0" />
+</citations>(<Link href="#ref-moliere_misanthrope_1666">Molière 1666</Link>)</Cite></Para>
+</Div>
+<Div class="translation" lang="no">
+<BlockQuote>
+<Para>Tatitata på norsk bokmål.</Para>
+<Para>På to avsnitt.</Para>
+</BlockQuote>
+<Para><Cite><citations>
+<Citation id="moliere_misanthrope_1666" mode="NormalCitation" note-num="16" hash="0" />
+</citations>(<Link href="#ref-moliere_misanthrope_1666">Molière 1666</Link>)</Cite></Para>
+</Div>
+</Div>
+<Header id="citations-de-vers" level="3">Citations de vers</Header>
+<Para>Comment citer des vers ? On utilise cette forme spéciale<SoftBreak />de citation normale pandoc-MD :</Para>
+<BlockQuote>
+<Para><Span class="verse" num="1">Souvent, pour s’amuser, les hommes d’équipage</Span><SoftBreak /><Span class="verse" num="2">Prennent des albatros, vastes oiseaux des mers,</Span><SoftBreak /><Span class="verse" num="5">Qui suivent, indolents compagnons de voyage,</Span></Para>
+</BlockQuote>
+<Para>Pour ajouter une référence, on la met à la fin de la citation :</Para>
+<BlockQuote>
+<Para><Span class="verse" num="1">Souvent, pour s’amuser, les hommes d’équipage</Span><SoftBreak /><Span class="verse" num="2">Prennent des albatros, vastes oiseaux des mers,</Span><SoftBreak /><Span class="verse" num="5">Qui suivent, indolents compagnons de voyage,</Span><SoftBreak /><Cite><citations>
+<Citation id="baudelaire_albatros_1857" mode="NormalCitation" note-num="17" hash="0"><suffix>, 1-3</suffix></Citation>
+</citations>(<Link href="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</Link>)</Cite></Para>
+</BlockQuote>
+<Para>Si on veut donner une ou plusieurs traductions de la citation, il faut<SoftBreak />utiliser une citation complexe. Les références sont alors données<SoftBreak />de la façon prévue pour les citations complexes :</Para>
+<Div class="quotecomplexe">
+<BlockQuote>
+<Para><Span class="verse" num="1">Souvent, pour s’amuser, les hommes d’équipage</Span><SoftBreak /><Span class="verse" num="2">Prennent des albatros, vastes oiseaux des mers,</Span><SoftBreak /><Span class="verse" num="5">Qui suivent, indolents compagnons de voyage,</Span></Para>
+</BlockQuote>
+<Div class="translation" lang="en">
+<BlockQuote>
+<Para><Span class="verse" num="1">Often, to amuse themselves, the sailors</Span><SoftBreak /><Span class="verse" num="2">Catch albatrosses, vast birds of the seas,</Span><SoftBreak /><Span class="verse" num="5">Who follow, indolent companions of the voyage,</Span></Para>
+</BlockQuote>
+<Para><Cite><citations>
+<Citation id="moliere_misanthrope_1666" mode="NormalCitation" note-num="18" hash="0" />
+</citations>(<Link href="#ref-moliere_misanthrope_1666">Molière 1666</Link>)</Cite></Para>
+</Div>
+<Para><Cite><citations>
+<Citation id="baudelaire_albatros_1857" mode="NormalCitation" note-num="19" hash="0"><suffix>, 1-3</suffix></Citation>
+</citations>(<Link href="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</Link>)</Cite></Para>
+</Div>
+<Para>Si on préfère, la référence au texte en langue originale peut être<SoftBreak />donnée avant la sous-section pour la traduction, ainsi :</Para>
+<Div class="quotecomplexe">
+<BlockQuote>
+<Para><Span class="verse" num="1">Souvent, pour s’amuser, les hommes d’équipage</Span><SoftBreak /><Span class="verse" num="2">Prennent des albatros, vastes oiseaux des mers,</Span><SoftBreak /><Span class="verse" num="5">Qui suivent, indolents compagnons de voyage,</Span></Para>
+</BlockQuote>
+<Para><Cite><citations>
+<Citation id="baudelaire_albatros_1857" mode="NormalCitation" note-num="20" hash="0"><suffix>, 1-3</suffix></Citation>
+</citations>(<Link href="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</Link>)</Cite></Para>
+<Div class="translation" lang="en">
+<BlockQuote>
+<Para><Span class="verse" num="1">Often, to amuse themselves, the sailors</Span><SoftBreak /><Span class="verse" num="2">Catch albatrosses, vast birds of the seas,</Span><SoftBreak /><Span class="verse" num="5">Who follow, indolent companions of the voyage,</Span></Para>
+</BlockQuote>
+<Para><Cite><citations>
+<Citation id="moliere_misanthrope_1666" mode="NormalCitation" note-num="21" hash="0" />
+</citations>(<Link href="#ref-moliere_misanthrope_1666">Molière 1666</Link>)</Cite></Para>
+</Div>
+</Div>
+<Para>Nous nous sommes arrêtés ici en ce qui a trait aux citations. Il faudra penser à un système qui reste lisible et pas trop lourd pour le théâtre et la linguistique.</Para>
+<Header id="figures" level="2">Figures</Header>
+<Para>Certains auteurs vont insérer des images sans enrichir comme ceci :</Para>
+<Figure>
+<Caption>
+<Plain>Légende</Plain>
+</Caption>
+<Plain><Image src="mkdreference/medias/image.png">Légende</Image></Plain>
+</Figure>
+<Para>Mais ce qu’on voudrait c’est qu’ils soient plus précis en insérant un snippet de code pour récupérer plus d’information.</Para>
+<Para><Strong>Exemples :</Strong></Para>
+<Div class="figure">
+<Para><Span class="head">Titre de l’image</Span></Para>
+<Figure>
+<Caption>
+<Plain>Légende</Plain>
+</Caption>
+<Plain><Image src="mkdreference/medias/image.png">Légende</Image></Plain>
+</Figure>
+<Div class="credits">
+<Para>Cette image est sous licence machin et est attribuée à <Cite><citations>
+<Citation id="baudelaire_albatros_1857" mode="NormalCitation" note-num="22" hash="0" />
+</citations>(<Link href="#ref-baudelaire_albatros_1857">Baudelaire 1857</Link>)</Cite>.</Para>
+</Div>
+</Div>
+<Div class="figure">
+<Para><Span class="head">Titre de l’image</Span></Para>
+<Figure>
+<Caption>
+<Plain>Photo de Montréal, <Span class="credits">Collection privée Jean Valjean</Span></Plain>
+</Caption>
+<Plain><Image src="mkdreference/medias/image.png">Photo de Montréal, <Span class="credits">Collection privée Jean Valjean</Span></Image></Plain>
+</Figure>
+</Div>
+<Div class="figure">
+<Para><Span class="head">L’image dans sa splendeur, telle qu’on peut l’admirer au <Span class="credits">Musée du Louvre</Span></Span></Para>
+<Figure>
+<Caption>
+<Plain>Image mirobolante</Plain>
+</Caption>
+<Plain><Image src="mkdreference/medias/image.png">Image mirobolante</Image></Plain>
+</Figure>
+</Div>
+<Para>On voit que les crédits peuvent être :</Para>
+<BulletList>
+<item>
+<Plain>une sous-section <Quoted quote-type="SingleQuote">credits</Quoted>.</Plain>
+</item>
+<item>
+<Plain>intégrés au sein du titre (.head) ou de la légende, dans un span <Quoted quote-type="SingleQuote">credits</Quoted>.</Plain>
+</item>
+</BulletList>
+<Para>Notons qu’une sous-section <Quoted quote-type="SingleQuote">credits</Quoted> a préséance sur d’éventuels spans <Quoted quote-type="SingleQuote">credits</Quoted>.</Para>
+<Header id="encadrés" level="2">Encadrés</Header>
+<Div class="encadre" titre="montitre">
+<Para><Span class="auth"><Span class="surname">nom</Span><Span class="forename">prenom</Span></Span></Para>
+<Para>Pour le moment on a un encadré minimal avec un titre et une autorité à récupérer<SoftBreak />dans <Code>TEI/text/body//bibl[@type=&quot;sec_authority&quot;]/author/persName/surname|forename</Code></Para>
+</Div>
+<Header id="typographie" level="2">Typographie</Header>
+<Para><Emph>italique</Emph> ou <Emph>italique</Emph></Para>
+<Para><Strong>gras</Strong></Para>
+<Para><Strong><Emph>gras et italique</Emph></Strong></Para>
+<Para><SmallCaps>en petites majuscules</SmallCaps></Para>
+<Para><SmallCaps><Emph>petites majuscules en italique</Emph></SmallCaps></Para>
+<Para>1<Superscript>er</Superscript></Para>
+<Para>3<Superscript><Emph>eme</Emph></Superscript></Para>
+<Para>A<Subscript>a</Subscript></Para>
+<Para><Underline>Trouvé comment souligner</Underline></Para>
+<Para><Strikeout>texte barré</Strikeout></Para>
+<Header id="index" level="2">Index</Header>
+<Para><Span id="Platon" class="personnalite">Platon</Span> est un philosophe de l’Antiquité grecque, élève de <Span id="Socrate" class="personnalite">Socrate</Span> et maître d’<Span id="Aristote" class="personnalite">Aristote</Span>.</Para>
+<Para>Il fonda l’<Span id="Academie" class="institution">Académie</Span> à <Span id="Athenes" class="lieu">Athènes</Span>, vers 387 av. J.-C.</Para>
+<Para>Ses œuvres majeures, comme la <Span id="Republique_Platon" class="oeuvre">République</Span> ou le <Span id="Banquet_Platon" class="oeuvre">Banquet</Span>, ont profondément influencé la pensée occidentale.</Para>
+<Para><Span id="Aristote" class="personnalite">Aristote</Span>, après avoir quitté l’Académie, devint le précepteur du jeune <Span id="Alexandre_le_Grand" class="personnalite">Alexandre le Grand</Span>, avant de fonder sa propre école, le <Span id="Lycee" class="institution">Lycée</Span>, également à <Span id="Athenes" class="lieu">Athènes</Span>.</Para>
+<Header id="le-code" level="2">Le code</Header>
+<CodeBlock class="python">def bonjour(nom):
+    print(f&quot;Bonjour, {nom} !&quot;)
+
+bonjour(&quot;monde&quot;)</CodeBlock>
+<Para>On peut aussi mettre du code inline : <Code>&lt;div&gt;Voici du code inline&lt;/div&gt;</Code></Para>
+<Header id="formules-mathématiques" level="2">Formules mathématiques</Header>
+<Para>Voici des formules <Quoted quote-type="DoubleQuote">inline</Quoted>, <Math math-type="InlineMath">\pi^2</Math>, <Math math-type="InlineMath">\pi \times {\sqrt 2}</Math>, <Math math-type="InlineMath">\pi^2</Math> et <Math math-type="InlineMath">\pi \times {\sqrt[3] 7}</Math>.</Para>
+<Para>Voici trois formules en blocs : <Math math-type="DisplayMath">\pi \times {\sqrt 2}</Math> <Math math-type="DisplayMath">\pi^2</Math><SoftBreak /><Math math-type="DisplayMath">\pi \times {\sqrt[3] 7}</Math></Para>
+<Para>Cela conclut notre section sur les formules.</Para>
+<Header id="tableaux" level="2">Tableaux</Header>
+<Para>Les tableaux suivants me semblent d’une complexité suffisante pour illustrer pas<SoftBreak />mal de choses.</Para>
+<Table>
+<Caption>
+<Plain>Tableau <Emph>trafiqué</Emph> du manuel de pandoc</Plain>
+</Caption>
+<colspecs>
+<ColSpec alignment="AlignDefault" col-width="0.19444444444444445" />
+<ColSpec alignment="AlignDefault" col-width="0.1111111111111111" />
+<ColSpec alignment="AlignDefault" col-width="0.18055555555555555" />
+</colspecs>
+<TableHead>
+<Row>
+<Cell col-span="2" alignment="AlignDefault">
+<Plain>Property</Plain>
+</Cell>
+<Cell alignment="AlignDefault">
+<Plain>-89.2 °C</Plain>
+</Cell>
+</Row>
+</TableHead>
+<TableBody row-head-columns="0">
+<header />
+<body>
+<Row>
+<Cell row-span="3" alignment="AlignDefault">
+<Plain>Temperature<SoftBreak />1961-1990</Plain>
+</Cell>
+<Cell alignment="AlignDefault">
+<Plain>min</Plain>
+</Cell>
+<Cell alignment="AlignDefault">
+<OrderedList start="1" number-style="Decimal" number-delim="Period">
+<item>
+<Plain>Earth</Plain>
+</item>
+<item>
+<Plain>Mercury</Plain>
+</item>
+<item>
+<Plain>Jupiter</Plain>
+</item>
+</OrderedList>
+</Cell>
+</Row>
+<Row>
+<Cell alignment="AlignDefault">
+<Plain>mean</Plain>
+</Cell>
+<Cell alignment="AlignDefault">
+<Plain>14 °C</Plain>
+</Cell>
+</Row>
+<Row>
+<Cell alignment="AlignDefault">
+<Plain>max</Plain>
+</Cell>
+<Cell alignment="AlignDefault">
+<Plain>56.7 °C</Plain>
+</Cell>
+</Row>
+</body>
+</TableBody>
+<TableFoot />
+</Table>
+<Table>
+<Caption>
+<Plain>Tableau <Strong>ultra-traficoté</Strong> du manuel de pandoc</Plain>
+</Caption>
+<colspecs>
+<ColSpec alignment="AlignDefault" col-width="0.19444444444444445" />
+<ColSpec alignment="AlignDefault" col-width="0.1111111111111111" />
+<ColSpec alignment="AlignDefault" col-width="0.18055555555555555" />
+</colspecs>
+<TableHead>
+<Row>
+<Cell col-span="2" alignment="AlignDefault">
+<Plain>Property</Plain>
+</Cell>
+<Cell alignment="AlignDefault">
+<Plain>-89.2 °C</Plain>
+</Cell>
+</Row>
+</TableHead>
+<TableBody row-head-columns="0">
+<header />
+<body>
+<Row>
+<Cell row-span="2" alignment="AlignDefault">
+<Plain>Temperature<SoftBreak />1961-1990</Plain>
+</Cell>
+<Cell col-span="2" alignment="AlignDefault">
+<Plain><Emph>minimum</Emph> on Earth</Plain>
+</Cell>
+</Row>
+<Row>
+<Cell col-span="2" row-span="2" alignment="AlignDefault">
+<Para>maximum de 56.7 °C</Para>
+<Para>minimum de 14 °C</Para>
+</Cell>
+</Row>
+<Row>
+<Cell alignment="AlignDefault">
+<Plain>Alpinisme</Plain>
+</Cell>
+</Row>
+</body>
+</TableBody>
+<TableFoot>
+<Row>
+<Cell alignment="AlignDefault">
+<Plain>1961-1990</Plain>
+</Cell>
+<Cell col-span="2" alignment="AlignDefault">
+<Plain>moyenne de 28 °C</Plain>
+</Cell>
+</Row>
+</TableFoot>
+</Table>
+<Para>Fin de la section sur les tableaux.</Para>
+<Header id="à-propos-du-titre-de-la-bibliographie" level="2">À propos du titre de la bibliographie</Header>
+<Para>Si le MD se termine par un titre, ce dernier sera utilisé comme titre de la<SoftBreak />bibliographie. Autrement, le mot <Quoted quote-type="DoubleQuote">Bibliographie</Quoted> ou <Quoted quote-type="DoubleQuote">Bibliography</Quoted> sera utilisé,<SoftBreak />selon que la métadonnée <Code>lang</Code> commence par <Code>fr</Code> ou non.</Para>
+<Para>Avec le titre ci-après, la bibliographie sera intitulée <Quoted quote-type="DoubleQuote">Références</Quoted>.</Para>
+<Header id="références" class="unnumbered" level="2">Références</Header>
+<Div id="refs" class="references csl-bib-body hanging-indent">
+<Div id="ref-baudelaire_albatros_1857" class="csl-entry">
+<Para>Baudelaire, Charles. 1857. <Span>« <Str content="L’Albatros" /> »</Span>. In <Emph>Les Fleurs du mal</Emph>. Poulet-Malassis et de Broise.</Para>
+</Div>
+<Div id="ref-hugo1862miserables" class="csl-entry">
+<Para>Hugo, Victor. 1862. <Emph>Les Misérables</Emph>. A. Lacroix, Verboeckhoven &amp; Cie.</Para>
+</Div>
+<Div id="ref-moliere_misanthrope_1666" class="csl-entry">
+<Para>Molière. 1666. <Emph>Le Misanthrope</Emph>. Jean Ribou.</Para>
+</Div>
+</Div>
+</blocks>
+</Pandoc>

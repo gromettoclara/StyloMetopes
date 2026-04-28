@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright © 2026 Yves Marcoux - Licence GNU GPL -->
+<!-- Copyright © 2026 Yves Marcoux - Licence MIT -->
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns="http://www.tei-c.org/ns/1.0"
   xmlns:t="http://www.tei-c.org/ns/1.0"
@@ -20,7 +20,7 @@
       <xsl:message>ATTENTION : Niveaux de titre non consécutifs, des sections seront promues.</xsl:message>
     </xsl:if>
     <xsl:if test=".//Div/Header[preceding-sibling::*[not(self::RawBlock)]]">
-      <xsl:message>ATTENTION : Le titres dans une division (:::) sont traités comme de simples paragraphes.</xsl:message>
+      <xsl:message>ATTENTION : Les titres dans une division (:::) sont traités comme de simples paragraphes.</xsl:message>
     </xsl:if>
     <xsl:if test="$ignoredDiv/ancestor::Div">
       <xsl:message>ATTENTION : Au moins une division sémantique ({.ack}, etc.) est imbriquée dans une autre division, résultats imprévisibles.</xsl:message>

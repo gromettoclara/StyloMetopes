@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright © 2026 Yves Marcoux - Licence GNU GPL -->
+<!-- Copyright © 2026 Yves Marcoux - Licence MIT -->
 <!--
 Observations sur l’AST de pandoc (et donc tenues pour acquises dans cette XSLT) :
 
@@ -128,7 +128,7 @@ vertu d’un protocole qu’on suppose respecté par les auteurs :
   are relocated to predetermined places in the output (header, front or back) -->
 
   <xsl:variable name="fakeDiv" select="//Div[@class=('question', 'answer', 'sig',
-    'quote-alt', 'quotcomplexe', 'trad', 'figure', 'credits', 'encadre')]" />
+    'quote-alt', 'quotecomplexe', 'translation', 'figure', 'credits', 'encadre')]" />
 <!-- ^ Les Div qui ne sont pas déplacées et qui ne donnent pas lieu à une
     <div> dans l’extrant -->
 
@@ -191,25 +191,25 @@ vertu d’un protocole qu’on suppose respecté par les auteurs :
 ce qui exige que le contenu de chaque BlockQuote soit exactement un Para. Si ce
 n’est pas le cas, on doit briser cette restriction. -->
 
-  <xsl:template match="Div[@class='quotcomplexe']">
+  <xsl:template match="Div[@class='quotecomplexe']">
     <cit><quote>
         <xsl:if test="@lang">
           <xsl:attribute name="xml:lang" select="@lang" />
         </xsl:if>
-        <xsl:apply-templates select="*" mode="quotcomplexe" />
-<!-- Ne devrait contenir que des BlockQuote, des Para et des Div[@class='trad']. -->
+        <xsl:apply-templates select="*" mode="quotecomplexe" />
+<!-- Ne devrait contenir que des BlockQuote, des Para et des Div[@class='translation']. -->
     </quote></cit>
   </xsl:template>
-  <xsl:template match="Div" mode="quotcomplexe">
-<!-- Toutes les Div matchant auront @class='trad' et @lang. -->
+  <xsl:template match="Div" mode="quotecomplexe">
+<!-- Toutes les Div matchant auront @class='translation' et @lang. -->
     <quote type="trl" xml:lang="{@lang}">
-      <xsl:apply-templates select="*" mode="quotcomplexe" />
+      <xsl:apply-templates select="*" mode="quotecomplexe" />
     </quote>
   </xsl:template>
-  <xsl:template match="BlockQuote" mode="quotcomplexe">
+  <xsl:template match="BlockQuote" mode="quotecomplexe">
     <xsl:apply-templates select="*" />
   </xsl:template>
-  <xsl:template match="Para" mode="quotcomplexe"><xsl:apply-templates /></xsl:template>
+  <xsl:template match="Para" mode="quotecomplexe"><xsl:apply-templates /></xsl:template>
 <!-- ^ Ces paragraphes ne devraient contenir que des <Cite>
     produisant uniquement un <bibl> -->
 
@@ -218,7 +218,7 @@ n’est pas le cas, on doit briser cette restriction. -->
 <!--  Tous les cas de citation : -->
       <xsl:when test="parent::Para[Span[@class='verse']]
         or parent::Para/parent::BlockQuote
-        or parent::Para/parent::Div[@class=('quotcomplexe', 'quote-alt', 'trad')]
+        or parent::Para/parent::Div[@class=('quotecomplexe', 'quote-alt', 'translation')]
         or parent::Span[@class='inlinequote']">
         <xsl:choose>
           <xsl:when test="citations[

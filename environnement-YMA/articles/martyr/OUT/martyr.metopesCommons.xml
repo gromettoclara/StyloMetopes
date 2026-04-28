@@ -95,7 +95,7 @@
       </profileDesc>
       <revisionDesc>
          <listChange>
-            <change type="creation" when="2026-04-21">XML-TEI file creation</change>
+            <change type="creation" when="2026-04-28">XML-TEI file creation</change>
          </listChange>
       </revisionDesc>
    </teiHeader>
@@ -344,7 +344,7 @@
             <div type="section2">
                <head>Citations complexes</head>
                <p>Métopes possède ce qu’on appelle des citations « complexes ». Il s’agit d’un type de citation conteneur ayant la propriété de pouvoir contenir d’autres citations conteneurs, qui sont des traductions de la citation principale.</p>
-               <p>Un citation complexe est codée comme section <code rend="inline">:::{.quotcomplexe}</code>, ou <code rend="inline">:::{.quotecomplexe lang="zz"}</code>, si on veut spécifier la langue de la citation principale.</p>
+               <p>Un citation complexe est codée comme section <code rend="inline">:::{.quotecomplexe}</code>, ou <code rend="inline">:::{.quotecomplexe lang="zz"}</code>, si on veut spécifier la langue de la citation principale.</p>
                <p>Le contenu de la citation complexe <hi rend="italic">doit</hi> commencer par la citation principale, laquelle <hi rend="italic">doit</hi> être donnée sous la forme d’une citation normale pandoc-MD (&gt;) à l’intérieur de la citation complexe :</p>
                <cit>
                   <quote xml:lang="fr">
@@ -354,7 +354,7 @@
                </cit>
                <p>La citation principale peut contenir tout ce qui peut se retrouver dans une citation normale pandoc-MD.</p>
                <p>
-                  <hi rend="italic">Après</hi> la citation principale, la citation complexe contiendra normalement (mais facultativement) une ou plusieurs sous-sections <code rend="inline">:::{.trad lang="zz"}</code>, chacune donnant une traduction de la citation principale, codée de la même façon que la citation principale :</p>
+                  <hi rend="italic">Après</hi> la citation principale, la citation complexe contiendra normalement (mais facultativement) une ou plusieurs sous-sections <code rend="inline">:::{.translation lang="zz"}</code>, chacune donnant une traduction de la citation principale, codée de la même façon que la citation principale :</p>
                <cit>
                   <quote xml:lang="fr">
                      <p>Tatitata en francais.</p>
