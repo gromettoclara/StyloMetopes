@@ -22,15 +22,15 @@ Voici une dédicace.
 
 Simple remarque : avec le schéma d'Érudit je suis confronté au problème suivant : ils sont très attaché à l'identité entre le pdf et le HTML produit à partie de leur XML. Or le markdown ne contraignant pas l'ordre des éléments, la dédicace ou les épigraphes se trouvent parfois mal placés dans l'article. C'est une idée à retenir et à anticiper pour la validation. Il faut "forcer" les écrivants et éditeurs sur stylo à placer ses blocs au bon endroit.
 
-::: {.notepre origin=aut}
+::: {.prenote origin=aut}
 Note préliminaire de l'auteur
 :::
 
-::: {.notepre origin=pb}
+::: {.prenote origin=pb}
 Note préliminaire de l'éditeur
 :::
 
-::: {.notepre origin=trl}
+::: {.prenote origin=trl}
 Note préliminaire du traducteur
 :::
 
@@ -39,7 +39,7 @@ ATTENTION: Ceci est un chapô introductif
 :::
 
 ::: {.epigraph}
-::: {.quotecomplexe}
+::: {.rich-quote}
 > Tant qu’il existera, par le fait des lois et des mœurs, une damnation sociale créant artificiellement, en pleine civilisation, des enfers, et compliquant d’une fatalité humaine la destinée qui est divine ; tant que les trois problèmes du siècle, la dégradation de l’homme par le prolétariat, la déchéance de la femme par la faim, l’atrophie de l’enfant par la nuit, ne seront pas résolus ; tant que, dans de certaines régions, l’asphyxie sociale sera possible ; en d’autres termes, et à un point de vue plus étendu encore, tant qu’il y aura sur la terre ignorance et misère, des livres de la nature de celui-ci pourront ne pas être inutiles.
 
 [@hugo1862miserables]
@@ -102,7 +102,7 @@ Il faut inventer une autre syntaxe si on veut que les notes soient les notes de 
 
 Il me semble plus propre d'inventer une nouvelle syntaxe que de détourner celle de Pandoc: 
 
-Par exemple je veux mettre une note de fin ici[Voici ce que je veux dire et qui apparaît en fin de document.]{.endnote}. Elle sera numérotée séquentiellement.
+Par exemple je veux mettre une note de fin ici^[Voici ce que je veux dire et qui apparaît en fin de document.]{.endnote}. Elle sera numérotée séquentiellement.
 
 ## Citations
 
@@ -221,15 +221,15 @@ Il s’agit d’un type de citation conteneur ayant la propriété de pouvoir
 contenir d’autres citations conteneurs, qui sont des traductions de la
 citation principale.
 
-Un citation complexe est codée comme section `:::{.quotecomplexe}`, ou
-`:::{.quotecomplexe lang="zz"}`, si on veut spécifier la langue de la citation
+Un citation complexe est codée comme section `:::{.rich-quote}`, ou
+`:::{.rich-quote lang="zz"}`, si on veut spécifier la langue de la citation
 principale.
 
 Le contenu de la citation complexe *doit* commencer par la citation principale,
 laquelle *doit* être donnée sous la forme d’une citation normale pandoc-MD (>)
 à l’intérieur de la citation complexe :
 
-:::{.quotecomplexe lang=fr}
+:::{.rich-quote lang=fr}
 > Ceci est la citation principale; un premier paragraphe.
 >
 > Et un second paragraphe.
@@ -243,7 +243,7 @@ normale pandoc-MD.
 sous-sections `:::{.translation lang="zz"}`, chacune donnant une traduction de la citation
 principale, codée de la même façon que la citation principale :
 
-:::{.quotecomplexe lang=fr}
+:::{.rich-quote lang=fr}
 > Tatitata en francais.
 >
 > Sur deux paragraphes.
@@ -266,7 +266,7 @@ Des références bibliographiques peuvent être insérées un peu
 partout, notamment après la citation principale, à la fin des sections des traductions
 et après la dernière traduction. Par exemple :
 
-:::{.quotecomplexe}
+:::{.rich-quote}
 > Un premier paragraphe.
 >
 > Un second paragraphe dans la même citation.
@@ -276,7 +276,7 @@ et après la dernière traduction. Par exemple :
 
 Autre exemple :
 
-:::{.quotecomplexe lang=fr}
+:::{.rich-quote lang=fr}
 > Tatitata en français.
 >
 > Sur deux paragraphes.
@@ -307,7 +307,7 @@ dernière traduction.
 Si on préfère, la référence à la citation en langue originale pourrait être
 donnée *avant* les sous-sections pour les traductions :
 
-:::{.quotecomplexe lang=fr}
+:::{.rich-quote lang=fr}
 > Tatitata en français.
 >
 > Sur deux paragraphes.
@@ -433,7 +433,7 @@ Notons qu’une sous-section 'credits' a préséance sur d’éventuels spans 'c
 
 ## Encadrés
 
-:::{.encadre titre=montitre}
+:::{.box title=montitre}
 
 [ [nom]{.surname}[prenom]{.forename}]{.auth}
 
