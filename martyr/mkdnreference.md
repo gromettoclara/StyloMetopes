@@ -102,7 +102,7 @@ Il faut inventer une autre syntaxe si on veut que les notes soient les notes de 
 
 Il me semble plus propre d'inventer une nouvelle syntaxe que de détourner celle de Pandoc: 
 
-Par exemple je veux mettre une note de fin ici^[Voici ce que je veux dire et qui apparaît en fin de document.]{.endnote}. Elle sera numérotée séquentiellement.
+Par exemple je veux mettre une note de fin ici[Voici ce que je veux dire et qui apparaît en fin de document.]{.endnote}. Elle sera numérotée séquentiellement.
 
 ## Citations
 
@@ -351,7 +351,7 @@ Si on veut donner une ou plusieurs traductions de la citation, il faut
 utiliser une citation complexe. Les références sont alors données
 de la façon prévue pour les citations complexes :
 
-:::{.quotecomplexe}
+:::{.rich-quote}
 > [Souvent, pour s’amuser, les hommes d’équipage]{.verse num=1} 
 > [Prennent des albatros, vastes oiseaux des mers,]{.verse num=2}
 > [Qui suivent, indolents compagnons de voyage,]{.verse num=5}
@@ -370,7 +370,7 @@ de la façon prévue pour les citations complexes :
 Si on préfère, la référence au texte en langue originale peut être
 donnée avant la sous-section pour la traduction, ainsi :
 
-:::{.quotecomplexe}
+:::{.rich-quote}
 > [Souvent, pour s’amuser, les hommes d’équipage]{.verse num=1} 
 > [Prennent des albatros, vastes oiseaux des mers,]{.verse num=2}
 > [Qui suivent, indolents compagnons de voyage,]{.verse num=5}
