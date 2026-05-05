@@ -81,7 +81,7 @@ if "%dobib%" == "oui" echo #### Fin BIB XML #### >> %dossout%\%fich%.log
 @echo off
 
 if "%doast%" == "oui" pandoc --standalone --verbose --citeproc ^
-  -f markdown+raw_html+sourcepos -t xml --metadata=link-citations:true ^
+  -f commonmark+sourcepos+raw_html -t xml --metadata=link-citations:true ^
   --bibliography %dossin%\%fich%.bib ^
   --csl %dossaux%\chicago-author-date-YMA.csl ^
   --metadata-file %dossin%\%fich%.yaml ^
@@ -97,7 +97,7 @@ if "%dolat%" == "oui" java -jar "C:\ProgMesProg\saxon\saxon-he-12.9.jar" ^
   -o:%dossout%\%fich%.latex.md -s:%dossout%\%fich%.AST.xml ^
   2>> %dossout%\%fich%.log
 if "%dolat%" == "oui" pandoc --standalone --verbose ^
-  -f markdown+sourcepos -t html4 --mathml -o %dossout%\%fich%.mathml.xml ^
+  -f commonmark+sourcepos -t html4 --mathml -o %dossout%\%fich%.mathml.xml ^
   --template %dossaux%\template-body.txt ^
   %dossout%\%fich%.latex.md 2>> %dossout%\%fich%.log
 if "%dolat%" == "oui" echo on
@@ -132,7 +132,7 @@ if "%donum%" == "oui" echo #### Fin Métopes numérotation #### >> %dossout%\%fi
 
 if "%dohtml%" == "oui" pandoc --standalone --verbose --section-divs ^
   --table-of-contents --citeproc ^
-  -f markdown+tex_math_dollars+raw_html+sourcepos -t html --mathml ^
+  -f commonmark+sourcepos+tex_math_dollars+raw_html -t html --mathml ^
   --bibliography %dossin%\%fich%.bib ^
   --csl %dossaux%\chicago-author-date-YMA.csl ^
   %dossin%\%fich%.yaml ^
