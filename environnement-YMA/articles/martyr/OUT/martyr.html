@@ -365,20 +365,20 @@ l’ordre des éléments, la dédicace ou les épigraphes se trouvent parfois
 mal placés dans l’article. C’est une idée à retenir et à anticiper pour
 la validation. Il faut “forcer” les écrivants et éditeurs sur stylo à
 placer ses blocs au bon endroit.</p>
-<div class="notepre" data-origin="aut">
+<div class="prenote" data-origin="aut">
 <p>Note préliminaire de l’auteur</p>
 </div>
-<div class="notepre" data-origin="pb">
+<div class="prenote" data-origin="pb">
 <p>Note préliminaire de l’éditeur</p>
 </div>
-<div class="notepre" data-origin="trl">
+<div class="prenote" data-origin="trl">
 <p>Note préliminaire du traducteur</p>
 </div>
 <div class="argument">
 <p>ATTENTION: Ceci est un chapô introductif</p>
 </div>
 <div class="epigraph">
-<div class="quotecomplexe">
+<div class="rich-quote">
 <blockquote>
 <p>Tant qu’il existera, par le fait des lois et des mœurs, une damnation
 sociale créant artificiellement, en pleine civilisation, des enfers, et
@@ -588,14 +588,14 @@ d’un type de citation conteneur ayant la propriété de pouvoir contenir
 d’autres citations conteneurs, qui sont des traductions de la citation
 principale.</p>
 <p>Un citation complexe est codée comme section
-<code>:::{.quotecomplexe}</code>, ou
-<code>:::{.quotecomplexe lang="zz"}</code>, si on veut spécifier la
-langue de la citation principale.</p>
+<code>:::{.rich-quote}</code>, ou
+<code>:::{.rich-quote lang="zz"}</code>, si on veut spécifier la langue
+de la citation principale.</p>
 <p>Le contenu de la citation complexe <em>doit</em> commencer par la
 citation principale, laquelle <em>doit</em> être donnée sous la forme
 d’une citation normale pandoc-MD (&gt;) à l’intérieur de la citation
 complexe :</p>
-<div class="quotecomplexe" lang="fr">
+<div class="rich-quote" lang="fr">
 <blockquote>
 <p>Ceci est la citation principale; un premier paragraphe.</p>
 <p>Et un second paragraphe.</p>
@@ -608,7 +608,7 @@ contiendra normalement (mais facultativement) une ou plusieurs
 sous-sections <code>:::{.translation lang="zz"}</code>, chacune donnant
 une traduction de la citation principale, codée de la même façon que la
 citation principale :</p>
-<div class="quotecomplexe" lang="fr">
+<div class="rich-quote" lang="fr">
 <blockquote>
 <p>Tatitata en francais.</p>
 <p>Sur deux paragraphes.</p>
@@ -629,7 +629,7 @@ citation principale :</p>
 <p>Des références bibliographiques peuvent être insérées un peu partout,
 notamment après la citation principale, à la fin des sections des
 traductions et après la dernière traduction. Par exemple :</p>
-<div class="quotecomplexe">
+<div class="rich-quote">
 <blockquote>
 <p>Un premier paragraphe.</p>
 <p>Un second paragraphe dans la même citation.</p>
@@ -638,7 +638,7 @@ traductions et après la dernière traduction. Par exemple :</p>
 1666)</span></p>
 </div>
 <p>Autre exemple :</p>
-<div class="quotecomplexe" lang="fr">
+<div class="rich-quote" lang="fr">
 <blockquote>
 <p>Tatitata en français.</p>
 <p>Sur deux paragraphes.</p>
@@ -668,7 +668,7 @@ donnée <em>après</em> la dernière traduction.</p>
 <p>Si on préfère, la référence à la citation en langue originale
 pourrait être donnée <em>avant</em> les sous-sections pour les
 traductions :</p>
-<div class="quotecomplexe" lang="fr">
+<div class="rich-quote" lang="fr">
 <blockquote>
 <p>Tatitata en français.</p>
 <p>Sur deux paragraphes.</p>
@@ -715,7 +715,7 @@ class="citation" data-cites="baudelaire_albatros_1857">(Baudelaire 1857,
 <p>Si on veut donner une ou plusieurs traductions de la citation, il
 faut utiliser une citation complexe. Les références sont alors données
 de la façon prévue pour les citations complexes :</p>
-<div class="quotecomplexe">
+<div class="rich-quote">
 <blockquote>
 <p><span class="verse" data-num="1">Souvent, pour s’amuser, les hommes
 d’équipage</span> <span class="verse" data-num="2">Prennent des
@@ -737,7 +737,7 @@ data-cites="baudelaire_albatros_1857">(Baudelaire 1857, 1‑3)</span></p>
 </div>
 <p>Si on préfère, la référence au texte en langue originale peut être
 donnée avant la sous-section pour la traduction, ainsi :</p>
-<div class="quotecomplexe">
+<div class="rich-quote">
 <blockquote>
 <p><span class="verse" data-num="1">Souvent, pour s’amuser, les hommes
 d’équipage</span> <span class="verse" data-num="2">Prennent des
@@ -813,7 +813,7 @@ spans ‘credits’.</p>
 </section>
 <section id="encadrés" class="level2">
 <h2>Encadrés</h2>
-<div class="encadre" data-titre="montitre">
+<div class="box" title="montitre">
 <p><span class="auth"><span class="surname">nom</span><span
 class="forename">prenom</span></span></p>
 <p>Pour le moment on a un encadré minimal avec un titre et une autorité

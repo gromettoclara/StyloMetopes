@@ -1,5 +1,5 @@
 @echo off
-rem Exemple : go martyr bib ast lat met num html
+rem Exemple : go martyr bib ast lat val met num html
 chcp 65001
 set fich=%1
 set dossin=articles\%fich%
@@ -12,42 +12,63 @@ if "%4" == "bib" set dobib=oui
 if "%5" == "bib" set dobib=oui
 if "%6" == "bib" set dobib=oui
 if "%7" == "bib" set dobib=oui
+if "%8" == "bib" set dobib=oui
+
 if "%2" == "ast" set doast=oui
 if "%3" == "ast" set doast=oui
 if "%4" == "ast" set doast=oui
 if "%5" == "ast" set doast=oui
 if "%6" == "ast" set doast=oui
 if "%7" == "ast" set doast=oui
+if "%8" == "ast" set doast=oui
+
 if "%2" == "lat" set dolat=oui
 if "%3" == "lat" set dolat=oui
 if "%4" == "lat" set dolat=oui
 if "%5" == "lat" set dolat=oui
 if "%6" == "lat" set dolat=oui
 if "%7" == "lat" set dolat=oui
+if "%8" == "lat" set dolat=oui
+
+if "%2" == "val" set doval=oui
+if "%3" == "val" set doval=oui
+if "%4" == "val" set doval=oui
+if "%5" == "val" set doval=oui
+if "%6" == "val" set doval=oui
+if "%7" == "val" set doval=oui
+if "%8" == "val" set doval=oui
+
 if "%2" == "met" set domet=oui
 if "%3" == "met" set domet=oui
 if "%4" == "met" set domet=oui
 if "%5" == "met" set domet=oui
 if "%6" == "met" set domet=oui
 if "%7" == "met" set domet=oui
+if "%8" == "met" set domet=oui
+
 if "%2" == "num" set donum=oui
 if "%3" == "num" set donum=oui
 if "%4" == "num" set donum=oui
 if "%5" == "num" set donum=oui
 if "%6" == "num" set donum=oui
 if "%7" == "num" set donum=oui
+if "%8" == "num" set donum=oui
+
 if "%2" == "htm" set dohtml=oui
 if "%3" == "htm" set dohtml=oui
 if "%4" == "htm" set dohtml=oui
 if "%5" == "htm" set dohtml=oui
 if "%6" == "htm" set dohtml=oui
 if "%7" == "htm" set dohtml=oui
+if "%8" == "htm" set dohtml=oui
+
 if "%2" == "html" set dohtml=oui
 if "%3" == "html" set dohtml=oui
 if "%4" == "html" set dohtml=oui
 if "%5" == "html" set dohtml=oui
 if "%6" == "html" set dohtml=oui
 if "%7" == "html" set dohtml=oui
+if "%8" == "html" set dohtml=oui
 
 echo #### Début job #### > %dossout%\%fich%.log
 @echo off
@@ -81,6 +102,14 @@ if "%dolat%" == "oui" pandoc --standalone --verbose ^
   %dossout%\%fich%.latex.md 2>> %dossout%\%fich%.log
 if "%dolat%" == "oui" echo on
 if "%dolat%" == "oui" echo #### Fin md2mathml #### >> %dossout%\%fich%.log
+@echo off
+
+if "%doval%" == "oui" java -jar "C:\ProgMesProg\saxon\saxon-he-12.9.jar" ^
+  -xsl:%dossaux%\valideProtoStylo.xsl ^
+  -s:%dossout%\%fich%.AST.xml -o:%dossout%\%fich%.metopesCommons.json ^
+  2>> %dossout%\%fich%.log
+if "%doval%" == "oui" echo on
+if "%doval%" == "oui" echo #### Fin Métopes validation #### >> %dossout%\%fich%.log
 @echo off
 
 if "%domet%" == "oui" java -Dfile.encoding=UTF-8 ^

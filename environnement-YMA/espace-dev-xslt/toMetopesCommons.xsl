@@ -116,9 +116,9 @@ vertu d’un protocole qu’on suppose respecté par les auteurs :
   <xsl:variable name="laEpigDiv" select="//Div[@class='epigraph']" />
   <xsl:variable name="laSponsDiv" select="//Div[@class='sponsor']" />
   <xsl:variable name="laDedicDiv" select="//Div[@class='dedication']" />
-  <xsl:variable name="laAutDiv" select="//Div[@class='notepre' and @origin='aut']" />
-  <xsl:variable name="laPblDiv" select="//Div[@class='notepre' and @origin='pb']" />
-  <xsl:variable name="laTrlDiv" select="//Div[@class='notepre' and @origin='trl']" />
+  <xsl:variable name="laAutDiv" select="//Div[@class='prenote' and @origin='aut']" />
+  <xsl:variable name="laPblDiv" select="//Div[@class='prenote' and @origin='pb']" />
+  <xsl:variable name="laTrlDiv" select="//Div[@class='prenote' and @origin='trl']" />
   <xsl:variable name="laArgDiv" select="//Div[@class='argument']" />
 
   <xsl:variable name="ignoredDiv" select=
@@ -128,7 +128,7 @@ vertu d’un protocole qu’on suppose respecté par les auteurs :
   are relocated to predetermined places in the output (header, front or back) -->
 
   <xsl:variable name="fakeDiv" select="//Div[@class=('question', 'answer', 'sig',
-    'quote-alt', 'quotecomplexe', 'translation', 'figure', 'credits', 'encadre')]" />
+    'quote-alt', 'rich-quote', 'translation', 'figure', 'credits', 'box')]" />
 <!-- ^ Les Div qui ne sont pas déplacées et qui ne donnent pas lieu à une
     <div> dans l’extrant -->
 
@@ -153,7 +153,7 @@ vertu d’un protocole qu’on suppose respecté par les auteurs :
     ><hi rend="strikethrough"><xsl:apply-templates /></hi></xsl:template>
   <xsl:template match="Figure"><figure><xsl:apply-templates /></figure></xsl:template>
   <xsl:template match="Image[not(ancestor::Figure)]"><figure rend="inline"
-    ><graphic url="$imagePath || {ym:imageName(@src)}" /></figure></xsl:template>
+    ><graphic url="{$imagePath || ym:imageName(@src)}" /></figure></xsl:template>
   <xsl:template match="Image"><graphic url="{$imagePath || ym:imageName(@src)}" /></xsl:template>
   <xsl:template match="Caption"><p rend="caption"><xsl:apply-templates select="*" /></p></xsl:template>
   <xsl:template match="OrderedList"><list type="ordered"><xsl:apply-templates /></list></xsl:template>
@@ -191,25 +191,25 @@ vertu d’un protocole qu’on suppose respecté par les auteurs :
 ce qui exige que le contenu de chaque BlockQuote soit exactement un Para. Si ce
 n’est pas le cas, on doit briser cette restriction. -->
 
-  <xsl:template match="Div[@class='quotecomplexe']">
+  <xsl:template match="Div[@class='rich-quote']">
     <cit><quote>
         <xsl:if test="@lang">
           <xsl:attribute name="xml:lang" select="@lang" />
         </xsl:if>
-        <xsl:apply-templates select="*" mode="quotecomplexe" />
+        <xsl:apply-templates select="*" mode="rich-quote" />
 <!-- Ne devrait contenir que des BlockQuote, des Para et des Div[@class='translation']. -->
     </quote></cit>
   </xsl:template>
-  <xsl:template match="Div" mode="quotecomplexe">
+  <xsl:template match="Div" mode="rich-quote">
 <!-- Toutes les Div matchant auront @class='translation' et @lang. -->
     <quote type="trl" xml:lang="{@lang}">
-      <xsl:apply-templates select="*" mode="quotecomplexe" />
+      <xsl:apply-templates select="*" mode="rich-quote" />
     </quote>
   </xsl:template>
-  <xsl:template match="BlockQuote" mode="quotecomplexe">
+  <xsl:template match="BlockQuote" mode="rich-quote">
     <xsl:apply-templates select="*" />
   </xsl:template>
-  <xsl:template match="Para" mode="quotecomplexe"><xsl:apply-templates /></xsl:template>
+  <xsl:template match="Para" mode="rich-quote"><xsl:apply-templates /></xsl:template>
 <!-- ^ Ces paragraphes ne devraient contenir que des <Cite>
     produisant uniquement un <bibl> -->
 
@@ -218,7 +218,7 @@ n’est pas le cas, on doit briser cette restriction. -->
 <!--  Tous les cas de citation : -->
       <xsl:when test="parent::Para[Span[@class='verse']]
         or parent::Para/parent::BlockQuote
-        or parent::Para/parent::Div[@class=('quotecomplexe', 'quote-alt', 'translation')]
+        or parent::Para/parent::Div[@class=('rich-quote', 'quote-alt', 'translation')]
         or parent::Span[@class='inlinequote']">
         <xsl:choose>
           <xsl:when test="citations[
@@ -293,6 +293,12 @@ Les 3 valeurs de @format avec l’existant stylo sont 'html', 'latex', 'tex'. --
         >
         <xsl:apply-templates select="*[not(self::Caption)]" />
       </table>
+      <xsl:variable name="credits" select="Caption//Span[@class='credits']" />
+      <xsl:if test="$credits">
+        <p rend="credits">
+          <xsl:apply-templates select="$credits" />
+        </p>
+      </xsl:if>
     </figure>
   </xsl:template>
   <xsl:template match="colspecs | TableHead | TableBody | TableFoot | TableBody/body">
@@ -423,14 +429,49 @@ If there are, they will be reported by validation, and rendered as paragraphs. -
     </figure>
   </xsl:template>
 
-  <xsl:template match="Div[@class='encadre']">
-    <floatingText type="encadre"><body><p>
-        <xsl:apply-templates select="*[position() > 1]/node()" />
-        <bibl type="sec_authority"><author><persName>
-          <surname><xsl:value-of select="Para/Span/Span[@class='surname']"/></surname>
-          <forename><xsl:value-of select="Para/Span/Span[@class='forename']"/></forename>
-        </persName></author></bibl>
-    </p></body></floatingText>
+  <xsl:template match="Div[@class='box']">
+    <floatingText type="box"><body>
+        <xsl:for-each select="@title">
+          <head><xsl:value-of select="." /></head>
+        </xsl:for-each>
+        <p>
+          <xsl:apply-templates select="*[position() > 1]/node()" />
+          <bibl type="sec_authority"><author><persName>
+            <surname><xsl:value-of select="Para/Span/Span[@class='surname']"/></surname>
+            <forename><xsl:value-of select="Para/Span/Span[@class='forename']"/></forename>
+          </persName></author></bibl>
+        </p>
+    </body></floatingText>
+  </xsl:template>
+
+  <xsl:function name="ym:cleanString" as="xs:string">
+    <xsl:param name="str" as="xs:string" />
+    <xsl:variable name="str" select="normalize-space($str)" />
+    <xsl:choose>
+      <xsl:when test="string-length($str) gt 100">
+        <xsl:value-of select="translate(substring($str,1,99),'&quot;', ' ') || '…'" />
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="translate($str,'&quot;', ' ')"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:function>
+
+  <xsl:template name="message">
+<!-- template appelé par validations -->
+    <xsl:param name="severity" select="'W'" as="xs:string" />
+    <xsl:param name="text" as="xs:string" />
+    <xsl:param name="object" as="node()" />
+    <xsl:message terminate="{if ($severity=('F','f')) then 'yes' else 'no'}">
+      <xsl:value-of select="
+        if ($severity=('W','w')) then 'ATTENTION : ' else
+          if ($severity=('I','i')) then 'INFORMATION : ' else 'ERREUR : '
+        " />
+      <xsl:value-of select="$text" />
+      <xsl:text> : "</xsl:text>
+      <xsl:value-of select="ym:cleanString($object)" />
+      <xsl:text>"</xsl:text>
+      </xsl:message>
   </xsl:template>
 
   <xsl:template match="Pandoc/blocks">

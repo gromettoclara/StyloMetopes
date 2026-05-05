@@ -3,12 +3,15 @@
 [INFO] Running filter citeproc
 [INFO] Loaded espace-dev-xslt\chicago-author-date-YMA.csl from espace-dev-xslt\chicago-author-date-YMA.csl
 [INFO] Loaded articles\martyr\martyr.bib from articles\martyr\martyr.bib
-[INFO] Completed filter citeproc in 78 ms
+[INFO] Completed filter citeproc in 93 ms
 #### Fin AST XML #### 
 [INFO] Loaded espace-dev-xslt\template-body.txt from espace-dev-xslt\template-body.txt
 #### Fin md2mathml #### 
-ATTENTION : Au moins une citation normale (❯​) contient plus d’un paragraphe.
-ATTENTION : Au moins une citation 'quote-alt' contient plus d’un paragraphe.
+#### Fin Métopes validation #### 
+ATTENTION : Citation normale (❯​) contenant plus d’un paragraphe : "Ceci est une citation normale pandoc-MD. Elle consiste endeux paragraphes suivis d’une liste. Le so…"
+ATTENTION : Citation normale (❯​) contenant plus d’un paragraphe : "Les outardes sont bleues, dit-il. Bleues sont les outardes, répondit l’autre. (Molière 1666)"
+ATTENTION : Citation 'quote-alt' contenant plus d’un paragraphe : "Ceci est une citation alternative de Métopes. Pizza Toute garnie Hawaïenne Spaghetti Bolognese Elle…"
+INFORMATION : Métadonnée 'acknowledgements' ignorée au profit de la section 'ack' : "Merci à la rédactrice en chef blabla."
 #### Fin XML Métopes #### 
 #### Fin Métopes numérotation #### 
 [INFO] Running filter citeproc
