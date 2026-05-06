@@ -3,7 +3,7 @@
 [INFO] Running filter citeproc
 [INFO] Loaded espace-dev-xslt\chicago-author-date-YMA.csl from espace-dev-xslt\chicago-author-date-YMA.csl
 [INFO] Loaded articles\martyr\martyr.bib from articles\martyr\martyr.bib
-[INFO] Completed filter citeproc in 93 ms
+[INFO] Completed filter citeproc in 62 ms
 #### Fin AST XML #### 
 [INFO] Loaded espace-dev-xslt\template-body.txt from espace-dev-xslt\template-body.txt
 #### Fin md2mathml #### 

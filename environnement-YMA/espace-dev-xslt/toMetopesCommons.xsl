@@ -10,12 +10,32 @@ Observations sur l’AST de pandoc (et donc tenues pour acquises dans cette XSLT
    celui directement sous Pandoc/blocks. Par exemple, le premier titre (#) sera
    Pandoc/blocks/Header[1].
 
-De plus, les choses suivantes sont tenues pour acquises (mais vérifiées en validation), en
-vertu d’un protocole qu’on suppose respecté par les auteurs :
+De plus, toutes les choses vérifiées par validation (toMC-validations.xsl) sont tenues
+pour acquises.
 
-1- Toutes les Div (:::) ayant un rôle sémantique prédéterminé (par exemple, .ack)
-   sont au niveau Pandoc/blocks/*; autrement dit, elles ne sont pas imbriquées dans une
-   autre Div.
+Pandoc se permet allègrement de jouer avec le texte (notamment via l’extension "smart",
+activée par défaut), y compris dans les titres (mais pas dans les constructions de type
+"verbatim", comme les segments et blocs de code).
+
+Par exemple :
+
+- Les apostrophes ' sont changées en ’
+- Les ellipses ... sont transformées en …
+- L’espace échappée (\ ) est transformée en espace insécable
+- Les espaces multiples sont ramenées à une seule
+- Les sauts de ligne sont transformés en <SoftBreak/> ou <LineBreak/>, selon le contexte
+  (précéde de 2 espaces ou plus -> <LineBreak/>)
+- Les espaces uniques sont éliminées dans certains contextes
+
+Concernant le pandoc-MD :
+
+- Les titres (#+) et délimiteurs de bloc (:::, ```, etc.) DOIVENT commencer en colonne 1
+- L’indentation à 4 espaces ou plus signifie implicitement un bloc de code
+- {.classe} (après […] ou :::) équivaut à {class='classe'}, {class="classe"} ou
+  {class=classe}
+- :::classe équivaut à :::{.classe} 
+- :::{.classe1 class=classe2} équivaut à :::{class="classe1 classe2"}
+
 -->
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns="http://www.tei-c.org/ns/1.0"

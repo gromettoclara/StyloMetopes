@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright © 2026 Yves Marcoux - Licence MIT -->
 <!--
-Validation des conventions de codage propres à Stylo dans le Markdown.
+Validation des conventions de codage propres à Stylo en Markdown.
+Note : C’est l’AST construit par Pandoc et non le Markdown lui-même qui est validé.
 -->
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns="http://www.tei-c.org/ns/1.0"
@@ -114,6 +115,24 @@ Validation des conventions de codage propres à Stylo dans le Markdown.
 
   <xsl:variable name="trueDiv" select="//Div except ($ignoredDiv | $fakeDiv)" />
 
+  <xsl:template mode="pretty" match="*">
+    <xsl:apply-templates mode="pretty" />
+  </xsl:template>
+  <xsl:template mode="pretty" match="text()">
+    <xsl:value-of select="." />
+  </xsl:template>
+  <xsl:template mode="pretty" match="LineBreak | SoftBreak | Space">
+    <xsl:text> </xsl:text>
+  </xsl:template>
+
+  <xsl:function name="ym:pretty">
+    <xsl:param name="object" as="node()" />
+    <xsl:variable name="pretty">
+      <xsl:apply-templates select="$object" mode="pretty" />
+    </xsl:variable>
+    <xsl:value-of select="normalize-space($pretty)"/>
+  </xsl:function>
+
   <xsl:template name="message">
 <!-- template appelé par validations -->
     <xsl:param name="severity" select="'W'" as="xs:string" />
@@ -123,8 +142,27 @@ Validation des conventions de codage propres à Stylo dans le Markdown.
       <xp:string key="severity"><xsl:value-of select="$severity"/></xp:string>
       <xp:string key="messageText"><xsl:value-of select="$text"/></xp:string>
       <xp:string key="xpath"><xsl:value-of select="path($object)" /></xp:string>
-      <xp:string key="faultyText"><xsl:value-of select="normalize-space($object)"
-        /></xp:string>
+      <xp:string key="nameInAST"><xsl:value-of select="$object/name()" /></xp:string>
+      <xp:array key="attributes">
+        <xsl:for-each select="$object/@*">
+          <xp:map>
+            <xp:string key="name"><xsl:value-of select="name()"/></xp:string>
+            <xp:string key="value"><xsl:value-of select="."/></xp:string>
+          </xp:map>
+        </xsl:for-each>
+      </xp:array>
+      <xsl:variable name="nearestTitle" select=
+        "($object/self::Header, $object/preceding::Header[1])[1]" />
+      <xp:string key="nearestTitle">
+        <xsl:for-each select="1 to $nearestTitle/@level">#</xsl:for-each>
+        <xsl:text> </xsl:text>
+        <xsl:value-of select="$nearestTitle" />
+      </xp:string>
+      <xp:string key="faultyTextPretty">
+        <xsl:value-of select="ym:pretty($object)" />
+      </xp:string>
+      <xp:string key="faultyTextRaw"><xsl:value-of select="string($object)"
+      /></xp:string>
     </xp:map>
     <xsl:message terminate="{if ($severity=('F','f')) then 'yes' else 'no'}" />
   </xsl:template>
