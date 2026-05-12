@@ -469,25 +469,8 @@ If there are, they will be reported by validation, and rendered as paragraphs. -
     </body></floatingText>
   </xsl:template>
 
-  <xsl:template mode="pretty" match="*">
-    <xsl:apply-templates mode="pretty" />
-  </xsl:template>
-  <xsl:template mode="pretty" match="text()">
-    <xsl:value-of select="." />
-  </xsl:template>
-  <xsl:template mode="pretty" match="LineBreak | SoftBreak | Space">
-    <xsl:text> </xsl:text>
-  </xsl:template>
-
-  <xsl:function name="ym:pretty">
-    <xsl:param name="object" as="node()" />
-    <xsl:variable name="pretty">
-      <xsl:apply-templates select="$object" mode="pretty" />
-    </xsl:variable>
-    <xsl:value-of select="normalize-space($pretty)"/>
-  </xsl:function>
-
   <xsl:function name="ym:cleanString" as="xs:string">
+<!-- Utilisée dans "message" ci-après. -->
     <xsl:param name="object" as="node()" />
     <xsl:variable name="str" select="ym:pretty($object)" />
     <xsl:choose>

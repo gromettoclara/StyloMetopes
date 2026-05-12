@@ -156,4 +156,25 @@ Appelle le template "message", qui doit être défini dans la feuille appelante.
 
   </xsl:template>
 
+<!-- Fonction ym:pretty et mode pretty centralisés ici pour être disponibles pour
+  utilisation par le template "message" fourni par la feuille appelante : -->
+
+  <xsl:template mode="pretty" match="*">
+    <xsl:apply-templates mode="pretty" />
+  </xsl:template>
+  <xsl:template mode="pretty" match="text()">
+    <xsl:value-of select="." />
+  </xsl:template>
+  <xsl:template mode="pretty" match="LineBreak | SoftBreak | Space">
+    <xsl:text> </xsl:text>
+  </xsl:template>
+
+  <xsl:function name="ym:pretty">
+    <xsl:param name="object" as="node()" />
+    <xsl:variable name="pretty">
+      <xsl:apply-templates select="$object" mode="pretty" />
+    </xsl:variable>
+    <xsl:value-of select="normalize-space($pretty)"/>
+  </xsl:function>
+
 </xsl:stylesheet>
