@@ -843,7 +843,8 @@
 </BulletList>
 <Para>Notons qu’une sous-section <Quoted quote-type="SingleQuote">credits</Quoted> a préséance sur d’éventuels spans <Quoted quote-type="SingleQuote">credits</Quoted>.</Para>
 <Header id="encadrés" level="2">Encadrés</Header>
-<Div class="box" title="montitre">
+<Div class="box">
+<Para><Span class="head">Titre</Span></Para>
 <Para><Span class="auth"><Span class="surname">nom</Span><Span class="forename">prenom</Span></Span></Para>
 <Para>Pour le moment on a un encadré minimal avec un titre et une autorité à récupérer<SoftBreak />dans <Code>TEI/text/body//bibl[@type=&quot;sec_authority&quot;]/author/persName/surname|forename</Code></Para>
 </Div>

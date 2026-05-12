@@ -432,9 +432,9 @@ If there are, they will be reported by validation, and rendered as paragraphs. -
 
   <xsl:template match="Div[@class='figure']">
     <figure>
-      <head>
-        <xsl:apply-templates select="Para/Span[@class='head']" />
-      </head>
+      <xsl:for-each select="Para/Span[@class='head']">
+        <head><xsl:apply-templates select="." /></head>
+      </xsl:for-each>
       <xsl:apply-templates select="Figure/*" />
       <xsl:variable name="credits" select="
         if (Div[@class='credits']) then
@@ -451,16 +451,21 @@ If there are, they will be reported by validation, and rendered as paragraphs. -
 
   <xsl:template match="Div[@class='box']">
     <floatingText type="box"><body>
-        <xsl:for-each select="@title">
-          <head><xsl:value-of select="." /></head>
+        <xsl:for-each select="Para/Span[@class='head']">
+          <head><xsl:apply-templates select="." /></head>
         </xsl:for-each>
         <p>
-          <xsl:apply-templates select="*[position() > 1]/node()" />
-          <bibl type="sec_authority"><author><persName>
-            <surname><xsl:value-of select="Para/Span/Span[@class='surname']"/></surname>
-            <forename><xsl:value-of select="Para/Span/Span[@class='forename']"/></forename>
-          </persName></author></bibl>
+          <xsl:apply-templates select="Para[not(Span/@class=('head', 'auth'))]/node()" />
+          <xsl:for-each select="Para/Span[@class='auth']">
+            <bibl type="sec_authority"><author><persName>
+              <surname><xsl:apply-templates select="Span[@class='surname']"/></surname>
+              <forename><xsl:apply-templates select="Span[@class='forename']"/></forename>
+            </persName></author></bibl>
+          </xsl:for-each>
         </p>
+        <xsl:apply-templates select="node()[not(self::Para) and normalize-space()]" />
+<!-- ^ Au cas où il y aurait d’autre junk (ne devrait pas, mais pour pas la perdre,
+      si jamais). -->
     </body></floatingText>
   </xsl:template>
 
