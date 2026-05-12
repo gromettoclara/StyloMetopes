@@ -433,7 +433,9 @@ Notons qu’une sous-section 'credits' a préséance sur d’éventuels spans 'c
 
 ## Encadrés
 
-:::{.box title=montitre}
+:::{.box}
+
+[Titre]{.head}
 
 [ [nom]{.surname}[prenom]{.forename}]{.auth}
 
