@@ -217,11 +217,15 @@ n’est pas le cas, on doit briser cette restriction. -->
           <xsl:attribute name="xml:lang" select="@lang" />
         </xsl:if>
         <xsl:apply-templates select="*" mode="rich-quote" />
-<!-- Ne devrait contenir que des BlockQuote, des Para et des Div[@class='translation']. -->
+<!-- Ne devrait contenir que des BlockQuote (le matériel cité, normalement un seul 
+  BlockQuote, au début, lequel peut cependant contenir à peu près n’importe quoi 
+  - notamment plusieurs Para), un ou des Para (qui, normalement, ne contiendront
+  qu’un ou des <Cite>) et des Div[@class='translation']. -->
     </quote></cit>
   </xsl:template>
   <xsl:template match="Div" mode="rich-quote">
-<!-- Toutes les Div matchant auront @class='translation' et @lang. -->
+<!-- Toutes les Div matchant devraient avoir @class='translation' et @lang (ce qu’on tient 
+  simplement pour acquis; si désiré, pourrait être vérifié dans validations). -->
     <quote type="trl" xml:lang="{@lang}">
       <xsl:apply-templates select="*" mode="rich-quote" />
     </quote>
