@@ -185,8 +185,9 @@ Pour info sur un organisme : https://doi.org/10.13039/«id»
       <revisionDesc>
         <listChange>
           <change type="creation" when=
-            "{translate(substring(string(current-dateTime()), 1, 10), 'T', ' ')}"
-            >XML-TEI file creation</change>
+            "2099-05-15"
+            >XML-TEI file creation (date fixe pendant les tests)</change>
+<!-- "{translate(substring(string(current-dateTime()), 1, 10), 'T', ' ')}" -->
         </listChange>
       </revisionDesc>
     </teiHeader>

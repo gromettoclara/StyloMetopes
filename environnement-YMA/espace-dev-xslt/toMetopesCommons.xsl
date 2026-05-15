@@ -229,9 +229,10 @@ n’est pas le cas, on doit briser cette restriction. -->
   <xsl:template match="BlockQuote" mode="rich-quote">
     <xsl:apply-templates select="*" />
   </xsl:template>
-  <xsl:template match="Para" mode="rich-quote"><xsl:apply-templates /></xsl:template>
-<!-- ^ Ces paragraphes ne devraient contenir que des <Cite>
-    produisant uniquement un <bibl> -->
+  <xsl:template match="*" mode="rich-quote"><xsl:apply-templates /></xsl:template>
+<!-- ^ Devrait ne matcher que des Para, ne contenant normalement chacun qu’un <Cite>
+  (lesquels produisent exactement un <bibl> chacun). On matche "*" pour ramasser toute
+  junk qui pourrait éventuellement se trouver là par erreur. -->
 
   <xsl:template match="Cite">
     <xsl:choose>
@@ -451,8 +452,8 @@ If there are, they will be reported by validation, and rendered as paragraphs. -
 
   <xsl:template match="Div[@class='box']">
     <floatingText type="box"><body>
-        <xsl:for-each select="Para/Span[@class='head']">
-          <head><xsl:apply-templates select="." /></head>
+        <xsl:for-each select="Para[Span/@class='head']">
+          <head><xsl:apply-templates /></head>
         </xsl:for-each>
         <p>
           <xsl:apply-templates select="Para[not(Span/@class=('head', 'auth'))]/node()" />
@@ -463,7 +464,7 @@ If there are, they will be reported by validation, and rendered as paragraphs. -
             </persName></author></bibl>
           </xsl:for-each>
         </p>
-        <xsl:apply-templates select="node()[not(self::Para) and normalize-space()]" />
+        <xsl:apply-templates select="*[not(self::Para)]" />
 <!-- ^ Au cas où il y aurait d’autre junk (ne devrait pas, mais pour pas la perdre,
       si jamais). -->
     </body></floatingText>
