@@ -550,7 +550,7 @@ au tout début de Pandoc/blocks : -->
       ' ' || $nFormInt" />-->
     <xsl:text>
 </xsl:text>
-    <TEI xml:space="default" xml:lang="{$docLang}">
+    <TEI xml:space="default" xml:lang="{$docLang}" change="commons_edition">
       <xsl:call-template name="TEIheader" />
       <text xml:id="text" type="article">
         <xsl:call-template name="front" />

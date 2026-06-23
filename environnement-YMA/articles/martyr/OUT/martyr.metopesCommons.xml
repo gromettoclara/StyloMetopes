@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:space="default" xml:lang="fr">
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xml:space="default"
+     xml:lang="fr"
+     change="commons_edition">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title type="main">Au-delà du minotaure et de la mélancolie : écrire Dora Maar</title>
+            <title type="main">Au-delà du minotaure et de la mélancolie : écrire Dora Maar</title>
             <title type="sub">un sous-titre</title>
             <title type="trl" xml:lang="en">Above minautore and melancolia : subtitle</title>
             <author role="aut">
@@ -102,7 +105,7 @@
    <text xml:id="text" type="article">
       <front>
          <div type="titlePage">
-            <p rend="title-main">Au-delà du minotaure et de la mélancolie : écrire Dora Maar</p>
+            <p rend="title-main">Au-delà du minotaure et de la mélancolie : écrire Dora Maar</p>
             <p rend="title-sub">un sous-titre</p>
             <p rend="title-trl" xml:lang="en">Above minautore and melancolia : subtitle</p>
             <p rend="author-aut">Mathilde Savard-Corbeil</p>
