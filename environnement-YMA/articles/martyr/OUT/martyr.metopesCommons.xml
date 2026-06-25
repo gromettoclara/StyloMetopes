@@ -155,11 +155,7 @@
          </argument>
          <epigraph>
             <cit>
-               <quote>
-                  <p>Tant qu’il existera, par le fait des lois et des mœurs, une damnation sociale créant artificiellement, en pleine civilisation, des enfers, et compliquant d’une fatalité humaine la destinée qui est divine ; tant que les trois problèmes du siècle, la dégradation de l’homme par le prolétariat, la déchéance de la femme par la faim, l’atrophie de l’enfant par la nuit, ne seront pas résolus ; tant que, dans de certaines régions, l’asphyxie sociale sera possible ; en d’autres termes, et à un point de vue plus étendu encore, tant qu’il y aura sur la terre ignorance et misère, des livres de la nature de celui-ci pourront ne pas être inutiles.</p>
-                  <bibl>
-                     <ref target="#ref-hugo1862miserables">Hugo 1862</ref>
-                  </bibl>
+               <quote>Tant qu’il existera, par le fait des lois et des mœurs, une damnation sociale créant artificiellement, en pleine civilisation, des enfers, et compliquant d’une fatalité humaine la destinée qui est divine ; tant que les trois problèmes du siècle, la dégradation de l’homme par le prolétariat, la déchéance de la femme par la faim, l’atrophie de l’enfant par la nuit, ne seront pas résolus ; tant que, dans de certaines régions, l’asphyxie sociale sera possible ; en d’autres termes, et à un point de vue plus étendu encore, tant qu’il y aura sur la terre ignorance et misère, des livres de la nature de celui-ci pourront ne pas être inutiles. <bibl rend="inline">(<ref target="#ref-hugo1862miserables">Hugo 1862</ref>)</bibl>
                </quote>
             </cit>
          </epigraph>
@@ -252,23 +248,23 @@
                <cit>
                   <quote>Ceci est une citation normale pandoc-MD. Elle consiste en exactement un paragraphe.</quote>
                </cit>
-               <cit>
-                  <quote type="quotation2">Ceci est une citation alternative de Métopes. Encore ici, un seul paragraphe.</quote>
+               <cit type="quotation2">
+                  <quote>Ceci est une citation alternative de Métopes. Encore ici, un seul paragraphe.</quote>
                </cit>
                <p>Exemples un peu plus complexes :</p>
                <cit>
+                  <quote>Ceci est une citation normale pandoc-MD.</quote>
+                  <quote>Elle consiste en deux paragraphes suivis d’une liste.</quote>
                   <quote>
-                     <p>Ceci est une citation normale pandoc-MD.</p>
-                     <p>Elle consiste en deux paragraphes suivis d’une liste.</p>
                      <list type="ordered">
                         <item>Le soleil.</item>
                         <item>La lune.</item>
                      </list>
                   </quote>
                </cit>
-               <cit>
-                  <quote type="quotation2">
-                     <p>Ceci est une citation alternative de Métopes.</p>
+               <cit type="quotation2">
+                  <quote>Ceci est une citation alternative de Métopes.</quote>
+                  <quote>
                      <figure>
                         <table rows="3" cols="2">
                            <row>
@@ -284,10 +280,9 @@
                            </row>
                         </table>
                      </figure>
-                     <p>Elle contient un tableau entre deux paragraphes.</p>
                   </quote>
+                  <quote>Elle contient un tableau entre deux paragraphes.</quote>
                </cit>
-               <p>Les citations conteneurs contenant exactement un paragraphe (et rien d’autre) sont traitées de façon particulière par la moulinette d’exportation et donnent lieu à la forme « normale » de citation Métopes. Toutes les autres « étirent » un peu le modèle Métopes et pourraient donner des résultats sous-optimaux (bien qu’entièrement valides selon le schéma Métopes). Le mot d’ordre est ici « essai et erreur ».</p>
             </div>
             <div type="section2">
                <head>Citations inline</head>
@@ -310,39 +305,27 @@
                <p>Habituellement, on met une seule référence par citation et on la met à la fin, mais il n’y a pas de règle sur ces deux points.</p>
                <p>Voici quelques exemples de citations avec références bibliographiques :</p>
                <cit>
-                  <quote>Ceci est une citation d’un grand écrivain. <bibl>
-                        <ref target="#ref-hugo1862miserables">Hugo 1862, 123‑25</ref>
-                     </bibl>
+                  <quote>Ceci est une citation d’un grand écrivain. <bibl rend="inline">(<ref target="#ref-hugo1862miserables">Hugo 1862, 123‑25</ref>)</bibl>
+                  </quote>
+               </cit>
+               <cit type="quotation2">
+                  <quote>Citation alternative, avec référence bibliographique. <bibl rend="inline">(<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>)</bibl>
                   </quote>
                </cit>
                <cit>
-                  <quote type="quotation2">Citation alternative, avec référence bibliographique. <bibl>
-                        <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>
-                     </bibl>
-                  </quote>
-               </cit>
-               <cit>
-                  <quote>
-                     <p>« Les outardes sont bleues, » dit-il.</p>
-                     <p>« Bleues sont les outardes, » répondit l’autre.</p>
-                     <p>
-                        <bibl>
-                           <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
-                        </bibl>
-                     </p>
-                  </quote>
+                  <quote>« Les outardes sont bleues, » dit-il.</quote>
+                  <quote>« Bleues sont les outardes, » répondit l’autre.</quote>
+                  <bibl>(<ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>)</bibl>
                </cit>
                <p>Comme le disait l’<hi rend="italic">Homme Océan</hi>, <cit>
-                     <quote>Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs. <bibl>
-                           <ref target="#ref-hugo1862miserables">Hugo 1862, 10‑12</ref>
-                        </bibl>
+                     <quote>Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs. <bibl rend="inline">(<ref target="#ref-hugo1862miserables">Hugo 1862, 10‑12</ref>)</bibl>
                      </quote>
                   </cit>. Que peut-on dire de plus ?</p>
                <p>L’exemple suivant ne contient pas de référence dans une citation, mais il illustre une façon courante d’articuler une référence et une citation :</p>
                <p>Comme le disait <bibl rend="inline">Hugo (<ref target="#ref-hugo1862miserables">1862</ref>)</bibl>, <cit>
                      <quote>Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs.</quote>
                   </cit>. Que peut-on ajouter ?</p>
-               <p>L’exemple démontre aussi qu’une référence bibliographique peut survenir ailleurs que dans une citation. Il s’agit alors d’une référence <hi rend="italic">inline</hi>, identifiée dans Métopes par la valeur d’attribut <code rend="inline">@rend="inline"</code>.</p>
+               <p>L’exemple démontre qu’une référence bibliographique peut survenir ailleurs que dans une citation.</p>
             </div>
             <div type="section2">
                <head>Citations complexes</head>
@@ -377,9 +360,7 @@
                   <quote>
                      <p>Un premier paragraphe.</p>
                      <p>Un second paragraphe dans la même citation.</p>
-                     <bibl>
-                        <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
-                     </bibl>
+                     <bibl>(<ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>)</bibl>
                   </quote>
                </cit>
                <p>Autre exemple :</p>
@@ -390,20 +371,14 @@
                      <quote type="trl" xml:lang="en">
                         <p>Tatitata in English.</p>
                         <p>On two paragraphs.</p>
-                        <bibl>
-                           <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
-                        </bibl>
+                        <bibl>(<ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>)</bibl>
                      </quote>
                      <quote type="trl" xml:lang="no">
                         <p>Tatitata på norsk bokmål.</p>
                         <p>På to avsnitt.</p>
-                        <bibl>
-                           <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
-                        </bibl>
+                        <bibl>(<ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>)</bibl>
                      </quote>
-                     <bibl>
-                        <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
-                     </bibl>
+                     <bibl>(<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>)</bibl>
                   </quote>
                </cit>
                <p>Dans ce dernier exemple, la citation principale a deux traductions avec chacune sa référence, et la référence à la citation originale est donnée <hi rend="italic">après</hi> la dernière traduction.</p>
@@ -412,22 +387,16 @@
                   <quote xml:lang="fr">
                      <p>Tatitata en français.</p>
                      <p>Sur deux paragraphes.</p>
-                     <bibl>
-                        <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>
-                     </bibl>
+                     <bibl>(<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857</ref>)</bibl>
                      <quote type="trl" xml:lang="en">
                         <p>Tatitata in English.</p>
                         <p>On two paragraphs.</p>
-                        <bibl>
-                           <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
-                        </bibl>
+                        <bibl>(<ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>)</bibl>
                      </quote>
                      <quote type="trl" xml:lang="no">
                         <p>Tatitata på norsk bokmål.</p>
                         <p>På to avsnitt.</p>
-                        <bibl>
-                           <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
-                        </bibl>
+                        <bibl>(<ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>)</bibl>
                      </quote>
                   </quote>
                </cit>
@@ -458,9 +427,7 @@
                         <l n="3">
                            <num>5</num> Qui suivent, indolents compagnons de voyage,</l>
                      </lg>
-                     <bibl>
-                        <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>
-                     </bibl>
+                     <bibl>(<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>)</bibl>
                   </quote>
                </cit>
                <p>Si on veut donner une ou plusieurs traductions de la citation, il faut utiliser une citation complexe. Les références sont alors données de la façon prévue pour les citations complexes :</p>
@@ -483,13 +450,9 @@
                            <l n="3">
                               <num>5</num> Who follow, indolent companions of the voyage,</l>
                         </lg>
-                        <bibl>
-                           <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
-                        </bibl>
+                        <bibl>(<ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>)</bibl>
                      </quote>
-                     <bibl>
-                        <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>
-                     </bibl>
+                     <bibl>(<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>)</bibl>
                   </quote>
                </cit>
                <p>Si on préfère, la référence au texte en langue originale peut être donnée avant la sous-section pour la traduction, ainsi :</p>
@@ -503,9 +466,7 @@
                         <l n="3">
                            <num>5</num> Qui suivent, indolents compagnons de voyage,</l>
                      </lg>
-                     <bibl>
-                        <ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>
-                     </bibl>
+                     <bibl>(<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>)</bibl>
                      <quote type="trl" xml:lang="en">
                         <lg>
                            <l n="1">
@@ -515,9 +476,7 @@
                            <l n="3">
                               <num>5</num> Who follow, indolent companions of the voyage,</l>
                         </lg>
-                        <bibl>
-                           <ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>
-                        </bibl>
+                        <bibl>(<ref target="#ref-moliere_misanthrope_1666">Molière 1666</ref>)</bibl>
                      </quote>
                   </quote>
                </cit>

@@ -39,11 +39,16 @@ ATTENTION: Ceci est un chapô introductif
 :::
 
 ::: {.epigraph}
-::: {.rich-quote}
-> Tant qu’il existera, par le fait des lois et des mœurs, une damnation sociale créant artificiellement, en pleine civilisation, des enfers, et compliquant d’une fatalité humaine la destinée qui est divine ; tant que les trois problèmes du siècle, la dégradation de l’homme par le prolétariat, la déchéance de la femme par la faim, l’atrophie de l’enfant par la nuit, ne seront pas résolus ; tant que, dans de certaines régions, l’asphyxie sociale sera possible ; en d’autres termes, et à un point de vue plus étendu encore, tant qu’il y aura sur la terre ignorance et misère, des livres de la nature de celui-ci pourront ne pas être inutiles.
-
-[@hugo1862miserables]
-:::
+>Tant qu’il existera, par le fait des lois et des mœurs, une damnation sociale 
+>créant artificiellement, en pleine civilisation, des enfers, et compliquant 
+>d’une fatalité humaine la destinée qui est divine ; tant que les trois 
+>problèmes du siècle, la dégradation de l’homme par le prolétariat, la déchéance
+>de la femme par la faim, l’atrophie de l’enfant par la nuit, ne seront pas 
+>résolus ; tant que, dans de certaines régions, l’asphyxie sociale sera 
+possible ; en d’autres termes, et à un point de vue plus étendu encore, tant 
+qu’il y aura sur la terre ignorance et misère, des livres de la nature de 
+celui-ci pourront ne pas être inutiles.
+>[@hugo1862miserables]
 :::
 
 :::{.sponsor}
@@ -155,12 +160,19 @@ Ceci est une citation alternative de Métopes.
 Elle contient un tableau entre deux paragraphes.
 :::
 
+<!--
 Les citations conteneurs contenant exactement un paragraphe (et rien d'autre)
 sont traitées de façon particulière par la moulinette d’exportation et donnent
 lieu à la forme "normale" de citation Métopes. Toutes les autres "étirent" un
 peu le modèle Métopes et pourraient donner des résultats sous-optimaux (bien
 qu’entièrement valides selon le schéma Métopes). Le mot d’ordre est ici "essai
 et erreur".
+
+2026-06-24 YMA Ce n’est en fait plus le cas, car je structure maintenant les
+citations à plusieurs paragraphes tel que conseillé par @cbourdot au <https://github.com/gromettoclara/StyloMetopes/issues/13#issuecomment-4562517329>,
+ce qui élimine la nécessité de traiter différemment les citations à un seul
+paragraphe.
+-->
 
 ### Citations inline
 
@@ -210,9 +222,8 @@ une façon courante d’articuler une référence et une citation :
 
 Comme le disait @hugo1862miserables, [Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs.]{.inlinequote}. Que peut-on ajouter ?
 
-L’exemple démontre aussi qu’une référence bibliographique peut survenir ailleurs que dans
-une citation. Il s’agit alors d’une référence *inline*, identifiée dans
-Métopes par la valeur d’attribut `@rend="inline"`.
+L’exemple démontre qu’une référence bibliographique peut survenir ailleurs que dans
+une citation.
 
 ### Citations complexes
 

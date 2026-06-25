@@ -467,14 +467,11 @@
 <Para>ATTENTION: Ceci est un chapô introductif</Para>
 </Div>
 <Div class="epigraph">
-<Div class="rich-quote">
 <BlockQuote>
-<Para>Tant qu’il existera, par le fait des lois et des mœurs, une damnation sociale créant artificiellement, en pleine civilisation, des enfers, et compliquant d’une fatalité humaine la destinée qui est divine ; tant que les trois problèmes du siècle, la dégradation de l’homme par le prolétariat, la déchéance de la femme par la faim, l’atrophie de l’enfant par la nuit, ne seront pas résolus ; tant que, dans de certaines régions, l’asphyxie sociale sera possible ; en d’autres termes, et à un point de vue plus étendu encore, tant qu’il y aura sur la terre ignorance et misère, des livres de la nature de celui-ci pourront ne pas être inutiles.</Para>
-</BlockQuote>
-<Para><Cite><citations>
+<Para>Tant qu’il existera, par le fait des lois et des mœurs, une damnation sociale<SoftBreak />créant artificiellement, en pleine civilisation, des enfers, et compliquant<SoftBreak />d’une fatalité humaine la destinée qui est divine ; tant que les trois<SoftBreak />problèmes du siècle, la dégradation de l’homme par le prolétariat, la déchéance<SoftBreak />de la femme par la faim, l’atrophie de l’enfant par la nuit, ne seront pas<SoftBreak />résolus ; tant que, dans de certaines régions, l’asphyxie sociale sera<SoftBreak />possible ; en d’autres termes, et à un point de vue plus étendu encore, tant<SoftBreak />qu’il y aura sur la terre ignorance et misère, des livres de la nature de<SoftBreak />celui-ci pourront ne pas être inutiles.<SoftBreak /><Cite><citations>
 <Citation id="hugo1862miserables" mode="NormalCitation" note-num="1" hash="0" />
 </citations>(<Link href="#ref-hugo1862miserables">Hugo 1862</Link>)</Cite></Para>
-</Div>
+</BlockQuote>
 </Div>
 <Div class="sponsor">
 <Para>Ce livre a été rendu possible grâce au soutien du CRSH.</Para>
@@ -610,8 +607,19 @@
 </Table>
 <Para>Elle contient un tableau entre deux paragraphes.</Para>
 </Div>
-<Para>Les citations conteneurs contenant exactement un paragraphe (et rien d’autre)<SoftBreak />sont traitées de façon particulière par la moulinette d’exportation et donnent<SoftBreak />lieu à la forme <Quoted quote-type="DoubleQuote">normale</Quoted> de citation Métopes. Toutes les autres <Quoted quote-type="DoubleQuote">étirent</Quoted> un<SoftBreak />peu le modèle Métopes et pourraient donner des résultats sous-optimaux (bien<SoftBreak />qu’entièrement valides selon le schéma Métopes). Le mot d’ordre est ici <Quoted quote-type="DoubleQuote">essai<SoftBreak />et erreur</Quoted>.</Para>
-<Header id="citations-inline" level="3">Citations inline</Header>
+<RawBlock format="html">&lt;!--
+Les citations conteneurs contenant exactement un paragraphe (et rien d&#39;autre)
+sont traitées de façon particulière par la moulinette d’exportation et donnent
+lieu à la forme &quot;normale&quot; de citation Métopes. Toutes les autres &quot;étirent&quot; un
+peu le modèle Métopes et pourraient donner des résultats sous-optimaux (bien
+qu’entièrement valides selon le schéma Métopes). Le mot d’ordre est ici &quot;essai
+et erreur&quot;.
+
+2026-06-24 YMA Ce n’est en fait plus le cas, car je structure maintenant les
+citations à plusieurs paragraphes tel que conseillé par @cbourdot au &lt;https://github.com/gromettoclara/StyloMetopes/issues/13#issuecomment-4562517329&gt;,
+ce qui élimine la nécessité de traiter différemment les citations à un seul
+paragraphe.
+--&gt;</RawBlock><Header id="citations-inline" level="3">Citations inline</Header>
 <Para>Les citations inline (ne constituant qu’un segment d’un paragraphe) sont codées comme des<SoftBreak /><Emph>segments</Emph> (span) <Code>[…]{.inlinequote}</Code>. Elles peuvent survenir partout où un<SoftBreak />span peut se trouver. Voici un exemple :</Para>
 <Para>Comme le disait l’<Emph>Homme Océan</Emph>, <Span class="inlinequote">Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs.</Span> Ensuite, le paragraphe continue.</Para>
 <Header id="références-bibliographiques" level="3">Références bibliographiques</Header>
@@ -646,7 +654,7 @@
 <Para>Comme le disait <Cite><citations>
 <Citation id="hugo1862miserables" mode="AuthorInText" note-num="9" hash="0" />
 </citations>Hugo (<Link href="#ref-hugo1862miserables">1862</Link>)</Cite>, <Span class="inlinequote">Il n’y a ni mauvaises herbes ni mauvais hommes. Il n’y a que de mauvais cultivateurs.</Span>. Que peut-on ajouter ?</Para>
-<Para>L’exemple démontre aussi qu’une référence bibliographique peut survenir ailleurs que dans<SoftBreak />une citation. Il s’agit alors d’une référence <Emph>inline</Emph>, identifiée dans<SoftBreak />Métopes par la valeur d’attribut <Code>@rend=&quot;inline&quot;</Code>.</Para>
+<Para>L’exemple démontre qu’une référence bibliographique peut survenir ailleurs que dans<SoftBreak />une citation.</Para>
 <Header id="citations-complexes" level="3">Citations complexes</Header>
 <Para>Métopes possède ce qu’on appelle des citations <Quoted quote-type="DoubleQuote">complexes</Quoted>.<SoftBreak />Il s’agit d’un type de citation conteneur ayant la propriété de pouvoir<SoftBreak />contenir d’autres citations conteneurs, qui sont des traductions de la<SoftBreak />citation principale.</Para>
 <Para>Un citation complexe est codée comme section <Code>:::{.rich-quote}</Code>, ou<SoftBreak /><Code>:::{.rich-quote lang=&quot;zz&quot;}</Code>, si on veut spécifier la langue de la citation<SoftBreak />principale.</Para>

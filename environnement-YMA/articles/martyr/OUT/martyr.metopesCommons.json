@@ -1,35 +1,4 @@
-[
-  {
-    "severity": "W",
-    "nameInAST": "BlockQuote",
-    "messageText": "Citation normale (❯​) contenant plus d’un paragraphe",
-    "xpath": "\/Q{}Pandoc[1]\/Q{}blocks[1]\/Q{}BlockQuote[2]",
-    "faultyTextPretty": "Ceci est une citation normale pandoc-MD. Elle consiste en deux paragraphes suivis d’une liste. Le soleil. La lune.",
-    "faultyTextRaw": "\nCeci est une citation normale pandoc-MD.\nElle consiste endeux paragraphes suivis d’une liste.\n\n\nLe soleil.\n\n\nLa lune.\n\n\n",
-    "nearestTitle": "### Citations conteneurs",
-    "attributes": [  ]
-  },
-  {
-    "severity": "W",
-    "nameInAST": "BlockQuote",
-    "messageText": "Citation normale (❯​) contenant plus d’un paragraphe",
-    "xpath": "\/Q{}Pandoc[1]\/Q{}blocks[1]\/Q{}BlockQuote[4]",
-    "faultyTextPretty": "Les outardes sont bleues, dit-il. Bleues sont les outardes, répondit l’autre. (Molière 1666)",
-    "faultyTextRaw": "\nLes outardes sont bleues, dit-il.\nBleues sont les outardes, répondit l’autre.\n\n\n(Molière 1666)\n",
-    "nearestTitle": "### Références bibliographiques",
-    "attributes": [  ]
-  },
-  {
-    "severity": "W",
-    "nameInAST": "Div",
-    "messageText": "Citation 'quote-alt' contenant plus d’un paragraphe",
-    "xpath": "\/Q{}Pandoc[1]\/Q{}blocks[1]\/Q{}Div[13]",
-    "faultyTextPretty": "Ceci est une citation alternative de Métopes. Pizza Toute garnie Hawaïenne Spaghetti Bolognese Elle contient un tableau entre deux paragraphes.",
-    "faultyTextRaw": "\nCeci est une citation alternative de Métopes.\n\n\n\n\n\n\n\n\n\n\n\n\nPizza\n\n\nToute garnie\n\n\n\n\nHawaïenne\n\n\n\n\nSpaghetti\n\n\nBolognese\n\n\n\n\n\n\nElle contient un tableau entre deux paragraphes.\n",
-    "nearestTitle": "### Citations conteneurs",
-    "attributes": [ { "name":"class", "value":"quote-alt" } ]
-  },
-  {
+[ {
     "severity": "I",
     "nameInAST": "MetaInlines",
     "messageText": "Métadonnée 'acknowledgements' ignorée au profit de la section 'ack'",
@@ -38,5 +7,4 @@
     "faultyTextRaw": "Merci à la rédactrice en chef blabla.",
     "nearestTitle": " ",
     "attributes": [  ]
-  }
-]
+  } ]

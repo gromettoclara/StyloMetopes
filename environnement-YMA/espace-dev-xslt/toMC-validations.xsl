@@ -102,8 +102,10 @@ Appelle le template "message", qui doit être défini dans la feuille appelante.
 <!-- The presence of &x200b; (zero-width space) fixes (mysteriously) a bug which
   prevents Notepad++ to display ❯ correctly while visualizing the log.
   (Notepad or Firefox don’t have that bug.) -->
+<!--
+2026-06-24 Realized multiple paragraphs in quotations are not a problem:
 
-    <xsl:for-each select=".//BlockQuote[not(ancestor-or-self::*[@class eq 'rich-quote'])
+<xsl:for-each select=".//BlockQuote[not(ancestor-or-self::*[@class eq 'rich-quote'])
       and ((count(*) > 1 or *[not(self::Para)]))]">
       <xsl:call-template name="message">
         <xsl:with-param name="text"
@@ -120,7 +122,7 @@ Appelle le template "message", qui doit être défini dans la feuille appelante.
         <xsl:with-param name="object" select="." />
       </xsl:call-template>
     </xsl:for-each>
-
+-->
     <xsl:for-each select=".//Div[@class='translation' and not(parent::Div[@class='rich-quote'])]">
       <xsl:call-template name="message">
         <xsl:with-param name="text"

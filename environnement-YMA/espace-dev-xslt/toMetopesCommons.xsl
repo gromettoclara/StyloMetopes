@@ -184,32 +184,68 @@ Concernant le pandoc-MD :
   <xsl:template match="Quoted">« <xsl:apply-templates /> »</xsl:template>
   <xsl:template match="Link"><ref target="{@href}"><xsl:apply-templates /></ref></xsl:template>
   <xsl:template match="citations" />
+
   <xsl:template match="Span[@class='inlinequote']">
     <cit><quote><xsl:apply-templates /></quote></cit>
   </xsl:template>
+
   <xsl:template match="Para" name="Para"><xsl:text>
 </xsl:text><p><xsl:apply-templates /></p></xsl:template>
-  <xsl:template match="Para[Span[@class='verse']]">
+
+<!-- 2026-06-25 Les citations (BlockQuote ou Div[@class='quote-alt']) à plusieurs
+  paragraphes sont maintenant traitées tel que conseillé par Charles @cbourdot au
+  <https://github.com/gromettoclara/StyloMetopes/issues/13#issuecomment-4562517329>. -->
+
+  <xsl:template match="Para[ (parent::BlockQuote or
+    parent::Div[@class=('quote-alt', 'rich-quote', 'translation')]) and
+    Cite and not(node()[normalize-space() and not(self::Cite)]) ]" priority="3">
+<!-- Para in quotation, containing only Cite’s: *do not* wrap in either p or quote. -->
+    <xsl:apply-templates select="Cite">
+      <xsl:with-param name="inline" select="false()" />
+    </xsl:apply-templates>
+  </xsl:template>
+
+  <xsl:template match="Para[parent::BlockQuote[not(ancestor::Div[@class='rich-quote'])]
+    or parent::Div[@class='quote-alt']]"
+    priority="2">
+    <quote><xsl:apply-templates /></quote>
+  </xsl:template>
+
+  <xsl:template match="*[parent::BlockQuote[not(ancestor::Div[@class='rich-quote'])]
+    or parent::Div[@class='quote-alt']]">
+    <quote><xsl:next-match /></quote>
+  </xsl:template>
+
+  <xsl:template match="Para[Span[@class='verse']]" priority="3">
     <lg><xsl:apply-templates select="Span[@class='verse']" /></lg>
 <!-- If any Cite, put them here: -->
-    <xsl:apply-templates select="Cite" />
+    <xsl:apply-templates select="Cite">
+      <xsl:with-param name="inline" select="false()" />
+    </xsl:apply-templates>
   </xsl:template>
+
+  <xsl:template match="Span[@class='verse']">
+    <xsl:variable name="count" select=
+      "1+count(preceding-sibling::Span[@class='verse'])" />
+    <l n="{$count}"><num><xsl:value-of select="@num"/></num>
+      <xsl:text> </xsl:text><xsl:apply-templates />
+    </l>
+  </xsl:template>
+  <!-- Préliminaire et tentatif 2026-04-16 ^ -->
+
   <xsl:template match="BlockQuote[Para/Span[@class='verse']]">
     <cit><quote><xsl:apply-templates select="*" /></quote></cit>
   </xsl:template>
+
   <xsl:template match="BlockQuote">
-    <cit><quote><xsl:apply-templates select=
-          "if (count(Para) eq 1 and not(*[not(self::Para)]))
-            then */node() else *" /></quote></cit>
+    <cit><xsl:apply-templates /></cit>
   </xsl:template>
+
   <xsl:template match="Div[@class='quote-alt']">
-    <cit><quote type="quotation2"><xsl:apply-templates select=
-          "if (count(Para) eq 1 and not(*[not(self::Para)]))
-            then */node() else *" /></quote></cit>
+    <cit type="quotation2"><xsl:apply-templates /></cit>
   </xsl:template>
-<!-- ^ La façon dont Métopes représente "normalement" les BlockQuote est sans <p>,
-ce qui exige que le contenu de chaque BlockQuote soit exactement un Para. Si ce
-n’est pas le cas, on doit briser cette restriction. -->
+<!-- ^ La façon dont Métopes représente "normalement" les citations est avec la structure
+  en paragraphes représentée par des <quote> et non des <p>. -->
 
   <xsl:template match="Div[@class='rich-quote']">
     <cit><quote>
@@ -225,7 +261,10 @@ n’est pas le cas, on doit briser cette restriction. -->
   </xsl:template>
   <xsl:template match="Div" mode="rich-quote">
 <!-- Toutes les Div matchant devraient avoir @class='translation' et @lang (ce qu’on tient 
-  simplement pour acquis; si désiré, pourrait être vérifié dans validations). -->
+  simplement pour acquis; si désiré, pourrait être vérifié dans validations).
+  Ces Div devraient contenir seulement un seul BlockQuote (la citation traduite) et
+  éventuellement un ou des Para (qui, normalement, ne contiendront
+  qu’un ou des <Cite>). -->
     <quote type="trl" xml:lang="{@lang}">
       <xsl:apply-templates select="*" mode="rich-quote" />
     </quote>
@@ -233,46 +272,52 @@ n’est pas le cas, on doit briser cette restriction. -->
   <xsl:template match="BlockQuote" mode="rich-quote">
     <xsl:apply-templates select="*" />
   </xsl:template>
-  <xsl:template match="*" mode="rich-quote"><xsl:apply-templates /></xsl:template>
-<!-- ^ Devrait ne matcher que des Para, ne contenant normalement chacun qu’un <Cite>
+  <xsl:template match="*" mode="rich-quote">
+    <xsl:apply-templates select="." />
+    <!-- ^ Fait en sorte que les Para, ne contenant normalement chacun qu’un ou des <Cite>
+(lesquels produisent exactement un <bibl> chacun) sont traités en mode normal. -->
+  </xsl:template>
+<!-- ^ Devrait ne matcher que des Para, ne contenant normalement chacun qu’un ou des <Cite>
   (lesquels produisent exactement un <bibl> chacun). On matche "*" pour ramasser toute
   junk qui pourrait éventuellement se trouver là par erreur. -->
 
   <xsl:template match="Cite">
+    <xsl:param name="inline" select="true()" />
+<!-- 2026-06-25 Finalement, je trouve que c’est mieux de laisser le CSL agir en tout temps,
+  au moins pour le moment. On verra si des avis contraires se manifestent. -->
+<!--
     <xsl:choose>
-<!--  Tous les cas de citation : -->
+<!-\-  Tous les cas de citation : -\->
       <xsl:when test="parent::Para[Span[@class='verse']]
         or parent::Para/parent::BlockQuote
         or parent::Para/parent::Div[@class=('rich-quote', 'quote-alt', 'translation')]
         or parent::Span[@class='inlinequote']">
-        <xsl:choose>
-          <xsl:when test="citations[
-            (count(Citation) eq 1) and
-            Citation/@mode[. eq 'NormalCitation'] and
-            not(Citation/prefix)] and
-            Link/following-sibling::node()[1][self::text() and . eq ')']">
-<!-- Exactement les cas où on peut mettre juste le <Link>, car il n’y a aucun texte
-  avoisinant autre que ( ) ^ -->
-            <bibl><xsl:apply-templates select="Link" /></bibl>
-          </xsl:when>
-          <xsl:otherwise>
-            <bibl><xsl:apply-templates /></bibl>
-          </xsl:otherwise>
-        </xsl:choose>
+        <xsl:variable name="linkOnly" select="citations[
+          (count(Citation) eq 1) and
+          Citation/@mode[. eq 'NormalCitation'] and
+          not(Citation/prefix)] and
+          Link/following-sibling::node()[1][self::text() and . eq ')']"/>
+<!-\- ^ Exactement les cas où on peut mettre juste le <Link>, car il n’y a aucun texte
+avoisinant autre que ( ) -\->
+        <bibl>
+          <xsl:if test="$inline">
+            <xsl:attribute name="rend">inline</xsl:attribute>
+          </xsl:if>
+          <xsl:apply-templates
+            select="if ($linkOnly) then Link else node()" />
+        </bibl>
       </xsl:when>
       <xsl:otherwise>
-        <bibl rend="inline"><xsl:apply-templates /></bibl>
-      </xsl:otherwise>
-    </xsl:choose>
+-->
+        <bibl>
+          <xsl:if test="$inline">
+            <xsl:attribute name="rend">inline</xsl:attribute>
+          </xsl:if>
+          <xsl:apply-templates />
+        </bibl>
+<!--      </xsl:otherwise>
+    </xsl:choose>-->
   </xsl:template>
-  <xsl:template match="Span[@class='verse']">
-    <xsl:variable name="count" select=
-      "1+count(preceding-sibling::Span[@class='verse'])" />
-    <l n="{$count}"><num><xsl:value-of select="@num"/></num>
-      <xsl:text> </xsl:text><xsl:apply-templates />
-    </l>
-  </xsl:template>
-<!-- Préliminaire et tentatif 2026-04-16 ^ -->
 
   <xsl:template match="RawBlock" />
 <!-- Yes, we just ignore them (ça inclut les commentaires HTML dans le MD) ^ 
@@ -546,8 +591,6 @@ au tout début de Pandoc/blocks : -->
   </xsl:template>
 
   <xsl:template match="/">
-<!--    <xsl:message select="count($formules) || ' ' || count($thebib) ||
-      ' ' || $nFormInt" />-->
     <xsl:text>
 </xsl:text>
     <TEI xml:space="default" xml:lang="{$docLang}" change="commons_edition">
@@ -560,7 +603,7 @@ au tout début de Pandoc/blocks : -->
         <xsl:if test="$laBiblioDiv">
           <back>
 <!-- Mettre la bibliographie ici : -->
-            <xsl:call-template name="bibliographie" />            
+            <xsl:call-template name="bibliographie" />
           </back>
         </xsl:if>
       </text>

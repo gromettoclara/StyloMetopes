@@ -7,7 +7,7 @@
   <meta name="keywords" content="Dora
 Maar, Surréalisme, Photomontage, Autothéorie, Écocritique, Affect, Subjectivité, Dépression, Féminisme, Écrits
 sur l’art" />
-  <title>Au-delà du minotaure et de la mélancolie : écrire Dora Maar</title>
+  <title>Au-delà du minotaure et de la mélancolie : écrire Dora Maar</title>
   <style>
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -270,7 +270,7 @@ sur l’art" />
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Au-delà du minotaure et de la mélancolie : écrire Dora
+<h1 class="title">Au-delà du minotaure et de la mélancolie : écrire Dora
 Maar</h1>
 <p class="subtitle">un sous-titre</p>
 <div class="abstract">
@@ -378,22 +378,19 @@ placer ses blocs au bon endroit.</p>
 <p>ATTENTION: Ceci est un chapô introductif</p>
 </div>
 <div class="epigraph">
-<div class="rich-quote">
 <blockquote>
 <p>Tant qu’il existera, par le fait des lois et des mœurs, une damnation
 sociale créant artificiellement, en pleine civilisation, des enfers, et
 compliquant d’une fatalité humaine la destinée qui est divine ; tant que
 les trois problèmes du siècle, la dégradation de l’homme par le
 prolétariat, la déchéance de la femme par la faim, l’atrophie de
-l’enfant par la nuit, ne seront pas résolus ; tant que, dans de
-certaines régions, l’asphyxie sociale sera possible ; en d’autres
+l’enfant par la nuit, ne seront pas résolus ; tant que, dans de
+certaines régions, l’asphyxie sociale sera possible ; en d’autres
 termes, et à un point de vue plus étendu encore, tant qu’il y aura sur
 la terre ignorance et misère, des livres de la nature de celui-ci
-pourront ne pas être inutiles.</p>
+pourront ne pas être inutiles. <span class="citation"
+data-cites="hugo1862miserables">(Hugo 1862)</span></p>
 </blockquote>
-<p><span class="citation" data-cites="hugo1862miserables">(Hugo
-1862)</span></p>
-</div>
 </div>
 <div class="sponsor">
 <p>Ce livre a été rendu possible grâce au soutien du CRSH.</p>
@@ -515,12 +512,19 @@ paragraphe.</p>
 </table>
 <p>Elle contient un tableau entre deux paragraphes.</p>
 </div>
-<p>Les citations conteneurs contenant exactement un paragraphe (et rien
-d’autre) sont traitées de façon particulière par la moulinette
-d’exportation et donnent lieu à la forme “normale” de citation Métopes.
-Toutes les autres “étirent” un peu le modèle Métopes et pourraient
-donner des résultats sous-optimaux (bien qu’entièrement valides selon le
-schéma Métopes). Le mot d’ordre est ici “essai et erreur”.</p>
+<!--
+Les citations conteneurs contenant exactement un paragraphe (et rien d'autre)
+sont traitées de façon particulière par la moulinette d’exportation et donnent
+lieu à la forme "normale" de citation Métopes. Toutes les autres "étirent" un
+peu le modèle Métopes et pourraient donner des résultats sous-optimaux (bien
+qu’entièrement valides selon le schéma Métopes). Le mot d’ordre est ici "essai
+et erreur".
+
+2026-06-24 YMA Ce n’est en fait plus le cas, car je structure maintenant les
+citations à plusieurs paragraphes tel que conseillé par @cbourdot au <https://github.com/gromettoclara/StyloMetopes/issues/13#issuecomment-4562517329>,
+ce qui élimine la nécessité de traiter différemment les citations à un seul
+paragraphe.
+-->
 </section>
 <section id="citations-inline" class="level3">
 <h3>Citations inline</h3>
@@ -576,10 +580,8 @@ citation :</p>
 data-cites="hugo1862miserables">Hugo (1862)</span>, <span
 class="inlinequote">Il n’y a ni mauvaises herbes ni mauvais hommes. Il
 n’y a que de mauvais cultivateurs.</span>. Que peut-on ajouter ?</p>
-<p>L’exemple démontre aussi qu’une référence bibliographique peut
-survenir ailleurs que dans une citation. Il s’agit alors d’une référence
-<em>inline</em>, identifiée dans Métopes par la valeur d’attribut
-<code>@rend="inline"</code>.</p>
+<p>L’exemple démontre qu’une référence bibliographique peut survenir
+ailleurs que dans une citation.</p>
 </section>
 <section id="citations-complexes" class="level3">
 <h3>Citations complexes</h3>
