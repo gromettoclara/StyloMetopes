@@ -208,12 +208,25 @@ Concernant le pandoc-MD :
   <xsl:template match="Para[parent::BlockQuote[not(ancestor::Div[@class='rich-quote'])]
     or parent::Div[@class='quote-alt']]"
     priority="2">
-    <quote><xsl:apply-templates /></quote>
+    <quote>
+      <xsl:if test="parent::Div[@class='quote-alt']">
+        <xsl:attribute name="type">quotation2</xsl:attribute>
+      </xsl:if>
+      <xsl:apply-templates />
+    </quote>
   </xsl:template>
+<!-- ^ La façon dont Métopes représente "normalement" les citations est avec la structure
+en paragraphes représentée par des <quote> et non des <p>. Pour tout le reste, on enrobe
+simplement d’un <quote> : -->
 
   <xsl:template match="*[parent::BlockQuote[not(ancestor::Div[@class='rich-quote'])]
     or parent::Div[@class='quote-alt']]">
-    <quote><xsl:next-match /></quote>
+    <quote>
+      <xsl:if test="parent::Div[@class='quote-alt']">
+        <xsl:attribute name="type">quotation2</xsl:attribute>
+      </xsl:if>
+      <xsl:next-match />
+    </quote>
   </xsl:template>
 
   <xsl:template match="Para[Span[@class='verse']]" priority="3">
@@ -237,15 +250,9 @@ Concernant le pandoc-MD :
     <cit><quote><xsl:apply-templates select="*" /></quote></cit>
   </xsl:template>
 
-  <xsl:template match="BlockQuote">
+  <xsl:template match="BlockQuote | Div[@class='quote-alt']">
     <cit><xsl:apply-templates /></cit>
   </xsl:template>
-
-  <xsl:template match="Div[@class='quote-alt']">
-    <cit type="quotation2"><xsl:apply-templates /></cit>
-  </xsl:template>
-<!-- ^ La façon dont Métopes représente "normalement" les citations est avec la structure
-  en paragraphes représentée par des <quote> et non des <p>. -->
 
   <xsl:template match="Div[@class='rich-quote']">
     <cit><quote>

@@ -244,8 +244,8 @@
                <cit xml:id="cit2">
                   <quote>Ceci est une citation normale pandoc-MD. Elle consiste en exactement un paragraphe.</quote>
                </cit>
-               <cit xml:id="cit3" type="quotation2">
-                  <quote>Ceci est une citation alternative de Métopes. Encore ici, un seul paragraphe.</quote>
+               <cit xml:id="cit3">
+                  <quote type="quotation2">Ceci est une citation alternative de Métopes. Encore ici, un seul paragraphe.</quote>
                </cit>
                <p xml:id="p46">Exemples un peu plus complexes :</p>
                <cit xml:id="cit4">
@@ -258,9 +258,9 @@
                      </list>
                   </quote>
                </cit>
-               <cit xml:id="cit5" type="quotation2">
-                  <quote>Ceci est une citation alternative de Métopes.</quote>
-                  <quote>
+               <cit xml:id="cit5">
+                  <quote type="quotation2">Ceci est une citation alternative de Métopes.</quote>
+                  <quote type="quotation2">
                      <figure xml:id="figure1">
                         <table xml:id="table1" rows="3" cols="2">
                            <row>
@@ -277,7 +277,7 @@
                         </table>
                      </figure>
                   </quote>
-                  <quote>Elle contient un tableau entre deux paragraphes.</quote>
+                  <quote type="quotation2">Elle contient un tableau entre deux paragraphes.</quote>
                </cit>
             </div>
             <div xml:id="div19" type="section2">
@@ -304,8 +304,8 @@
                   <quote>Ceci est une citation d’un grand écrivain. <bibl xml:id="bibl4" rend="inline">(<ref target="#ref-hugo1862miserables">Hugo 1862, 123‑25</ref>)</bibl>
                   </quote>
                </cit>
-               <cit xml:id="cit8" type="quotation2">
-                  <quote>Citation alternative, avec référence bibliographique. <bibl xml:id="bibl5" rend="inline">(<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>)</bibl>
+               <cit xml:id="cit8">
+                  <quote type="quotation2">Citation alternative, avec référence bibliographique. <bibl xml:id="bibl5" rend="inline">(<ref target="#ref-baudelaire_albatros_1857">Baudelaire 1857, 1‑3</ref>)</bibl>
                   </quote>
                </cit>
                <cit xml:id="cit9">
